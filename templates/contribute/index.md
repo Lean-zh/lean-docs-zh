@@ -1,90 +1,71 @@
-# How to contribute to mathlib
+# 如何为 mathlib 做贡献
 
-Here are some tips and tricks
-to make the process of contributing as smooth as possible.
+以下是一些提示和技巧，可以使贡献过程尽可能顺利。
 
-* Use [Zulip](https://leanprover.zulipchat.com/) to
-   discuss your contribution before and while you are working on it.
-* Create a GitHub account and add your GitHub username to your Zulip profile, using [the personal settings panel](https://leanprover.zulipchat.com/#settings/profile).
-We also strongly encourage setting your display name on Zulip to be your real name.
-* Adhere to the guidelines:
-   - The [style guide](style.html) for contributors.
-   - The explanation of [naming conventions](naming.html).
-   - The [documentation guidelines](doc.html).
+*   使用 [Zulip](https://leanprover.zulipchat.com/) 来在您工作之前和期间讨论您的贡献。
+*   创建一个 GitHub 账户，并使用[个人设置面板](https://leanprover.zulipchat.com/#settings/profile)将您的 GitHub 用户名添加到您的 Zulip 个人资料中。我们也强烈建议您在 Zulip 上将显示名称设置为您的真实姓名。
+*   遵守以下指南：
+    *   为贡献者准备的[风格指南](style.html)。
+    *   关于[命名约定](naming.html)的解释。
+    *   [文档指南](doc.html)。
 
-Once you have code that you'd like to contribute, you should open a PR.
+一旦您有了希望贡献的代码，您应该开启一个 PR。
 
-## Working on mathlib
+## 在 mathlib 上工作
 
-We use `git` to manage and version control `mathlib`.
+我们使用 `git` 来管理和进行 mathlib 的版本控制。
 
-Please see [the Git Guide for Mathlib4 Contributors](git.html) for detailed instructions if you have not contributed to an open source project with git before.
+如果您之前没有使用 git 为开源项目贡献过，请参阅[Mathlib4 贡献者 Git 指南](git.html)以获取详细说明。
 
-The `master` branch is the "production" version of mathlib.
-It is essential that everything in the master branch compiles without errors, and there are no `sorry`s.
-To ensure this, we only commit changes to `master` that have passed automated Continuous Integration ("CI") tests, and have been approved by mathlib maintainers.
+`master` 分支是 mathlib 的“生产”版本。
+至关重要的是，master 分支中的所有内容都必须能够无错误地编译，并且没有任何 `sorry`。
+为确保这一点，我们只向 `master` 提交那些通过了自动化持续集成 (Continuous Integration, "CI") 测试，并得到 mathlib 维护者批准的变更。
 
-While you're working on a new contribution to `mathlib`, you should do this on a different branch.
-You should do this in your own fork of the `mathlib` repository.
+当您为一个新的 `mathlib` 贡献工作时，您应该在一个不同的分支上进行。
+您应该在您自己的 `mathlib` 仓库的复刻 (fork) 中进行此操作。
 
-Typical workflow:
-* To get started, you'll need a local copy of mathlib.
-* First, you'll need to go to https://github.com/leanprover-community/mathlib4 and click "Fork" in the top right,
-  to make your own fork of the repository.
-  Your fork is at [https://github.com/USER/mathlib4](https://github.com/USER/mathlib4).
-* Now make a local clone of the repository.
-  ```
-  git clone https://github.com/leanprover-community/mathlib4.git
-  cd mathlib4
-  lake exe cache get
-  ```
-* The steps above only need to be done once (not once for each contribution).
-* Now, each time you want to work on a new change to mathlib, create a new branch:
-  ```
-  git switch -c my_new_branch   # This creates a new branch and switches to it
-  ```
-* Sometimes you may not want to create a new branch, but instead work on a branch
-  that someone else created, or you created from a different computer.
-  In that case you need to use `git switch their_new_branch` (note there is no `-c` here).
-* Make local changes, e.g. using Visual Studio Code using the Lean extension.
-* Commit your changes using `git commit -a` (or via the VS Code interface).
-* If you'd like to compile everything locally to check you didn't break anything, run
-`lake build`. This may take a long time if you modified files low down in the import hierarchy.
-It's also okay to let our central CI servers do this for you by pushing your changes after you've opened a PR to the main repository.
-* If you created new files, run `lake exe mk_all`. This will update `Mathlib.lean` to ensure that all files are imported there.
-* In order to push your changes back to the repository on github, use
-  ```
-  git push
-  ```
-  If this complains about the remote not being configured, follow the advice in the output from `git` and run
-  ```
-  git push --set-upstream origin my_new_branch
-  ```
-* Once you've opened a PR to the main `mathlib` repository (see below),
-  continuous integration will automatically kick in at this point.
-  You can view the output by visiting
-  https://github.com/leanprover-community/mathlib4/tree/my_new_branch
-  (There will be a green tick on the line describing the most recent commit if everything works,
-  otherwise a yellow circle if CI is still working, or a red cross if something went wrong.
-  Click on the red cross to see details.)
-  You can also check CI status on the command line by installing [`hub`](https://hub.github.com/) and running `hub ci-status`.
-* After CI finishes, you can run `lake exe cache get` to download compiled oleans.
+典型工作流程：
+*   要开始，您需要一个 mathlib 的本地副本。
+*   首先，您需要访问 https://github.com/leanprover-community/mathlib4 并点击右上角的 "Fork"，来创建您自己的仓库复刻 (fork)。您的复刻位于 [https://github.com/USER/mathlib4](https://github.com/USER/mathlib4)。
+*   现在创建一个仓库的本地克隆 (clone)。
+    ```
+    git clone https://github.com/leanprover-community/mathlib4.git
+    cd mathlib4
+    lake exe cache get
+    ```
+*   以上步骤只需完成一次（而不是每次贡献都做一次）。
+*   现在，每当您想对 mathlib 进行新的更改时，请创建一个新分支：
+    ```
+    git switch -c my_new_branch   # 这会创建一个新分支并切换到该分支
+    ```
+*   有时您可能不想创建新分支，而是想在别人创建的或者您在不同电脑上创建的分支上工作。在这种情况下，您需要使用 `git switch their_new_branch`（注意这里没有 `-c`）。
+*   进行本地更改，例如使用带有 Lean 扩展的 Visual Studio Code。
+*   使用 `git commit -a`（或通过 VS Code 界面）提交您的更改。
+*   如果您想在本地编译所有内容以检查是否破坏了任何东西，请运行 `lake build`。如果您修改了位于导入层级较深处的文件，这可能会花费很长时间。在您向主仓库开启 PR 后，让我们的中央 CI 服务器为您完成这项工作也是可以的。
+*   如果您创建了新文件，请运行 `lake exe mk_all`。这将更新 `Mathlib.lean` 以确保所有文件都在那里被导入。
+*   为了将您的更改推送回 github 上的仓库，请使用
+    ```
+    git push
+    ```
+    如果此命令抱怨远程仓库未配置，请遵循 `git` 输出中的建议并运行
+    ```
+    git push --set-upstream origin my_new_branch
+    ```
+*   一旦您向主 `mathlib` 仓库开启了 PR（见下文），持续集成 (continuous integration) 将在此时自动启动。您可以通过访问 https://github.com/leanprover-community/mathlib4/tree/my_new_branch 查看输出（如果一切正常，描述最新提交的行上会有一个绿色对勾；如果 CI 仍在工作，则是一个黄色圆圈；如果出了问题，则是一个红色叉号。点击红色叉号可以查看详情）。您也可以通过安装 [`hub`](https://hub.github.com/) 并运行 `hub ci-status` 在命令行上检查 CI 状态。
+*   在 CI 完成后，您可以运行 `lake exe cache get` 来下载编译好的 oleans。
 
 
-## Making a Pull Request (PR)
+## 创建一个拉取请求 (PR)
 
-Once you're happy with your local changes, it's time to make a pull request.
+一旦您对本地的更改感到满意，就该创建一个拉取请求 (pull request) 了。
 
-* If you haven't already, please come to https://leanprover.zulipchat.com/, introduce yourself, and mention your new PR.
+*   如果您还没有这样做，请访问 https://leanprover.zulipchat.com/，介绍一下自己，并提及您的新 PR。
 
-* If you've made a lot of changes/additions, try to make many PRs containing small, self-contained pieces; in general, the smaller the better!
-  This helps you get feedback as you go along, and it is much easier to review.
-  This is especially important for new contributors as it prevents wasted effort.
+*   如果您做了很多更改/添加，请尝试创建多个包含小的、自包含片段的 PR；总的来说，越小越好！这有助于您在进行过程中获得反馈，而且审查起来也容易得多。这对新贡献者尤其重要，因为它可以防止做无用功。
 
-* The title and description of the PR should follow our [commit conventions](commit.html).
+*   PR 的标题和描述应遵循我们的[提交约定](commit.html)。
 
-* If you are moving or deleting declarations, please include these lines at the bottom of the commit message
-(that is, before the `---`) using the following format:
+*   如果您要移动或删除声明，请在提交信息的底部（即在 `---` 之前）使用以下格式包含这些行：
 
 Moves:
 - Vector.* -> Mathlib.Vector.*
@@ -94,71 +75,63 @@ Deletions:
 - Nat.bit1_add_bit1
 - ...
 
-Any other comments you want to keep out of the PR commit should go
-below the `---`.
+任何您希望保留在 PR 提交信息之外的其他评论都应放在 `---` 下方。
 
-## Lifecycle of a PR
+## PR 的生命周期
 
-Many reviewers use the [review queue](../queueboard/review_dashboard.html) to identify PRs that are ready for review.
-The instructions below will ensure that your PR appears on that queue; if it doesn't appear there it may not receive much attention.
-Everyone is also invited to regularly look at the queue (it is linkified as `#queueboard` on Zulip), and write reviews of PRs within their expertise.
-You can check if your [PR is on the queue](../queueboard/on_the_queue.html), and if not, what is needed to get it on.
+许多审查者使用[审查队列](../queueboard/review_dashboard.html)来识别准备好审查的 PR。
+以下说明将确保您的 PR 出现在该队列上；如果它没有出现在那里，可能不会受到太多关注。
+也欢迎大家定期查看队列（在 Zulip 上链接为 `#queueboard`），并对自己专业领域内的 PR 进行审查。
+您可以检查您的 [PR 是否在队列中](../queueboard/on_the_queue.html)，如果不在，需要做什么才能让它进入队列。
 
-The review queue is controlled by GitHub "labels".
-On the main page for a PR, on the right-hand side,
-there should be a sidebar with panels "reviewers", "assignees", "labels", etc.
-Click on the "labels" header to add or remove labels from the current project.
-(Labels can only be edited by "GitHub collaborators", which is approximately the same as "people who have write access".) Anyone can edit the labels by writing the following commands in a comment on the PR (each on its own line):
-- `awaiting-author` will add the **"awaiting-author"** label
-- `-awaiting-author` will remove the **"awaiting-author"** label
-- `WIP` will add the **"WIP"** label
-- `-WIP` will remove the **"WIP"** label
+审查队列由 GitHub “标签” (labels) 控制。
+在 PR 的主页上，右侧应该有一个侧边栏，包含 "reviewers"、"assignees"、"labels" 等面板。
+点击 "labels" 标题可以为当前项目添加或移除标签。
+（标签只能由 "GitHub collaborators" 编辑，这大致相当于“拥有写权限的人”。）任何人都可以通过在 PR 的评论中编写以下命令来编辑标签（每个命令占一行）：
+- `awaiting-author` 将添加 **"awaiting-author"** 标签
+- `-awaiting-author` 将移除 **"awaiting-author"** 标签
+- `WIP` 将添加 **"WIP"** 标签
+- `-WIP` 将移除 **"WIP"** 标签
 
-If your PR builds (has a green checkmark), someone will "review" it within a few weeks (depending on the size of the PR; smaller PRs will get quicker responses). They will probably leave comments and add the label **"awaiting-author"**. You should address each comment, clicking the "resolve conversation" button once the problem is resolved. Ideally each problem is resolved with a new commit, but there is no hard rule here. Once all requested changes are implemented, you should remove the **"awaiting-author"** label to start the process over again.
+如果您的 PR 构建成功（有一个绿色对勾），有人会在几周内“审查”它（取决于 PR 的大小；较小的 PR 会得到更快的响应）。他们可能会留下评论并添加 **"awaiting-author"** 标签。您应该处理每一条评论，一旦问题解决就点击“resolve conversation”按钮。理想情况下，每个问题都通过一次新的提交来解决，但这里没有硬性规定。一旦所有请求的更改都已实现，您应该移除 **"awaiting-author"** 标签以重新开始此过程。
 
-There are different groups of people that can review your PR: anyone, [reviewers](../teams/reviewers.html) and [maintainers](../teams/maintainers.html).
-Anyone who has something useful to say can review your PR.
-If they think your PR is ready to move to the next stage, they might leave an "approving" review on GitHub.
-These reviews are taken into account by reviewers.
-If a reviewer considers your PR ready to be merged, they will add the **"maintainer-merge"** label to your PR.
-These are used by maintainers to prioritize their review.
-Maintainers are always the ones to give final approval.
-Maintainers have reviewer rights, but also further powers (such as merging PRs).
-Depending on availability, a maintainer could be the first reviewer to look at your PR: in this case,
-your PR could get merged without being "maintainer merge"d first.
-Review times can vary depending on availability of our volunteers.
-To speed up the process, you can look at the [review guidelines](pr-review.html) and try to make sure your PR adheres to them.
-If you want to explicitly ask for a review, please create a topic in the [PR reviews](https://leanprover.zulipchat.com/#narrow/channel/144837-PR-reviews/) stream on Zulip.
+有不同的人群可以审查您的 PR：任何人、[审查者](../teams/reviewers.html) 和 [维护者](../teams/maintainers.html)。
+任何有建设性意见的人都可以审查您的 PR。
+如果他们认为您的 PR 已准备好进入下一阶段，他们可能会在 GitHub 上留下一个“批准”的审查。
+这些审查会被审查者考虑。
+如果审查者认为您的 PR 已准备好被合并，他们会为您的 PR 添加 **"maintainer-merge"** 标签。
+维护者使用这些标签来优先处理他们的审查。
+维护者总是最终批准的人。
+维护者拥有审查者的权利，但还有更进一步的权力（例如合并 PR）。
+根据可用性，维护者可能是第一个查看您 PR 的审查者：在这种情况下，您的 PR 可能会在没有先被 "maintainer merge" 的情况下就被合并。
+审查时间可能会因我们志愿者的可用性而异。
+为了加快进程，您可以查看[审查指南](pr-review.html)并确保您的 PR 遵守它们。
+如果您想明确请求审查，请在 Zulip 的 [PR reviews](https://leanprover.zulipchat.com/#narrow/channel/144837-PR-reviews/) 信息流中创建一个主题。
 
-If a maintainer has approved your PR, a **"ready-to-merge"** label is automatically applied to the PR.
-A bot called `bors` will take it from here. (See [here](https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/bors.md) for more detail about bors.)
-The PR will get added to the ["merge queue"](https://mathlib-bors-ca18eefec4cb.herokuapp.com/repositories/16).
-The merge queue is processed automatically, but this takes some finite amount of time as it requires building branches of mathlib.
+如果维护者批准了您的 PR，一个 **"ready-to-merge"** 标签会自动应用于该 PR。
+一个名为 `bors` 的机器人将从此接手。（有关 bors 的更多详情，请参见[此处](https://github.com/leanprover-community/mathlib/blob/master/docs/contribute/bors.md)。）
+该 PR 将被添加到[“合并队列”](https://mathlib-bors-ca18eefec4cb.herokuapp.com/repositories/16)中。
+合并队列是自动处理的，但这需要一定的有限时间，因为它需要构建 mathlib 的分支。
 
-In some cases, a maintainer will "delegate" the PR. You'll see that your PR now has a **"delegated"** label. This either means that there are a few final changes requested, but that the maintainer trusts you to make these and send the PR to bors yourself, or that the maintainer wants to give you one final chance to look things over before the PR is merged. In either case, when you are ready, writing a comment containing the line "bors merge" will result in the PR being merged.
+在某些情况下，维护者会“委托” (delegate) 该 PR。您会看到您的 PR 现在有了一个 **"delegated"** 标签。这要么意味着有一些最终的更改被请求，但维护者相信您能完成这些更改并亲自将 PR 发送给 bors，要么是维护者想在 PR 被合并前给您最后一次检查的机会。无论哪种情况，当您准备好时，编写一条包含 “bors merge” 行的评论将使该 PR 被合并。
 
-Here are some other frequently-used labels:
+以下是一些其他常用的标签：
 
-- A **"WIP"** (= work in progress) PR still needs some foundational work (e.g. maybe it still contains `sorry`s) before getting reviewed. Post a WIP if you want to announce that you're working on something you expect to finish soon.
+- 一个 **"WIP"**（= work in progress，正在进行中）的 PR 在被审查前还需要一些基础性工作（例如，可能还包含 `sorry`）。如果您想宣布您正在进行某项工作并期望很快完成，可以发布一个 WIP。
 
-- A **"RFC"** (= request for comment) is a PR about a change that might be controversial or need a decision from an expert about
-whether to proceed at all.
+- 一个 **"RFC"**（= request for comment，征求意见）的 PR 是关于一个可能有争议或需要专家决定是否继续进行的更改。
 
-- You can add **"awaiting-CI"** if you're not certain whether CI will succeed.
-  This will temporarily hide the PR on the main review queue.
-  The label will be automatically removed when CI is complete.
+- 如果您不确定 CI 是否会成功，可以添加 **"awaiting-CI"**。这会暂时在主审查队列中隐藏该 PR。当 CI 完成时，该标签会自动移除。
 
-- Consider adding the **"help wanted"** label to directly solicit contributions.
+- 考虑添加 **"help wanted"** 标签以直接征集贡献。
 
-- The **"blocked-by-other-PR"** label means that some specific other PR(s) should be resolved before addressing this one. To add the "blocked-by-other-PR" label to your PR, include the PR numbers of the dependencies in the PR comment (following the example hidden in the comment there) so that others can see at a glance which PRs should be reviewed first. The label will be added automatically by a bot and will also be removed automatically when the other PRs have been merged. PRs with this label do not appear on the review queue.
+- **"blocked-by-other-PR"** 标签意味着某些特定的其他 PR 应该在此 PR 被处理前得到解决。要为您的 PR 添加 "blocked-by-other-PR" 标签，请在 PR 评论中包含依赖的 PR 编号（遵循那里评论中隐藏的示例），以便他人可以一目了然地知道哪些 PR 应该被优先审查。该标签将由一个机器人自动添加，并在其他 PR 被合并后自动移除。带有此标签的 PR 不会出现在审查队列中。
 
-- The **easy** label should be used to mark PRs that can be immediately approved. Maintainers and reviewers often look at easy PRs first to keep the queue flowing. Easy PRs typically add a single lemma, correct typos in documentation, or similar. If you have any doubt whether your PR is trivial you should not add this label. In particular, a PR is generally *not* easy if the diff is more than 25 lines, it adds any definitions or new files, or it adds any `simp` lemmas or instances that are not immediately analogous to existing `simp` lemmas or instances.
+- **easy** 标签应用于标记那些可以立即被批准的 PR。维护者和审查者通常会先看 easy PRs 以保持队列流动。Easy PRs 通常添加一个引理，修正文档中的拼写错误或类似情况。如果您对您的 PR 是否微不足道有任何疑问，您不应该添加此标签。特别是，如果 diff 超过 25 行，添加了任何定义或新文件，或者添加了任何与现有 `simp` 引理或实例没有直接类比的 `simp` 引理或实例，那么一个 PR 通常就**不**是 easy 的。
 
-- The **delegated** label means that a maintainer has issued the "bors delegate" (or "bors d+") command. The author of the PR
-should now merge the PR themselves once any final requested changes have been made, and CI has succeeded. They can do this using
-"bors merge".
+- **delegated** 标签意味着维护者已发出 "bors delegate"（或 "bors d+"）命令。PR 的作者现在应该在任何最终请求的更改都已做出并且 CI 成功后，自己合并该 PR。他们可以使用 "bors merge" 来做到这一点。
 
-### Dealing with merge conflicts
+### 处理合并冲突
 
-Due to the fact that multiple people work on mathlib in parallel, someone might have introduced a change on `master` that conflicts with a change that you're proposing on your PR. If it happens with your PR, a bot will automatically add the **"merge-conflict"** label, and your PR will not appear on the review queue. Check [this GitHub tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) on how to resolve merge conflicts by using their online tool.
-Once the conflict has been resolved, the **"merge-conflict"** label will automatically be removed, and your PR will return to the review queue.
+由于多个人并行地在 mathlib 上工作，有人可能在 `master` 上引入了一项与您在 PR 上提议的更改相冲突的更改。如果您的 PR 发生了这种情况，一个机器人会自动添加 **"merge-conflict"** 标签，并且您的 PR 将不会出现在审查队列中。请查看[这个 GitHub 教程](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)关于如何使用他们的在线工具解决合并冲突。
+一旦冲突解决，**"merge-conflict"** 标签将自动被移除，您的 PR 将返回审查队列。

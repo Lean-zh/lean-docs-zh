@@ -1,121 +1,85 @@
-# Pull Request Review Guide
+# 拉取请求 (Pull Request) 审查指南
 
-This guide provides a detailed look at how to conduct PR reviews for mathlib. You may
-wonder whether this guide applies to you, and the answer is "yes!"
+本指南详细介绍了如何为 mathlib 进行 PR 审查。您可能会想，这份指南是否适用于我，答案是“是的！”
 
-While the mathlib maintainers are the only users with authority to *merge* pull requests,
-everyone is welcome, and even encouraged, to *review* pull requests. (Note: there is in 
-fact another category of people, mathlib *reviewers*, who have shown that they can provide
-valuable PR reviews; approving reviews from these users with `maintainer merge` are more
-quickly merged by maintainers).
+虽然 mathlib 维护者是唯一有权**合并**拉取请求的用户，但我们欢迎，甚至鼓励每个人来**审查**拉取请求。（注意：实际上还有另一类人，即 mathlib **审查者**，他们已经证明了自己能提供有价值的 PR 审查；来自这些用户的带有 `maintainer merge` 的批准审查会被维护者更快地合并）。
 
-A history of helpful reviews is a key criterion for membership on either the mathlib
-reviewer or mathlib maintainer teams.
+拥有提供有益审查的历史是成为 mathlib 审查者或 mathlib 维护者团队成员的关键标准。
 
-This guide starts with general [guidelines](#guidelines-for-review) for conducting reviews,
-a high-level [overview](#what-to-consider-when-reviewing) of what reviewers should be
-considering and then focuses on a few practical [examples](#examples).
+本指南首先是一般的[审查指南](#guidelines-for-review)，然后是对审查者应考虑事项的高层次[概述](#what-to-consider-when-reviewing)，最后聚焦于一些实践性的[示例](#examples)。
 
-While this guide is rather long, it is not required to comprehend everything before
-starting to review. Partial reviews are themselves helpful, and you can learn about the
-various considerations in a piecemeal fashion as you progress in your understanding
-of Lean and mathlib.
+虽然本指南相当长，但在开始审查之前并不需要完全理解所有内容。部分审查本身也是有帮助的，随着您对 Lean 和 mathlib 理解的加深，您可以逐步学习各种考量因素。
 
-## Guidelines for review
+## 审查指南
 
-### Respect and encouragment
+### 尊重与鼓励
 
-As with all interactions in the mathlib community, be sure to adhere to the
-[Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/).
-In short, be respectful. However, when reviewing please be
-sure to also be *encouraging*. The majority of contributors have only made
-a handful of pull requests, and this may even be their first! As such it is
-important to avoid comments like "This result is useless, we already have a
-version of it." Instead you could be more gentle and say, for example, "Thanks
-for proving this, but I think we already have a lemma to this effect. It is
-`my_generic_lemma`. Please try to use that instead." Try to find the
-good in what they have done, even while pointing out room for improvement.
+与 mathlib 社区中的所有互动一样，请务必遵守[行为准则](https://www.contributor-covenant.org/version/2/0/code_of_conduct/)。
+简而言之，要互相尊重。然而，在审查时，请务必同时也要**鼓励**他人。大多数贡献者只提交过少数几个拉取请求，这甚至可能是他们的第一个！因此，避免像“这个结果没用，我们已经有它的一个版本了”这样的评论非常重要。相反，您可以更温和地说，例如：“感谢您证明了这一点，但我想我们已经有一个具有此效果的引理了。它是 `my_generic_lemma`。请尝试使用那个。” 即使在指出改进空间的同时，也要努力发现他们所做工作中的优点。
 
-### Humility
+### 谦逊
 
-None of us, including the mathlib maintainers, is perfect or has a monopoly
-on best practices. As such, reviewers should always leave room for someone
-to suggest a better approach. In addition, it's important to recognize that
-*you may be wrong*, and to allow for this possibility. Of course, perfect is
-the enemy of the good, so it is not necessary to wait indefinitely for 
-better approaches or new ideas.
+我们中没有人是完美的，包括 mathlib 维护者，也没有人对最佳实践有垄断权。因此，审查者应始终为他人提出更好的方法留有余地。此外，认识到**您可能是错的**并允许这种可能性很重要。当然，完美是优秀的敌人，所以没有必要无限期地等待更好的方法或新想法。
 
-## What to consider when reviewing
+## 审查时应考虑的事项
 
-Reviewing is essentially about looking at code and asking yourself questions.
-The foundational issues, organized approximately from easiest to hardest, are:
-style, documentation, location, improvements and library integration.
+审查本质上是审视代码并向自己提问。
+基础性问题，大致按从易到难的顺序排列是：风格、文档、位置、改进和库集成。
 
-Note that new reviewers are certainly capable of commenting on the first two
-or three issues, whereas answering questions of library integration generally
-requires several months of developing familiarity with mathlib and contributing
-toward the reviewing process.
+请注意，新的审查者当然有能力对前两三个问题发表评论，而回答关于库集成的问题通常需要几个月的时间来熟悉 mathlib 并参与审查过程。
 
-Here are some explicit questions you can ask yourself as a reviewer.
-This is just an outline; in later sections we investigate each question
-in more detail with examples.
+以下是您作为审查者可以问自己的一些明确问题。
+这只是一个大纲；在后面的部分中，我们将通过示例更详细地探讨每个问题。
 
-- [does it adhere to style?](#style)
-    + [code formatting](style.html)
-    + [naming conventions](naming.html)
-    + is the [PR title and description](commit.html) appropriately informative?
-- [is there useful documentation?](#documentation)
-    + do the definitions have sufficiently informative docstrings?
-    + are there cross references to related declarations?
-    + do complicated proofs have a sketch in comments interspersed throughout?
-    + do important theorems have docstrings?
-    + are there warnings to the user when code should only be used in certain ways?
-    + is it formalizing something from the literature?
-- [location, location, location](#location)
-    + are the declarations in the appropriate files?
-      [`#find_home`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Util/Imports.html#«command#find_home_») can be useful here.
-    + do the results already exist? possibly in a more general form with a different name? 
-      The `apply?` or `exact?` tactics can help answer this sometimes.
-    + are new `import`s introduced, and if so, do they import too much material for this file?
-    + should some of the results be placed into a new file to minimize import requirements?
-    + should a file be split into multiple pieces because its getting too long (e.g., > 1000 lines),
-      or touches on too many different topics?
-- [are there obvious improvements that can be made?](#improvements)
-    + can pieces be split into supporting lemmas or definitions (especially for long proofs)?
-    + can different / better tactics be used to improve readability (e.g., using `gcongr`
-      instead of `mul_le_mul_of_nonneg_left`)?
-      Note: code golfing is okay as long as it *doesn't sacrifice readability*, although golfing
-      trivial results is generally okay.
-    + does a different proof structure greatly simplify the argument?
-    + are the definitions introduced the best way to formalize the concept (very difficult!)?
-- [does it advance or improve the library?](#library-integration)
-    + does it provide a sensible API?
-    + is it general enough to support known future needs?
-    + does it fit the design and collective vision of mathlib?
-- more specific considerations
-    + do declarations use `α β : Type*` instead of `α β : Type _` to refer to arbitrary universe levels?
-      (Note: this is a performance issue because using `Type _` introduces unification problems that
-      need solving.)
-    + are lemmas tagged `@[simp]`, `@[ext]`, et cetera where they should be? or shouldn't be?
-    + do new definitions come with lemmas about them (perhaps even just those generated by `@[simps]`)
-    + do any newly declared instances create diamonds? non-defeq or non-propeq?
+- [是否遵循风格？](#style)
+    + [代码格式化](style.html)
+    + [命名约定](naming.html)
+    + [PR 标题和描述](commit.html)是否提供了足够的信息？
+- [是否有有用的文档？](#documentation)
+    + 定义是否有足够信息量的文档字符串 (docstring)？
+    + 是否有对相关声明的交叉引用？
+    + 复杂的证明中是否穿插了注释形式的草图？
+    + 重要的定理是否有文档字符串？
+    + 当代码只能以特定方式使用时，是否对用户有警告？
+    + 它是否正在形式化文献中的某些内容？
+- [位置，位置，位置](#location)
+    + 声明是否位于合适的文件中？
+      [`#find_home`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Util/Imports.html#«command#find_home_») 在这里可能很有用。
+    + 结果是否已经存在？可能以更通用的形式用不同的名称存在？
+      `apply?` 或 `exact?` 策略有时可以帮助回答这个问题。
+    + 是否引入了新的 `import`？如果是，它们是否为此文件导入了过多的材料？
+    + 是否应将某些结果放入新文件中以最小化导入需求？
+    + 文件是否因为过长（例如，> 1000行）或涉及太多不同主题而应被拆分成多个部分？
+- [是否有明显的改进可以做？](#improvements)
+    + 是否可以将某些部分拆分为辅助引理或定义（特别是对于长证明）？
+    + 是否可以使用不同/更好的策略来提高可读性（例如，使用 `gcongr`
+      而不是 `mul_le_mul_of_nonneg_left`）？
+      注意：代码精简 (code golfing) 是可以的，只要它**不牺牲可读性**，尽管精简琐碎的结果通常是可以的。
+    + 不同的证明结构是否能极大地简化论证？
+    + 引入的定义是否是形式化该概念的最佳方式（非常困难！）？
+- [它是否推进或改进了库？](#library-integration)
+    + 它是否提供了一个合理的 API？
+    + 它是否足够通用以支持已知的未来需求？
+    + 它是否符合 mathlib 的设计和集体愿景？
+- 更具体的考虑
+    + 声明是否使用 `α β : Type*` 而不是 `α β : Type _` 来指代任意的 universe level？
+      （注意：这是一个性能问题，因为使用 `Type _` 会引入需要解决的类型合一问题。）
+    + 引理是否在应该的地方被标记了 `@[simp]`、`@[ext]` 等等？或者不应该被标记？
+    + 新定义是否附带了关于它们的引理（也许只是那些由 `@[simps]` 生成的）？
+    + 新声明的实例是否会产生菱形问题 (diamond)？非定义性相等或非命题性相等？
 
-## Examples
+## 示例
 
-The remainder of this guide is devoted to considering both contrived and real-world
-examples of the review process. We attempt to provide examples for each of the following
-questions above. Parties involved in the real-world examples have been consulted for
-permission for inclusion in this style guide.
+本指南的其余部分致力于思考审查过程中的虚构和真实世界的示例。我们尝试为上述每个问题提供示例。真实世界示例中涉及的各方已被征求同意将其包含在本风格指南中。
 
-Not every question has a corresponding example, but we attempt to provide at least a 
-discussion about what should be considered in each case.
+并非每个问题都有对应的示例，但我们尝试至少为每种情况提供关于应考虑事项的讨论。
 
-### Style
+### 风格
 
-#### Code formatting
+#### 代码格式化
 
 ```lean
--- do NOT write code in this style!
+-- 不要用这种风格写代码！
 theorem mul_assoc_assoc {α : Type*} [Semigroup α] (a b c d : α)
 : a*b*c*d=a*(b*(c*d)) :=
 by
@@ -123,22 +87,14 @@ rw [mul_assoc,
     mul_assoc]
 ```
 
-The code above violates several formatting guidelines: there are no
-spaces around binary operations, the line starts with a `:` instead of 
-ending it on the previous line, `by` should be moved to the previous line
-instead of by itself (a style linter should catch this anyway in CI),
-and the `rw` tactic is unnecessarily split across multiple lines.
+上面的代码违反了几个格式化准则：二元运算符周围没有空格，行以 `:` 开头而不是在前一行的末尾结束，`by` 应该移到前一行而不是单独一行（一个风格 linter 无论如何都应该在 CI 中捕捉到这一点），并且 `rw` 策略被不必要地分成了多行。
 
-The author of the PR in this situation, by virtue of violating so many
-style guidelines, is probably a new contributor and is unfamiliar with,
-or doesn't recall, the style guide. An appropriate review comment would 
-be something like:
+在这种情况下，PR 的作者由于违反了如此多的风格准则，可能是一个新的贡献者，不熟悉或不记得风格指南。一个合适的审查评论应该是这样的：
 
 ````markdown
-In case you're unaware, please familiarize yourself with the mathlib
-[style guide](https://leanprover-community.github.io/contribute/style.html).
-You need spaces around `*`, `:` at the end of the line and the `rw` to 
-be on the same line.
+如果您还不了解，请熟悉一下 mathlib 的
+[风格指南](https://leanprover-community.github.io/contribute/style.html)。
+您需要在 `*` 周围添加空格，将 `:` 放在行尾，并且将 `rw` 放在同一行。
 ```suggestion
 theorem mul_assoc_assoc {α : Type*} [Semigroup α] (a b c d : α) :
     a * b * c * d = a * (b * (c * d)) := by
@@ -146,79 +102,61 @@ theorem mul_assoc_assoc {α : Type*} [Semigroup α] (a b c d : α) :
 ```
 ````
 
-#### Naming conventions
+#### 命名约定
 
 ```lean
 theorem inv_is_unit_times_self_eq_1 {M : Type*} [Monoid M] {a : M} (h : IsUnit a) :
     ↑(IsUnit.unit h)⁻¹ * a = 1 := sorry
 ```
 
-The above lemma is taken directly from the library, can you guess its actual name?
-It is `IsUnit.inv_val_mul`. An appropriate review to suggest a new name might look
-something like:
+上面的引理直接取自库，您能猜出它的实际名称吗？
+它是 `IsUnit.inv_val_mul`。一个建议新名称的合适审查可能会是这样：
 
 ````markdown
-In order to accord with the 
-[naming conventions](https://leanprover-community.github.io/contribute/naming.html)
-for mathlib, I suggest renaming this to: `IsUnit.inv_val_mul`. Note that:
+为了符合 mathlib 的
+[命名约定](https://leanprover-community.github.io/contribute/naming.html)，
+我建议将其重命名为：`IsUnit.inv_val_mul`。请注意：
 
-- we use `mul` instead of `times`, and `one` instead of `1`
-- the lemma is sufficiently clear without the reference to `1`
-- If we are referencing an `IsUnit` hypothesis, we would use `isUnit`, not `is_unit`
-- However, since we have an `IsUnit` hypothesis, putting it in the `IsUnit.` 
-  namespace allows for use with dot notation.
-- we should reference the coercion that appears here, which is `Subtype.val`, hence
-  the `val` in the suggested name.
+- 我们使用 `mul` 而不是 `times`，以及 `one` 而不是 `1`
+- 没有对 `1` 的引用，引理也足够清晰
+- 如果我们引用一个 `IsUnit` 假设，我们会用 `isUnit`，而不是 `is_unit`
+- 然而，由于我们有一个 `IsUnit` 假设，将其放在 `IsUnit.`
+  命名空间中允许使用点表示法。
+- 我们应该引用这里出现的强制类型转换，即 `Subtype.val`，因此
+  建议的名称中有 `val`。
 ````
 
-This provides the PR author with a link to the naming conventions in case they
-haven't yet seen it, but also points out the specific issues so that they don't
-have to read through the entire guide again. This is probably helpful also if 
-they have only made one error in the naming convention.
+这为 PR 作者提供了一个命名约定的链接，以防他们还没有看过，但同时也指出了具体问题，这样他们就不必再通读整个指南。如果他们在命名约定中只犯了一个错误，这可能也很有帮助。
 
-Note: not all declarations have exactly one suitable name, there may be a few, 
-each with their own advantages and disadvantages.
+注意：并非所有声明都有一个完全合适的名称，可能会有几个，每个都有其优缺点。
 
-#### Is the PR title and description appropriately informative?
+#### PR 标题和描述是否提供了足够的信息？
 
-Consider the following PR title and description:
+考虑以下 PR 标题和描述：
 
 ```markdown
 Title: feat(Analysis/SpecificLimits)
 Description: Where should we put these lemmas?
 ```
 
-This has two issues: the title doesn't provide any information about the changes
-and the description includes a discussion question, as opposed to information 
-about the changes. A reasonable review comment might be something like:
+这有两个问题：标题没有提供任何关于更改的信息，而描述包含了一个讨论性问题，而不是关于更改的信息。一个合理的审查评论可能是：
 
 ```markdown
-Please update the PR title and description to be more informative about what 
-you have added or changed as these will be permanently included in the git
-history when this is merged. Questions or topics for discussion are allowed
-in the PR description, but should be placed after the `---`, as then they
-will be treated as comments and not included in the git history.
+请更新 PR 标题和描述，使其更能说明您添加或更改了什么，因为当这个 PR 被合并时，这些信息将被永久包含在 git 历史中。问题或讨论主题是允许出现在 PR 描述中的，但应该放在 `---` 之后，这样它们将被视为评论而不会被包含在 git 历史中。
 ```
 
-Of course, you could provide suggestions, or even update the PR title and 
-description yourself, but you may want to point it out, especially if the 
-PR author is a relatively new contributor.
+当然，您可以提供建议，甚至自己更新 PR 标题和描述，但您可能希望指出这一点，特别是如果 PR 作者是相对较新的贡献者。
 
-### Documentation
+### 文档
 
-#### Do the definitions have sufficiently informative docstrings?
+#### 定义是否有足够信息量的文档字符串？
 
-The `docBlame` linter should ensure that users add docstrings to all their
-definitions. However, just because a docstring *exists* doesn't necessarily
-mean it's *useful* and *accurate*. Reviewers should do their best to make sure
-the provided docstring accurately describes the `def` in an easily intelligible
-way.
+`docBlame` linter 应该能确保用户为他们所有的定义添加文档字符串。然而，仅仅因为一个文档字符串**存在**并不一定意味着它**有用**和**准确**。审查者应尽力确保所提供的文档字符串以易于理解的方式准确描述了该 `def`。
 
-#### Do important theorems have docstrings?
+#### 重要的定理是否有文档字符串？
 
-The following example makes reference to the review in
-[#5580](https://github.com/leanprover-community/mathlib4/pull/5580/files).
-In that PR, the following theorem was added:
+以下示例引用了 [#5580](https://github.com/leanprover-community/mathlib4/pull/5580/files) 中的审查。
+在该 PR 中，添加了以下定理：
 
 ```lean
 protected theorem _root_.WithSeminorms.equicontinuous_TFAE {κ : Type*}
@@ -233,17 +171,13 @@ protected theorem _root_.WithSeminorms.equicontinuous_TFAE {κ : Type*}
   sorry
 ```
 
-This theorem is useful, but also a bit long and takes time to parse (for humans).
-As such, it should probably have a docstring, which lead to the
-[following comment](https://github.com/leanprover-community/mathlib4/pull/5580/files#r1286511394)
+这个定理很有用，但也有点长，需要时间来（对人类）解析。因此，它可能应该有一个文档字符串，这导致了[以下评论](https://github.com/leanprover-community/mathlib4/pull/5580/files#r1286511394)
 
 ```markdown
-Can you please add a docstring explaining the statement of the theorem, as well as a cross reference to
-`NormedSpace.equicontinuous_TFAE`?
+请您添加一个文档字符串来解释这个定理的陈述，并添加一个到 `NormedSpace.equicontinuous_TFAE` 的交叉引用好吗？
 ```
 
-The PR author then updated the theorem with the following informative docstring, and here we can
-see tremendous added value:
+然后，PR 作者用以下信息丰富的文档字符串更新了该定理，我们可以看到这里增加了巨大的价值：
 
 ```lean
 /-- Let `E` and `F` be two topological vector spaces over a `NontriviallyNormedField`, and assume
@@ -258,25 +192,28 @@ maps from `E` to `F`, the following are equivalent:
 In particular, if you can determine all continuous seminorms on `E`, that gives you a complete
 characterization of equicontinuity for linear maps from `E` to `F`. For example `E` and `F` are
 both normed spaces, you get `NormedSpace.equicontinuous_TFAE`. -/
+/-- 设 `E` 和 `F` 是 `NontriviallyNormedField` 上的两个拓扑向量空间，并假设 `F` 的拓扑是由某个半范数族 `q` 生成的。对于一个从 `E` 到 `F` 的线性映射族 `f`，以下各项是等价的：
+* `f` 在 `0` 点是等度连续的。
+* `f` 是等度连续的。
+* `f` 是一致等度连续的。
+* 对于每个 `q i`，半范数族 `k ↦ (q i) ∘ (f k)` 被某个 `E` 上的连续半范数 `p` 所界定。
+* 对于每个 `q i`，半范数 `⊔ k, (q i) ∘ (f k)` 是良定义且连续的。
+特别地，如果您能确定 `E` 上的所有连续半范数，那就为您提供了从 `E` 到 `F` 的线性映射的等度连续性的完整刻画。例如，如果 `E` 和 `F` 都是赋范空间，您就得到了 `NormedSpace.equicontinuous_TFAE`。 -/
 ```
 
-#### Are there cross references to related declarations?
+#### 是否有对相关声明的交叉引用？
 
-See the previous example, where a cross reference was requested for a related declaration.
+请参见前一个示例，其中请求了对一个相关声明的交叉引用。
 
-#### Do complicated proofs have a sketch in comments interspersed throughout?
+#### 复杂的证明中是否穿插了注释形式的草图？
 
-In this example, we just show an existing example of how interspersed comments can 
-significantly add to the value of a proof in Lean. This is copied directly from the 
-source for [Gromov_Hausdorff.GH_space.topological_space.second_countable_topology](https://leanprover-community.github.io/mathlib_docs/topology/metric_space/gromov_hausdorff.html#Gromov_Hausdorff.GH_space.topological_space.second_countable_topology).
+在这个例子中，我们只展示一个现有示例，说明穿插的注释如何能显著增加 Lean 中证明的价值。这直接从 [Gromov_Hausdorff.GH_space.topological_space.second_countable_topology](https://leanprover-community.github.io/mathlib_docs/topology/metric_space/gromov_hausdorff.html#Gromov_Hausdorff.GH_space.topological_space.second_countable_topology) 的源代码复制而来。
 
-Whenever a complicated proof isn't documented like this, please encourage the PR
-author to do so. You can point them to this code. Another suitable and less complicated
-example can be found in the source for
-[banach_steinhaus](https://leanprover-community.github.io/mathlib_docs/analysis/normed_space/banach_steinhaus.html#banach_steinhaus).
+每当一个复杂的证明没有像这样被文档化时，请鼓励 PR 作者这样做。您可以向他们指出这段代码。另一个合适的、不那么复杂的例子可以在 [banach_steinhaus](https://leanprover-community.github.io/mathlib_docs/analysis/normed_space/banach_steinhaus.html#banach_steinhaus) 的源代码中找到。
 
 ```
 /-- The Gromov-Hausdorff space is second countable. -/
+/-- Gromov-Hausdorff 空间是第二可数的。 -/
 instance : second_countable_topology GH_space :=
 begin
   refine second_countable_of_countable_discretization (λ δ δpos, _),
@@ -287,6 +224,7 @@ begin
       using finite_cover_balls_of_compact is_compact_univ εpos,
   -- for each `p`, `s p` is a finite `ε`-dense subset of `p` (or rather the metric space
   -- `p.rep` representing `p`)
+  -- 对于每个 `p`，`s p` 是 `p` (或代表 `p` 的度量空间 `p.rep`) 的一个有限 `ε`-稠密子集
   choose s hs using this,
   have : ∀ p:GH_space, ∀ t:set p.rep, t.finite → ∃ n:ℕ, ∃ e:equiv t (fin n), true,
   { assume p t ht,
@@ -294,11 +232,14 @@ begin
     exact ⟨fintype.card t, fintype.equiv_fin t, trivial⟩ },
   choose N e hne using this,
   -- cardinality of the nice finite subset `s p` of `p.rep`, called `N p`
+  -- `p.rep` 的好的有限子集 `s p` 的基数，称为 `N p`
   let N := λ p:GH_space, N p (s p) (hs p).1,
   -- equiv from `s p`, a nice finite subset of `p.rep`, to `fin (N p)`, called `E p`
+  -- 从 `p.rep` 的好的有限子集 `s p` 到 `fin (N p)` 的等价，称为 `E p`
   let E := λ p:GH_space, e p (s p) (hs p).1,
   -- A function `F` associating to `p : GH_space` the data of all distances between points
   -- in the `ε`-dense set `s p`.
+  -- 一个函数 `F`，它将 `p : GH_space` 与 `ε`-稠密集 `s p` 中点之间所有距离的数据关联起来。
   let F : GH_space → Σn:ℕ, (fin n → fin n → ℤ) :=
     λp, ⟨N p, λa b, ⌊ε⁻¹ * dist ((E p).symm a) ((E p).symm b)⌋⟩,
   refine ⟨Σ n, fin n → fin n → ℤ, by apply_instance, F, λp q hpq, _⟩,
@@ -310,21 +251,28 @@ begin
   and the inverse of the identification of `s q` with `fin (N q)`. Together with
   the fact that `N p = N q`, this constructs `Ψ` between `s p` and `s q`, and then
   composing with the canonical inclusion we get `Φ`. -/
+  /- 由于 F 的目标空间是可数的，只需证明具有 `F p = F q` 的两点 `p` 和 `q` 的距离 `≤ δ`。
+  为此，我们构造一个从 `s p ⊆ p.rep` (代表 `p`) 到 `q.rep` (代表 `q`) 的映射 `Φ`，它在 `s p` 上几乎是一个等距映射，且其像为 `s q`。
+  为此，我们复合 `s p` 与 `fin (N p)` 的等价，以及 `s q` 与 `fin (N q)` 的等价的逆。
+  结合 `N p = N q` 的事实，这构造了 `s p` 和 `s q` 之间的 `Ψ`，然后与典范包含复合得到 `Φ`。-/
   have Npq : N p = N q := (sigma.mk.inj_iff.1 hpq).1,
   let Ψ : s p → s q := λ x, (E q).symm (fin.cast Npq ((E p) x)),
   let Φ : s p → q.rep := λ x, Ψ x,
   -- Use the almost isometry `Φ` to show that `p.rep` and `q.rep`
   -- are within controlled Gromov-Hausdorff distance.
+  -- 使用几乎等距的 `Φ` 来证明 `p.rep` 和 `q.rep` 在受控的 Gromov-Hausdorff 距离内。
   have main : GH_dist p.rep q.rep ≤ ε + ε/2 + ε,
   { refine GH_dist_le_of_approx_subsets Φ  _ _ _,
     show ∀ x : p.rep, ∃ (y : p.rep) (H : y ∈ s p), dist x y ≤ ε,
     { -- by construction, `s p` is `ε`-dense
+      -- 根据构造，`s p` 是 `ε`-稠密的
       assume x,
       have : x ∈ ⋃y∈(s p), ball y ε := (hs p).2 (mem_univ _),
       rcases mem_Union₂.1 this with ⟨y, ys, hy⟩,
       exact ⟨y, ys, le_of_lt hy⟩ },
     show ∀ x : q.rep, ∃ (z : s p), dist x (Φ z) ≤ ε,
     { -- by construction, `s q` is `ε`-dense, and it is the range of `Φ`
+      -- 根据构造，`s q` 是 `ε`-稠密的，并且它是 `Φ` 的值域
       assume x,
       have : x ∈ ⋃y∈(s q), ball y ε := (hs q).2 (mem_univ _),
       rcases mem_Union₂.1 this with ⟨y, ys, hy⟩,
@@ -347,36 +295,44 @@ begin
     { /- the distance between `x` and `y` is encoded in `F p`, and the distance between
       `Φ x` and `Φ y` (two points of `s q`) is encoded in `F q`, all this up to `ε`.
       As `F p = F q`, the distances are almost equal. -/
+      /- `x` 和 `y` 之间的距离被编码在 `F p` 中，而 `Φ x` 和 `Φ y`（`s q` 的两点）之间的距离被编码在 `F q` 中，这一切都精确到 `ε`。
+      由于 `F p = F q`，这些距离几乎相等。 -/
       assume x y,
       have : dist (Φ x) (Φ y) = dist (Ψ x) (Ψ y) := rfl,
       rw this,
       -- introduce `i`, that codes both `x` and `Φ x` in `fin (N p) = fin (N q)`
+      -- 引入 `i`，它在 `fin (N p) = fin (N q)` 中编码了 `x` 和 `Φ x`
       let i : ℕ := E p x,
       have hip : i < N p := ((E p) x).2,
       have hiq : i < N q, by rwa Npq at hip,
       have i' : i = ((E q) (Ψ x)), by { simp only [equiv.apply_symm_apply, fin.coe_cast] },
       -- introduce `j`, that codes both `y` and `Φ y` in `fin (N p) = fin (N q)`
+      -- 引入 `j`，它在 `fin (N p) = fin (N q)` 中编码了 `y` 和 `Φ y`
       let j : ℕ := E p y,
       have hjp : j < N p := ((E p) y).2,
       have hjq : j < N q, by rwa Npq at hjp,
       have j' : j = ((E q) (Ψ y)).1,
       { simp only [equiv.apply_symm_apply, fin.val_eq_coe, fin.coe_cast] },
       -- Express `dist x y` in terms of `F p`
+      -- 用 `F p` 表示 `dist x y`
       have : (F p).2 ((E p) x) ((E p) y) = floor (ε⁻¹ * dist x y),
         by simp only [F, (E p).symm_apply_apply],
       have Ap : (F p).2 ⟨i, hip⟩ ⟨j, hjp⟩ = floor (ε⁻¹ * dist x y),
         by { rw ← this, congr; apply fin.ext_iff.2; refl },
       -- Express `dist (Φ x) (Φ y)` in terms of `F q`
+      -- 用 `F q` 表示 `dist (Φ x) (Φ y)`
       have : (F q).2 ((E q) (Ψ x)) ((E q) (Ψ y)) = floor (ε⁻¹ * dist (Ψ x) (Ψ y)),
         by simp only [F, (E q).symm_apply_apply],
       have Aq : (F q).2 ⟨i, hiq⟩ ⟨j, hjq⟩ = floor (ε⁻¹ * dist (Ψ x) (Ψ y)),
         by { rw ← this, congr; apply fin.ext_iff.2; [exact i', exact j'] },
       -- use the equality between `F p` and `F q` to deduce that the distances have equal
       -- integer parts
+      -- 使用 `F p` 和 `F q` 之间的相等性来推断距离具有相等的整数部分
       have : (F p).2 ⟨i, hip⟩ ⟨j, hjp⟩ = (F q).2 ⟨i, hiq⟩ ⟨j, hjq⟩,
       { -- we want to `subst hpq` where `hpq : F p = F q`, except that `subst` only works
         -- with a constant, so replace `F q` (and everything that depends on it) by a constant `f`
         -- then `subst`
+        -- 我们想在 `hpq : F p = F q` 的地方使用 `subst hpq`，但 `subst` 只对常量有效，所以用一个常量 `f` 替换 `F q`（以及所有依赖它的东西），然后再 `subst`
         revert hiq hjq,
         change N q with (F q).1,
         generalize_hyp : F q = f at hpq ⊢,
@@ -386,6 +342,7 @@ begin
       rw [Ap, Aq] at this,
       -- deduce that the distances coincide up to `ε`, by a straightforward computation
       -- that should be automated
+      -- 通过一个应该被自动化的直接计算，推断出距离在 `ε` 精度内是一致的
       have I := calc
         |ε⁻¹| * |dist x y - dist (Ψ x) (Ψ y)| =
           |ε⁻¹ * (dist x y - dist (Ψ x) (Ψ y))| : (abs_mul _ _).symm
@@ -404,27 +361,26 @@ begin
 end
 ```
 
-#### Are there warnings to the user when code should only be used in certain ways?
+#### 当代码只能以特定方式使用时，是否对用户有警告？
 
-Some declarations are only intended for use within a particular file, perhaps because they are auxiliary.
-Others can be used anywhere, but should be use sparingly, and only when the preferred method is
-unavailable or downside of using it is irrelevant.
+有些声明仅打算在特定文件内使用，也许因为它们是辅助性的。
+其他声明可以在任何地方使用，但应谨慎使用，并且仅在首选方法不可用或使用它的缺点无关紧要时使用。
 
-##### Use in a particular file
+##### 在特定文件内使用
 
-An example of the former is:
+前者的一个例子是：
 [PiLp.iSup_edist_ne_top_aux](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/NormedSpace/PiLp.html#PiLp.iSup_edist_ne_top_aux)
-which contains the following docstring.
+它包含以下文档字符串。
 
 ```lean
 /-- An auxiliary lemma used twice in the proof of `PiLp.pseudoMetricAux` below. Not intended for use outside this file. -/
+/-- 一个在下面的 `PiLp.pseudoMetricAux` 证明中使用了两次的辅助引理。不打算在本文件之外使用。 -/
 ```
 
-This lemma signals to the reader both with its name (contains `aux`) and its docstring that it is not intended for
-general purpose use. The reason for this is that the declaration immediately preceding it,
-[PiLp.pseudoEmetricAux](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/NormedSpace/PiLp.html#PiLp.pseudoEmetricAux),
-is an instance which is only activated temporarily to build the proper pseudo extended metric structure.
-Its docstring also makes this clear:
+这个引理通过其名称（包含 `aux`）和其文档字符串向读者表明，它不打算用于通用目的。原因在于它紧邻的前一个声明，
+[PiLp.pseudoEmetricAux](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/NormedSpace/PiLp.html#PiLp.pseudoEmetricAux)，
+是一个仅为构建恰当的伪扩展度量结构而临时激活的实例。
+它的文档字符串也清楚地说明了这一点：
 
 ```lean
 /-- Endowing the space `PiLp p β` with the `L^p` pseudoemetric structure. This definition is not
@@ -433,13 +389,14 @@ with the product one. Therefore, we do not register it as an instance. Using thi
 pseudoemetric space instance, we will show that the uniform structure is equal (but not defeq) to
 the product one, and then register an instance in which we replace the uniform structure by the
 product one using this pseudoemetric space and `PseudoEMetricSpace.replaceUniformity`. -/
+/-- 为空间 `PiLp p β` 赋予 `L^p` 伪扩展度量结构。这个定义并不令人满意，因为它没有注册拓扑和一致结构与乘积结构一致的事实。因此，我们不将其注册为实例。我们将使用这个作为临时的伪扩展度量空间实例，来证明一致结构等于（但不是定义性相等）乘积结构，然后使用这个伪扩展度量空间和 `PseudoEMetricSpace.replaceUniformity` 注册一个实例，在其中我们将一致结构替换为乘积结构。 -/
 ```
 
-##### Conditions for use
+##### 使用条件
 
-An example of the latter is:
-[completeLatticeOfSup](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/CompleteLattice.html#completeLatticeOfSup),
-which contains the following docstring.
+后者的一个例子是：
+[completeLatticeOfSup](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/CompleteLattice.html#completeLatticeOfSup)，
+它包含以下文档字符串。
 
 ````lean
 /-- Create a `CompleteLattice` from a `PartialOrder` and `SupSet`
@@ -455,39 +412,35 @@ instance : CompleteLattice my_T :=
     inf_le_left := ...
     -- don't care to fix sup, sInf, bot, top
     ..completeLatticeOfSup my_T _ }
+```-/
+/-- 从一个返回集合最小上界的 `PartialOrder` 和 `SupSet` 创建一个 `CompleteLattice`。
+通常这个构造函数提供的定义性等式很差。如果其他字段是明确已知的，它们应该被提供；
+例如，如果 `inf` 是明确已知的，应像这样构造 `CompleteLattice` 实例
+```
+instance : CompleteLattice my_T :=
+  { inf := better_inf,
+    le_inf := ...,
+    inf_le_right := ...,
+    inf_le_left := ...
+    -- 不关心修正 sup, sInf, bot, top
+    ..completeLatticeOfSup my_T _ }
 ```
 -/
 ````
 
-In this case, a `CompleteLattice` is constructed, but the data-carrying `sup`, `sInf`,
-`bot` and `top` fields are defined in terms of `sSup`, and will therefore be 
-inconvenient to prove things about when access to the definition is required. This 
-docstring therefore serves as an important warning to the user that this constructor
-should be used sparingly, and these data-carrying fields should be provided if they
-are known explicitly.
-    
-#### Is it formalizing something from the literature?
+在这种情况下，一个 `CompleteLattice` 被构造出来，但携带数据的 `sup`、`sInf`、`bot` 和 `top` 字段是根据 `sSup` 定义的，因此当需要访问定义时，证明关于它们的事情会很不方便。因此，这个文档字符串对用户来说是一个重要的警告，即这个构造函数应谨慎使用，并且如果这些携带数据的字段是明确已知的，就应该提供它们。
 
-Some objects in mathlib exist only to serve formalization (e.g., `AddMonoidWithOne`),
-but most ideas formalized come directly from the mathematical literature. In such
-cases, especially when the contributor is mimicking an existing published proof on 
-paper, they should be encouraged to add an entry to the `references.bib` file and
-cite it in the module documentation and / or the docstring of the relevant theorem.
+#### 它是否正在形式化文献中的某些内容？
 
-In addition, having mathematics in mathlib that is connected to the literature is
-an extra sanity check that what is being added is relevant, and that hopefully
-someone will care about it and use it later. Incorporating mathematics into mathlib
-places a burden to maintain what was added, and there's no reason to take on that 
-burden if it won't ever be used.
+mathlib 中的一些对象仅仅是为了形式化而存在的（例如，`AddMonoidWithOne`），但大多数形式化的思想直接来自数学文献。在这种情况下，特别是当贡献者模仿现有的已发表的纸上证明时，应该鼓励他们向 `references.bib` 文件添加一个条目，并在模块文档和/或相关定理的文档字符串中引用它。
 
-### Location
+此外，将与文献相关的数学纳入 mathlib 是一个额外的健全性检查，以确保所添加的内容是相关的，并希望以后有人会关心并使用它。将数学纳入 mathlib 会带来维护所添加内容的负担，如果它永远不会被使用，就没有理由承担这个负担。
 
-#### Are the declarations in the appropriate files?
+### 位置
 
-Consider the following example from [#5742](github.com/leanprover-community/mathlib4/pull/5742)
-where the PR author was placing a norm structure on the `Unitization`. The author was
-creating a new file `Analysis.NormedSpace.Unitization` and at a certain point declared the
-instance:
+#### 声明是否位于合适的文件中？
+
+考虑 [#5742](github.com/leanprover-community/mathlib4/pull/5742) 中的以下示例，其中 PR 作者正在为 `Unitization` 设置范数结构。作者正在创建一个新文件 `Analysis.NormedSpace.Unitization`，并在某个时刻声明了该实例：
 
 ```lean
 instance Unitization.instNontrivial {𝕜 A} [Nontrivial 𝕜] [Nonempty A] :
@@ -495,95 +448,51 @@ instance Unitization.instNontrivial {𝕜 A} [Nontrivial 𝕜] [Nonempty A] :
   nontrivial_prod_left
 ```
 
-Notice that this instance has nothing to do with norms, and so it likely belongs in an
-earlier file. A reviewer could use the `#find_home Unitization.instNontrivial` to determine
-that the natural place to put this declaration is `Algebra.Algebra.Unitization`. A helpful
-reviewer could comment:
+请注意，这个实例与范数无关，因此它很可能属于一个更早的文件。审查者可以使用 `#find_home Unitization.instNontrivial` 来确定放置此声明的自然位置是 `Algebra.Algebra.Unitization`。一个有帮助的审查者可以评论：
 
 ```markdown
-It seems like this instance doesn't have anything to do with the norm structure on the 
-`Unitization`. Perhaps you could place this instance in `Algebra.Algebra.Unitization` instead.
+这个实例似乎与 `Unitization` 上的范数结构无关。也许您可以将此实例放在 `Algebra.Algebra.Unitization` 中。
 ```
 
-#### Do the results already exist? possibly in a more general form with a different name? 
+#### 结果是否已经存在？可能以更通用的形式用不同的名称存在？
 
-Mathlib is by now quite a large library, and it's difficult for anyone, especially new
-users, to be familiar with all the different corners and exactly which results are 
-available. This is exacerbated by the fact that we aspire for generality, and eschew
-code duplication; this leads to the canonical questions by new users: "is mathlib really
-missing vector spaces and group homomorphisms?", and its answer: "no, these are `Module`
-and `MonoidHom`, respectively."
+Mathlib 现在是一个相当大的库，对任何人，特别是新用户来说，熟悉所有不同的角落和确切有哪些结果是困难的。我们追求通用性并避免代码重复，这加剧了这个问题；这导致了新用户的典型问题：“mathlib 真的缺少向量空间和群同态吗？”，其答案是：“不，这些分别是 `Module` 和 `MonoidHom`。”
 
-As a result, it is not uncommon for new contributors (or even experienced ones!) to 
-create a PR for a result that already exists, sometimes verbatim, and other times in
-greater generality.
+因此，新贡献者（甚至是有经验的贡献者！）为一个已经存在的结果创建一个 PR，有时是逐字相同的，有时是在更广的通用性下，这并不少见。
 
-The `apply?` and `exact?` tactics can help answer this sometimes. If you suspect a 
-result already exists, just copy it to a new file with `import Mathlib` and try `exact?`.
+`apply?` 和 `exact?` 策略有时可以帮助回答这个问题。如果您怀疑一个结果已经存在，只需将其复制到一个带有 `import Mathlib` 的新文件中，然后尝试 `exact?`。
 
-#### Are new `import`s introduced? Do they import too much?
+#### 是否引入了新的 `import`？它们是否导入了过多？
 
-Maintaining the organization of the mathlib import hierarchy is an important task, 
-but it can easily get out of hand without careful review. Generally, the problem occurs
-in the following manner.
+维护 mathlib 导入层级的组织是一项重要任务，但如果没有仔细的审查，它很容易失控。通常，问题以下列方式发生。
 
-A contributor thinks: "I would like to add `my_theorem` and it's all about `Z`, so I'll
-add it to `X.Y.Z`." Upon trying to add the theorem there, the contributor realizes: "oh,
-I don't have access to `helper_lemma`, I need to `import A.B.C`." During review, the 
-reviewer is focused on other things, and the PR is merged with this import change.
-This is the story of how, at one time, `Analysis.NormedSpace.Star.Basic` imported 
-`Analysis.NormedSpace.OperatorNorm`! This occurred in
-[#16964](https://github.com/leanprover-community/mathlib/pull/16964)
-and then had to be fixed in [#18194](https://github.com/leanprover-community/mathlib/pull/18194).
+一个贡献者想：“我想添加 `my_theorem`，它完全是关于 `Z` 的，所以我会把它加到 `X.Y.Z`。”在尝试在那里添加定理时，贡献者意识到：“哦，我无法访问 `helper_lemma`，我需要 `import A.B.C`。”在审查期间，审查者专注于其他事情，PR 就带着这个导入更改被合并了。这就是 `Analysis.NormedSpace.Star.Basic` 曾一度导入 `Analysis.NormedSpace.OperatorNorm` 的故事！这发生在 [#16964](https://github.com/leanprover-community/mathlib/pull/16964) 中，然后不得不在 [#18194](https://github.com/leanprover-community/mathlib/pull/18194) 中修复。
 
-As another example, in [#6239](https://github.com/leanprover-community/mathlib4/pull/6239),
-the contributor had added the import `Data.IsROrC.Basic` to
-`LinearAlgebra.Matrix.DotProduct`. This is probably a hard thing for a new 
-contributor to recognize, because it sometimes requires decent familiarity with the
-way the library is organized.
+作为另一个例子，在 [#6239](https://github.com/leanprover-community/mathlib4/pull/6239) 中，贡献者将 `Data.IsROrC.Basic` 的导入添加到了 `LinearAlgebra.Matrix.DotProduct`。对于新贡献者来说，这可能是一个很难识别的事情，因为它有时需要对库的组织方式有相当的熟悉度。
 
-Of course, reviewers should do their best to catch the most egregious examples
-(e.g., importing `Analysis` files into `Algebra` files is generally rather suspect),
-but asking the question is always warranted. It can often mean that the results belong
-elsewhere, the file should be split along a natural boundary, or the new results should
-go in a new a file.
+当然，审查者应该尽力捕捉最过分的例子（例如，将 `Analysis` 文件导入到 `Algebra` 文件中通常是相当可疑的），但提出这个问题总是合理的。这通常意味着结果属于其他地方，文件应该沿着一个自然的边界被拆分，或者新的结果应该放在一个新文件中。
 
-#### Should a file be split into multiple pieces?
+#### 文件是否应被拆分成多个部分？
 
-There are essentially three reasons to split a file:
+拆分文件基本上有三个原因：
 
-1. It is simply too long to be nice to use.
-   A good rule of thumb here is that it exceeds 1000 lines.
-2. The file is sectioned into multiple pieces that are only loosely related.
-3. To avoid import creep from the introduction of new results that are closely
-   related to existing ones.
+1.  它太长了，不好用。
+    一个好的经验法则是它超过 1000 行。
+2.  文件被分成了多个仅松散相关的部分。
+3.  为了避免因引入与现有结果密切相关的新结果而导致的导入蔓延。
 
-Let's say some results, about 500 lines worth, are added to an existing file which 
-already contains 700 lines, and suppose further that the new material is closely 
-related to some of the existing material in the file. A reviewer should be on the 
-lookout for a natural boundaries where the file can be split into coherent pieces.
+假设一些结果，大约 500 行，被添加到一个已经包含 700 行的现有文件中，并进一步假设新材料与文件中的一些现有材料密切相关。审查者应该留意一个自然的边界，可以将文件拆分成连贯的部分。
 
-### Improvements
+### 改进
 
-#### Splitting into supporting lemmas or definitions (especially for long proofs)?
+#### 是否应将（尤其是长证明）拆分为辅助引理或定义？
 
-Long standalone proofs are frequently an indication that there is a worthwhile
-refactor lurking close at hand. Often new contributors are unaware of existing
-lemmas in the library, or may not know how to split their theorem into more 
-manageable chunks. In these cases, the reviewer has a few options including:
-rolling up their sleeves and refactoring the result into multiple lemmas 
-themselves in the form of a `suggestion` on GitHub; looking for a potential
-refactor and mentioning it, as in "you might consider splitting out the 
-argument on lines xx into its own lemma, which will simplify the proof"; or 
-simply asking, "this proof seems rather long and unwieldy, have you considered
-at all how it might be split into more manageable pieces?"; or even, "this 
-proof seems like it might be easier if you make use of theorem X."
+长的独立证明常常表明附近潜藏着一个值得进行的重构。通常新贡献者不了解库中现有的引理，或者可能不知道如何将他们的定理拆分成更易于管理的小块。在这些情况下，审查者有几个选择，包括：亲自上阵，将结果重构为多个引理，以 GitHub 上的 `suggestion` 形式提供；寻找潜在的重构并提及它，如“您可能会考虑将 xx 行的论证拆分成自己的引理，这将简化证明”；或者只是问，“这个证明似乎相当长且笨重，您有没有考虑过如何将其拆分成更易于管理的部分？”；甚至，“这个证明如果利用定理 X 可能会更容易。”
 
-#### Different tactics to improve readability
+#### 不同的策略以提高可读性
 
-A good example where using better tactics, or golfing, can *improve* readability
-can be found in this suggestion from [#6140](https://github.com/leanprover-community/mathlib4/pull/6140/files/d2506ba26543b630722124dbf030339f43f6590a#r1287284988).
-In this case, the original subsequence of tactics in the proof was:
+一个很好的例子，说明使用更好的策略或代码精简可以**提高**可读性，可以在 [#6140](https://github.com/leanprover-community/mathlib4/pull/6140/files/d2506ba26543b630722124dbf030339f43f6590a#r1287284988) 的这个建议中找到。
+在这种情况下，证明中最初的策略序列是：
 
 ```lean
   have h₀ : log b = log (- -b) := by simp
@@ -596,7 +505,7 @@ In this case, the original subsequence of tactics in the proof was:
   rfl
 ```
 
-and the suggestion was to golf it to:
+而建议是将其精简为：
 
 ```lean
   refine tendsto_exp_atBot.comp <| (tendsto_const_mul_atBot_of_neg ?_).mpr tendsto_id
@@ -604,14 +513,9 @@ and the suggestion was to golf it to:
   linarith
 ```
 
-from the golfed version, we can easily see that this is essentially just composing some
-library lemmas about `Filter.Tendsto`, along with a single hypothesis to one of these
-theorems which is proven with some basic rewriting and calls to `linarith`.
+从精简后的版本中，我们可以很容易地看出，这本质上只是复合了一些关于 `Filter.Tendsto` 的库引理，以及其中一个定理的一个假设，这个假设是通过一些基本的重写和调用 `linarith` 来证明的。
 
-An example where using a better tactic can improve readability can be found in the 
-entire diff of [#4702](https://github.com/leanprover-community/mathlib4/pull/4702/files),
-which golfed lemmas throughout the library using the new `gcongr` tactic.  We'll
-highlight one particularly nice example for reference. The original code was:
+一个使用更好策略可以提高可读性的例子可以在 [#4702](https://github.com/leanprover-community/mathlib4/pull/4702/files) 的整个 diff 中找到，它使用新的 `gcongr` 策略精简了整个库的引理。我们将重点介绍一个特别好的例子以供参考。原始代码是：
 
 ```lean
   _ ≤ ε / 2 * ‖∑ i in range n, g i‖ + ε / 2 * ∑ i in range n, g i := by
@@ -619,13 +523,13 @@ highlight one particularly nice example for reference. The original code was:
     exact add_le_add hn (mul_le_mul_of_nonneg_left le_rfl (half_pos εpos).le)
 ```
 
-which was improved using `gcongr` to:
+使用 `gcongr` 改进为：
 
 ```lean
   _ ≤ ε / 2 * ‖∑ i in range n, g i‖ + ε / 2 * ∑ i in range n, g i := by rw [← mul_sum]; gcongr
 ```
 
-Or, from the same PR, this example which used `positivity` to go from:
+或者，来自同一个 PR，这个例子使用 `positivity` 从：
 
 ```lean
   · have ha' := mul_le_mul_of_nonneg_left ha (inv_pos.2 hab).le
@@ -634,18 +538,17 @@ Or, from the same PR, this example which used `positivity` to go from:
     rwa [MulZeroClass.mul_zero, ← div_eq_inv_mul] at hb'
 ```
 
-to:
+改进为：
 
 ```lean
   · positivity
   · positivity
 ```
 
-#### Does a different proof structure greatly simplify the argument?
+#### 不同的证明结构是否能极大地简化论证？
 
-A great example of this occurred in the review for
-[#5602](https://github.com/leanprover-community/mathlib4/pull/5602/files/ea99653c047046bae3a109ee980314eec0bb9e81#r1282044795)
-In this case, the PR author proved:
+一个很好的例子发生在 [#5602](https://github.com/leanprover-community/mathlib4/pull/5602/files/ea99653c047046bae3a109ee980314eec0bb9e81#r1282044795) 的审查中。
+在这种情况下，PR 作者证明了：
 
 ```lean
 variable {R S A : Type*} [CommSemiring R] [Semiring A] [Algebra R A] [SetLike S A]
@@ -666,14 +569,13 @@ theorem NonUnitalSubalgebra.unitization_surjective :
     exact ⟨x * y, map_mul _ _ _⟩
 ```
 
-The reviewer commented:
+审查者评论道：
 
 ```markdown
-I see why it's not immediate (you'd have to get back to the full codomain),
-but is there really no good way of using `Algebra.adjoin_le` here?
+我明白为什么这不直接（你得回到完整的余定义域），但真的没有好方法在这里使用 `Algebra.adjoin_le` 吗？
 ```
 
-which resulted in the vastly improved three-line proof:
+这导致了极大改进的三行证明：
 
 ```lean
 theorem NonUnitalSubalgebra.unitization_surjective :
@@ -683,55 +585,34 @@ theorem NonUnitalSubalgebra.unitization_surjective :
   fun x ↦ match this x.property with | ⟨y, hy⟩ => ⟨y, Subtype.ext hy⟩
 ```
 
-In this case, appealing to the lemma `Algebra.adjoin_le` was a tremendous
-simplification over using `Algebra.adjoin_induction'`.
+在这种情况下，诉诸引理 `Algebra.adjoin_le` 比使用 `Algebra.adjoin_induction'` 是一个巨大的简化。
 
-#### Are the definitions introduced the best way to formalize the concept (very difficult!)?
+#### 引入的定义是否是形式化该概念的最佳方式（非常困难！）？
 
-This is incredibly hard to describe in general, but perhaps the simplest
-rule of thumb that can be given is this: the more definitions avoid 
-dependent types, the better.
+这在一般情况下非常难以描述，但也许可以给出的最简单的经验法则是：定义越能避免依赖类型，就越好。
 
-As an example, consider the definition of [Vector](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Vector.html#Vector).
-Many introductory expositions of dependent type theory define `Vector`
-as an inductive type and give it as the canonical example of a dependent
-type. While the dependent typing is unavoidable, mathlib's definition 
-instead opts for a simple subtype of `List`, and the dependence on `ℕ`
-appears only in `List.length` equality proposition. This has the 
-advantage that we can easily pass out of the dependent type world by
-coercing to `List` and then life is much easier. In fact, most operations
-on `Vector` are precisely the corresponding operation on `List` combined
-with an equality proof on the lengths.
+例如，考虑 [Vector](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Vector.html#Vector) 的定义。
+许多关于依赖类型理论的入门性阐述将 `Vector` 定义为一个归纳类型，并将其作为依赖类型的典型例子。虽然依赖类型是不可避免的，但 mathlib 的定义转而选择了 `List` 的一个简单子类型，对 `ℕ` 的依赖只出现在 `List.length` 的相等性命题中。这样做的好处是，我们可以通过强制转换为 `List` 轻松地脱离依赖类型世界，然后生活就容易多了。实际上，`Vector` 上的大多数操作正是 `List` 上的相应操作加上一个关于长度的相等性证明。
 
-### Library integration
+### 库集成
 
-Many of the questions here are a bit nebulous and generally require a large amount of
-familiarity with the structure of mathlib, or at least significant prior expertise
-in formalization. Don't be discouraged if you find it difficult to address these
-questions when reviewing.
+这里的许多问题有点模糊，通常需要对 mathlib 的结构有大量的熟悉度，或者至少在形式化方面有重要的先前专业知识。如果您在审查时发现难以解决这些问题，请不要灰心。
 
-#### Does it provide a sensible API?
+#### 它是否提供了一个合理的 API？
 
-- Are attributes added appropriately (e.g., `@[simp]`, `@[ext]`, `@[gcongr]`, `@[aesop]`, etc.)?
-- Are rewrite lemmas provided to avoid the need to pass through equalities definitionally all the time?
-- Does a new type provide convenient constructors in common use cases?
+- 属性是否被适当地添加（例如，`@[simp]`、`@[ext]`、`@[gcongr]`、`@[aesop]` 等）？
+- 是否提供了重写引理以避免一直需要通过定义性等式来传递？
+- 新类型是否为常见用例提供了方便的构造函数？
 
-#### Is it general enough to support known future needs?
+#### 它是否足够通用以支持已知的未来需求？
 
-This requires knowing what some of the future needs may be! Being active on Zulip
-can help make a reviewer aware of these needs. However, one may use a proxy for this question, 
-namely, "is there a more general version of this result in the literature which invokes pre-existing
-concepts in mathlib?" If there is, perhaps the existing PR should be generalized.
+这需要知道未来的一些需求可能是什么！在 Zulip 上保持活跃可以帮助审查者了解这些需求。然而，人们可以用一个代理问题来代替这个问题，即：“文献中是否存在一个更通用的版本，它调用了 mathlib 中已有的概念？”如果有，也许现有的 PR 应该被泛化。
 
-#### Does it fit the design and collective vision of mathlib?
+#### 它是否符合 mathlib 的设计和集体愿景？
 
-Again, this is a vague question and requires knowing what the design and collective vision are!
-However, as some practical examples:
+同样，这是一个模糊的问题，需要知道设计和集体愿景是什么！
+然而，作为一些实际的例子：
 
-- If a user is adding a new kind of morphism (not in the category theory library), they should 
-  more likely than not be defining a bundled morphism type, and probably an associated morphism
-  class using the `FunLike` API.
-- Similarly, if a contributor is adding a new subobject, they should probably be using bundled
-  subobjects and making use of the `SetLike` API. For reference, see the [relevant section 
-  in Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/C07_Hierarchies.html#sub-objects).
-- Follow the advice of any existing library note.
+- 如果一个用户正在添加一种新的态射（不在范畴论库中），他们很可能应该定义一个绑定的态射类型，并且可能使用 `FunLike` API 定义一个相关的态射类。
+- 类似地，如果一个贡献者正在添加一个新的子对象，他们可能应该使用绑定的子对象并利用 `SetLike` API。作为参考，请参见 [Mathematics in Lean 中相关章节](https://leanprover-community.github.io/mathematics_in_lean/C07_Hierarchies.html#sub-objects)。
+- 遵循任何现有库注释的建议。

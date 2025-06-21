@@ -1,36 +1,22 @@
-# Controlled installation of Lean 4 on Debian/Ubuntu
+# 在 Debian/Ubuntu 上进行受控的 Lean 4 安装
 
-Note that these are legacy instructions provided by the community. The recommended
-way to install Lean and to create a project is to follow the instructions in
-[the official Lean documentation](https://docs.lean-lang.org/lean4/doc/quickstart.html).
+请注意，这些是由社区提供的遗留说明。安装 Lean 和创建项目的推荐方法是遵循 [Lean 官方文档](https://docs.lean-lang.org/lean4/doc/quickstart.html) 中的说明。
 
-## Legacy instructions
+## 遗留说明
 
-This document explains a more controlled installation procedure
-for Lean 4 and mathlib on Linux distributions derived from Debian (Debian
-itself, Ubuntu, LMDE,...). There is a quicker way described in the main
-[install page](debian.html) but it requires more trust.
-Of course you can get even more details about what is going on by
-reading the bash script that will be downloaded below:
-[elan_init](https://github.com/leanprover/elan/blob/master/elan-init.sh).
+本文档解释了在源自 Debian 的 Linux 发行版（Debian 本身、Ubuntu、LMDE 等）上为 Lean 4 和 mathlib 进行更受控的安装流程。在主[安装页面](debian.html)中描述了一种更快捷的方法，但它需要更多的信任。当然，你可以通过阅读下面将要下载的 bash 脚本来获取更多关于其运行原理的细节：[elan_init](https://github.com/leanprover/elan/blob/master/elan-init.sh)。
 
-* Lean itself doesn't depend on much infrastructure, but supporting tools
-  needed by most users require `git` and `curl`. So the first step is:
+* Lean 本身不依赖于太多基础设施，但大多数用户所需的支持工具需要 `git` 和 `curl`。所以第一步是：
   ```bash
   sudo apt install git curl
   ```
 
-* The next step installs a small tool called `elan` which will handle
-  updating Lean according to the needs of your current project (hit Enter
-  when a question is asked). It will live in `$HOME/.elan` and adds a
-  line to `$HOME/.profile`.
+* 下一步是安装一个名为 `elan` 的小工具，它将根据你当前项目的需求来处理 Lean 的更新（当被提问时按 Enter 键）。它将位于 `$HOME/.elan` 中，并向 `$HOME/.profile` 添加一行。
   ```bash
   curl https://elan.lean-lang.org/elan-init.sh -sSf | sh
   ```
 
-* There are three editors you can use with Lean, VS Code, emacs and neovim. The
-  recommended choice is [Visual Studio Code](https://code.visualstudio.com/) which has
-  the most complete and well-tested support for Lean.
+* 有三种可以与 Lean 一起使用的编辑器：VS Code、emacs 和 neovim。推荐的选择是 [Visual Studio Code](https://code.visualstudio.com/)，它为 Lean 提供了最完整且经过充分测试的支持。
   ```bash
   wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
   sudo apt install ./code.deb
@@ -38,13 +24,10 @@ reading the bash script that will be downloaded below:
   code --install-extension leanprover.lean4
   ```
 
-  Now open VS Code, and verify Lean is working, for example by saving a file `test.lean` and entering `#eval 1+1`.
-   A green line should appear underneath `#eval 1+1`, and hovering the mouse over it you should see `2`
-   displayed.
+  现在打开 VS Code，并通过保存一个名为 `test.lean` 的文件并输入 `#eval 1+1` 来验证 Lean 是否正常工作。在 `#eval 1+1` 下方应该会出现一条绿线，将鼠标悬停在上面时，你应该能看到显示的 `2`。
 
-  Alternatively, you can use Emacs and its [lean4-mode](https://github.com/leanprover/lean4-mode) or
-  neovim and its [lean.nvim extension](https://github.com/Julian/lean.nvim).
+  或者，你可以使用 Emacs 及其 [lean4-mode](https://github.com/leanprover/lean4-mode) 或 neovim 及其 [lean.nvim extension](https://github.com/Julian/lean.nvim)。
 
-## Lean Projects
+## Lean 项目
 
-You can now read instructions about creating and working on [Lean projects](project.html)
+你现在可以阅读关于创建和使用 [Lean 项目](project.html) 的说明了。

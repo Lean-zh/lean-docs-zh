@@ -1,7 +1,7 @@
-# Teaching with Lean
+# 使用 Lean 进行教学
 
-If you are interested in using Lean for teaching, you can find various resources and suggestions here.
+如果你有兴趣使用 Lean 进行教学，可以在这里找到各种资源和建议。
 
-* [A list of courses and descriptions](courses.html)
-* [A list of teaching resources: materials, tools, etc](resources.html)
-* [Tips and hints for using Lean in teaching](practices.html)
+* [课程列表与介绍](courses.html)
+* [教学资源列表：材料、工具等](resources.html)
+* [在教学中使用 Lean 的技巧与提示](practices.html)

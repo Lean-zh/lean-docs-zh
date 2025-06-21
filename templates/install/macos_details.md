@@ -1,58 +1,47 @@
-# Controlled installation of Lean 4 on MacOS
+# 在 MacOS 上进行受控的 Lean 4 安装
 
-Note that these are legacy instructions provided by the community. The recommended
-way to install Lean and to create a project is to follow the instructions in
-[the official Lean documentation](https://docs.lean-lang.org/lean4/doc/quickstart.html).
+请注意，这些是由社区提供的遗留说明。安装 Lean 和创建项目的推荐方法是遵循 [Lean 官方文档](https://docs.lean-lang.org/lean4/doc/quickstart.html) 中的说明。
 
-## Legacy instructions
+## 遗留说明
 
-This document explains a more controlled installation procedure for Lean on MacOS. There is a quicker way described in the main
-[install page](macos.html) but it requires more trust.
+本文档解释了在 MacOS 上为 Lean 进行更受控的安装流程。在主[安装页面](macos.html)中描述了一种更快捷的方法，但它需要更多的信任。
 
-If you get stuck, please come to [the chat room](https://leanprover.zulipchat.com/) to ask for
-assistance.
+如果你遇到困难，请到[聊天室](https://leanprover.zulipchat.com/)寻求帮助。
 
-We'll need to set up Lean, an editor that knows about Lean, and [`mathlib`](https://github.com/leanprover-community/mathlib4/) (the math library).
+我们需要设置 Lean、一个了解 Lean 的编辑器，以及 [`mathlib`](https://github.com/leanprover-community/mathlib4/)（数学库）。
 
-Rather than installing Lean directly, we'll install a small program called [`elan`](https://github.com/leanprover/elan) which
-automatically provides the correct version of Lean on a per-project basis. This is recommended for
-all users.
+我们将安装一个名为 [`elan`](https://github.com/leanprover/elan) 的小程序，而不是直接安装 Lean，它会根据每个项目的需要自动提供正确版本的 Lean。建议所有用户都这样做。
 
-Installing `elan` and mathlib supporting tools
+安装 `elan` 和 mathlib 支持工具
 ---
 
-1.  Grab the [latest release](https://github.com/leanprover/elan/releases/latest) for your architecture,
-    unpack it, and run the contained installation program.
+1.  获取你架构的[最新版本](https://github.com/leanprover/elan/releases/latest)，
+    解压它，并运行其中包含的安装程序。
 
-    The installation will tell you where it will install `elan` to (`~/.elan` by default),
-    and also ask you about editing your shell config to extend `PATH`. `elan` can be uninstalled via `elan self uninstall`, which should revert these changes.
-    
-(We discourage using the `homebrew` provided `elan-init` package, as users often find that this lags behind updates to the official release. We especially discourage using the `homebrew` formula named simply `lean`, which installs a fixed version of Lean.)
+    安装程序会告诉你它将在哪里安装 `elan`（默认为 `~/.elan`），
+    并询问你是否编辑 shell 配置以扩展 `PATH`。可以通过 `elan self uninstall` 卸载 `elan`，这应该会撤销这些更改。
 
-2.  Use `elan` to install the latest stable version of `lean` by running
-    `elan toolchain install stable`. You can also set the newly-installed
-    version to be the default version of `lean` you get when running outside of
-    a project (discussed below) by running `elan default stable`.
+（我们不鼓励使用 `homebrew` 提供的 `elan-init` 包，因为用户经常发现它落后于官方版本的更新。我们尤其不鼓励使用名为 `lean` 的 `homebrew` 公式，它会安装一个固定版本的 Lean。）
 
-Installing and configuring an editor
+2.  通过运行 `elan toolchain install stable`，使用 `elan` 安装最新稳定版的 `lean`。你还可以通过运行 `elan default stable`，将新安装的版本设置为在项目（下文讨论）之外运行时获取的默认 `lean` 版本。
+
+安装和配置编辑器
 ---
 
-There are three editors you can use with Lean, VS Code emacs and neovim.
-This document describes using VS Code which currently has the best support for Lean.
-For emacs, look at https://github.com/leanprover/lean4-mode.
-For neovim, look at https://github.com/Julian/lean.nvim)
+有三种可以与 Lean 一起使用的编辑器：VS Code、emacs 和 neovim。
+本文档描述了使用 VS Code 的方法，它目前对 Lean 的支持最好。
+对于 emacs，请查看 https://github.com/leanprover/lean4-mode。
+对于 neovim，请查看 https://github.com/Julian/lean.nvim)
 
-1. Install [VS Code](https://code.visualstudio.com/).
-2. Launch VS Code.
-3. Click on the extension icon ![(image of icon)](img/new-extensions-icon.png)
-   (or ![(image of icon)](img/extensions-icon.png) in older versions) in the side bar on the left edge of
-   the screen (or press <kbd>⇧ Shift</kbd><kbd>⌘ Command</kbd><kbd>X</kbd>) and search for `leanprover`.
-4. Select the `lean4` extension (unique name `leanprover.lean4`).
-5. Click "install" (In old versions of VS Code, you might need to click "reload" afterwards)
-6. Verify Lean is working, for example by saving a file `test.lean` and entering `#eval 1+1`.
-   A green line should appear underneath `#eval 1+1`, and hovering the mouse over it you should see `2`
-   displayed.
+1. 安装 [VS Code](https://code.visualstudio.com/)。
+2. 启动 VS Code。
+3. 点击屏幕左侧边栏中的扩展图标 ![(image of icon)](img/new-extensions-icon.png)
+   （或在旧版本中是 ![(image of icon)](img/extensions-icon.png)）（或按 <kbd>⇧ Shift</kbd><kbd>⌘ Command</kbd><kbd>X</kbd>) 并搜索 `leanprover`。
+4. 选择 `lean4` 扩展（唯一名称为 `leanprover.lean4`）。
+5. 点击“安装”（在旧版本的 VS Code 中，之后你可能需要点击“重新加载”）
+6. 验证 Lean 是否正常工作，例如，通过保存一个名为 `test.lean` 的文件并输入 `#eval 1+1`。
+   在 `#eval 1+1` 下方应该会出现一条绿线，将鼠标悬停在上面时，你应该能看到显示的 `2`。
 
-## Lean Projects
+## Lean 项目
 
-You can now read instructions about creating and working on [Lean projects](project.html)
+你现在可以阅读关于创建和使用 [Lean 项目](project.html) 的说明了

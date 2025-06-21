@@ -1,124 +1,123 @@
-# Git Guide for Mathlib4 Contributors
+# Mathlib4 贡献者 Git 指南
 
-This guide is designed for mathematicians who are new to git but want to contribute to the mathlib4 library.
-Contributions are made via pull requests. We'll walk through the essential workflows step by step.
-Note that there are many other guides on the web describing how to contribute to open-source projects
-via pull requests.
+本指南专为不熟悉 git 但希望为 mathlib4 库做出贡献的数学家设计。
+贡献通过拉取请求 (pull request) 进行。我们将逐步介绍基本的工作流程。
+请注意，网络上还有许多其他指南描述了如何通过拉取请求为开源项目做贡献。
 
-The guide is organized into three main sections:
+本指南分为三个主要部分：
 
-1. [**One-time setup**](#part-1-one-time-setup) (do this once when you first start contributing)
-2. [**Daily workflow**](#part-2-daily-workflow) (common operations for working on contributions)
-3. [**Additional information**](#additional-information)
+1.  [**一次性设置**](#part-1-one-time-setup) (首次开始贡献时执行一次)
+2.  [**日常工作流程**](#part-2-daily-workflow) (进行贡献时的常用操作)
+3.  [**附加信息**](#additional-information)
 
-## Prerequisites
+## 先决条件
 
-Before starting, make sure you have:
+开始之前，请确保您已具备：
 
-- Git installed on your computer
-- [A GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
-- (Optional but recommended) [The GitHub CLI tool (`gh`)](https://cli.github.com/) installed
+-   电脑上安装了 Git
+-   [一个 GitHub 账户](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
+-   （可选但推荐）安装了 [GitHub CLI 工具 (`gh`)](https://cli.github.com/)
 
 ---
 
-# Part 1: One-Time Setup
+# 第一部分：一次性设置
 
-These steps only need to be done once when you first start contributing to mathlib4.
+这些步骤仅在您首次开始为 mathlib4 做贡献时需要执行一次。
 
-## Step 1: Fork the Repository on GitHub
+## 步骤 1：在 GitHub 上复刻 (Fork) 仓库
 
-First, you need to create your own copy (fork) of the mathlib4 repository:
+首先，您需要创建一份您自己的 mathlib4 仓库副本（即复刻）：
 
-1. Go to https://github.com/leanprover-community/mathlib4
-2. Click the "Fork" button in the top right corner
-3. Choose your GitHub account as the destination. It is recommended to leave "copy the master branch only" checked.
-4. Wait for GitHub to create your fork
+1.  访问 https://github.com/leanprover-community/mathlib4
+2.  点击右上角的 "Fork" 按钮
+3.  选择您的 GitHub 账户作为目标。建议保持 "copy the master branch only" (仅复制 master 分支) 的勾选状态。
+4.  等待 GitHub 创建您的复刻
 
-**You only ever need to do this step once.**
-You can reuse your fork for many different branches and pull requests.
+**您只需执行此步骤一次。**
+您可以为许多不同的分支和拉取请求重复使用您的复刻。
 
-## Step 2: Get a Local Copy of the Repository
+## 步骤 2：获取仓库的本地副本
 
-The fork you created in the previous step is a "remote" copy of mathlib4, which lives on GitHub's servers.
-You'll now need to set up your local copy of mathlib4 on your computer (also referred to as a "clone").
+您在上一步中创建的复刻是 mathlib4 的一个“远程”副本，它位于 GitHub 的服务器上。
+现在，您需要在您的计算机上设置 mathlib4 的本地副本（也称为“克隆”）。
 
-You have two options depending on whether you already have a clone of mathlib4:
+根据您是否已有 mathlib4 的克隆，您有两种选择：
 
-### Option A: If you don't have mathlib4 cloned yet
+### 选项 A：如果您还没有克隆过 mathlib4
 
-#### Method 1: Using GitHub CLI (recommended)
+#### 方法 1：使用 GitHub CLI（推荐）
 
-Replace `YOUR_USERNAME` with your GitHub username in the following shell commands:
+在以下 shell 命令中，将 `YOUR_USERNAME` 替换为您的 GitHub 用户名：
 
 ```bash
 gh repo clone YOUR_USERNAME/mathlib4
 cd mathlib4
 ```
 
-#### Method 2: Manual cloning
+#### 方法 2：手动克隆
 
-Replace `YOUR_USERNAME` with your GitHub username in the following shell commands to clone your fork (not the original repository) into a directory named `mathlib4` in the current working directory and then navigate to it:
+在以下 shell 命令中，将 `YOUR_USERNAME` 替换为您的 GitHub 用户名，以将您的复刻（而不是原始仓库）克隆到当前工作目录下名为 `mathlib4` 的目录中，然后导航到该目录：
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/mathlib4.git
 cd mathlib4
 ```
 
-This automatically sets up your fork as the `origin` remote, which is what we want.
+这会自动将您的复刻设置为 `origin` 远程仓库，这正是我们想要的。
 
-### Option B: If you already have mathlib4 cloned
+### 选项 B：如果您已经克隆了 mathlib4
 
-If you already have a clone from the original repository (e.g. if you created one via the Lean 4 VS Code extension), you can reuse it. Just navigate to your existing mathlib4 directory:
+如果您已经从原始仓库克隆了一份（例如，通过 Lean 4 VS Code 扩展创建的），您可以重复使用它。只需导航到您现有的 mathlib4 目录：
 
 ```bash
 cd path/to/your/existing/mathlib4
 ```
 
-#### Configure GitHub CLI (if installed)
+#### 配置 GitHub CLI（如果已安装）
 
-If you have the GitHub CLI installed, set the default repository to the upstream mathlib4:
+如果您安装了 GitHub CLI，请将默认仓库设置为主仓库 mathlib4：
 
 ```bash
 gh repo set-default leanprover-community/mathlib4
 ```
 
-This ensures that GitHub CLI commands like `gh pr checkout` will work with the main mathlib4 repository rather than your fork.
+这可以确保 `gh pr checkout` 等 GitHub CLI 命令将与主 mathlib4 仓库而不是您的复刻一起工作。
 
-## Step 3: Set Up Remotes Correctly
+## 步骤 3：正确设置远程仓库 (Remotes)
 
-The remote setup depends on which option you chose above:
+远程仓库的设置取决于您在上面选择了哪个选项：
 
-### If you cloned your fork using the GitHub CLI (Option A, Method 1)
+### 如果您使用 GitHub CLI 克隆了您的复刻（选项 A，方法 1）
 
-`gh` has already taken care of this step for you.
+`gh` 已经为您完成了这一步。
 
-### If you cloned your fork without using the GitHub CLI (Option A, Method 2)
+### 如果您未使用 GitHub CLI 克隆您的复刻（选项 A，方法 2）
 
-You need to add the original repository as `upstream`:
+您需要将原始仓库添加为 `upstream`：
 
 ```bash
 git remote add upstream https://github.com/leanprover-community/mathlib4.git
 ```
 
-### If you used an existing clone (Option B)
+### 如果您使用了现有的克隆（选项 B）
 
-You need to rename the existing remote and add your fork.
-Replace `YOUR_USERNAME` with your GitHub username:
+您需要重命名现有的远程仓库并添加您的复刻。
+将 `YOUR_USERNAME` 替换为您的 GitHub 用户名：
 
 ```bash
 git remote rename origin upstream
 git remote add origin https://github.com/YOUR_USERNAME/mathlib4.git
 ```
 
-### Verify Your Remotes
+### 验证您的远程仓库
 
-Regardless of which option you chose, verify your remotes are set correctly:
+无论您选择哪个选项，都请验证您的远程仓库设置是否正确：
 
 ```bash
 git remote -v
 ```
 
-You should see:
+您应该会看到：
 
 ```
 origin    https://github.com/YOUR_USERNAME/mathlib4.git (fetch)
@@ -127,35 +126,35 @@ upstream  https://github.com/leanprover-community/mathlib4.git (fetch)
 upstream  https://github.com/leanprover-community/mathlib4.git (push)
 ```
 
-## Step 4: Configure the Master Branch
+## 步骤 4：配置 Master 分支
 
-First, fetch the branches from upstream:
+首先，从上游仓库获取分支：
 
 ```bash
 git fetch upstream
 ```
 
-Then make sure your `master` branch tracks `upstream/master`:
+然后确保您的 `master` 分支跟踪 `upstream/master`：
 
 ```bash
 git branch --set-upstream-to=upstream/master master
 ```
 
-## Step 5: Configure Git for Your Workflow
+## 步骤 5：为您的工作流配置 Git
 
-### Set Default Push Behavior
+### 设置默认推送行为
 
-Configure git to push new branches to `origin` by default:
+配置 git 默认将新分支推送到 `origin`：
 
 ```bash
 git config push.default current
 git config push.autoSetupRemote true
 ```
 
-### Prevent Accidental Commits to Master (Optional but Recommended)
+### 防止意外提交到 Master（可选但推荐）
 
-To avoid accidentally committing directly to `master`, you can set up a pre-commit hook.
-First, create the hook file:
+为避免意外直接提交到 `master`，您可以设置一个 pre-commit 钩子。
+首先，创建钩子文件：
 
 ```bash
 mkdir -p .git/hooks
@@ -169,7 +168,7 @@ fi
 EOF
 ```
 
-Then make it executable:
+然后使其可执行：
 
 ```bash
 chmod +x .git/hooks/pre-commit
@@ -177,204 +176,204 @@ chmod +x .git/hooks/pre-commit
 
 ---
 
-# Part 2: Daily Workflow
+# 第二部分：日常工作流程
 
-These are the operations you'll use regularly when working on contributions.
+这些是您在进行贡献时会经常使用的操作。
 
-## Creating and Working on a New Branch
+## 创建和处理新分支
 
-### Keep Your Master Branch Up to Date
+### 保持您的 Master 分支最新
 
-**Do this before creating a new branch** to ensure you're working with the latest changes:
+**在创建新分支之前执行此操作**，以确保您正在使用最新的更改：
 
 ```bash
 git switch master
 git pull
 ```
 
-### Create a New Branch
+### 创建一个新分支
 
-Then create and switch to a new branch:
+然后创建并切换到一个新分支：
 
 ```bash
 git switch -c my-feature-branch
 ```
 
-The branch will automatically track `origin/my-feature-branch` when you first push it.
+当您首次推送该分支时，它将自动跟踪 `origin/my-feature-branch`。
 
-### Basing Work on Another PR
+### 基于另一个 PR 进行工作
 
-If you intend to make your work dependent on another PR:
+如果您打算让您的工作依赖于另一个 PR：
 
-1. Check out the relevant PR branch by running `git switch <pr-branch-name>` if this is your own PR, or by following the instructions in the section [`Working with Others' PRs`](#working-with-others-prs) below if you intend to work on top of someone else's PR.
-2. Run `git pull` to ensure you are up-to-date with this pull request.
-3. Run `git switch -c my-feature-branch` to create a new branch on top of the current branch.
+1.  通过运行 `git switch <pr-branch-name>` 检出相关的 PR 分支（如果是您自己的 PR），或者如果您打算在别人的 PR 之上工作，请遵循下方 [`处理他人的 PR`](#working-with-others-prs) 部分的说明。
+2.  运行 `git pull` 以确保您与此拉取请求保持同步。
+3.  运行 `git switch -c my-feature-branch` 以在当前分支之上创建一个新分支。
 
 
-## Push Your Branch and Open a PR
+## 推送您的分支并开启一个 PR
 
-### Push Your Branch
+### 推送您的分支
 
-After making your changes and commits:
+在做出更改和提交之后：
 
 ```bash
 git push
 ```
 
-### Open a Pull Request
+### 开启一个拉取请求 (Pull Request)
 
-1. Go to your fork on GitHub: `https://github.com/YOUR_USERNAME/mathlib4`
-2. You should see a banner suggesting to open a PR for your recent push
-3. Click "Compare & pull request"
-4. Fill in the PR title and description
-5. Click "Create pull request"
+1.  前往您在 GitHub 上的复刻：`https://github.com/YOUR_USERNAME/mathlib4`
+2.  您应该会看到一个建议您为最近的推送开启 PR 的横幅
+3.  点击 "Compare & pull request"
+4.  填写 PR 的标题和描述
+5.  点击 "Create pull request"
 
-Alternatively, or if you do not see the banner, you can also go to https://github.com/leanprover-community/mathlib4/compare, and click `compare across forks`.
-You will need to select your fork in the "head repository" drop-down menu, and select the branch you want to merge in the "compare" drop-down menu.
+或者，如果您没有看到该横幅，您也可以访问 https://github.com/leanprover-community/mathlib4/compare，然后点击 `compare across forks`。
+您需要在“head repository”下拉菜单中选择您的复刻，并在“compare”下拉菜单中选择您想要合并的分支。
 
-## Working with Others' PRs
+## 处理他人的 PR
 
-Note that even just opening VS Code on Lean code from a branch from someone untrustworthy can end up executing code on your computer!
-Please check the [Security Warning in the Additional Information section](#-security-warning).
+请注意，即使只是在 VS Code 中打开来自不受信任的人的分支中的 Lean 代码，也可能最终在您的计算机上执行代码！
+请查看[附加信息部分的安全警告](#-security-warning)。
 
-### Method 1: Using GitHub CLI (Recommended)
+### 方法 1：使用 GitHub CLI（推荐）
 
-This is much simpler than the manual method. To checkout PR #1234:
+这比手动方法简单得多。要检出 PR #1234：
 
 ```bash
 gh pr checkout 1234
 ```
 
-This automatically handles the remote setup and branch checkout.
+这会自动处理远程仓库设置和分支检出。
 
-To switch back to your branch:
+要切换回您的分支：
 
 ```bash
 git switch my-feature-branch
 ```
 
-### Method 2: Manual Checkout
+### 方法 2：手动检出
 
-To check out someone else's PR manually, first add their fork as a remote (replace `USERNAME` with their GitHub username):
+要手动检出别人的 PR，首先将他们的复刻添加为远程仓库（将 `USERNAME` 替换为他们的 GitHub 用户名）：
 
 ```bash
 git remote add contributor-name https://github.com/USERNAME/mathlib4.git
 ```
 
-Then fetch their branches:
+然后获取他们的分支：
 
 ```bash
 git fetch contributor-name
 ```
 
-Finally, checkout their branch:
+最后，检出他们的分支：
 
 ```bash
 git checkout contributor-name/their-branch-name
 ```
 
-(Remotes can be removed with `git remote remove <contributor-name>`.)
+（远程仓库可以使用 `git remote remove <contributor-name>` 移除。）
 
-To switch back to your branch:
+要切换回您的分支：
 
 ```bash
 git switch my-feature-branch
 ```
 
-## Giving Collaborator Access
+## 授予协作者访问权限
 
-If you want to allow others to push directly to your PR branch:
+如果您想允许他人直接推送到您的 PR 分支：
 
-1. Go to your fork: `https://github.com/YOUR_USERNAME/mathlib4`
-2. Click "Settings" tab
-4. Click "Collaborators" (you may have to reauthenticate)
-5. Enter their GitHub username
-6. Choose "Write" permission level
-7. Send the invitation
+1.  前往您的复刻：`https://github.com/YOUR_USERNAME/mathlib4`
+2.  点击 "Settings" 标签页
+4.  点击 "Collaborators" （您可能需要重新验证身份）
+5.  输入他们的 GitHub 用户名
+6.  选择 "Write" 权限级别
+7.  发送邀请
 
-Once they accept, they can push directly to your PR branches by using `git push` after following one of the methods in ["Basing Work on Another PR"](#basing-work-on-another-pr).
+一旦他们接受，他们就可以在遵循 ["基于另一个 PR 进行工作"](#basing-work-on-another-pr) 中的一种方法后，使用 `git push` 直接推送到您的 PR 分支。
 
 ---
 
-# Additional Information
+# 附加信息
 
-## ⚠️ Security Warning
+## ⚠️ 安全警告
 
-**Important**: When you give someone collaborator access to your fork, or when you checkout and run someone else's code, you are potentially running unreviewed code on your computer. Only collaborate with people you trust, as they could potentially include malicious code that runs during the build process.
+**重要提示**：当您授予某人对您的复刻的协作者访问权限时，或者当您检出并运行他人的代码时，您可能正在您的计算机上运行未经审查的代码。请仅与您信任的人合作，因为他们提交的代码可能包含会在构建过程中运行的恶意内容。
 
-## Getting Help
+## 获取帮助
 
-If you encounter issues or have questions about git workflows, please ask in the `#new users` stream on the [Lean Zulip chat](https://leanprover.zulipchat.com). The community is very helpful and welcomes questions!
+如果您遇到问题或对 git 工作流程有疑问，请在 [Lean Zulip chat](https://leanprover.zulipchat.com) 的 `#new users` 信息流中提问。社区非常乐于助人并欢迎提问！
 
-## Quick Reference
+## 快速参考
 
-Here's a summary of the most common commands you'll use.
+以下是您将最常使用的一些命令的摘要。
 
-Update master:
+更新 master：
 
 ```bash
 git switch master
 git pull
 ```
 
-Create a new branch on top of the current branch:
+在当前分支之上创建一个新分支：
 
 ```bash
 git switch -c new-branch-name
 ```
 
-Push your branch and set up tracking:
+推送您的分支并设置跟踪：
 
 ```bash
 git push origin new-branch-name
 ```
 
-If you've set the [default push options per the guide above](#set-default-push-behavior), the following will suffice:
+如果您已按照[上述指南设置了默认推送选项](#set-default-push-behavior)，那么以下命令就足够了：
 ```bash
 git push
 ```
 
-Check out someone else's PR:
+检出他人的 PR：
 
 ```bash
 gh pr checkout PR_NUMBER
 ```
 
-Check remote configuration:
+检查远程仓库配置：
 
 ```bash
 git remote -v
 ```
 
-Check which branch you're on:
+检查您当前所在的分支：
 
 ```bash
 git branch
 ```
 
-Switch to working on a different branch:
+切换到不同的分支进行工作：
 
 ```bash
 git switch your-branch-name
 ```
 
-## Common Troubleshooting
+## 常见问题排查
 
-**Problem**: "Your branch is behind 'upstream/master'"
-**Solution**:
+**问题**："Your branch is behind 'upstream/master'"
+**解决方案**：
 ```bash
 git switch master
 git pull
 ```
 
-**Problem**: "fatal: The current branch has no upstream branch"
-**Solution**:
+**问题**："fatal: The current branch has no upstream branch"
+**解决方案**：
 ```bash
 git push --set-upstream origin branch-name
 ```
 
-**Problem**: Accidentally committed to your copy of the master branch
-**Solution**: Move the commits to a new branch:
+**问题**：意外提交到了您的 master 分支副本
+**解决方案**：将提交移动到一个新分支：
 ```bash
 git branch new-branch-name
 git switch master
@@ -382,8 +381,8 @@ git reset --hard upstream/master
 git switch new-branch-name
 ```
 
-## Additional resources
+## 附加资源
 
-* [The git glossary](https://git-scm.com/docs/gitglossary)
-* [Everyday git commands](https://git-scm.com/docs/giteveryday)
-* [The git user manual](https://git-scm.com/docs/user-manual)
+*   [The git glossary (git 术语表)](https://git-scm.com/docs/gitglossary)
+*   [Everyday git commands (日常 git 命令)](https://git-scm.com/docs/giteveryday)
+*   [The git user manual (git 用户手册)](https://git-scm.com/docs/user-manual)

@@ -1,59 +1,55 @@
-# Maths in Lean: category theory
+# Lean 中的数学：范畴论
 
-The `Category` typeclass is defined in [`Mathlib.CategoryTheory.Category.Basic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html).
-It depends on the type of the objects, so for example we might write `Category (Type u)` if we're talking about a category whose objects are types (in universe `u`).
+`Category` 类型类 (typeclass) 定义在 [`Mathlib.CategoryTheory.Category.Basic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html)。
+它依赖于对象的类型，因此，例如，如果我们讨论的是一个其对象为类型（在 universe `u` 中）的范畴，我们可能会写成 `Category (Type u)`。
 
-Functors (which are a structure, not a typeclass) are defined in [`Mathlib.CategoryTheory.Functor.Basic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Functor/Basic.html),
-along with identity functors and functor composition.
+函子 (Functors)（它是一个结构体，而不是类型类）定义在 [`Mathlib.CategoryTheory.Functor.Basic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Functor/Basic.html) 中，
+以及单位函子 (identity functors) 和函子复合 (functor composition)。
 
-Natural transformations, and their compositions, are defined in [`Mathlib.CategoryTheory.NatTrans`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/NatTrans.html).
+自然变换 (Natural transformations) 及其复合定义在 [`Mathlib.CategoryTheory.NatTrans`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/NatTrans.html) 中。
 
-The category of functors and natural transformations between fixed categories `C` and `D`
-is defined in [`Mathlib.CategoryTheory.Functor.Category`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Functor/Category.html).
+在固定的范畴 `C` 和 `D` 之间，由函子和自然变换构成的范畴定义在 [`Mathlib.CategoryTheory.Functor.Category`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Functor/Category.html) 中。
 
-Cartesian products of categories, functors, and natural transformations appear in
-[`Mathlib.CategoryTheory.Products.Basic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Products/Basic.html).
+范畴、函子和自然变换的笛卡尔积 (Cartesian products) 出现在 [`Mathlib.CategoryTheory.Products.Basic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Products/Basic.html) 中。
 
-The category of types, and the hom pairing functor, are defined in [`Mathlib.CategoryTheory.Types`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Types.html).
+类型范畴 (category of types) 以及 hom 配对函子 (hom pairing functor) 定义在 [`Mathlib.CategoryTheory.Types`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Types.html) 中。
 
-## Notation
+## 记法
 
-### Categories
+### 范畴
 
-We use the `⟶` (`\hom`) arrow to denote sets of morphisms, as in `X ⟶ Y`.
-This leaves the actual category implicit; it is inferred from the type of `X` and `Y` by typeclass inference.
+我们使用 `⟶` (`\hom`) 箭头来表示态射 (morphisms) 的集合，如 `X ⟶ Y`。
+这使得实际的范畴是隐式的；它通过类型类推断 (typeclass inference) 从 `X` 和 `Y` 的类型中推断出来。
 
-We use `𝟙` (`\b1`) to denote identity morphisms, as in `𝟙 X`.
+我们使用 `𝟙` (`\b1`) 来表示单位态射 (identity morphisms)，如 `𝟙 X`。
 
-We use `≫` (`\gg`) to denote composition of morphisms, as in `f ≫ g`, which means "`f` followed by `g`".
-You may prefer write composition in the usual convention, using `⊚` (`\oo` or `\circledcirc`), as in `f ⊚ g` which means "`g` followed by `f`". To do so you'll need to add this notation locally, via
+我们使用 `≫` (`\gg`) 来表示态射的复合，如 `f ≫ g`，表示“先 `f` 后 `g`”。
+你可能更喜欢用常规的约定来写复合，使用 `⊚` (`\oo` 或 `\circledcirc`)，如 `f ⊚ g`，表示“先 `g` 后 `f`”。为此，你需要通过以下方式局部地添加此记法：
 
 ```lean
 local notation f ` ⊚ `:80 g:80 := category.comp g f
 ```
 
-### Isomorphisms
+### 同构
 
-We use `≅` for isomorphisms.
+我们使用 `≅` 表示同构 (isomorphisms)。
 
-### Functors
+### 函子
 
-We use `⥤` (`\func`) to denote functors, as in `C ⥤ D` for the type of functors from `C` to `D`.
+我们使用 `⥤` (`\func`) 来表示函子，如 `C ⥤ D` 表示从 `C` 到 `D` 的函子类型。
 
-We use `F.obj X` to denote the action of a functor on an object.
-We use `F.map f` to denote the action of a functor on a morphism`.
+我们使用 `F.obj X` 表示函子在对象上的作用。
+我们使用 `F.map f` 表示函子在态射上的作用。
 
-Functor composition can be written as `F ⋙ G`.
+函子复合可以写为 `F ⋙ G`。
 
-### Natural transformations
+### 自然变换
 
-We use `τ.app X` for the components of a natural transformation.
+我们使用 `τ.app X` 表示自然变换的分量 (components)。
 
-Otherwise, we mostly use the notation for morphisms in any category:
+在其他方面，我们主要使用任何范畴中态射的记法：
 
-We use `F ⟶ G` (`\hom` or `-->`) to denote the type of natural transformations, between functors
-`F` and `G`.
-We use `F ≅ G` (`\iso`) to denote the type of natural isomorphisms.
+我们使用 `F ⟶ G` (`\hom` 或 `-->`) 来表示函子 `F` 和 `G` 之间的自然变换类型。
+我们使用 `F ≅ G` (`\iso`) 来表示自然同构 (natural isomorphisms) 的类型。
 
-For vertical composition of natural transformations we just use `≫`. For horizontal composition,
-use `hcomp`.
+对于自然变换的垂直复合 (vertical composition)，我们只使用 `≫`。对于水平复合 (horizontal composition)，使用 `hcomp`。

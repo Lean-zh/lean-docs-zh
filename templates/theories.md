@@ -1,28 +1,24 @@
 <div class="alert alert-info">
 <p>
-We are currently updating the Lean community website to describe working with Lean 4,
-but most of the information you will find here today still describes Lean 3.
+我们目前正在更新 Lean 社区网站，以介绍 Lean 4 的使用方法，但您今天在这里找到的大部分信息仍然是关于 Lean 3 的。
 </p>
 <p>
-Pull requests updating this page for Lean 4 are very welcome.
-There is a link at the bottom of this page.
+我们非常欢迎为本页面提供 Lean 4 更新的拉取请求。页面底部有一个链接。
 </p>
 <p>
-Please visit <a href="https://leanprover.zulipchat.com">the leanprover zulip</a>
-and ask for whatever help you need during this transitional period!
+请访问 <a href="https://leanprover.zulipchat.com">the leanprover zulip</a>，并在此过渡期间寻求您需要的任何帮助！
 </p>
 <p>
-The website for Lean 3 has been <a href="https://leanprover-community.github.io/lean3/">archived</a>.
-If you need to link to Lean 3 specific resources please link there.
+Lean 3 的网站已被<a href="https://leanprover-community.github.io/lean3/">归档</a>。如果您需要链接到 Lean 3 的特定资源，请链接到那里。
 </p>
 </div>
 
-# Lean mathematical theories
+# Lean 数学理论
 
-The following document some theories spanning multiple files.
+以下文档介绍了一些跨越多个文件的理论。
 
-* [Sets and set-like objects](theories/sets.html)
-* [Category theory](theories/category_theory.html)
-* [Linear algebra](theories/linear_algebra.html)
-* [The natural numbers](theories/naturals.html)
-* [Topological, uniform and metric spaces](theories/topology.html)
+* [集合与类集合对象](theories/sets.html)
+* [范畴论](theories/category_theory.html)
+* [线性代数](theories/linear_algebra.html)
+* [自然数](theories/naturals.html)
+* [拓扑空间、一致空间和度量空间](theories/topology.html)

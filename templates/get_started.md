@@ -1,48 +1,32 @@
-# Get started with Lean
+# Lean 入门
 
-There are two ways for you to start interacting with Lean. Installing it on your own computer
-will give you the most satisfactory experience. However some Lean projects offer ways of
-interacting with them via the cloud, which requires no local installation.
+您可以通过两种方式开始与 Lean 互动。在您自己的计算机上安装它会给您最满意的体验。然而，一些 Lean 项目提供了通过云端与之互动的方式，这不需要本地安装。
 
-## Without a local installation
+## 无需本地安装
 
-If you only want to try Lean without installing it, you can try running it in
-the cloud using Gitpod or GitHub codespaces. For instance you can read
-the book [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/) while 
-doing the exercises [on Gitpod](https://gitpod.io/#/https://github.com/leanprover-community/mathematics_in_lean). 
-Note this Gitpod option requires you to create an account somewhere. Note also that 
-Gitpod is being deprecated in April 2025.
+如果您只是想在不安装 Lean 的情况下尝试它，您可以使用 Gitpod 或 GitHub codespaces 在云端运行它。例如，您可以在阅读 [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/) 这本书的同时，[在 Gitpod 上](https://gitpod.io/#/https://github.com/leanprover-community/mathematics_in_lean) 进行练习。请注意，这个 Gitpod 选项需要您在某个地方创建一个账户。另请注意，Gitpod 将于 2025 年 4 月弃用。
 
-## Installing Lean and creating a project
+## 安装 Lean 并创建项目
 
-The important thing to know about a local installation is that it is a two step process. 
-First you need to install the software. But this is not enough; to run Lean on a file,
-the file must be part of a Lean project. 
+关于本地安装，需要了解的重要一点是，这是一个两步过程。首先，您需要安装软件。但这还不够；要在文件上运行 Lean，该文件必须是 Lean 项目 (Lean project) 的一部分。
 
-Once you have installed Lean, you can either install a Lean project from the internet
-(for example the [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/)
-project) or you can create your own project.
+安装 Lean 后，您可以从互联网上安装一个 Lean 项目（例如 [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/) 项目），也可以创建自己的项目。
 
-The recommended way to install Lean and to get working with a project is to follow the
-[instructions in the official Lean manual](https://docs.lean-lang.org/lean4/doc/quickstart.html).
-The manual explains a simple point-and-click method for both installing Lean, and creating
-or downloading a project.
+安装 Lean 并开始使用项目的推荐方法是遵循 [Lean 官方手册中的说明](https://docs.lean-lang.org/lean4/doc/quickstart.html)。该手册解释了一种简单的点击式方法，用于安装 Lean、创建或下载项目。
 
-After you have followed these instructions, you'll probably want to [learn Lean](learn.html)!
+遵循这些说明后，您可能就想 [学习 Lean](learn.html) 了！
 
-## Command line
+## 命令行
 
-The community used to maintain its own installation instructions. These contain more
-low-level instructions on how to install Lean and to create projects. They may
-be out of date.
+社区过去曾维护自己的安装说明。这些说明包含更多关于如何安装 Lean 和创建项目的底层指令。它们可能已经过时。
 
-### Legacy installation instructions
+### 旧版安装说明
 
 * [Debian/Ubuntu](install/debian.html)
-* [Other linux](install/linux.html)
+* [其他 Linux](install/linux.html)
 * [MacOS](install/macos.html)
 * [Windows](install/windows.html)
 
-### Legacy project installation instructions
+### 旧版项目安装说明
 
-* [Creating a project](install/project.html)
+* [创建项目](install/project.html)

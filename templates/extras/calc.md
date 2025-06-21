@@ -1,11 +1,8 @@
-# How to use calc
+# 如何使用 calc
 
-`calc` is an environment -- so a "mode" like tactic mode, term mode and
-[conv mode](conv.html). Documentation and basic examples for how to use
-it are in Theorem Proving In Lean, in
-[section 4](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#calculational-proofs).
+`calc` 是一个环境——也就是一种“模式”，类似于 `tactic mode`、`term mode` 和 [conv mode](conv.html)。关于如何使用它的文档和基本示例可以在《Theorem Proving In Lean》的[第 4 节](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#calculational-proofs)中找到。
 
-Basic example usage:
+基本用法示例：
 
 ```lean
 example (a b c : ℕ) (H1 : a = b + 1) (H2 : b = c) : a = c + 1 :=
@@ -13,8 +10,7 @@ calc a = b + 1 := H1
      _ = c + 1 := by rw [H2]
 ```
 
-`calc` is also available in tactic mode. You can leave `?_`s to create a
-new goal:
+`calc` 在 `tactic mode` 中也可用。你可以留下 `?_` 来创建一个新的目标：
 ```lean
 example (a b c : ℕ) (H1 : a = b + 1) (H2 : b = c) : a = c + 1 := by
   calc
@@ -23,20 +19,13 @@ example (a b c : ℕ) (H1 : a = b + 1) (H2 : b = c) : a = c + 1 := by
   · exact H1
   · rw [H2]
 ```
-In fact, `calc A = B := H ...` in tactic mode functions exactly like a
-call to `refine (calc A = B := H ...)`.
+事实上，在 `tactic mode` 中，`calc A = B := H ...` 的功能与调用 `refine (calc A = B := H ...)` 完全相同。
 
-## Getting effective feedback while using calc
+## 在使用 calc 时获得有效反馈
 
-To get helpful error messages, keep the calc structure even before the
-proof is complete. Use `_` as in the example above or `sorry` to stand
-for missing justifications. `sorry` will suppress error messages
-entirely, while `_` will generate a guiding error message.
+为了获得有用的错误信息，即使在证明完成之前，也要保持 `calc` 的结构。使用上面示例中的 `_` 或 `sorry` 来代表缺失的理由。`sorry` 会完全抑制错误信息，而 `_` 则会生成一条引导性的错误信息。
 
-If the structure of calc is incorrect (e.g., missing `:=` or the
-justification after it), you may see error messages that are obscure
-and/or red squiggles that end up under a random `_`. To avoid these,
-you might first populate a skeleton proof such as:
+如果 `calc` 的结构不正确（例如，缺少 `:=` 或其后的理由），你可能会看到晦涩的错误信息和/或在某个随机的 `_` 下方出现的红色波浪线。为避免这些问题，你可以先填充一个骨架证明，例如：
 
 ```lean
 example (A B C D : ℝ ) : A = D :=
@@ -45,7 +34,7 @@ calc A = B := sorry
      _ = D := sorry
 ```
 
-and then fill in the `sorry` and `_` gradually.
+然后再逐步填充 `sorry` 和 `_`。
 
 
 ```lean
@@ -56,13 +45,11 @@ example (A B C D : ℝ ) : A = D := by
      sorry
 ```
 
-There is also a Calc widget that makes this easier here is a [video](https://youtu.be/8MFGhOWeCNE?t=1834) demonstrating it.
+还有一个 Calc 小部件可以使这个过程更简单，这里有一个[视频](https://youtu.be/8MFGhOWeCNE?t=1834)演示了它。
 
-## Using operators other than equality
+## 使用等号以外的运算符
 
-Many of the basic examples in TPIL use equality for most or all of
-the operators, but actually `calc` will work with any relation for which
-we have created an instance of `Trans`
+《TPIL》中的许多基本示例都使用等号作为大部分或全部的运算符，但实际上 `calc` 可以用于任何我们为其创建了 `Trans` 实例的关系。
 
 ```lean
 def r : ℕ → ℕ → Prop := sorry
@@ -79,9 +66,9 @@ calc a *** b := H1
      _ *** c := H2
 ```
 
-## Using more than one operator
+## 使用多个运算符
 
-This is possible, for example:
+这是可以的，例如：
 
 ```lean
 theorem T2 (a b c d : ℕ)
@@ -94,28 +81,18 @@ theorem T2 (a b c d : ℕ)
 
  ```
 
-What is actually going on here? The proofs themselves are not a mystery,
-for example `Nat.succ_le_succ h2` is a proof of `b + 1  ≤ c + 1`. The
-clever part is that lean can put all of these together to correctly
-deduce that if `U = V < W ≤ X < Y` then `U < Y`. Note the following subtlety:
-given `U op1 V` and `V op2 W` Lean
-has to conclude `U op3 W` for some operator, which might be `op1`
-or `op2` (or even, as we shall see, a new operator). How is Lean
-doing this? The easiest case is when one of `op1` and `op2`
-is `=`. Lean knows
+这里到底发生了什么？证明本身并不神秘，例如 `Nat.succ_le_succ h2` 是 `b + 1 ≤ c + 1` 的一个证明。巧妙之处在于，Lean 可以将所有这些部分组合在一起，正确地推断出如果 `U = V < W ≤ X < Y`，那么 `U < Y`。注意以下微妙之处：给定 `U op1 V` 和 `V op2 W`，Lean 必须为某个运算符 `op3` 得出 `U op3 W` 的结论，这个运算符可能是 `op1` 或 `op2`（甚至，正如我们将看到的，是一个新的运算符）。Lean 是如何做到这一点的？最简单的情况是当 `op1` 和 `op2` 中有一个是 `=` 时。Lean 知道
 
 ```lean
 #check trans_rel_right -- {α : Sort u} {a b c : α} (r : α → α → Prop) (h₁ : a = b) (h₂ : r b c) : r a c
 #check trans_rel_left -- {α : Sort u} {a b c : α} (r : α → α → Prop) (h₁ : r a b) (h₂ : b = c) : r a c
 ```
 
-and uses them if one of the operators is an equality operator. If however neither
-operator is the equality operator, Lean looks through the instances of
-`Trans` and applies these instead.
+并且如果其中一个运算符是等号运算符，就会使用它们。然而，如果两个运算符都不是等号运算符，Lean 会查找 `Trans` 的实例并应用它们。
 
-## Using user-defined operators
+## 使用用户自定义的运算符
 
-It is as simple as creating the relevant `Trans` instances. For example
+这就像创建相关的 `Trans` 实例一样简单。例如
 
 ```lean
 def r : ℕ → ℕ → Prop := sorry
@@ -135,4 +112,4 @@ calc a **** b := H1
      _ ^^^^ c := H2
 ```
 
-This example shows us that the third operator `op3` can be different to both `op1` and `op2`.
+这个例子向我们展示了第三个运算符 `op3` 可以与 `op1` 和 `op2` 都不同。

@@ -1,88 +1,63 @@
-# How to speed up a Mathlib file
+# 如何加速 Mathlib 文件
 
-We explain how a slow Mathlib file can be made faster. These notes are based on
-the experiment carried out in Mathlib PR
-[#12412](https://github.com/leanprover-community/mathlib4/pull/12412).
+我们解释如何让一个缓慢的 Mathlib 文件变得更快。这些说明基于在 Mathlib 拉取请求 (PR) [#12412](https://github.com/leanprover-community/mathlib4/pull/12412) 中进行的实验。
 
-1. The first step is to find out which parts of the code are slow. To do so, 
-   add a line `set_option profiler true` after the `import` statements.
-   This will produce lines of the form `<blah> took <number>ms` (or even `<number>s`)
-   in the infoview, recording steps that took at least `100ms` (the lower bound in ms
-   can be adapted via `set_option profiler.threshold <num>`).
-2. For each such line, try to make the corresponding step faster following the
-   instructions below.
-3. The previous step can potentially be repeated with a lowered setting of
-   `profiler.threshold`, to find and speed up things that are not very slow,
-   but also not very fast. This will eventually deliver diminishing returns, however.
-4. Remove the profiler options again and PR!
+1. 第一步是找出代码的哪些部分是缓慢的。为此，请在 `import` 语句后添加一行 `set_option profiler true`。这将在信息视图 (infoview) 中产生形如 `<blah> took <number>ms`（甚至 `<number>s`）的行，记录耗时至少 `100ms` 的步骤（毫秒单位的下限可以通过 `set_option profiler.threshold <num>` 进行调整）。
+2. 对于每一行这样的信息，请按照下面的说明尝试让相应的步骤变得更快。
+3. 上一步可以潜在地通过降低 `profiler.threshold` 的设置来重复，以找出并加速那些不是非常慢，但也不是很快的部分。然而，这最终会带来递减的回报。
+4. 再次移除分析器 (profiler) 选项，然后提交 PR！
 
-## Dealing with specific slow steps
+## 处理特定的缓慢步骤
 
-Here we explain how one can try to speed up various parts of the code that cause
-the profiler to produce messages in the infoview.
+在这里，我们解释如何尝试加速代码中导致分析器 (profiler) 在信息视图 (infoview) 中产生消息的各个部分。
 
-### `typeclass inference of <name> took <a long time>`
+### `类型类推断 (typeclass inference) of <name> 耗时过长`
 
-1. Add `set_option trace.Meta.synthInstance true in` immediately before the declaration
-   causing the message.
-2. Look at the generated instance synthesis trace in the infoview and find the instance(s)
-   of `<name>` that are slow.
-3. Use `#synth <name> <args>` before the declaration (possibly temporarily adding `variable`s
-   to the context if needed) to obtain a suitable term providing the instance.
-4. Add a line
-   `@[local instance] lemma/def <some name> <possibly some args> : <name> <args> := <term>`
-   before the declaration (or near the beginning of the current section/namespace).
-   If the instance needs some local context from within the proof, add
-   `have/let <some name> <possibly some args> : <name> <args> := <term>` at a suitable
-   place in the proof instead.
-5. Remove the `set_option` line before the declaration.
+1. 在引起该消息的声明 (declaration) 之前，立即添加 `set_option trace.Meta.synthInstance true in`。
+2. 查看信息视图 (infoview) 中生成的实例合成跟踪 (instance synthesis trace)，并找到 `<name>` 中缓慢的实例。
+3. 在声明之前使用 `#synth <name> <args>`（如果需要，可以临时向上下文中添加 `variable`）以获得提供该实例的合适项 (term)。
+4. 在声明之前（或在当前 section/namespace 的开头附近）添加一行
+   `@[local instance] lemma/def <some name> <possibly some args> : <name> <args> := <term>`。
+   如果实例需要证明内部的某些局部上下文，则应在证明的适当位置添加
+   `have/let <some name> <possibly some args> : <name> <args> := <term>`。
+5. 移除声明前的 `set_option` 行。
 
-It may be the case that `<term>` again triggers a slow instance search, so this procedure
-may need to be repeated.
+`<term>` 可能会再次触发缓慢的实例搜索，因此这个过程可能需要重复。
 
-**Trade-off:** Littering files with local instances is not nice and goes somewhat against
-the purpose of the type class system.
+**权衡：** 在文件中散布局部实例并不美观，并且在某种程度上违背了类型类 (type class) 系统的初衷。
 
-Of course, an even better solution would be to find out *what* causes the type class search
-to be slow in the cases discovered and then find a fix for that. This would likely benefit
-many other files throughout Mathlib.
+当然，一个更好的解决方案是找出在发现的情况下，**什么**导致了类型类搜索缓慢，然后找到修复方法。这很可能会使 Mathlib 中的许多其他文件受益。
 
-### `simp took <a long time>`
+### `simp 耗时过长`
 
-Replace the relevant `simp/simpa` call by `simp?/simpa?` and click on the `Try this:`
-suggestion to replace it by a `simp/simpa only` call. In some cases it is also possible
-to prune the list of lemmas to some extent.
+将相关的 `simp/simpa` 调用替换为 `simp?/simpa?`，并点击 `Try this:` 建议，将其替换为 `simp/simpa only` 调用。在某些情况下，也可以在一定程度上精简引理列表。
 
-**Trade-off:** Proofs can get several dense lines longer, and will now mention many lemmas by name, each of which might be renamed in the future, breaking your proof.
+**权衡：** 证明可能会增加好几行密集的代码，并且现在会按名称提及许多引理，其中任何一个将来都可能被重命名，从而破坏你的证明。
 
-### `elaboration took <a long time>`
+### `精化 (elaboration) 耗时过长`
 
-Look for `_`s in the declaration that triggers it, find out what they are filled by,
-and replace them by the corresponding explicit arguments.
+在触发该消息的声明中查找 `_`，找出它们被填充的内容，并用相应的显式参数替换它们。
 
-**Trade-off:** If the explicit arguments are long, this makes the statement longer
-and potentially harder to read.
+**权衡：** 如果显式参数很长，这会使语句更长，并可能更难阅读。
 
-### `compilation of <name> took <a long time>`
+### `编译 (compilation) of <name> 耗时过长`
 
-Try to add `noncomputable` before the definition.
+尝试在定义前添加 `noncomputable`。
 
-**Trade-off:** Definition is no longer kernel-reducible, but this should not be a
-problem in most cases.
+**权衡：** 定义不再是内核可归约的 (kernel-reducible)，但这在大多数情况下应该不是问题。
 
-### `tactic execution of <tactic> took <a long time>`
+### `<tactic> 的策略执行 (tactic execution) 耗时过长`
 
-Try to replace the slow tactic by calls to simpler ones.
+尝试用对更简单策略的调用来替换慢的 tactic。
 
-* For example, a slow `nontriviality ... using ...` can be replaced by
+* 例如，一个缓慢的 `nontriviality ... using ...` 可以被替换为
   ```lean
   rcases subsingleton_or_nontrivial ... with H | H
-  · -- get `Subsingleton` case out of the way
+  · -- 处理 `Subsingleton` 的情况
     ...
-  -- now we have `Nontrivial ...`
+  -- 现在我们有了 `Nontrivial ...`
   ```
 
-* A slow `convert` can be avoided by doing the rewrites that are done following it
-first and then using `refine` or `exact`.
+* 可以通过先执行其后的重写，然后使用 `refine` 或 `exact` 来避免缓慢的 `convert`。
 
-**Trade-off:** The proof may get a bit longer and more pedestrian.
+**权衡：** 证明可能会变得稍长一些，也更按部就班。
