@@ -2,7 +2,7 @@
 {% block content %}
 
   <div class="mx-auto mt-5" style="max-width: 30em">
-    <img src="img/community_logo_emb.svg" alt="Lean community"
+    <img src="img/community_logo_emb.svg" alt="Lean 社区"
       height="146" width="278"
                 class="img-fluid w-100"/>
   </div>
@@ -13,56 +13,50 @@
    <div class="card-deck">
       <div class="card">
         <div class="card-body">
-		  <h4>Try it!</h4>
+		  <h4>试一试！</h4>
           <p>
-          You can
-          try Lean in your web browser,
-          install it in an isolated folder,
-          or go for the full install.
-          Lean is free, open source software. It works on
-          Linux, Windows, and MacOS.
+          你可以在网页浏览器中试用 Lean，也可以将其安装在隔离的文件夹中，或者进行完整安装。Lean 是免费的开源软件，支持 Linux、Windows 和 MacOS 系统。
           </p>
 		</div>
 		<ul class="list-group list-group-flush border-top">
           <li class="list-group-item"><a href="https://live.lean-lang.org/"
-                 >Try the online version of Lean</a></li>
+                 >在线试用 Lean</a></li>
           <li class="list-group-item"><a href="get_started.html#regular-install"
-                 >Installation instructions</a></li>
-          <li class="list-group-item"><a href="install/project.html">Working on Lean projects</a></li>
+                 >安装说明</a></li>
+          <li class="list-group-item"><a href="install/project.html">参与 Lean 项目</a></li>
         </ul>
       </div>
       <div class="card">
         <div class="card-body">
-		<h4>Learn to Lean!</h4>
+		<h4>学习 Lean！</h4>
 		<p>
-    You can learn by playing a game, following tutorials,
-    or reading books.
+    你可以通过玩游戏、看教程或阅读书籍来学习。
 		</p>
 		</div>
 		<ul class="list-group list-group-flush border-top">
-          <li class="list-group-item"><a href="learn.html">Learning resources</a></li>
+          <li class="list-group-item"><a href="learn.html">学习资源</a></li>
           <li class="list-group-item"><a href="https://lean-lang.org/theorem_proving_in_lean4/"
-                 >Theorem Proving in Lean 4</a> (an introduction)</li>
+                 >《用 Lean 4 证明定理》</a> (入门)</li>
           <li class="list-group-item"><a href="https://leanprover-community.github.io/mathlib4_docs"
-                 >API documentation of mathlib</a></li>
+                 >mathlib 的 API 文档</a></li>
         </ul>
       </div>
       <div class="card">
         <div class="card-body">
-		<h4>Meet the community!</h4>
+		<h4>加入社区！</h4>
 		<p>
-        Lean has very diverse and active community. It gathers mostly on
-    a <a href="https://leanprover.zulipchat.com/">Zulip chat</a>
-    and on <a href="https://github.com/leanprover-community/mathlib4">GitHub</a>.
-    You can get involved and join the fun!
+        Lean 拥有一个非常多元化和活跃的社区。大家主要聚集在
+    <a href="https://leanprover.zulipchat.com/">Zulip 聊天室</a>
+    和 <a href="https://github.com/leanprover-community/mathlib4">GitHub</a> 上。
+    欢迎你参与进来，共享乐趣！
 		</p>
 		</div>
 		<ul class="list-group list-group-flush border-top">
-          <li class="list-group-item"><a href="meet.html">Meet us</a></li>
+          <li class="list-group-item"><a href="meet.html">认识我们</a></li>
           <li class="list-group-item"><a href="contribute/index.html"
-                 >How to contribute</a></li>
+                 >如何贡献</a></li>
           <li class="list-group-item"><a href="papers.html"
-                 >Papers involving Lean</a></li>
+                 >涉及 Lean 的论文</a></li>
         </ul>
       </div>
     </div>
@@ -70,7 +64,7 @@
 
 		{{ what_is | md }}
 
-  <h2>Formalized with Lean and mathlib</h2>
+  <h2>使用 Lean 和 mathlib 形式化的项目</h2>
 
   <div class="row row-cols-1 row-cols-md-2">
 	{% for formalization in formalizations %}
@@ -78,11 +72,11 @@
 		<div class="card" >
 		  <div class="card-body">
 			  <h5 class="card-title">{{ formalization.title }}</h5>
-			<h6 class="card-subtitle mb-2 text-muted">by {{ formalization.authors }}</h6>
+			<h6 class="card-subtitle mb-2 text-muted">作者：{{ formalization.authors }}</h6>
 			<p class="card-text">{{ formalization.abstract }}</p>
 		  </div>
           <div class="card-footer text-right bg-white">
-            <small><a href="{{ formalization.url | url }}" class="card-link">Learn more</a></small>
+            <small><a href="{{ formalization.url | url }}" class="card-link">了解更多</a></small>
           </div>
 		</div>
 	  </div>
@@ -90,8 +84,7 @@
   </div>
 
   <p class="mt-2">
-    You can find many more in the <a href="papers.html">list of papers</a>
-    and <a href="lean_projects.html">list of projects</a>.
+    你可以在<a href="papers.html">论文列表</a>和<a href="lean_projects.html">项目列表</a>中找到更多内容。
   </p>
 
   {% endblock %}

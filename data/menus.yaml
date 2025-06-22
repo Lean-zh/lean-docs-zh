@@ -1,60 +1,60 @@
-- title: Community
+- title: 社区
   items:
-    - Zulip chat: https://leanprover.zulipchat.com/
+    - Zulip 聊天室: https://leanprover.zulipchat.com/
     - GitHub: https://github.com/leanprover-community/mathlib4
-    - Blog: blog
-    - Community information: meet.html
-    - Community guidelines: meet.html#community-guidelines
-    - Teams: teams.html
-    - Papers about Lean: papers.html
-    - Projects using Lean: lean_projects.html
-    - Teaching using Lean: teaching/index.html
-    - Events: events.html
+    - 博客: blog
+    - 社区信息: meet.html
+    - 社区准则: meet.html#community-guidelines
+    - 团队: teams.html
+    - 关于 Lean 的论文: papers.html
+    - 使用 Lean 的项目: lean_projects.html
+    - 使用 Lean 进行教学: teaching/index.html
+    - 活动: events.html
 
-- title: Installation
+- title: 安装
   items:
-    - Get started: get_started.html
-    - Online version (no installation): https://live.lean-lang.org/
-    - Using Lake (build system): install/project.html
+    - 开始使用: get_started.html
+    - 在线版本 (无需安装): https://live.lean-lang.org/
+    - 使用 Lake (构建系统): install/project.html
 
-- title: Documentation
+- title: 文档
   items:
-    - Learning resources (start here): learn.html
-    - API documentation: https://leanprover-community.github.io/mathlib4_docs
-    - Declaration search (Loogle): https://loogle.lean-lang.org/
-    - Language reference: https://lean-lang.org/doc/reference/latest/
-    - Tactic list: https://leanprover-community.github.io/mathlib-manual/html-multi/
-    - Calc mode: extras/calc.html
-    - Conv mode: extras/conv.html
-    - Simplifier: extras/simp.html
-    - Well-founded recursion: extras/well_founded_recursion.html
-    - Speeding up Lean files: extras/speedup.html
-    - About MWEs: mwe.html
-    - Glossary: glossary.html
+    - 学习资源 (从这里开始): learn.html
+    - API 文档: https://leanprover-community.github.io/mathlib4_docs
+    - 声明搜索 (Loogle): https://loogle.lean-lang.org/
+    - 语言参考: https://lean-lang.org/doc/reference/latest/
+    - 策略列表: https://leanprover-community.github.io/mathlib-manual/html-multi/
+    - 计算模式 (Calc mode): extras/calc.html
+    - 转换模式 (Conv mode): extras/conv.html
+    - 化简器 (Simplifier): extras/simp.html
+    - 良基递归: extras/well_founded_recursion.html
+    - 加速 Lean 文件编译: extras/speedup.html
+    - 关于最小工作示例 (MWE): mwe.html
+    - 术语表: glossary.html
 
-- title: Library overviews
+- title: 库概览
   items:
-    - Library overview: mathlib-overview.html
-    - Undergraduate maths: undergrad.html
-    - Wiedijk's 100 theorems: 100.html
-    - 1000+ theorems: 1000.html
+    - 库概览: mathlib-overview.html
+    - 本科数学: undergrad.html
+    - Wiedijk 100 定理: 100.html
+    - 1000+ 定理: 1000.html
 
-- title: Theories
+- title: 理论
   items:
-    - Natural Numbers: theories/naturals.html
-    - Linear Algebra: theories/linear_algebra.html
-    - Sets and finite sets: theories/sets.html
-    - Topology: theories/topology.html
-    - Category Theory: theories/category_theory.html
+    - 自然数: theories/naturals.html
+    - 线性代数: theories/linear_algebra.html
+    - 集合与有限集: theories/sets.html
+    - 拓扑学: theories/topology.html
+    - 范畴论: theories/category_theory.html
 
-- title: Contributing
+- title: 贡献指南
   items:
-    - Pull request lifecycle: contribute/index.html
-    - Git Guide for Mathlib4 Contributors: contribute/git.html
-    - Naming conventions: contribute/naming.html
-    - Code style guideline: contribute/style.html
-    - Documentation style: contribute/doc.html
-    - Commit conventions: contribute/commit.html
-    - Pull request review guide: contribute/pr-review.html
-    - Contribution statistics: mathlib_stats.html
-    - Tags and branches: contribute/tags_and_branches.html
+    - Pull Request 生命周期: contribute/index.html
+    - Mathlib4 贡献者 Git 指南: contribute/git.html
+    - 命名约定: contribute/naming.html
+    - 代码风格指南: contribute/style.html
+    - 文档风格指南: contribute/doc.html
+    - Commit 约定: contribute/commit.html
+    - Pull Request 审查指南: contribute/pr-review.html
+    - 贡献统计: mathlib_stats.html
+    - 标签与分支: contribute/tags_and_branches.html

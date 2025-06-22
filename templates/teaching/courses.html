@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% block title %}Courses using Lean{% endblock %}
+{% block title %}使用 Lean 的课程{% endblock %}
 {% block extracss %}
 <style>
 .course-details {
@@ -18,17 +18,17 @@ div.dtsp-searchPane div.dataTables_scrollBody {
 {% endblock %}
 {% block content %}
 
-<h1>Courses using Lean</h1>
+<h1>使用 Lean 的课程</h1>
 
 <p>
-  We maintain a list here of past and future courses either using Lean to teach mathematics,
-  or directly teaching Lean as an interactive theorem prover or programming language.
-  Please add courses by making a pull request editing
+  我们在此维护一个使用 Lean 教授数学，或直接教授 Lean 作为交互式定理证明器或编程语言的过往及未来课程列表。
+  请通过编辑
   <a
-    href="https://github.com/leanprover-community/leanprover-community.github.io/blob/lean4/data/courses.yaml">courses.yaml</a>.
+    href="https://github.com/leanprover-community/leanprover-community.github.io/blob/lean4/data/courses.yaml">courses.yaml</a>
+  文件并提交拉取请求 (pull request) 来添加课程。
 </p>
 <p>
-Select tags to start filtering:
+选择标签以开始筛选：
 <br>
 {% for tag in tags %}
 <span class="course-tag badge">{{ tag }}</span> 
@@ -39,11 +39,11 @@ Select tags to start filtering:
   <thead>
     <tr>
       <th></th>
-      <th>Instructor</th>
-      <th>Title</th>
-      <th>Location</th>
-      <th>Year</th>
-      <th>Tags</th>
+      <th>讲师</th>
+      <th>标题</th>
+      <th>地点</th>
+      <th>年份</th>
+      <th>标签</th>
     </tr>
   </thead>      
   <tbody>
@@ -77,22 +77,22 @@ var formatExtra = function(idx){
     contents = "<ul class=\"course-details\">";
 
     if (data.website != "None") {
-            contents += "<li><strong>Website: </strong><a href=\"" + data.website + "\">" + data.website + "</a></li>" 
+            contents += "<li><strong>网站：</strong><a href=\"" + data.website + "\">" + data.website + "</a></li>" 
     };
     if (data.repository != "None") {
-            contents += "<li><strong>Repository: </strong><a href=\"" + data.repository + "\">" + data.repository + "</a></li>" 
+            contents += "<li><strong>代码仓库：</strong><a href=\"" + data.repository + "\">" + data.repository + "</a></li>" 
     };
     if (data.material != "None") {
-            contents += "<li><strong>Material: </strong><a href=\"" + data.material + "\">" + data.material + "</a></li>" 
+            contents += "<li><strong>材料：</strong><a href=\"" + data.material + "\">" + data.material + "</a></li>" 
     };
     if (data.summary != "None") {
-            contents += "<li><strong>Summary: </strong>" + data.summary + "</a></li>" 
+            contents += "<li><strong>简介：</strong>" + data.summary + "</a></li>" 
     };
     if (data.notes != "None") {
-            contents += "<li><strong>Notes: </strong> " + data.notes + "</li>" 
+            contents += "<li><strong>笔记：</strong> " + data.notes + "</li>" 
     };
     if (data.experiences != "None") {
-            contents += "<li><strong>Experiences: </strong> " + data.experiences + "</li>" 
+            contents += "<li><strong>经验分享：</strong> " + data.experiences + "</li>" 
     };
     contents += "</ul>";
 

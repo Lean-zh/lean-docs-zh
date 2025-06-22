@@ -1,267 +1,170 @@
 -
   name: Jeremy Avigad
   descr: |
-       Jeremy is a Professor of Philosophy at Carnegie Mellon University
-       (USA).  He did a PhD in mathematical logic at Berkeley, and has
-       been formalizing mathematics since 2002, in Isabelle, Coq and
-       Lean.
+       Jeremy 是卡内基梅隆大学 (美国) 的哲学教授。他在伯克利大学获得了数理逻辑博士学位，自 2002 年以来，他一直在使用 Isabelle、Coq 和 Lean 进行数学形式化。
   img: jeremy.png
 -
   name: Anne Baanen
   descr: |
-       Anne is a Mathematical Research Engineer at the Lean FRO. They did a PhD
-       on formalizing algebraic number theory at Vrije Universiteit Amsterdam
-       (Netherlands). They have been formalizing proofs in mathematics and
-       computer science since 2018.
+       Anne 是 Lean FRO 的一名数学研究工程师。他们在阿姆斯特丹自由大学 (荷兰) 获得了关于代数数论形式化的博士学位。自 2018 年以来，他们一直在进行数学和计算机科学领域的证明形式化工作。
   img: anne.jpg
 -
   name: Matthew Robert Ballard
   descr: |
-       Matt is a Professor of Mathematics at the University of South Carolina
-       (Columbia, USA). He did a PhD on derived categories in algebraic
-       geometry at the University of Washington (Seattle, USA).
-       He has been formalizing mathematics since 2020.
+       Matt 是南卡罗来纳大学 (美国哥伦比亚) 的数学教授。他在华盛顿大学 (美国西雅图) 获得了关于代数几何中导范畴的博士学位。他自 2020 年以来一直在进行数学形式化工作。
   img: mrb.png
 -
   name: Reid Barton
   descr: |
-       Reid is a post-doc at the University of Pittsburgh (USA). He did a PhD
-       in algebraic topology in Harvard. He worked on the Glasgow
-       Haskell Compiler, and has been formalizing mathematics since
-       2017.
+       Reid 是匹兹堡大学 (美国) 的博士后。他在哈佛大学获得了代数拓扑学博士学位。他曾参与格拉斯哥 Haskell 编译器的开发工作，并自 2017 年以来一直在进行数学形式化。
   img: reid.jpg
 -
   name: Riccardo Brasca
   descr: |
-      Riccardo is an Associate Professor of Mathematics at Université
-      Paris Cité (France). He did a PhD in number theory in Milan. He has
-      been formalizing mathematics since 2020.
+      Riccardo 是巴黎西岱大学 (法国) 的数学副教授。他在米兰获得了数论博士学位。他自 2020 年以来一直在进行数学形式化工作。
   img: riccardo.jpg
 -
   name: Kevin Buzzard
   descr: |
-      Kevin is a professor of pure mathematics at Imperial College
-      London. He did a PhD under Richard Taylor in Cambridge UK.
-      He has been formalising mathematics since 2017.
+      Kevin 是伦敦帝国学院的纯粹数学教授。他在英国剑桥大学师从 Richard Taylor 获得博士学位。他自 2017 年以来一直在进行数学形式化工作。
   img: kbuzzard.jpg
 -
   name: Mario Carneiro
   descr: |
-       Mario is a post-doc at Carnegie Mellon University (USA). He did
-       a PhD in pure & applied logic at CMU under Jeremy Avigad. He
-       has been formalizing mathematics since 2013, first in Metamath
-       and then in Lean.
+       Mario 是卡内基梅隆大学 (美国) 的博士后。他在卡内基梅隆大学师从 Jeremy Avigad 获得纯粹与应用逻辑博士学位。他自 2013 年以来一直在进行数学形式化，最初使用 Metamath，后来使用 Lean。
   img: mario.jpg
 -
   name: Bryan Gin-ge Chen
   descr: |
-       Bryan is a data-scientist in Dayton (USA). He did a PhD in
-       theoretical condensed matter physics at University of
-       Pennsylvania. He has been formalizing mathematics and helping
-       with the community infrastructure since 2018.
+       Bryan 是代顿 (美国) 的一名数据科学家。他在宾夕法尼亚大学获得了理论凝聚态物理学博士学位。自 2018 年以来，他一直在进行数学形式化并协助社区基础设施建设。
   img: bryan.jpg
 -
   name: Johan Commelin
   descr: |
-       Johan is universitair docent (assistant professor) at Utrecht University
-       (Netherlands) and a senior mathematical research engineer
-       at the Lean FRO.
-       He did a PhD in algebraic geometry in Nijmegen.
-       He has been formalizing mathematics since 2018.
+       Johan 是乌得勒支大学 (荷兰) 的 universitair docent (助理教授)，同时也是 Lean FRO 的高级数学研究工程师。他在奈梅亨获得了代数几何博士学位。他自 2018 年以来一直在进行数学形式化工作。
   img: Johan.jpg
 -
   name: Anatole Dedecker
   descr: |
-       Anatole is a PhD student in Mathematics, specifically operator algebras,
-       at Université Paris Cité (France). He has been formalizing
-       mathematics in Lean since 2020.
+       Anatole 是巴黎西岱大学 (法国) 的一名数学博士生，主攻算子代数方向。他自 2020 年以来一直在使用 Lean 进行数学形式化。
   img: anatole.jpg
 -
   name: Rémy Degenne
   descr: |
-       Rémy is a researcher at the Inria centre at the University of Lille (France).
-       He did a PhD in applied mathematics at Université Paris Cité. He has been
-       formalizing mathematics since 2020.
+       Rémy 是里尔大学 (法国) Inria 中心的研究员。他在巴黎西岱大学获得了应用数学博士学位。他自 2020 年以来一直在进行数学形式化工作。
   img: remy.jpg
 -
   name: Floris van Doorn
   descr: |
-       Floris is a professor in the mathematics department of the
-       University of Bonn (Germany) on formal mathematics.
-       He did a PhD in at Carnegie Mellon University,
-       and post-docs at the University of Pittsburgh and Université Paris-Saclay.
-       He has been formalizing mathematics since 2011, first in Coq and now in Lean.
+       Floris 是波恩大学 (德国) 数学系的形式化数学教授。他在卡内基梅隆大学获得博士学位，并先后在匹兹堡大学和巴黎-萨克雷大学从事博士后研究。他自 2011 年以来一直在进行数学形式化，最初使用 Coq，现在使用 Lean。
   img: floris.jpg
 -
   name: Frédéric Dupuis
   descr: |
-       Frédéric is an Associate Professor of Computer Science at the
-       Université de Montréal. His main area of research is quantum
-       information theory and cryptography. He has been formalizing
-       mathematics since 2020.
+       Frédéric 是蒙特利尔大学的计算机科学副教授。他的主要研究领域是量子信息论和密码学。他自 2020 年以来一直在进行数学形式化工作。
   img: frederic.jpg
 -
   name: Gabriel Ebner
   descr: |
-       Gabriel is an engineer at Microsoft Research (USA).
-       He did a PhD in computational proof theory at TU Wien (Austria).
-       He developed the current parallel compilation
-       infrastructure and interactive editor integration for Lean, and
-       has been formalizing mathematics since 2016.
+       Gabriel 是微软研究院 (美国) 的一名工程师。他在维也纳工业大学 (奥地利) 获得了计算证明论博士学位。他为 Lean 开发了当前的并行编译基础设施和交互式编辑器集成，并自 2016 年以来一直在进行数学形式化。
   img: gabriel.jpeg
 -
   name: Sébastien Gouëzel
   descr: |
-       Sébastien is a Professor of Mathematics at Université de Rennes 1
-       (France).  He did a PhD in dynamical systems in Orsay.  He has
-       been formalizing mathematics since 2016, first in Isabelle and
-       now in Lean.
+       Sébastien 是雷恩第一大学 (法国) 的数学教授。他在奥赛获得了动力系统博士学位。他自 2016 年以来一直在进行数学形式化，最初使用 Isabelle，现在使用 Lean。
   img: sebastien.jpg
 -
   name: Markus Himmel
   descr: |
-       Markus is a tech lead at the Lean FRO.
-       He did a master's in pure mathematics in Cambridge (UK).
-       He has been formalizing mathematics since 2020.
+       Markus 是 Lean FRO 的技术主管。他在剑桥大学 (英国) 获得了纯粹数学硕士学位。他自 2020 年以来一直在进行数学形式化工作。
   img: markus.jpg
 -
   name: Simon Hudon
   descr: |
-       Simon is a research engineer and proof engineer at Bedrock Systems where he
-       works on the formal verification of a novel hypervisor. He did a Master's
-       in computer science in Zurich and started a PhD in computer science in
-       in Toronto.  Has has been involved with formal verification
-       since 2010 including pen and paper proofs of correctness, smt-based proofs
-       and interactive proofs with Lean and Coq. He has been writing Lean tactics
-       since 2017.
+       Simon 是 Bedrock Systems 的一名研究工程师和证明工程师，致力于新型 hypervisor 的形式化验证工作。他在苏黎世获得了计算机科学硕士学位，并在多伦多开始攻读计算机科学博士学位。自 2010 年以来，他一直参与形式化验证，包括正确性的纸笔证明、基于 SMT 的证明以及使用 Lean 和 Coq 的交互式证明。他自 2017 年以来一直在编写 Lean 策略。
   img: Simon.jpg
 -
   name: Chris Hughes
   descr: |
-       Chris is a PhD student at INRIA with the Gallinette team in Nantes (France).
-       He has been formalizing mathematics since 2017.
+       Chris 是法国南特 INRIA Gallinette 团队的博士生。他自 2017 年以来一直在进行数学形式化工作。
   img: chris.png
 -
   name: Yury G. Kudryashov
   descr: |
-       Yury is a Formalization Lead at Harmonic.
-       He did a PhD in dynamical systems in Lyon and Moscow.
-       He has been formalizing mathematics since 2019.
+       Yury 是 Harmonic 的形式化负责人。他在里昂和莫斯科获得了动力系统博士学位。他自 2019 年以来一直在进行数学形式化工作。
   img: yury.jpeg
 -
   name: Robert Y. Lewis
   descr: |
-       Rob is a lecturer in the Department of Computer Science at
-       Brown University (USA).
-       He did a PhD in Pure and Applied Logic at Carnegie Mellon
-       University in Pittsburgh. He has been formalizing mathematics
-       since 2014.
+       Rob 是布朗大学 (美国) 计算机科学系的讲师。他在匹兹堡的卡内基梅隆大学获得了纯粹与应用逻辑博士学位。他自 2014 年以来一直在进行数学形式化工作。
   img: rob.jpg
 -
   name: Jireh Loreaux
   descr: |
-       Jireh is an Associate Professor of Mathematics in the Department of Mathematics
-       and Statistics at Southern Illinois University Edwardsville (USA).
-       He did a PhD in operator theory and operator algebras at the
-       University of Cincinnati. He has been formalizing mathematics in Lean
-       since 2018, and contributing to mathlib since 2021.
+       Jireh 是南伊利诺伊大学爱德华兹维尔分校 (美国) 数学与统计系的数学副教授。他在辛辛那提大学获得了算子理论和算子代数博士学位。他自 2018 年以来一直在使用 Lean 进行数学形式化，并自 2021 年起为 mathlib 做出贡献。
   img: jireh.jpg
 -
   name: Heather Macbeth
   descr: |
-        Heather is an Assistant Professor of Mathematics at Fordham University
-        (USA). She did a PhD in differential geometry in Princeton.
-        She has been formalizing mathematics since 2019.
+        Heather 是福特汉姆大学 (美国) 的数学助理教授。她在普林斯顿大学获得了微分几何博士学位。她自 2019 年以来一直在进行数学形式化工作。
   img: heather.jpeg
 -
   name: Patrick Massot
   descr: |
-       Patrick is a Professor of Mathematics at Université Paris-Saclay
-       at Orsay (France).  He did a PhD in differential topology in
-       Lyon.  He has been formalizing mathematics since 2017.
+       Patrick 是奥赛 (法国) 巴黎-萨克雷大学的数学教授。他在里昂获得了微分拓扑学博士学位。他自 2017 年以来一直在进行数学形式化工作。
   img: patrick.png
 -
   name: Bhavik Mehta
   descr: |
-       Bhavik is a PhD student in Mathematics at the University of Cambridge
-       (UK). He has been formalizing mathematics since 2019.
+       Bhavik 是剑桥大学 (英国) 的数学博士生。他自 2019 年以来一直在进行数学形式化工作。
   img: bhavik.jpg
 -
   name: Kyle Miller
   descr: |
-       Kyle is a post-doc in mathematics at UC Santa Cruz
-       and a research software engineer at the Lean FRO.
-       He did a PhD in low-dimensional topology at UC Berkeley.
-       He has been formalizing mathematics since 2020.
+       Kyle 是加州大学圣克鲁兹分校的数学博士后，同时也是 Lean FRO 的研究软件工程师。他在加州大学伯克利分校获得了低维拓扑学博士学位。他自 2020 年以来一直在进行数学形式化工作。
   img: kyle.jpg
 -
   name: Kim Morrison
   descr: |
-       Kim is a senior research engineer at the Lean Focused Research Organization.
-       Their background is in mathematics, particularly topology and category theory.
-       After a PhD at Berkeley, they have worked at Microsoft Station Q,
-       Berkeley, and the Australian National University.
-       Kim has been formalizing mathematics in Lean and Mathlib since 2017.
+       Kim 是 Lean 重点研究组织 (Lean Focused Research Organization) 的一名高级研究工程师。他们的背景是数学，特别是拓扑学和范畴论。在伯克利获得博士学位后，他们曾在微软 Station Q、伯克利和澳大利亚国立大学工作。Kim 自 2017 年以来一直在使用 Lean 和 Mathlib 进行数学形式化。
   img: Kim.jpg
 -
   name: Oliver Nash
   descr: |
-       Oliver is a mathematician who originally trained as a geometer. He has
-       spent time working in industry (proprietary trading, software), in
-       academia (postdoc at Imperial College), and most recently spent a year
-       as a Research Scientist at Google DeepMind.
-       He did a DPhil in differential geometry
-       at Oxford (UK).  He has been formalizing mathematics since 2019.
+       Oliver 是一名数学家，最初接受的是几何学家的训练。他曾在工业界（自营交易、软件）和学术界（在伦敦帝国学院做博士后）工作，最近在 Google DeepMind 担任了一年的研究科学家。他在牛津大学 (英国) 获得了微分几何博士学位。他自 2019 年以来一直在进行数学形式化工作。
   img: ocfnash.png
 -
   name: Joël Riou
   descr: |
-       Joël is an Associate Professor of Mathematics at Université Paris-Saclay
-       at Orsay (France).  He did a PhD in homotopy theory of schemes at
-       Université Paris VII.  He has been formalizing mathematics since 2021.
+       Joël 是奥赛 (法国) 巴黎-萨克雷大学的数学副教授。他在巴黎第七大学获得了概形的同伦理论 (homotopy theory of schemes) 博士学位。他自 2021 年以来一直在进行数学形式化工作。
   img: joel.jpg
 -
   name: Damiano Testa
   descr: |
-       Damiano is a reader in the Department of Mathematics at the University of Warwick (UK).
-       He did a PhD in Algebraic Geometry at MIT (USA).
-       He has been formalizing mathematics since 2020.
+       Damiano 是华威大学 (英国) 数学系的准教授 (reader)。他在麻省理工学院 (美国) 获得了代数几何博士学位。他自 2020 年以来一直在进行数学形式化工作。
   img: damiano.jpeg
 -
   name: Adam Topaz
   descr: |
-       Adam is an Assistant Professor of Mathematics at the University of
-       Alberta (Canada). His research is primarily in Galois theory and
-       related topics from arithmetic geometry. He has been formalizing
-       mathematics since 2020.
+       Adam 是阿尔伯塔大学 (加拿大) 的数学助理教授。他的研究主要集中在伽罗瓦理论及算术几何的相关课题。他自 2020 年以来一直在进行数学形式化工作。
   img: adam.jpg
 -
   name: Eric Wieser
   descr: |
-       Eric is a Software Engineer at Google DeepMind.
-       He did a PhD formalizing Clifford algebras at the University of Cambridge (UK).
-       He has been formalizing mathematics since 2020, and
-       maintaining open source software since 2017.
+       Eric 是 Google DeepMind 的一名软件工程师。他在剑桥大学 (英国) 获得了关于克利福德代数 (Clifford algebras) 形式化的博士学位。他自 2020 年以来一直在进行数学形式化，并自 2017 年起维护开源软件。
   img: eric.jpg
 -
   name: Leonardo de Moura
   descr: |
-       Leo is a Senior Principal Applied Scientist in the Automated Reasoning
-       Group at AWS as well as Chief Architect and co-founder of the Lean FRO.
-       He did a PhD at PUC-Rio. His research areas are automated reasoning,
-       theorem proving, decision procedures, SAT and SMT, and he is the main
-       architect of Z3 and of Lean.
+       Leo 是 AWS 自动推理组的高级首席应用科学家，同时也是 Lean FRO 的首席架构师和联合创始人。他在里约热内卢天主教大学 (PUC-Rio) 获得博士学位。他的研究领域包括自动推理、定理证明、决策过程、SAT 和 SMT，他也是 Z3 和 Lean 的主要架构师。
   img: leo.jpg
 -
   name: Wojciech Nawrocki
   descr: |
-       Wojciech is a PhD student at Carnegie Mellon University (USA).
-       He has been contributing to open source software since 2016.
+       Wojciech 是卡内基梅隆大学 (美国) 的一名博士生。他自 2016 年以来一直在为开源软件做贡献。
   img: wojciech.jpg
 -
   name: Sebastian Ullrich
   descr: |
-       Sebastian is Head of Engineering and co-founder of the Lean FRO. He did
-       a PhD on the Lean 4 frontend at Karlsruhe Institute of Technology
-       (Germany). He has been working on Lean since 2015.
+       Sebastian 是 Lean FRO 的工程主管和联合创始人。他在卡尔斯鲁厄理工学院 (德国) 获得了关于 Lean 4 前端的博士学位。他自 2015 年以来一直致力于 Lean 的开发工作。
   img: sebastian.jpg

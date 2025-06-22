@@ -1,25 +1,24 @@
 {% extends '_base.html' %}
-{% block title %}Lean-related conferences and events{% endblock %}
+{% block title %}Lean 相关会议与活动{% endblock %}
 {% block content %}
 
 
 
-	<h1>Lean-related conferences and events</h1>
+	<h1>Lean 相关会议与活动</h1>
 
 	<p>
-        We maintain a list here of past and future events related to Lean, mathlib, and formalized mathematics in general.
-        Please add events by making a pull request editing
-        <a href="https://github.com/leanprover-community/leanprover-community.github.io/blob/lean4/data/events.yaml">events.yaml</a>.
+        我们在此维护一个与 Lean、mathlib 以及广义的形式化数学相关的过去及未来活动的列表。
+        请通过编辑 <a href="https://github.com/leanprover-community/leanprover-community.github.io/blob/lean4/data/events.yaml">events.yaml</a> 文件并提交一个拉取请求 (pull request) 来添加活动。
 	</p>
 
     <p>
-        The "conference," "workshop," and "tutorial" tags are vaguely defined.
-        Approximately, a "conference" is for formal presentations of finished work, often with published proceedings;
-        a "workshop" is more casual and may include work in progress, although sometimes will publish informal proceedings;
-        a "tutorial" is an opportunity to learn or practice how to use the system.
+        “会议 (conference)”、“研讨会 (workshop)”和“教程 (tutorial)”这些标签的定义比较模糊。
+        大致来说，“会议”用于正式展示已完成的工作，通常会出版论文集；
+        “研讨会”则更为随意，可能包含进行中的工作，有时也会发布非正式的论文集；
+        “教程”则是学习或实践如何使用本系统的机会。
     </p>
 
-    <h2>Upcoming events</h2>
+    <h2>即将举行的活动</h2>
     <ul>
     {% for e in new_events %}
         <li> <a href="{{ e.url }}">{{ e.title }}</a> ({{ e.location }}. {{ e.date_range }})
@@ -29,7 +28,7 @@
     {% endfor %}
      </ul>
 
-    <h2>Past events</h2>
+    <h2>已结束的活动</h2>
     <ul>
     {% for e in old_events %}
         <li> <a href="{{ e.url }}">{{ e.title }}</a> ({{ e.location }}. {{ e.date_range }})

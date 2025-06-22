@@ -1,17 +1,17 @@
 {% extends '_base.html' %}
-{% block title %}Lean papers{% endblock %}
+{% block title %}Lean 论文{% endblock %}
 {% block content %}
 
-      <h1>Papers</h1>
+      <h1>论文</h1>
       {% for title, papers in paper_lists %}
       <h2>{{ title }}</h2>
       <ul>
         {% for paper in papers %}
         <li>{% for author in paper.persons['author'] %}{{ ' '.join(author.first_names).strip('{}') | tex }} {{ ' '.join(author.last_names).strip('{}') | tex}}, {% endfor %}
           <a href="{{ paper.fields['url'] }}">{{ paper.fields['title'] | tex }}</a>.
-          {% if paper.fields['journal'] %}{{ paper.fields['journal'] | tex }},{% endif %}
+          {% if paper.fields['journal'] %}{{ paper.fields['journal'] | tex }}, {% endif %}
           {{ paper.fields['year'] }}
-          {% if 'website' in paper.fields %} (<a href="{{ paper.fields['website'] }}">website</a>){% endif %}
+          {% if 'website' in paper.fields %} (<a href="{{ paper.fields['website'] }}">网站</a>){% endif %}
           {% for tag in paper.fields['tags'] %}
           <small class="align-middle"><span class="badge badge-secondary align-middle paper-tag-{{tag}}">{{ tag }}</span></small>
           {% endfor %}
@@ -20,6 +20,6 @@
       </ul>
       {% endfor %}
 
-      <p class="mt-4">You can find all those papers and more in <a href="lean.bib">lean.bib</a>.</p>
+      <p class="mt-4">您可以在 <a href="lean.bib">lean.bib</a> 中找到所有这些论文及更多内容。</p>
 
 {% endblock %}
