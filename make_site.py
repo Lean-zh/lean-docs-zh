@@ -864,18 +864,10 @@ def render_site(target: Path, base_url: str, reloader=False, only: Optional[str]
             team_tpl.stream(team=team, menus=menus, base_url=base_url).dump(tgt_file)
 
 
-    # 这是最终的、修复后的代码
-    for folder in ['css', 'js', 'img', 'papers', 'teams']:
-        # 我们只处理顶级目录，并确保它们存在
-        source_path = Path(folder)
-        # 注意：这里的 teams 是源目录，而非 build 目录下的 teams
-        if source_path.exists() and source_path.is_dir():
-            subprocess.call(['rsync', '-rL', str(source_path), str(target)])
-
-    for file in ['googlef0c00cb4d31b246f.html', 'robots.txt', 'lean.bib']:
-        source_file = Path(file)
-        if source_file.exists():
-            subprocess.call(['rsync', '-L', str(source_file), str(target)])
+    for folder in ['css', 'js', 'img', 'papers', str(target/'teams')]:
+        subprocess.call(['rsync', '-a', folder, str(target).rstrip('/')])
+    subprocess.call(['rsync', '-a', 'googlef0c00cb4d31b246f.html', str(target).rstrip('/')])
+    subprocess.call(['rsync', '-a', 'robots.txt', str(target).rstrip('/')])
 
     site.render(use_reloader=reloader)
 
