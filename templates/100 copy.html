@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+{% block title %}Lean 中的 100 个定理{% endblock %}
+{% block content %}
+
+    <h1>100 个定理</h1>
+
+    <p><a href="https://www.cs.ru.nl/~freek/">Freek Wiedijk</a> 维护着<a href="https://www.cs.ru.nl/~freek/100/">一个列表</a>，该列表追踪了各个定理证明器在形式化 100 个经典数学定理方面的进展，以此来比较主流的定理证明器。
+    目前，其中 {{hundred_theorems|selectattr('proof_formalized')|list|length}} 个定理已在 Lean 中被形式化，
+    另有 {{hundred_theorems|rejectattr('proof_formalized')|selectattr('statement_formalized')|list|length}} 个定理仅在 Lean 中形式化了其陈述。</p>
+
+    <p>我们还有一个页面，列出了该列表中<a href="100-missing.html">尚未在 Lean 中实现</a>的定理。</p>
+
+	<p>
+	要更新此列表，请在编辑了
+	<a href="https://github.com/leanprover-community/mathlib4/blob/master/docs/100.yaml">yaml 源文件</a>之后，<a href="contribute/index.html">向 mathlib 提交一个拉取请求 (pull request)</a>。
+	这可以完全在 GitHub 上完成，请参阅
+	<a href="https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository">“在其他用户的仓库中编辑文件”</a>。
+	</p>
+
+    {% for theorem in hundred_theorems|selectattr('proof_formalized') %}
+        <h5 class="markdown-heading mt-5" id="{{ theorem.id }}">{{ theorem.id }}. {{ theorem.title }} <a class="hover-link" href="#{{ theorem.id }}">#</a></h5>
+        {% if theorem.authors %}<p>作者: {{ theorem.authors }}</p>{% endif %}
+        {% if theorem.statement %}<p><code>{{ theorem.statement }}</code></p>{% endif %}
+        {% for doc in theorem.doc_decls|default([], true) %}
+        <div class="doc-stmt">{{ doc.decl_header_html }}</div>
+        <p><a href="{{ doc.docs_link }}">文档</a>, <a href="{{ doc.src_link }}">源文件</a></p>
+        {% endfor %}
+        {% for title, link in (theorem.links|default({}, true)).items() %}<p><a href="{{link}}">{{title}}</a></p>{% endfor %}
+        {% if theorem.note %}<p>{% markdown %}{{ theorem.note }}{% endmarkdown %}</p>{% endif %}
+    {% endfor %}
+
+{% endblock %}

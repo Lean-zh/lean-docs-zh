@@ -1,0 +1,143 @@
+- 
+  title: 帽集问题
+  authors: Dahmen, Hölzl and Lewis
+  abstract: |
+            2016年，Ellenberg 和 Gijswijt 为 $𝔽^n_q$ 中没有三项算术级数的子集的大小确定了一个新的上界。
+            这个问题引起了数学界的广泛关注，尤其是在 $q = 3$ 的情况下，它通常被称为帽集问题 (cap set problem)。
+            Ellenberg 和 Gijswijt 的证明发表在《数学年刊》(Annals of Mathematics) 上，并因其对初等方法的巧妙运用而备受瞩目。
+  url: https://lean-forward.github.io/e-g/
+-
+  title: 完美体空间
+  authors: Buzzard, Commelin and Massot
+  abstract: |
+            完美体空间 (Perfectoid spaces) 是 Peter Scholze 在 2012 年引入的算术几何中的复杂对象。
+            我们在拓扑学、代数和几何学中形式化了足够的定义和定理，以便在 Lean 定理证明器中定义完美体空间。
+            这个实验证实了证明助手可以处理这个方向的复杂性，这与形式化一个关于简单对象的长篇证明有很大的不同。
+  url: https://leanprover-community.github.io/lean-perfectoid-spaces/
+-
+  title: 连续统假设的独立性
+  authors: Han and van Doorn
+  abstract: |
+            连续统假设 (continuum hypothesis) 指出，在最小的无限基数和连续统的基数之间不存在其他基数。
+            它由康托 (Cantor) 于 1878 年提出，是希尔伯特 (Hilbert) 23 个数学未解问题列表中的第一个问题。
+            哥德尔 (Gödel) 和科恩 (Cohen) 证明了它相对于 ZFC 是独立的，即既不能被证明，也不能被证伪。
+  url: https://flypitch.github.io/
+- 
+  title: 作为多项式函子商的数据类型
+  authors: Avigad, Carneiro and Hudon
+  abstract: |
+            一大类数据类型，包括归纳类型、余归纳类型和商的任意嵌套，都可以表示为多项式函子 (polynomial functors) 的商。
+            这为在交互式定理证明器中构造它们并进行推理提供了清晰的方法。
+  url: https://github.com/avigad/qpf
+-
+ title: 液态张量实验
+ authors: Commelin, Topaz et al
+ abstract: |
+           液态向量空间是 Clausen 和 Scholze 融合了数论与泛函分析的凝聚数学框架中的关键对象。
+           关于它们的主要定理保证了它们具有实现该目标所需的适当性质。
+ url: https://leanprover-community.github.io/liquid/
+-
+ title: 球面外翻
+ authors: Massot, Nash, van Doorn
+ abstract: |
+           斯梅尔 (Smale) 著名的球面外翻定理确保了你可以在欧几里得三维空间中将一个球体的内外表面翻转过来。
+           这是格罗莫夫 (Gromov) 提出的一个更具普遍性的柔性结果的一个实例。
+           它的形式化表明，证明助手不仅限于数学的代数部分，也能够处理微分拓扑。
+ url: https://leanprover-community.github.io/sphere-eversion/
+- 
+ title: 费马大定理对正则素数的情形
+ authors: Best, Birkbeck, Brasca, Rodriguez, van de Velde, Yang 
+ abstract: |
+           尽管这与费马大定理的一般情况相去甚远，但正则素数 (regular prime) 指数的情况是代数数论基础的一个很好的测试案例。
+ url: https://leanprover-community.github.io/flt-regular/blueprint/ 
+- 
+ title: 多项式弗莱曼-鲁萨猜想
+ authors: Tao et al
+ abstract: |
+           这是加性组合学中的一个著名猜想，其解决方案于 2023 年 11 月宣布，并在一个大型协作项目的支持下，三周内完成了形式化。
+ url: https://teorth.github.io/pfr/
+-
+ title: Cedar 规范
+ authors: Emina Torlak et al
+ abstract: |
+           Cedar 是一种用于将权限定义为策略的语言，这些策略描述了谁应该有权访问什么。它也是一个用于评估这些策略的规范。
+           该规范已被形式化，其在 Lean 中的实现被用来与 Rust 实现进行比较检查。
+ url: https://github.com/cedar-policy/cedar-spec/tree/main/cedar-lean
+- 
+ title: Cairo 验证
+ authors: Avigad
+ abstract: |
+           Cairo 是一种基于区块链的编程语言。该语言及其库的各种组件已被形式化。  
+ url: https://github.com/starkware-libs/formal-proofs 
+ 
+- 
+  title: 帽集问题
+  authors: Dahmen, Hölzl and Lewis
+  abstract: |
+            2016年，Ellenberg 和 Gijswijt 为 $𝔽^n_q$ 中没有三项算术级数的子集的大小确定了一个新的上界。
+            这个问题引起了数学界的广泛关注，尤其是在 $q = 3$ 的情况下，它通常被称为帽集问题 (cap set problem)。
+            Ellenberg 和 Gijswijt 的证明发表在《数学年刊》(Annals of Mathematics) 上，并因其对初等方法的巧妙运用而备受瞩目。
+  url: https://lean-forward.github.io/e-g/
+-
+  title: 完美体空间
+  authors: Buzzard, Commelin and Massot
+  abstract: |
+            完美体空间 (Perfectoid spaces) 是 Peter Scholze 在 2012 年引入的算术几何中的复杂对象。
+            我们在拓扑学、代数和几何学中形式化了足够的定义和定理，以便在 Lean 定理证明器中定义完美体空间。
+            这个实验证实了证明助手可以处理这个方向的复杂性，这与形式化一个关于简单对象的长篇证明有很大的不同。
+  url: https://leanprover-community.github.io/lean-perfectoid-spaces/
+-
+  title: 连续统假设的独立性
+  authors: Han and van Doorn
+  abstract: |
+            连续统假设 (continuum hypothesis) 指出，在最小的无限基数和连续统的基数之间不存在其他基数。
+            它由康托 (Cantor) 于 1878 年提出，是希尔伯特 (Hilbert) 23 个数学未解问题列表中的第一个问题。
+            哥德尔 (Gödel) 和科恩 (Cohen) 证明了它相对于 ZFC 是独立的，即既不能被证明，也不能被证伪。
+  url: https://flypitch.github.io/
+- 
+  title: 作为多项式函子商的数据类型
+  authors: Avigad, Carneiro and Hudon
+  abstract: |
+            一大类数据类型，包括归纳类型、余归纳类型和商的任意嵌套，都可以表示为多项式函子 (polynomial functors) 的商。
+            这为在交互式定理证明器中构造它们并进行推理提供了清晰的方法。
+  url: https://github.com/avigad/qpf
+-
+ title: 液态张量实验
+ authors: Commelin, Topaz et al
+ abstract: |
+           液态向量空间是 Clausen 和 Scholze 融合了数论与泛函分析的凝聚数学框架中的关键对象。
+           关于它们的主要定理保证了它们具有实现该目标所需的适当性质。
+ url: https://leanprover-community.github.io/liquid/
+-
+ title: 球面外翻
+ authors: Massot, Nash, van Doorn
+ abstract: |
+           斯梅尔 (Smale) 著名的球面外翻定理确保了你可以在欧几里得三维空间中将一个球体的内外表面翻转过来。
+           这是格罗莫夫 (Gromov) 提出的一个更具普遍性的柔性结果的一个实例。
+           它的形式化表明，证明助手不仅限于数学的代数部分，也能够处理微分拓扑。
+ url: https://leanprover-community.github.io/sphere-eversion/
+- 
+ title: 费马大定理对正则素数的情形
+ authors: Best, Birkbeck, Brasca, Rodriguez, van de Velde, Yang 
+ abstract: |
+           尽管这与费马大定理的一般情况相去甚远，但正则素数 (regular prime) 指数的情况是代数数论基础的一个很好的测试案例。
+ url: https://leanprover-community.github.io/flt-regular/blueprint/ 
+- 
+ title: 多项式弗莱曼-鲁萨猜想
+ authors: Tao et al
+ abstract: |
+           这是加性组合学中的一个著名猜想，其解决方案于 2023 年 11 月宣布，并在一个大型协作项目的支持下，三周内完成了形式化。
+ url: https://teorth.github.io/pfr/
+-
+ title: Cedar 规范
+ authors: Emina Torlak et al
+ abstract: |
+           Cedar 是一种用于将权限定义为策略的语言，这些策略描述了谁应该有权访问什么。它也是一个用于评估这些策略的规范。
+           该规范已被形式化，其在 Lean 中的实现被用来与 Rust 实现进行比较检查。
+ url: https://github.com/cedar-policy/cedar-spec/tree/main/cedar-lean
+- 
+ title: Cairo 验证
+ authors: Avigad
+ abstract: |
+           Cairo 是一种基于区块链的编程语言。该语言及其库的各种组件已被形式化。  
+ url: https://github.com/starkware-libs/formal-proofs

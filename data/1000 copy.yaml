@@ -1,0 +1,7788 @@
+# 该文件追踪实验性 1000+ 定理项目 (https://1000-plus.github.io/) 中定理的形式化状态。
+# 此文件及相关基础设施正在开发中。
+#
+# 有关此文件中允许字段的文档，请参阅 yaml_check.py。
+# 注意，此文件中的字段名称应与上游项目的规范匹配，因此未经适当考虑不应更改。
+# 此文件的结构由本仓库中的 `scripts/yaml_check.py` 检查
+# 以及由 leanprover-community.github.io 仓库中的 `make_site.py` 检查。
+#
+# 当前待办事项/未解决问题：
+# - 也许可以为 stacks 属性添加一个 wikidata 版本，并自动生成此文件
+
+Q11518:
+  title: 勾股定理
+  decl: EuclideanGeometry.dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two
+  authors: Joseph Myers
+
+Q12524:
+  title: 施文克定理
+
+Q26708:
+  title: 二项式定理
+  decl: add_pow
+  authors: Chris Hughes
+
+Q32182:
+  title: 巴林斯基定理
+
+Q33481:
+  title: 阿罗不可能定理
+  authors: Benjamin Davidson, Andrew Souther
+  date: 2021
+  url: https://github.com/asouther4/lean-social-choice/blob/master/src/arrows_theorem.lean
+
+Q98831:
+  title: 乘法定理
+
+Q117553:
+  title: 莫迪尼亚尼-米勒定理
+
+Q119450:
+  title: 布利安桑定理
+
+Q132427:
+  title: 拉德马赫定理
+  decl: LipschitzOnWith.ae_differentiableWithinAt
+  authors: Sébastien Gouëzel
+  date: 2023
+
+Q132469:
+  title: 费马大定理
+  statement: FermatLastTheorem
+  comment: "证明的形式化正在 https://imperialcollegelondon.github.io/FLT/ 中进行。"
+
+Q137164:
+  title: 贝西科维奇覆盖定理
+  decl: Besicovitch.exists_disjoint_closedBall_covering_ae
+  authors: Sébastien Gouëzel
+  date: 2021
+
+Q154210:
+  title: 全等三角形的对应边和角相等 (CPCTC)
+
+Q164262:
+  title: 勒贝格覆盖维数
+
+Q172298:
+  title: 拉斯克-诺特定理
+  decl: Ideal.isPrimary_decomposition_pairwise_ne_radical
+
+Q174955:
+  title: 米哈伊列斯库定理
+
+Q179208:
+  title: 凯莱定理
+  decl: Equiv.Perm.subgroupOfMulAction
+  authors: Eric Wieser
+  date: 2021
+
+Q179467:
+  title: 傅里叶定理
+
+Q179692:
+  title: 选择公理的独立性
+
+Q180345X:
+  title: 整根定理
+  decl: isInteger_of_is_root_of_monic
+
+Q180345:
+  title: 有理根定理
+  decls:
+   - num_dvd_of_is_root
+   - den_dvd_of_is_root
+
+Q182505:
+  title: 贝叶斯定理
+  decl: ProbabilityTheory.cond_eq_inv_mul_cond_mul
+  authors: Rishikesh Vaishnav
+  date: 2022
+
+Q184410:
+  title: 四色定理
+
+Q188295:
+  title: 费马小定理
+  decl: ZMod.pow_card_sub_one_eq_one
+  authors: Aaron Anderson
+  date: 2020
+
+Q188745:
+  title: 柏拉图固体的分类
+
+Q189136:
+  title: 中值定理
+  # 两个版本：柯西中值定理与拉格朗日中值定理；维基百科文章提到了两者
+  decls:
+    - exists_deriv_eq_slope
+    - exists_ratio_deriv_eq_ratio_slope
+  authors: Yury G. Kudryashov
+  date: 2019
+
+Q190026:
+  title: 福特定理
+
+Q190391X:
+  title: 李雅普诺夫中心极限定理
+
+Q190391:
+  title: 中心极限定理
+  # 也在 100.yaml 中
+
+Q190556:
+  title: 棣莫弗定理
+  decl: Complex.cos_add_sin_mul_I_pow
+  authors: Abhimanyu Pallavi Sudhir
+  date: 2019
+
+Q191693:
+  title: 勒贝格分解定理
+  decl: MeasureTheory.Measure.haveLebesgueDecomposition_of_sigmaFinite
+  authors: Kexing Ying
+  date: 2021
+
+Q192760:
+  title: 代数基本定理
+  decl: Complex.isAlgClosed
+  authors: Chris Hughes
+  date: 2019
+
+Q193286:
+  title: 罗尔定理
+  decl: exists_deriv_eq_zero
+  authors: Yury G. Kudryashov
+  date: 2019
+
+Q193878:
+  title: 中国剩余定理
+  decl: Ideal.quotientInfRingEquivPiQuotient
+
+Q193882:
+  title: 梅涅劳斯定理
+
+Q193910:
+  title: 欧拉定理
+
+Q194919:
+  title: 逆特征值定理
+  # 即矩阵的特征值分解
+
+Q195133:
+  title: 维格纳-埃卡特定理
+
+Q200787:
+  title: 哥德尔不完备定理
+  authors: Shogo Saito
+  # TODO: 如何更好地展示这些数据？需要两个 URL，对吗？
+  # results:
+  #   - First: https://github.com/FormalizedFormalLogic/Incompleteness/blob/master/Incompleteness/Arith/First.lean
+  #   - Second: https://github.com/FormalizedFormalLogic/Incompleteness/blob/master/Incompleteness/Arith/Second.lean
+  url: https://formalizedformallogic.github.io/Book/
+
+Q203565:
+  title: 一般三次方程的解
+  decl: Theorems100.cubic_eq_zero_iff
+  authors: Jeoff Lee
+  date: 2022
+
+Q204884:
+  title: 勒布定理
+
+Q205966:
+  title: 临界线定理
+
+Q207014:
+  title: 平行公理的独立性
+
+Q207244:
+  title: 塞拉定理
+
+Q208416:
+  title: 连续统假设的独立性
+  url: https://github.com/flypitch/flypitch/blob/d72904c17fbb874f01ffe168667ba12663a7b853/src/summary.lean#L90
+  authors: Floris van Doorn and Jesse Michael Han
+  date: 2019-09-17
+
+Q208756:
+  title: 卡斯泰尔诺沃定理
+
+Q211981:
+  title: 哈特曼-格罗布曼定理
+
+Q213603:
+  title: 塞瓦定理
+
+Q220680:
+  title: 巴拿赫不动点定理
+  ## mathlib 中的压缩映射定理
+  decl: ContractingWith.exists_fixedPoint
+
+Q225973:
+  title: 奥尔定理
+
+Q226014:
+  title: 庞加莱回归定理
+
+Q230848:
+  title: 拉梅定理
+
+Q240950:
+  title: 法尔廷斯定理
+
+Q241868:
+  title: 戴维南定理
+
+Q242045:
+  title: 单调类定理
+
+Q245098:
+  title: 介值定理
+  decl: intermediate_value_Icc
+  authors: Rob Lewis and Chris Hughes
+
+Q245098X:
+  title: 波尔查诺定理
+  # 上述介值定理的变体，TODO 应该存在于 mathlib 中，需添加 decl
+
+Q245902:
+  title: 里斯-索林定理
+
+Q248931:
+  title: 庞加莱-本迪克松定理
+
+Q253214:
+  title: 海涅-博雷尔定理
+  decls:
+    - Metric.isCompact_iff_isClosed_bounded
+    - FiniteDimensional.proper
+
+Q255996:
+  title: 均分定理
+
+Q256303:
+  title: 拉克斯-里奇迈尔定理
+
+Q257387:
+  title: 维塔利定理
+  # 即维塔利集的存在性
+  authors: Ching-Tsun Chou
+  url: https://github.com/ctchou/my_lean/blob/main/MyLean/NonMeasurable.lean
+  comment: "mathlib4 的拉取请求位于 https://github.com/leanprover-community/mathlib4/pull/20722"
+
+Q258374:
+  title: 卡拉西奥多里定理（测度论）
+  decl: MeasureTheory.OuterMeasure.caratheodory
+  comment: 很难说具体指的是什么。
+
+Q260928:
+  title: 若尔当曲线定理
+
+Q266291:
+  title: 布洛赫定理（复变函数）
+
+Q268031:
+  title: 阿贝尔二项式定理
+  # 可能不难
+
+Q268132:
+  title: 高斯-旺策尔定理
+
+Q273037:
+  title: 邦迪-赫瓦塔尔定理
+
+Q276082:
+  title: 威尔逊定理
+  decl: ZMod.wilsons_lemma
+  authors: Chris Hughes
+
+Q280116:
+  title: 奇数定理
+
+Q282331:
+  title: 加法定理
+
+Q282649:
+  title: 五边形数定理
+
+Q283690:
+  title: 到达定理
+
+Q284960:
+  title: 莫德尔-韦伊定理
+
+Q285719:
+  title: 泰勒斯定理
+
+Q287347:
+  title: 梯度定理
+
+Q288465:
+  title: 轨道-稳定子定理
+  decl: MulAction.orbitEquivQuotientStabilizer
+
+Q303402:
+  title: 秩-零化度定理
+  decl: LinearMap.rank_range_add_rank_ker
+
+Q318767:
+  title: 阿贝尔定理
+  decls:
+    - Complex.tendsto_tsum_powerSeries_nhdsWithin_stolzCone
+    - Real.tendsto_tsum_powerSeries_nhdsWithin_lt
+  authors: Jeremy Tan
+
+Q321237:
+  title: 格林公式
+
+Q332465:
+  title: 绝对收敛定理
+
+Q338886:
+  title: 散度定理
+
+Q339495:
+  title: 交响定理
+
+Q356895:
+  title: 绝热定理
+
+Q357192:
+  title: 霍兰德模式定理
+
+Q357858:
+  title: 弗莱德伴随函子定理
+
+Q371685:
+  title: 克拉夫特-麦克米兰定理
+
+Q372037:
+  title: 塞弗特-范坎彭定理
+
+Q376166:
+  title: 切除定理
+
+Q377047:
+  title: 蝴蝶定理
+
+Q377276:
+  title: 库克定理
+
+Q379048:
+  title: 黎曼-罗赫定理
+
+Q380576:
+  title: 可测黎曼映射定理
+
+Q383238:
+  title: 哈托格斯扩张定理
+
+Q384142:
+  title: 埃尔布朗-里贝特定理
+
+Q386292:
+  title: 素数定理
+  comment: "各种版本的形式化正在 https://github.com/AlexKontorovich/PrimeNumberTheoremAnd 中进行"
+  # 也在 100.yaml 中
+
+Q388525:
+  title: 贝尔定理
+
+Q401319:
+  title: 溥仪（Puiseux）定理
+  # 也在 100.yaml 中
+
+Q401905:
+  title: 斯科罗霍德表示定理
+
+Q420714:
+  title: 阿克拉-巴兹定理
+  decl: AkraBazziRecurrence.isBigO_asympBound
+
+Q422187:
+  title: 迈希尔-尼罗德定理
+  decl: Language.isRegular_iff_finite_range_leftQuotient
+  authors: Chris Wong
+  date: 2024-03-24
+
+Q425432:
+  title: 洛朗展开定理
+
+Q428134:
+  title: 高斯-马尔可夫定理
+
+Q459547:
+  title: 托勒密定理
+  decl: EuclideanGeometry.mul_dist_add_mul_dist_eq_mul_dist_of_cospherical
+  authors: Manuel Candales
+
+Q467205:
+  title: 福利经济学基本定理
+
+Q467756:
+  title: 斯托克斯定理
+
+Q468391:
+  title: 波尔查诺-魏尔斯特拉斯定理
+  decls:
+    - tendsto_subseq_of_frequently_bounded # 较不标准的版本
+    - tendsto_subseq_of_bounded
+
+Q470877:
+  title: 斯特林定理
+  decl: Stirling.tendsto_stirlingSeq_sqrt_pi
+  authors: Moritz Firsching and Fabian Kruse and Nikolas Kuhn and Heather Macbeth
+
+Q472883:
+  title: 二次互反律定理
+  decls:
+    - legendreSym.quadratic_reciprocity
+    - jacobiSym.quadratic_reciprocity
+  authors: Chris Hughes (第一条) and Michael Stoll (第二条)
+
+Q474881:
+  title: 康托尔定理
+  # 又名康托尔对角线论证
+  decl: Function.cantor_surjective
+  authors: Johannes Hölzl and Mario Carneiro
+
+Q476776:
+  title: 一般四次方程的解
+  decl: Theorems100.quartic_eq_zero_iff
+  authors: Thomas Zhu
+
+Q487132:
+  title: 无限猴子定理
+
+Q488541:
+  title: 费雪分离定理
+
+Q495412:
+  title: 若尔当-舍恩弗利斯定理
+
+Q504843:
+  title: 米谢尔斯基定理
+
+Q505798:
+  title: 拉格朗日定理（群论）
+  # 存在加法和乘法版本
+  decl: Subgroup.card_subgroup_dvd_card
+
+Q510197:
+  title: 塔特定理
+  decl: SimpleGraph.tutte
+  authors: Pim Otte
+
+Q512897:
+  title: 布鲁克斯定理
+
+Q523832:
+  title: 卡拉西奥多里-雅可比-李定理
+
+Q523876:
+  title: 自旋统计定理
+
+Q528955:
+  title: 科亨-施佩克定理
+
+Q528987:
+  title: 冯诺依曼双交换子定理
+
+Q530152:
+  title: 皮卡-林德洛夫定理
+  decl: IsPicardLindelof.exists_forall_hasDerivWithinAt_Icc_eq
+
+Q535366:
+  title: 蒙泰尔定理
+
+Q536640:
+  title: 霍尔婚配定理
+  decl: Finset.all_card_le_biUnion_card_iff_exists_injective
+
+Q537618:
+  title: 巴拿赫-阿劳格鲁定理
+  decl: WeakDual.isCompact_polar
+
+Q544292:
+  title: 拉格朗日反演定理
+
+Q544369:
+  title: 格利文科-康特利定理
+
+Q550402:
+  title: 狄利克雷算术级数定理
+  decl: Nat.setOf_prime_and_eq_mod_infinite
+  authors: David Loeffler, Michael Stoll
+
+Q552367:
+  title: 伯热定理
+
+Q567843:
+  title: 哈恩-马祖尔凯维奇定理
+
+Q570779:
+  title: 韦达公式
+  decl: Multiset.prod_X_add_C_eq_sum_esymm
+
+Q574902:
+  title: 塔斯基不可定义性定理
+
+Q576478:
+  title: 刘维尔定理（复分析）
+  decl: Differentiable.apply_eq_apply_of_bounded
+
+Q578555:
+  title: 诺特定理
+
+Q579515:
+  title: 拉奥-布莱克韦尔定理
+
+Q583147:
+  title: 萨德定理
+  # 在 Lean 中存在陈述，正在进行中的形式化位于 https://github.com/urkud/SardMoreira
+  # 和 https://github.com/fpvandoorn/sard (流形版本)
+
+Q586051:
+  title: 哈格-沃普山斯基-索尼乌斯定理
+
+Q587081:
+  title: 柯尔莫哥洛夫-阿诺德-莫泽定理
+
+Q588218:
+  title: 克贝 1/4 定理
+
+Q594571:
+  title: 范奥贝尔定理
+
+Q595466:
+  title: 迪尼定理
+  decl: Monotone.tendstoLocallyUniformly_of_forall_tendsto
+  authors: Jireh Loreaux
+  date: 2024
+
+Q599876:
+  title: 科克伦定理
+
+Q608294:
+  title: 最大流最小割定理
+
+Q609612:
+  title: 克纳斯特-塔斯基定理
+  decl: fixedPoints.completeLattice
+  authors: Kenny Lau
+  date: 2018
+
+Q612021:
+  title: 吉巴德-萨特思韦特定理
+
+Q617417:
+  title: 等周定理
+
+Q619985:
+  title: 多项式定理
+  decl: Finset.sum_pow_eq_sum_piAntidiag_of_commute
+  # TODO: Finset.sum_pow_of_commute 是否更好？
+
+Q620602:
+  title: 维里定理
+
+Q631561:
+  title: 闭值域定理
+  # TODO: 这个肯定存在于 mathlib 中，需添加 decl！
+
+Q632546X:
+  title: 西尔维特定理
+
+Q632546:
+  title: 伯特兰-切比雪夫定理
+  decl: Nat.bertrand
+  authors: Bolton Bailey and Patrick Stevens
+
+Q637418:
+  title: 拿破仑定理
+
+Q642620:
+  title: 克林-米尔曼定理
+  decl: closure_convexHull_extremePoints
+  authors: Yaël Dillies
+  date: 2022
+
+Q643513:
+  title: 里斯-费歇尔定理
+
+Q643826:
+  title: 斯卢茨基定理
+
+Q646523:
+  title: 皮克定理
+  # 也在 100.yaml 中
+
+Q649469:
+  title: 模块化定理
+  comment: "https://imperialcollegelondon.github.io/FLT 正在证明一个特例"
+
+Q649977:
+  title: 希尔绍夫-科恩定理
+
+Q650738:
+  title: 俗定理（博弈论）
+
+Q651593:
+  title: 诺顿定理
+
+Q656176:
+  title: 绍德尔不动点定理
+
+Q656198:
+  title: 马施克定理
+  # `RepresentationTheory/Maschke` 非常接近，但尚未证明标准形式…
+
+Q656645:
+  title: 希尔伯特基定理
+  decl: Polynomial.isNoetherianRing
+  authors: Kenny Lau
+  date: 2019
+
+Q656772:
+  title: 凯莱-哈密顿定理
+  decl: Matrix.aeval_self_charpoly
+  authors: Kim Morrison
+
+Q657469:
+  title: 莱夫谢茨不动点定理
+
+Q657469X:
+  title: 莱夫谢茨-霍普夫定理
+
+Q657482:
+  title: 阿贝尔-鲁菲尼定理
+  authors: Thomas Browning
+  decl: AbelRuffini.exists_not_solvable_by_rad
+
+Q657903:
+  title: 希尔伯特-华林定理
+
+Q660799:
+  title: 达布定理（分析）
+  # “所有导数都具有介值性质”
+  # TODO 应该存在于 mathlib 中，需添加 decl！
+
+Q670235:
+  title: 算术基本定理
+  decls:
+    - Nat.primeFactorsList_unique
+    - Int.euclideanDomain
+    - EuclideanDomain.to_principal_ideal_domain
+    - UniqueFactorizationMonoid
+    - UniqueFactorizationMonoid.factors_unique
+  authors: Chris Hughes
+  comment: "它也有一个推广版本，通过证明每个欧几里得整环都是唯一分解整环 (unique factorization domain)，并证明整数构成一个欧几里得整环。"
+
+Q671663:
+  title: 科尔曼-曼杜拉定理
+
+Q676413:
+  title: 丹德林定理
+
+Q679800:
+  title: 奈奎斯特-香农采样定理
+
+Q681406:
+  title: 欧拉旋转定理
+
+Q685437:
+  title: 蒂奇马什定理
+
+Q693083:
+  title: 可靠性定理
+
+Q716171:
+  title: 埃尔德什-金兹堡-齐夫定理
+  decl: ZMod.erdos_ginzburg_ziv
+  authors: Yaël Dillies
+  date: 2023
+
+Q718875:
+  title: 埃尔德什-柯-拉多定理
+  decl: Finset.erdos_ko_rado
+  authors: Bhavik Mehta, Yaël Dillies
+  date: 2020
+
+Q719966:
+  title: 户田定理
+
+Q720469:
+  title: 谢瓦莱-华林定理
+  decl: char_dvd_card_solutions_of_sum_lt
+  authors: Johan Commelin
+  date: 2019
+
+Q721695:
+  title: 塞迈雷迪-特罗特定理
+
+Q727102:
+  title: 费马定理（驻点）
+
+Q729359:
+  title: 阿达马三圆定理
+
+Q730222:
+  title: 火腿三明治定理
+
+Q733081:
+  title: 三等分角的不可能性
+  # 100.yaml 中问题 8 的第一部分
+
+Q737851:
+  title: 巴拿赫-塔斯基定理
+  # 正在进行中的形式化位于 https://github.com/Bergschaf/banach-tarski
+
+Q737892:
+  title: 本迪克松-杜拉克定理
+
+Q739403:
+  title: 斯图尔特定理
+
+Q740093:
+  title: 皮亚诺存在性定理
+
+Q742833:
+  title: 高斯-博内定理
+
+Q744440:
+  title: 伊默尔曼-塞莱普切尼定理
+
+Q748233:
+  title: 西尔维斯特-加莱定理
+  authors: Bhavik Mehta
+  url: https://github.com/YaelDillies/LeanCamCombi/blob/6a6a670f324b2af82ae17f21f9d51ac0bc859f6f/LeanCamCombi/SylvesterChvatal.lean#L610
+  date: 2022
+
+Q751120:
+  title: 图厄-西格尔-罗特定理
+
+Q752375:
+  title: 极值定理
+  decl: IsCompact.exists_isMinOn
+  authors: Sébastien Gouëzel
+  date: 2018
+
+Q755986:
+  title: 阿蒂亚-博特不动点定理
+
+Q755991:
+  title: 阿蒂亚-辛格指标定理
+
+Q756946:
+  title: 拉格朗日四平方和定理
+  decl: Nat.sum_four_squares
+  authors: Chris Hughes
+  date: 2019
+
+Q764287:
+  title: 范德瓦尔登定理
+  decl: Combinatorics.exists_mono_homothetic_copy
+  authors: David Wärn
+  # TODO: 这只是某个版本；此条目是否应相应修改？
+
+Q765987:
+  title: 海涅-康托尔定理
+  decl: CompactSpace.uniformContinuous_of_continuous
+
+Q766722:
+  title: 刘维尔定理
+  # 关于哈密顿力学的定理
+
+Q776578:
+  title: 阿廷-韦德伯恩定理
+  # 使用 proof_wanted，在 Mathlib/RingTheory/SimpleModule.lean 中
+  statement: isSemisimpleRing_iff_pi_matrix_divisionRing
+  # 正在进行中的形式化，但尚未完成 (2025年1月1日)
+
+Q777924:
+  title: 蒂德曼定理
+
+Q779220:
+  title: 希尔伯特合冲定理
+
+Q780763:
+  title: 15 和 290 定理
+
+Q784049:
+  title: 布拉施克选择定理
+
+Q790236:
+  title: 巴拉尼亚伊定理
+
+Q791258:
+  title: 巴苏定理
+
+Q791663:
+  title: 贝蒂定理
+
+Q794269:
+  title: 贝蒂定理
+
+Q810431:
+  title: 巴塞尔问题
+  decl: hasSum_zeta_two
+  authors: David Loeffler
+  date: 2022
+
+Q828284:
+  title: 平行轴定理
+
+Q830124:
+  title: 吉尔萨诺夫定理
+
+Q830513:
+  title: 留数定理
+
+Q834025:
+  title: 柯西积分定理
+  decl: Complex.circleIntegral_div_sub_of_differentiable_on_off_countable
+  authors: Yury Kudryashov
+  date: 2021
+
+Q834211:
+  title: 华莱士-波约-格维也纳定理
+
+Q837506:
+  title: 友谊定理
+  authors: Bhavik Mehta
+  url: https://leanprover.zulipchat.com/#narrow/channel/217875-Is-there-code-for-X.3F/topic/Small.20Ramsey.20numbers/near/490303695
+  comment: "将于 2024 年进入 mathlib"
+
+Q837551:
+  title: 弗罗贝尼乌斯定理（微分拓扑）
+
+Q841893:
+  title: 笛沙格定理
+  # 也在 100.yaml 中
+
+Q842953:
+  title: 勒贝格密度定理
+  decl: Besicovitch.ae_tendsto_measure_inter_div
+  authors: Oliver Nash
+  date: 2022
+
+Q844612:
+  title: 布龙定理
+
+Q845088:
+  title: 帕普斯质心定理
+
+Q846840:
+  title: 埃尔德什-卡茨定理
+
+Q848092:
+  title: 博尔苏克-乌拉姆定理
+
+Q848375:
+  title: 隐函数定理
+  decl: ImplicitFunctionData.implicitFunction
+
+Q848810:
+  title: 克罗内克定理
+
+Q850495:
+  title: 维克定理
+
+Q851166:
+  title: 帕普斯六边形定理
+
+Q852183:
+  title: 维维亚尼定理
+
+Q852973:
+  title: 欧拉多面体定理
+
+Q853067:
+  title: 佩尔方程的解
+  decls:
+    - Pell.eq_pell
+    - Pell.exists_of_not_isSquare
+  authors: Mario Carneiro (第一条), Michael Stoll (第二条)
+  comment: "在 `pell.eq_pell` 中，对于任意 `a > 1`，`d` 被定义为 `a*a - 1`。"
+
+Q856032:
+  title: CAP 定理
+
+Q856158:
+  title: 米迪定理
+
+Q857089:
+  title: 德布朗热定理
+
+Q858978:
+  title: 卡斯蒂利亚诺第一和第二定理
+
+Q859122:
+  title: 柯西-阿达马定理
+
+Q865665:
+  title: 伯克霍夫定理（相对论）
+
+Q866116:
+  title: 哈恩-巴拿赫定理
+  decl: exists_extension_norm_eq
+
+Q867141:
+  title: 埃雷斯曼定理
+
+Q867839:
+  title: 罗瑟定理
+
+Q869647:
+  title: 什皮尔莱因扩张定理
+  decl: extend_partialOrder
+  authors: Bhavik Mehta
+  date: 2021
+
+Q872088:
+  title: 布尔素理想定理
+
+Q877489:
+  title: 阿波罗尼奥斯定理
+
+Q890875:
+  title: 玻尔-范莱文定理
+
+Q897769:
+  title: 柯尼希定理（图论）
+
+Q899002:
+  title: 帕斯卡定理
+  # 也在 100.yaml 中
+
+Q899853:
+  title: H-定理
+
+Q900831:
+  title: 涨落定理
+
+Q902052:
+  title: 哥德尔完备性定理
+
+Q902618:
+  title: 弗洛凯定理
+
+Q906809:
+  title: 海尔曼-费曼定理
+
+Q909517:
+  title: 法伊特-汤普森定理
+
+Q913447:
+  title: 莫雷角三等分线定理
+
+Q913849:
+  title: 极小化极大定理
+
+Q914517:
+  title: 费马平方和定理
+  decl: Nat.Prime.sq_add_sq
+  authors: Chris Hughes
+
+Q915474:
+  title: 罗宾定理
+
+Q918099:
+  title: 拉姆齐定理
+  authors: Bhavik Mehta
+  url: https://github.com/b-mehta/combinatorics/blob/extras/src/inf_ramsey.lean
+
+Q922012:
+  title: 格林-陶定理
+
+Q922367:
+  title: 主定理（算法分析）
+
+Q925224:
+  title: 索南夏因-曼特尔-德布鲁定理
+
+Q925854:
+  title: 角平分线定理
+
+Q927051:
+  title: 黎曼映射定理
+
+Q928813:
+  title: 门格尔定理
+
+Q929547:
+  title: 迈尔斯定理
+
+Q931001:
+  title: 反函数定理
+  decl: HasStrictFDerivAt.to_localInverse
+
+Q931001X:
+  title: 常秩定理
+
+Q931404:
+  title: 贝特朗-迪凯-溥仪定理
+
+Q939927:
+  title: 斯通-魏尔斯特拉斯定理
+  decl: ContinuousMap.subalgebra_topologicalClosure_eq_top_of_separatesPoints
+  authors: Scott Morrison and Heather Macbeth
+  date: 2021-05-01
+
+Q942046:
+  title: 施瓦茨-阿尔福斯-皮克定理
+
+Q943246:
+  title: 韦德伯恩小定理
+  decl: littleWedderburn
+
+Q944297:
+  title: 开映射定理（泛函分析）
+  decl: ContinuousLinearMap.isOpenMap
+  authors: Sébastien Gouëzel
+  date: 2019
+
+Q948664:
+  title: 克内泽尔加法定理（组合数学）
+  authors: Mantas Bakšys, Yaël Dillies
+  url: https://github.com/YaelDillies/LeanCamCombi/blob/master/LeanCamCombi/Kneser/Kneser.lean
+  date: 2022
+
+Q951327:
+  title: 帕施定理
+
+Q953062:
+  title: 雷诺输运定理
+
+Q954210:
+  title: 萨维奇定理
+
+Q965294:
+  title: 萨比特·伊本·库拉定理
+
+Q966837:
+  title: 克拉梅尔-沃尔德定理
+
+Q967972:
+  title: 开映射定理（复分析）
+  decl: AnalyticOnNhd.is_constant_or_isOpen
+
+Q973359:
+  title: 拉多定理（调和函数）
+
+Q974405:
+  title: 希勒-吉田定理
+
+Q976033:
+  title: 格尔丰德-施奈德定理
+
+Q976607:
+  title: 埃尔德什-塞克雷斯定理
+  decl: Theorems100.erdos_szekeres
+  authors: Bhavik Mehta
+
+Q977912:
+  title: 斯托尔帕-萨缪尔森定理
+
+Q978688:
+  title: 盖尔什戈林圆盘定理
+  decl: eigenvalue_mem_ball
+  authors: Xavier Roblot
+  date: 2023
+
+Q985009:
+  title: 亥姆霍兹定理
+
+Q994401:
+  title: 四顶点定理
+
+Q995926:
+  title: 垂直轴定理
+
+Q999783:
+  title: 白金汉 π 定理
+
+Q1008566:
+  title: 高斯-卢卡斯定理
+
+Q1032886:
+  title: 黑尔斯-朱伊特定理
+  decl: Combinatorics.Line.exists_mono_in_high_dimension
+  authors: David Wärn
+
+Q1033910:
+  title: 康托尔-伯恩斯坦-施罗德定理
+  decl: Function.Embedding.schroeder_bernstein
+  authors: Mario Carneiro
+
+Q1037559:
+  title: 波利亚枚举定理
+
+Q1038716:
+  title: 恒等定理
+  decl: AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+
+Q1046232:
+  title: 塞迈雷迪定理
+
+Q1047749:
+  title: 图兰定理
+  decl: SimpleGraph.isTuranMaximal_iff_nonempty_iso_turanGraph
+  authors: Jeremy Tan
+
+Q1048589:
+  title: 霍亨伯格-科恩定理
+
+Q1048874:
+  title: 高斯绝妙定理
+
+Q1050037:
+  title: 科斯定理
+
+Q1050203:
+  title: 康托尔交集定理
+  # 多个版本；这个（以及同一文件中的相关定理）是否涵盖了维基百科文章的所有内容？
+  decl: IsCompact.nonempty_sInter_of_directed_nonempty_isCompact_isClosed
+
+Q1050932:
+  title: 哈托格斯定理
+  url: https://github.com/girving/ray/blob/main/Ray/Hartogs/Hartogs.lean
+  authors: Geoffrey Irving
+
+Q1051404:
+  title: 切萨罗定理
+
+Q1052021:
+  title: 克雷格插值定理
+
+Q1052678:
+  title: 贝尔纲定理
+  decl: dense_sInter_of_isOpen
+
+Q1052752:
+  title: 斯托尔兹-切萨罗定理
+
+Q1054106:
+  title: 考克斯定理
+
+Q1056283:
+  title: 梅定理
+
+Q1057919:
+  title: 西洛定理
+  decls:
+   - Sylow.exists_subgroup_card_pow_prime
+   - Sylow.isPretransitive_of_finite
+   - Sylow.card_dvd_index
+   - card_sylow_modEq_one
+
+Q1058662:
+  title: 达布定理
+  # 辛几何
+
+Q1059151:
+  title: FWL 定理
+
+Q1064471:
+  title: 恩绍定理
+
+Q1065257:
+  title: 夹挤定理
+  decl: tendsto_of_tendsto_of_tendsto_of_le_of_le'
+
+Q1065966:
+  title: 同构定理
+  # 抽象代数中的三个同构定理
+  decls:
+    - QuotientGroup.quotientKerEquivRange
+    - QuotientGroup.quotientInfEquivProdNormalQuotient
+    - QuotientGroup.quotientQuotientEquivQuotient
+
+Q1067156:
+  title: 控制收敛定理
+  decl: MeasureTheory.tendsto_integral_of_dominated_convergence
+
+Q1067156X:
+  title: 有界收敛定理
+  decls:
+    - MeasureTheory.FiniteMeasure.tendsto_lintegral_nn_of_le_const
+    - MeasureTheory.tendsto_lintegral_nn_filter_of_le_const
+
+Q1068085:
+  title: 闭图像定理
+  decl: LinearMap.continuous_of_isClosed_graph
+
+Q1068283:
+  title: 勒文海姆-斯科伦定理
+  decl: FirstOrder.Language.exists_elementaryEmbedding_card_eq
+
+Q1068385:
+  title: 克莱罗定理
+
+Q1068976:
+  title: 希尔伯特零点定理
+  decl: MvPolynomial.vanishingIdeal_zeroLocus_eq_radical
+
+Q1075398:
+  title: 容格定理
+
+Q1076274:
+  title: 绍凯-毕晓普-德莱乌定理
+
+Q1077462:
+  title: 柯尼希定理（集合论）
+
+Q1077741:
+  title: 毛球定理
+
+Q1082910:
+  title: 欧拉分割定理
+  authors: Bhavik Mehta and Aaron Anderson
+  decl: Theorems100.partition_theorem
+
+Q1095330:
+  title: 阿佩里定理
+  url: https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/pi.20is.20irrational.3F/near/478674074
+  # TODO: 插入仓库链接，或许可以将其加入 mathlib :-)
+
+Q1097021:
+  title: 闵可夫斯基定理
+  decl: MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure
+  authors: Alex J. Best and Yaël Dillies
+  date: 2021
+
+Q1103054:
+  title: 利昂斯-拉克斯-米尔格拉姆定理
+
+Q1119094:
+  title: 佩利-维纳定理
+
+Q1121027:
+  title: 克雷洛夫-博戈柳博夫定理
+
+Q1125462:
+  title: 迪诺斯特拉托斯定理
+
+Q1129636:
+  title: 雷曼-谢费定理
+
+Q1130846:
+  title: 拉德纳定理
+
+Q1131601:
+  title: 斯克拉尔定理
+
+Q1132952:
+  title: 欧拉齐次函数定理
+
+Q1134296:
+  title: 支撑超平面定理
+
+Q1134776:
+  title: 迪尔沃思定理
+
+Q1135706:
+  title: 哈纳克定理
+
+Q1136043:
+  title: 赫尔维茨定理（复分析）
+
+Q1136262:
+  title: 光学定理
+
+Q1137014:
+  title: 齐霍诺夫定理
+  decl: isCompact_pi_infinite
+
+Q1137206:
+  title: 泰勒定理
+  decls:
+    - taylor_mean_remainder_lagrange
+    - taylor_mean_remainder_cauchy
+  authors: Moritz Doll
+
+Q1139041:
+  title: 柯西定理（群论）
+  decl: exists_prime_orderOf_dvd_card
+
+Q1139430:
+  title: 赫尔维茨定理（赋范除法代数）
+
+Q1139524:
+  title: 有理数定理
+
+Q1140119:
+  title: 莫雷拉定理
+
+Q1140200:
+  title: PCP 定理
+
+Q1141747:
+  title: 卡诺定理（内切圆、外接圆）
+
+Q1143540:
+  title: 赫克歇尔-俄林定理
+
+Q1144897:
+  title: 布劳威尔不动点定理
+  authors: Brendan Seamas Murphy
+  url: https://github.com/Shamrock-Frost/BrouwerFixedPoint/blob/master/src/brouwer_fixed_point.lean
+  comment: "在 Lean 3 中"
+
+Q1146791:
+  title: 费马多边形数定理
+
+Q1148215:
+  title: 米切尔嵌入定理
+  decl: CategoryTheory.Abelian.freyd_mitchell
+  authors: Markus Himmel, Jakob von Raumer, Paul Reichert, Joël Riou
+
+Q1149022:
+  title: 富比尼定理
+  decl: MeasureTheory.integral_prod
+
+Q1149185X:
+  title: 柯比-帕里斯定理
+
+Q1149185:
+  title: 古德斯坦定理
+
+Q1149458:
+  title: 紧致性定理
+  decl: FirstOrder.Language.Theory.isSatisfiable_iff_isFinitelySatisfiable
+
+Q1149522:
+  title: 拉密定理
+
+Q1152521:
+  title: 莫尔-马斯凯罗尼定理
+
+Q1153441:
+  title: 戈德斯通定理
+
+Q1153584:
+  title: 单调收敛定理
+  decls:
+    - MeasureTheory.integral_tendsto_of_tendsto_of_antitone
+    - MeasureTheory.lintegral_tendsto_of_tendsto_of_monotone
+
+Q1166774:
+  title: 斯通布尔代数表示定理
+
+Q1177508:
+  title: 雷代伊定理
+
+Q1179446:
+  title: 德拉姆定理
+
+Q1182249:
+  title: 演绎定理
+
+Q1186134:
+  title: 庞塞莱-施泰纳定理
+
+Q1186808:
+  title: 卢卡斯定理
+  decl: Choose.lucas_theorem
+
+Q1187646:
+  title: 同态基本定理
+  # 又名第一同构定理
+  decl: QuotientGroup.quotientKerEquivRange
+
+Q1188048:
+  title: 巴比尔定理
+
+Q1188392:
+  title: 蔡克endorf定理
+  decl: Nat.zeckendorfEquiv
+
+Q1188504:
+  title: 皮特曼-库普曼-达穆瓦定理
+
+Q1191319:
+  title: 拉东-尼科迪姆定理
+  decl: MeasureTheory.Measure.absolutelyContinuous_iff_withDensity_rnDeriv_eq
+
+Q1191709:
+  title: 叶戈罗夫定理
+  decl: MeasureTheory.tendstoUniformlyOn_of_ae_tendsto
+  authors: Kexing Ying
+
+Q1191862:
+  title: 儒歇定理
+
+Q1194053:
+  title: 度量化定理
+  decl: TopologicalSpace.metrizableSpace_of_t3_secondCountable
+  comment: "乌雷松度量化定理（仅此）"
+
+Q1196538:
+  title: 笛卡尔定理
+
+Q1196729:
+  title: 梅滕斯定理
+
+Q1202608:
+  title: 德古阿定理
+
+Q1209546:
+  title: 卡普兰斯基密度定理
+
+Q1217677:
+  title: 微积分基本定理
+  decls:
+    - intervalIntegral.integral_hasStrictDerivAt_of_tendsto_ae_right
+    - intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le
+  authors: Yury G. Kudryashov (第一条) and Benjamin Davidson (第二条)
+
+Q1227061:
+  title: 辛钦丢番图逼近定理
+
+Q1227702:
+  title: 狄利克雷单位定理
+
+Q1227703:
+  title: 狄利克雷逼近定理
+
+Q1242398:
+  title: 杜布分解定理
+
+Q1243340:
+  title: 伯克霍夫-冯诺依曼定理
+  decl: doublyStochastic_eq_convexHull_permMatrix
+  authors: Bhavik Mehta
+  date: 2024
+
+Q1249069:
+  title: 理查森定理
+
+Q1259814:
+  title: 尼尔森-施赖尔定理
+  decl: subgroupIsFreeOfIsFree
+
+Q1276318:
+  title: 施瓦茨核定理
+
+Q1305766:
+  title: 庞加莱-霍普夫定理
+
+Q1306092:
+  title: 纳什嵌入定理
+
+Q1306095:
+  title: 惠特尼嵌入定理
+  decl: exists_embedding_euclidean_of_compact
+  comment: "简化版：针对紧流形；嵌入到某个 *n* 维空间"
+
+Q1307676:
+  title: 肯尼思定理
+
+Q1308502:
+  title: 丘奇-罗瑟定理
+
+Q1315949:
+  title: 米塔-列夫勒定理
+
+Q1317350:
+  title: 陈氏定理
+
+Q1317367:
+  title: 日本共圆多边形定理
+
+Q1322892:
+  title: 迪拉克弦图定理
+
+Q1330788:
+  title: 魏尔斯特拉斯分解定理
+
+Q1340623:
+  title: 有限单群分类
+
+Q1346677:
+  title: 蒂茨扩张定理
+  decl: BoundedContinuousFunction.exists_extension_norm_eq_of_isClosedEmbedding
+
+Q1347094:
+  title: 内错角定理
+
+Q1348736:
+  title: 雷布琴斯基定理
+
+Q1349282:
+  title: 艾伦伯格-齐伯尔定理
+
+Q1357684:
+  title: 里斯表示定理
+  decl: InnerProductSpace.toDual
+  authors: Frédéric Dupuis
+  date: 2020
+
+Q1361031:
+  title: 弗罗贝尼乌斯定理（实除法代数）
+
+Q1361393:
+  title: 卢津定理
+
+Q1366581:
+  title: 埃尔德什-拉多定理
+
+Q1369453:
+  title: 克罗内克-韦伯定理
+
+Q1370316:
+  title: 凯西定理
+
+Q1376515:
+  title: 无毛定理
+
+Q1396592:
+  title: 弗拉内尔-兰道定理
+
+Q1420905:
+  title: 希尔伯特定理 90
+
+Q1422083:
+  title: 里尔-纳尔泽夫斯基不动点定理
+
+Q1423818:
+  title: 欧拉几何定理
+
+Q1424481:
+  title: 弗鲁赫特定理
+
+Q1425077:
+  title: 谱定理
+
+Q1425308:
+  title: 婆罗摩笈多定理
+
+Q1425529:
+  title: 切博塔廖夫密度定理
+
+Q1426292:
+  title: 巴拿赫-施坦豪斯定理
+  decl: banach_steinhaus
+  authors: Jireh Loreaux
+  date: 2021
+
+Q1434158:
+  title: 涨落耗散定理
+
+Q1434805:
+  title: 马克斯·诺特定理
+
+Q1443036:
+  title: 帕塞瓦尔定理
+
+Q1452678:
+  title: 彭罗斯-霍金奇点定理
+
+Q1455794:
+  title: 弗罗登塔尔悬置定理
+
+Q1457052:
+  title: 良序定理
+  decl: exists_wellOrder
+  authors: Mario Carneiro, Chris Hughes, Violeta Hernández
+  date: 2017
+
+Q1471282:
+  title: 拉东定理
+  decl: Convex.radon_partition
+  authors: Vasilii Nesterov
+  date: 2023
+
+Q1472120:
+  title: 黑林格-特普利茨定理
+
+Q1477053:
+  title: 阿尔泽拉-阿斯科利定理
+  decl: BoundedContinuousFunction.arzela_ascoli
+
+Q1505529:
+  title: 龙格定理
+
+Q1506253:
+  title: 欧几里得定理
+  decl: Nat.exists_infinite_primes
+  authors: Jeremy Avigad
+
+Q1529941:
+  title: 彼得-外尔定理
+
+Q1530275:
+  title: 邓福德-佩蒂斯定理
+
+Q1535225:
+  title: 沃什定理
+
+Q1542114:
+  title: 贝祖定理
+
+Q1543149:
+  title: 索霍茨基-魏尔斯特拉斯定理
+
+Q1547975:
+  title: 梅尔明-瓦格纳定理
+
+Q1551745:
+  title: 二项式逆定理
+
+Q1555342:
+  title: 雷-施利德定理
+
+Q1564541:
+  title: 佩龙-弗罗贝尼乌斯定理
+
+Q1566341:
+  title: 欣德曼定理
+  decl: Hindman.FP_partition_regular
+  authors: David Wärn
+
+Q1566372:
+  title: 哈格定理
+
+Q1568612:
+  title: 马登定理
+
+Q1568811:
+  title: 哈恩分解定理
+  decl: MeasureTheory.SignedMeasure.exists_isCompl_positive_negative
+  authors: Kexing Ying
+  date: 2021
+
+Q1572474:
+  title: 林德曼-魏尔斯特拉斯定理
+  # WIP PR: https://github.com/leanprover-community/mathlib4/pull/6718
+
+Q1576235:
+  title: 洛赫斯定理
+
+Q1602819:
+  title: 卢默-菲利普斯定理
+
+Q1614464:
+  title: 柯西-柯瓦列夫斯基定理
+
+Q1621180:
+  title: 奥尔利奇-佩蒂斯定理
+
+Q1630588:
+  title: 赫尔维茨定理（数论）
+
+Q1631749:
+  title: 莱斯特定理
+
+Q1631992:
+  title: 施泰纳-莱默斯定理
+
+Q1632301:
+  title: 施图姆定理
+
+Q1632433:
+  title: 海利定理
+  authors: Vasily Nesterov
+  decl: Convex.helly_theorem
+  date: 2023
+
+Q1637085:
+  title: 坡印亭定理
+
+Q1660147:
+  title: 马祖尔-乌拉姆定理
+
+Q1668861:
+  title: 皮卡定理
+
+Q1683356:
+  title: 日本共圆四边形定理
+
+Q1687147:
+  title: 斯普拉格-格隆迪定理
+  decl: SetTheory.PGame.equiv_nim_grundyValue
+  authors: Fox Thomson
+  date: 2020
+
+Q1694565:
+  title: 维诺格拉多夫定理
+
+Q1699024:
+  title: 约翰椭球
+
+Q1704878:
+  title: 阿佩尔-洪贝尔定理
+
+Q1716166:
+  title: 默瑟定理
+
+Q1720410:
+  title: 叶尔姆斯列夫定理
+
+Q1724049:
+  title: 沃尔斯滕霍姆定理
+
+Q1727461:
+  title: 相交割线定理
+
+Q1739994:
+  title: 布劳尔-铃木定理
+
+Q1751105:
+  title: 布卢姆加速定理
+
+Q1751823:
+  title: 不克隆定理
+
+Q1752516:
+  title: 黎曼级数定理
+
+Q1752621:
+  title: 西尔维斯特惯性定理
+  decl: QuadraticForm.equivalent_one_zero_neg_one_weighted_sum_squared
+
+Q1752988:
+  title: 库塔-儒可夫斯基定理
+
+Q1756194:
+  title: 香农-哈特利定理
+
+Q1765521:
+  title: 杜布鞅收敛定理
+
+Q1766814:
+  title: Smn 定理
+  decl: Nat.Partrec.Code.smn
+  authors: Mario Carneiro
+  date: 2018
+
+Q1785610:
+  title: 庞塞莱闭合定理
+
+Q1785872:
+  title: 贝里-埃森定理
+
+Q1786292:
+  title: 舒尔定理
+
+Q1786419:
+  title: 克拉默斯定理
+
+Q1789863:
+  title: 劳斯定理
+
+Q1809539:
+  title: 披萨定理
+
+Q1816952:
+  title: 舒尔引理
+  decl: CategoryTheory.finrank_endomorphism_simple_eq_one
+
+Q1841237:
+  title: 富比尼微分定理
+  # XXX: mathlib 是否已有此定理？
+
+Q1855610:
+  title: 棣莫弗-拉普拉斯定理
+  # 中心极限定理的特例：二项分布收敛于正态分布
+
+Q1888583:
+  title: 霍尔迪奇定理
+
+Q1893717:
+  title: 莱斯定理
+  decl: ComputablePred.rice
+
+Q1896455:
+  title: 伐里农定理
+
+Q1899432:
+  title: 格罗滕迪克-希策布鲁赫-黎曼-罗赫定理
+
+Q1914905:
+  title: 拉马努金-斯科伦定理
+
+Q1930577:
+  title: 埃尔布朗定理
+
+Q1933521:
+  title: 克莱尼递归定理
+  decl: Nat.Partrec.Code.fixed_point₂
+  authors: Mario Carneiro
+  date: 2018
+
+Q1938251:
+  title: 哈斯-闵可夫斯基定理
+
+Q1946642X:
+  title: S-配边定理
+
+Q1946642:
+  title: H-配边定理
+
+Q1964537:
+  title: 默格利安定理
+
+Q1966978:
+  title: 莱维连续性定理
+
+Q1974087:
+  title: 黎曼可去奇点定理
+
+Q1995468:
+  title: 赫尔德定理
+
+Q1996305:
+  title: 伯恩赛德定理
+  # 一个外部项目证明了其一部分：TODO 在此评论中提及
+
+Q2000090:
+  title: 美术馆定理
+
+Q2008549:
+  title: 希尔伯特定理（微分几何）
+
+Q2013213:
+  title: 罗伊施勒定理
+
+Q2022775:
+  title: 希尔伯特-施密特定理
+
+Q2027347:
+  title: 可选停止定理
+  decl: MeasureTheory.submartingale_iff_expected_stoppedValue_mono
+  authors: Kexing Ying, Rémy Degenne
+  date: 2022
+
+Q2028341:
+  title: 阿多定理
+
+Q2046647:
+  title: 卡鲁宁-勒维定理
+
+Q2063099:
+  title: 庞加莱对偶定理
+
+Q2068227:
+  title: 阿廷-施赖尔定理
+
+Q2071632:
+  title: 劳奇-卡佩利定理
+
+Q2093886:
+  title: 本原元定理
+  decl: Field.exists_primitive_element
+
+Q2094241:
+  title: 霍普夫-里诺定理
+
+Q2096184:
+  title: 普朗歇尔定理
+  # 也在 undergrad.yml 中
+
+Q2109761:
+  title: 单值化定理
+
+Q2120067:
+  title: 迪勒-德雷斯定理
+
+Q2190744:
+  title: 费尔巴哈定理
+  # 也在 100.yaml 中
+
+Q2197859:
+  title: 尼科马霍斯定理
+
+Q2222575:
+  title: 球壳定理
+
+Q2226602:
+  title: 鲍尔-菲克定理
+
+Q2226606:
+  title: 贝克曼-夸尔斯定理
+
+Q2226610:
+  title: 巴拿赫-马祖尔定理
+
+Q2226624:
+  title: 布鲁克-乔拉-赖瑟定理
+
+Q2226625:
+  title: 科曼迪诺定理
+
+Q2226640:
+  title: 克拉梅尔分解定理
+
+Q2226644:
+  title: 伊斯顿定理
+
+Q2226650:
+  title: 埃伯林-斯穆里安定理
+
+Q2226677:
+  title: 盖尔范德-马祖尔定理
+
+Q2226682:
+  title: 盖尔范德-奈马克定理
+
+Q2226691:
+  title: 基尔霍夫定理
+
+Q2226695:
+  title: 赫尔维茨自同构定理
+
+Q2226698:
+  title: 坎托罗维奇定理
+
+Q2226709:
+  title: 克鲁尔-施密特定理
+
+Q2226750:
+  title: 马尔格朗日-埃伦普赖斯定理
+
+Q2226774:
+  title: 柯尼希定理
+
+Q2226786:
+  title: 斯佩纳定理
+  decl: IsAntichain.sperner
+  authors: Bhavik Mehta, Alena Gusakov, Yaël Dillies
+  date: 2022
+
+Q2226800:
+  title: 舒尔-察森豪斯定理
+  decl: Subgroup.exists_left_complement'_of_coprime
+  authors: Thomas Browning
+  date: 2021
+
+Q2226803:
+  title: 滕嫩鲍姆定理
+
+Q2226807:
+  title: 范蒂格姆定理
+
+Q2226855:
+  title: 沙尔科夫斯基定理
+  # TODO: 找到代码
+  authors: Bhavik Mehta
+  date: 2022
+
+Q2226868:
+  title: 几何平均数定理
+
+Q2226962:
+  title: 魏尔斯特拉斯-卡索拉蒂定理
+
+Q2253746:
+  title: 伯特兰投票定理
+  authors: Bhavik Mehta and Kexing Ying
+  decl: Ballot.ballot_problem
+
+Q2266397:
+  title: 相交弦定理
+
+Q2267175:
+  title: 切割线定理
+
+Q2269888:
+  title: 科恩不可约判据
+
+Q2270905:
+  title: 庞加莱-伯克霍夫-维特定理
+
+Q2275191:
+  title: 勒贝格微分定理
+  decl: VitaliFamily.ae_tendsto_lintegral_div
+  authors: Sébastien Gouëzel
+  date: 2021
+
+Q2277040:
+  title: 香农展开定理
+
+Q2287393:
+  title: 卡里斯蒂不动点定理
+
+Q2309682:
+  title: 球定理
+
+Q2309760:
+  title: 卢曼-门肖夫定理
+
+Q2310718:
+  title: 皮托管定理
+
+Q2338929:
+  title: 置换定理
+  # 又名施泰尼茨置换引理。这肯定在 mathlib 的某个地方
+
+Q2345282:
+  title: 香农定理
+
+Q2347139:
+  title: 卡诺定理（热力学）
+
+Q2360531:
+  title: 若尔当-舒尔定理
+
+Q2374733:
+  title: 斯科伦-马勒-莱赫定理
+
+Q2376918:
+  title: 阿贝尔和陶伯定理
+
+Q2378270:
+  title: 图厄定理
+
+Q2379128:
+  title: 林德斯特伦定理
+
+Q2379132:
+  title: 上升和下降定理
+  # TODO: mathlib 是否有这些？
+
+Q2394548:
+  title: 胡雷维茨定理
+
+Q2411312:
+  title: 香农信源编码定理
+
+Q2428364:
+  title: 克劳修斯定理
+
+Q2449984:
+  title: 米库尔定理
+
+Q2449984X:
+  title: 枢轴定理
+
+Q2471737:
+  title: 卡拉西奥多里定理（凸包）
+  decl: convexHull_eq_union
+
+Q2473965:
+  title: 丑小鸭定理
+
+Q2478371:
+  title: 包络定理
+
+Q2482753:
+  title: 曼定理
+  # 在 LeanCamCombi 中完成
+
+Q2495664:
+  title: 泛系数定理
+
+Q2500406:
+  title: 利纳尔定理
+
+Q2500408:
+  title: 泰博定理
+
+Q2518048:
+  title: 小平消没定理
+
+Q2524990:
+  title: 杰克逊定理（排队论）
+
+Q2525646:
+  title: 若尔当-赫尔德定理
+  decl: CompositionSeries.jordan_holder
+
+Q2533936:
+  title: 笛卡尔总角亏定理
+
+Q2540738:
+  title: 嘉当-迪厄多内定理
+
+Q2558669:
+  title: 阿廷-佐恩定理
+
+Q2588432:
+  title: 沃尔德定理
+
+Q2600653:
+  title: 泰勒-普劳德曼定理
+
+Q2607007:
+  title: 铰链定理
+
+Q2621667:
+  title: 长田-斯米尔诺夫度量化定理
+
+Q2631152:
+  title: 卡拉西奥多里扩张定理
+
+Q2635326:
+  title: 结构化程序定理
+
+Q2638931:
+  title: 卷积定理
+
+Q2703389:
+  title: 林尼克定理
+
+Q2733672:
+  title: 普赖斯定理
+
+Q2734084:
+  title: 玻尔-莫勒鲁普定理
+
+Q2793600:
+  title: 斯塔克-黑格纳定理
+
+Q2799491:
+  title: 林格尔-扬斯定理
+
+Q2800071:
+  title: 完美图定理
+
+Q2862403:
+  title: 施耐德-兰定理
+
+Q2893695:
+  title: 无混定理
+
+Q2916568:
+  title: 戈莫里定理
+
+Q2919401:
+  title: 奥斯特洛夫斯基定理
+  decl: Rat.AbsoluteValue.equiv_real_or_padic
+  authors: David Kurniadi Angdinata, Fabrizio Barroero, Laura Capuano, Nirvana Coppola, María Inés de Frutos-Fernández, Sam van Gool, Silvain Rideau-Kikuchi, Amos Turchet, Francesco Veneziano
+  date: 2024
+
+Q2981012:
+  title: 蒙日定理
+
+Q2984415:
+  title: 海纳尔-塞迈雷迪定理
+
+Q2993026:
+  title: 安克尼-阿廷-乔拉定理
+
+Q2993308:
+  title: 卡梅伦-埃尔德什定理
+
+Q2993319:
+  title: 米尔斯基-纽曼定理
+
+Q2995691:
+  title: 纽兰德-尼伦伯格定理
+
+Q3001796:
+  title: 斯科伦-诺特定理
+
+Q3007384:
+  title: 波斯特定理
+
+Q3075250:
+  title: 哈代-李特尔伍德极大定理
+
+Q3077634:
+  title: 萨尔奎斯对应定理
+
+Q3088644:
+  title: 戈德斯坦定理
+
+Q3154003:
+  title: 勒卡姆定理
+
+Q3180727:
+  title: 佩利斯定理
+
+Q3229335:
+  title: 玻尔-卡拉西奥多里定理
+
+Q3229352:
+  title: 维塔利覆盖定理
+  decl: Vitali.exists_disjoint_covering_ae
+  authors: Sébastien Gouëzel
+  date: 2021
+
+Q3345678:
+  title: 穆尔-阿龙扎因定理
+
+Q3424029:
+  # TODO: 应引用单个条目
+  # 维基百科中的列表已经更改。当 1000+ 定理项目与维基百科数据同步，
+  # 并且此文件与 1000+ 定理项目的数据同步时，此条目将自动更改。
+  title: 沙勒定理（消歧义）
+
+Q3443426:
+  title: 邦迪定理
+
+Q3458641:
+  title: 塞格极限定理
+
+Q3502015:
+  title: 哈斯椭圆曲线定理
+
+Q3505260:
+  title: 凯莱-萨尔蒙定理
+
+Q3526969:
+  title: AF+BG 定理
+
+Q3526976:
+  title: 阿克斯-格罗滕迪克定理
+
+Q3526982:
+  title: 埃尔德什-安宁定理
+
+Q3526990:
+  title: 欧拉定理
+
+Q3526993:
+  title: 高木存在性定理
+
+Q3526996:
+  title: 柯尔莫哥洛夫扩张定理
+  authors: Rémy Degenne, Peter Pfaffelhuber
+  date: 2023
+  url: https://github.com/RemyDegenne/kolmogorov_extension4
+
+Q3526998:
+  title: 切除定理
+
+Q3527004:
+  title: BEST 定理
+
+Q3527008:
+  title: 巴利安-洛定理
+
+Q3527009:
+  title: 贝克定理
+
+Q3527011:
+  title: 贝克定理（几何）
+
+Q3527015:
+  title: 伯恩斯坦单调函数定理
+
+Q3527017:
+  title: 伯林-拉克斯定理
+
+Q3527019:
+  title: 伯奇定理
+
+Q3527034:
+  title: 柯西定理（几何）
+
+Q3527040:
+  title: 乔姆斯基-许岑贝格表示定理
+
+Q3527044:
+  title: 帕普斯面积定理
+
+Q3527054:
+  title: 德布鲁因-埃尔德什定理（图论）
+
+Q3527056:
+  title: 德布鲁因-埃尔德什定理（关联几何）
+
+Q3527064:
+  title: 唐斯克定理
+
+Q3527067:
+  title: F. 和 M. 里斯定理
+
+Q3527071:
+  title: 法里-米尔诺定理
+
+Q3527079:
+  title: 弗赖曼定理
+
+Q3527088:
+  title: 哈布什定理
+
+Q3527091:
+  title: 格罗莫夫多项式增长群定理
+
+Q3527093:
+  title: 希尔伯特-施佩泽定理
+
+Q3527095:
+  title: 雅可比四平方和定理
+
+Q3527100:
+  title: 克鲁斯卡尔树定理
+
+Q3527102:
+  title: 克鲁斯卡尔-卡托纳定理
+  decl: Finset.kruskal_katona
+  authors: Bhavik Mehta, Yaël Dillies
+  date: 2020
+
+Q3527110:
+  title: 拉克斯-温德洛夫定理
+
+Q3527113:
+  title: 李-科尔钦定理
+
+Q3527118:
+  title: 马勒定理
+  decl: PadicInt.hasSum_mahler
+
+Q3527125:
+  title: 蒙斯基定理
+
+Q3527129:
+  title: 蒙茨-萨斯定理
+
+Q3527132:
+  title: 内格尔-卢茨定理
+
+Q3527155:
+  title: 罗伯逊-西摩定理
+
+Q3527162:
+  title: 苏菲·热尔曼定理
+  # 费马大定理的特例，包括所有小于 100 的素数
+
+Q3527166:
+  title: 施泰因豪斯定理
+  # 不难，但似乎缺失
+
+Q3527171:
+  title: 辛格定理
+
+Q3527185:
+  title: 怀特海德定理
+
+Q3527189:
+  title: 格定理
+  # 又名第三或第四同构定理
+  decl: QuotientGroup.quotientQuotientEquivQuotient
+
+Q3527196:
+  title: 主理想定理
+
+Q3527205:
+  title: 向量空间维数定理
+  decl: mk_eq_mk_of_basis
+
+Q3527209:
+  title: 哈斯范数定理
+
+Q3527214:
+  title: 非挤压定理
+
+Q3527215:
+  title: 希尔伯特投影定理
+  decl: exists_norm_eq_iInf_of_complete_convex
+  authors: Zhouhang Zhou
+  date: 2019
+
+Q3527217:
+  title: M. 里斯扩张定理
+
+Q3527219:
+  title: 魏尔斯特拉斯预备定理
+
+Q3527223:
+  title: 晶体学限制定理
+
+Q3527226:
+  title: 线性加速定理
+
+Q3527230:
+  title: 冯·施陶特-克劳森定理
+
+Q3527233:
+  title: 柯尔莫哥洛夫三级数定理
+
+Q3527241:
+  title: 克鲁尔主理想定理
+  decl: Ideal.height_le_one_of_isPrincipal_of_mem_minimalPrimes
+  authors: Andrew Yang
+  date: 2023
+
+Q3527245:
+  title: 六指数定理
+
+Q3527247:
+  title: 六圆定理
+
+Q3527250:
+  title: 阿达马三线定理
+  decl: Complex.HadamardThreeLines.norm_le_interpStrip_of_mem_verticalClosedStrip
+  authors: Xavier Généreux
+  date: 2023
+
+Q3527263:
+  title: 克莱尼不动点定理
+  decl: fixedPoints.lfp_eq_sSup_iterate
+  authors: Ira Fesefeldt
+  date: 2024
+
+Q3527279:
+  title: 维纳陶伯定理
+
+Q3534036:
+  title: 庞培乌定理
+
+Q3613173:
+  title: 蒂茨择一定理
+
+Q3661294:
+  title: 开尔文环量定理
+
+Q3699212:
+  title: 圣维南定理
+
+Q3711848:
+  title: 索博列夫嵌入定理
+  # 部分进展：索博列夫不等式 MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq
+
+Q3757563:
+  title: 截线定理
+
+Q3771212:
+  title: 普罗特定理
+
+Q3889376:
+  title: 卡迈克尔定理
+
+Q3893473:
+  title: 驯顺定理
+
+Q3915398:
+  title: 布伦-闵可夫斯基定理
+
+Q3983968:
+  title: 施图姆-皮科内比较定理
+
+Q3983972:
+  title: 单纯逼近定理
+
+Q3984011:
+  title: 达根-施瓦茨定理
+
+Q3984017:
+  title: 海利选择定理
+
+Q3984020:
+  title: 霍尔姆斯特伦定理
+
+Q3984052:
+  title: 等分布定理
+
+Q3984053:
+  title: 傅里叶反演定理
+  decl: Continuous.fourier_inversion
+  authors: Sébastien Gouëzel
+  date: 2024
+
+Q3984056:
+  title: 无通信定理
+
+Q3984063:
+  title: 莫斯托刚性定理
+
+Q3984069:
+  title: 弗雷德霍姆定理
+
+Q4054114:
+  title: ATS 定理
+
+Q4116459:
+  title: 尼云定理
+
+Q4171386:
+  title: 灵魂定理
+
+Q4179283:
+  title: 正能量定理
+
+Q4272300:
+  title: 初值定理
+
+Q4272645:
+  title: 终值定理
+
+Q4378868:
+  title: 弗拉格门-林德洛夫定理
+  decl: PhragmenLindelof.horizontal_strip
+  authors: Yury G. Kudryashov
+  date: 2022
+
+Q4378889:
+  title: 卡拉西奥多里定理（共形映射）
+
+Q4408070:
+  title: 德费内蒂定理
+
+Q4454910:
+  title: 奥斯特洛夫斯基-阿达马缺项定理
+
+Q4454919:
+  title: 奥曼协议定理
+
+Q4454925:
+  title: 楔之边缘定理
+
+Q4454954:
+  title: 基尔什布劳恩定理
+
+Q4454958:
+  title: 极小化极大定理
+
+Q4454973:
+  title: 林德洛夫定理
+
+Q4454976:
+  title: 刘维尔定理（共形映射）
+
+Q4454989:
+  title: 默尼耶定理
+
+Q4454996:
+  title: 诺维科夫紧叶定理
+
+Q4455003:
+  title: 波梅兰丘克定理
+
+Q4455015:
+  title: 劳斯-赫尔维茨定理
+
+Q4455016:
+  title: 里布球面定理
+
+Q4455023:
+  title: 萨佐诺夫定理
+
+Q4455025:
+  title: 无游荡域定理
+
+Q4455030:
+  title: 斯通单参数酉群定理
+
+Q4455031:
+  title: 法里定理
+
+Q4455033:
+  title: 法图定理
+
+Q4455037:
+  title: 哈代定理
+
+Q4455043:
+  title: 凯莱-巴卡拉克定理
+
+Q4455046:
+  title: 单值性定理
+
+Q4634017:
+  title: 2π 定理
+
+Q4663326:
+  title: 希策布鲁赫-黎曼-罗赫定理
+
+Q4666729:
+  title: 阿贝尔-雅可比定理
+
+Q4666729X:
+  title: 阿贝尔曲线定理
+
+Q4667501:
+  title: 阿布扬卡-莫定理
+
+Q4677985:
+  title: 无环模型定理
+
+Q4695203:
+  title: 四函数定理
+  decl: four_functions_theorem
+  authors: Yaël Dillies
+  date: 2023
+
+Q4700718:
+  title: 阿赫耶泽尔定理
+
+Q4712316:
+  title: 阿尔伯特-布劳尔-哈斯-诺特定理
+
+Q4713046:
+  title: 阿尔钦-艾伦定理
+
+Q4724004B:
+  title: 黎曼存在性定理
+
+Q4724004A:
+  title: 周定理
+
+Q4734002:
+  title: 格罗莫夫-鲁定理
+
+Q4734844:
+  title: 阿尔珀林-布劳尔-戈伦斯坦定理
+
+Q4736422:
+  title: 丹茹瓦-卢津定理
+
+Q4746948:
+  title: 阿米瑟-莱维茨基定理
+
+Q4751110:
+  title: 分析师旅行商定理
+
+Q4751118:
+  title: 解析弗雷德霍姆定理
+
+Q4753992:
+  title: 安德森定理
+
+Q4756099:
+  title: 安德烈奥蒂-弗兰克尔定理
+
+Q4783822:
+  title: 算术黎曼-罗赫定理
+
+Q4788680:
+  title: 面积定理（共形映射）
+
+Q4801169:
+  title: 阿廷逼近定理
+
+Q4801183:
+  title: 阿廷-韦迪耶对偶定理
+
+Q4801563:
+  title: 阿特斯坦定理
+
+Q4815879:
+  title: 阿蒂亚-西格尔完备化定理
+
+Q4815899:
+  title: 阿特金森定理
+
+Q4826848:
+  title: 自主收敛定理
+
+Q4827308:
+  title: 辅助多项式定理
+
+Q4830725:
+  title: 阿克斯-格罗滕迪克定理
+  decl: ax_grothendieck_zeroLocus
+  authors: Chris Hughes
+  date: 2023
+
+Q4832965:
+  title: 阿兹特克菱形定理
+
+Q4838119:
+  title: 巴布什卡-拉克斯-米尔格拉姆定理
+
+Q4848497:
+  title: 贝利-博雷尔定理
+
+Q4853767:
+  title: 巴拿赫-斯通定理
+
+Q4857506:
+  title: 巴帕特-贝格定理
+
+Q4865980:
+  title: 巴尔怀斯紧致性定理
+
+Q4866385:
+  title: 基变换定理
+
+Q4866385X:
+  title: 正常基变换定理
+
+Q4877965:
+  title: 博维尔-拉兹洛定理
+
+Q4878586:
+  title: 贝克单子性定理
+  decl: CategoryTheory.Monad.monadicOfCreatesGSplitCoequalizers
+  authors: Bhavik Mehta
+  date: 2020
+
+Q4880958:
+  title: 贝恩克-施泰因定理
+
+Q4884789:
+  title: 贝尔特拉米定理
+
+Q4884950:
+  title: 别雷定理
+
+Q4891633:
+  title: 伯杰-卡兹丹比较定理
+
+Q4894565:
+  title: 伯恩斯坦定理（逼近论）
+
+Q4914101:
+  title: 宾识别定理
+
+Q4916483:
+  title: 伯克霍夫-格罗滕迪克定理
+
+Q4918128:
+  title: 毕晓普-坎宁斯定理
+
+Q4927458:
+  title: 布隆代尔定理
+
+Q4937691:
+  title: 博戈柳博夫-帕拉修克定理
+
+Q4941364:
+  title: 邦达列娃-夏普利定理
+
+Q4942215:
+  title: 博内定理
+
+Q4944906:
+  title: 博雷尔确定性定理
+
+Q4944908:
+  title: 博雷尔不动点定理
+
+Q4944923:
+  title: 博雷尔-博特-韦伊定理
+
+Q4944923X:
+  title: 博雷尔-韦伊定理
+
+Q4948983:
+  title: 博特周期性定理
+
+Q4949984:
+  title: 有界逆定理
+
+Q4950096:
+  title: 布尔巴基-维特定理
+
+Q4956438:
+  title: 分支定理
+
+Q4958218:
+  title: 布劳尔诱导特征标定理
+
+Q4958221:
+  title: 布劳尔三大主定理
+
+Q4958227:
+  title: 布劳尔-内斯比特定理
+
+Q4958230:
+  title: 布劳尔-西格尔定理
+
+Q4958233:
+  title: 布劳尔-铃木-沃尔定理
+
+Q4971339:
+  title: 英国国旗定理
+
+Q4975963:
+  title: 布朗可表示性定理
+
+Q4979609:
+  title: 布龙-蒂奇马什定理
+
+Q4991415:
+  title: 乔拉-莫德尔定理
+
+Q4998912:
+  title: 伯克定理
+
+Q5001327:
+  title: 布泽曼定理
+
+Q5005143:
+  title: 博歇定理
+
+Q5005965:
+  title: C-定理
+
+Q5026435:
+  title: 卡梅伦-马丁定理
+
+Q5037752:
+  title: 卡拉西奥多里存在性定理
+
+Q5041175:
+  title: 卡尔松-雅各布斯定理
+
+Q5042898:
+  title: 卡尔松定理
+
+Q5047043:
+  title: 嘉当定理 A 和 B
+
+Q5047046:
+  title: 布劳尔-嘉当-华定理
+
+Q5047048:
+  title: 嘉当-阿达马定理
+
+Q5047051:
+  title: 嘉当-仓西延长定理
+
+Q5047052:
+  title: 嘉当-凯勒定理
+
+Q5049717:
+  title: 卡斯泰尔诺沃-德弗朗基斯定理
+
+Q5091194:
+  title: 程氏特征值比较定理
+
+Q5094298:
+  title: 谢瓦莱结构定理
+
+Q5094305:
+  title: 谢瓦莱-谢泼德-托德定理
+
+Q5103861:
+  title: 崔氏完全正映射定理
+
+Q5125859:
+  title: 克拉佩龙定理
+
+Q5127710:
+  title: 克拉克-奥康定理
+
+Q513028:
+  title: 贝祖恒等式
+  decl: Nat.gcd_eq_gcd_ab
+
+Q5132839:
+  title: 克利福德圆定理
+
+Q5132840:
+  title: 克利福德特殊除子定理
+
+Q5136698:
+  title: 簇分解定理
+
+Q5139948:
+  title: 科德定理
+
+Q5141331:
+  title: 科恩结构定理
+
+Q5155090:
+  title: 交换定理
+
+Q5157054:
+  title: 压缩定理
+
+Q5161245:
+  title: 康利-曾德尔定理
+
+Q5163116:
+  title: 保守性定理
+
+Q5165492:
+  title: 连续映射定理
+
+Q5166389:
+  title: 范弗莱克定理
+
+Q5171652:
+  title: 角定理
+  decl: corners_theorem_nat
+  authors: Yaël Dillies, Bhavik Mehta
+  date: 2022
+
+Q5172143:
+  title: 科罗纳定理
+
+Q5178114:
+  title: 库尔塞勒定理
+
+Q5180651:
+  title: 克雷格定理
+
+Q5187911:
+  title: 克鲁克斯涨落定理
+
+Q5188510:
+  title: 横截定理
+
+Q5195996:
+  title: 柯蒂斯-赫德伦德-林登定理
+
+Q5221089:
+  title: 丹斯金定理
+
+Q5242704:
+  title: 道森-格特纳定理
+
+Q5244285:
+  title: 德布鲁因定理
+
+Q5244361:
+  title: 德弗朗基斯定理
+
+Q5251122:
+  title: 时间层次定理
+
+Q5252320:
+  title: 利科里什扭转定理
+
+Q5278348:
+  title: 加尔文定理
+
+Q5282059:
+  title: 哈里什-钱德拉定理
+
+Q5282247:
+  title: 分解定理
+
+Q5295351:
+  title: 唐纳森定理
+
+Q5296972:
+  title: 杜布-迈耶分解定理
+
+Q5299605:
+  title: 格利文科定理
+
+Q5311783:
+  title: 达德利定理
+
+Q5315060:
+  title: 邓福德-施瓦茨定理
+
+Q5319505:
+  title: 蔡尔伯格-布雷苏定理
+
+Q5337931:
+  title: 埃奇沃思极限定理
+
+Q5362000:
+  title: 埃利策定理
+
+Q5384150:
+  title: 等内切圆定理
+
+Q5385323:
+  title: 埃尔德什-高莱定理
+
+Q5385324:
+  title: 埃尔德什-纳吉定理
+
+Q5385325:
+  title: 埃尔德什-波萨定理
+
+Q5385326:
+  title: 埃尔德什-斯通定理
+
+Q5421989:
+  title: 外角定理
+
+Q5436274:
+  title: 法雷尔-马尔库舍维奇定理
+
+Q5437947:
+  title: 法图-勒贝格定理
+  # 本质上是测度论中的法图引理：我们也算作它
+  decl: MeasureTheory.lintegral_liminf_le
+
+Q5438320:
+  title: 福斯特曼-俄林定理
+
+Q5443003:
+  title: 芬克尔对偶定理
+
+Q5443004:
+  title: 芬克尔定理
+
+Q5443005:
+  title: 芬克尔-莫罗定理
+
+Q5445112:
+  title: 费尼克定理
+
+Q5445311:
+  title: 费雷罗-华盛顿定理
+
+Q5447238:
+  title: 菲勒定理
+
+Q5454965:
+  title: 费希尔-蒂皮特-格涅坚科定理
+
+Q5455495:
+  title: 菲廷定理
+
+Q5456213:
+  title: 五圆定理
+
+Q5463860:
+  title: 焦子群定理
+
+Q5473576:
+  title: 福斯特定理
+
+Q5494134:
+  title: 弗兰科娃-海利选择定理
+
+Q5498822:
+  title: 伯克霍夫遍历定理
+
+Q5499906:
+  title: 希尔绍夫-维特定理
+
+Q5501344:
+  title: 弗赖德林-温策尔定理
+
+Q5503689:
+  title: 邦别里-弗里德兰德-伊万尼茨定理
+
+Q5504427:
+  title: 友谊定理
+  decl: Theorems100.friendship_theorem
+  authors: Aaron Anderson and Jalex Stark and Kyle Miller
+
+Q5505098:
+  title: 弗罗贝尼乌斯行列式定理
+
+Q5505114:
+  title: 弗罗达定理
+
+Q5506929:
+  title: 富克斯定理
+
+Q5507285:
+  title: 富格莱德定理
+
+Q5508180:
+  title: 充分就业定理
+
+Q5508482:
+  title: 富尔顿-汉森连通性定理
+
+Q5508973:
+  title: 无套利定价基本定理
+
+Q5530454:
+  title: 盖尔曼-洛定理
+
+Q5552370:
+  title: 杰罗克分裂定理
+
+Q5566491:
+  title: 格莱舍定理
+
+Q5567394:
+  title: 格里森定理
+
+Q5576268:
+  title: 戈达德-索恩定理
+
+Q5579030:
+  title: 戈德堡-萨克斯定理
+
+Q5580171:
+  title: 戈尔迪定理
+
+Q5586067:
+  title: 戈登-纽厄尔定理
+
+Q5588002:
+  title: 戈特斯曼-克尼尔定理
+
+Q5597098:
+  title: 图结构定理
+
+Q5609384:
+  title: 格林伯格定理
+
+Q5610188:
+  title: 格罗莫夫紧致性定理（几何）
+
+Q5610190:
+  title: 格罗莫夫紧致性定理（拓扑）
+
+Q5610718:
+  title: 格罗滕迪克连通性定理
+
+Q5612131:
+  title: 格伦斯基定理
+
+Q5612159:
+  title: 格林瓦尔德-王定理
+
+Q5612871:
+  title: 格勒奇定理
+
+Q5638112:
+  title: 哈德维格定理
+
+Q5638886:
+  title: 哈恩嵌入定理
+
+Q5643485:
+  title: 哈尔彭-劳赫利定理
+
+Q5645731:
+  title: 哈默斯利-克利福德定理
+
+Q5656673:
+  title: 哈代-李特尔伍德陶伯定理
+
+Q5656674:
+  title: 哈代-拉马努金定理
+
+Q5657833:
+  title: 哈里什-钱德拉正则性定理
+
+Q5659675:
+  title: 哈纳克曲线定理
+
+Q5675112:
+  title: 哈托格斯-罗森塔尔定理
+
+Q5680041:
+  title: 哈斯-阿尔夫定理
+
+Q5697916B:
+  title: 瓦尔德豪森定理
+
+Q5697916A:
+  title: 赖德迈斯特-辛格定理
+
+Q5697927:
+  title: 格罗斯-扎吉尔定理
+
+Q5709171:
+  title: 海利-布雷定理
+
+Q5709377:
+  title: 亥姆霍兹定理（经典力学）
+
+Q5761142:
+  title: 希尔伯特不可约性定理
+
+Q5874979:
+  title: 霍比-赖斯定理
+
+Q5876058:
+  title: 霍奇指标定理
+
+Q5988409:
+  title: 黎曼曲面恒等定理
+
+Q6015420:
+  title: 增量定理
+
+Q6059532:
+  title: 阿龙扎因-史密斯定理
+
+Q6086104:
+  title: 同构扩张定理
+
+Q6119825:
+  title: 雅各布森-布尔巴基定理
+
+Q6276298:
+  title: 若尔当定理（多重传递群）
+
+Q6344729:
+  title: 卡丘罗夫斯基定理
+
+Q6360586:
+  title: 金森-麦卡龙定理
+
+Q6373327:
+  title: 卡普-利普顿定理
+
+Q6378596:
+  title: 卡茨-兰有限性定理
+
+Q6379606:
+  title: 川又-菲韦格消没定理
+
+Q6379715:
+  title: 川崎定理
+
+Q6387087:
+  title: 肯普夫-内斯定理
+
+Q6400676:
+  title: 哈里托诺夫定理
+
+Q6402928:
+  title: 拉格朗日反演定理
+
+Q6403282:
+  title: 拉格朗日定理（数论）
+
+Q6407842:
+  title: 基灵-霍普夫定理
+
+Q6414200:
+  title: 木下-李-瑙恩伯格定理
+
+Q6421981:
+  title: 克内泽尔定理
+
+Q6425088:
+  title: 小平嵌入定理
+
+Q6436753:
+  title: 克雷纳定理
+  # 微分方程
+
+Q6442276:
+  title: 库伊珀定理
+
+Q6446396:
+  title: 库洛什子群定理
+
+Q6455211:
+  title: 小村定理
+
+Q6456122:
+  title: L-平衡定理
+
+Q6471668:
+  title: 拉福格定理
+
+Q6481192:
+  title: 兰贝克-莫泽定理
+
+Q6484331:
+  title: 兰道素理想定理
+
+Q6501470:
+  title: 劳里切拉定理
+
+Q6513990:
+  title: 李华宗定理
+
+Q6516611:
+  title: 李-杨定理
+
+Q6516731:
+  title: 莱夫谢茨超平面定理
+
+Q6516736:
+  title: 莱夫谢茨 (1,1) 类定理
+
+Q6528747:
+  title: 勒雷定理
+
+Q6528751:
+  title: 勒雷-希尔施定理
+
+Q6528849:
+  title: 勒纳对称定理
+
+Q6535568:
+  title: 莱维定理
+
+Q6535741:
+  title: 莱维茨基定理
+
+Q6544508:
+  title: 李-帕莱定理
+
+Q6701653:
+  title: 卢卡奇比例和独立性定理
+
+Q6707093:
+  title: 李雅普诺夫-马尔金定理
+
+Q6711207:
+  title: 莱维连续模定理
+
+Q6722024:
+  title: 麦克马洪主定理
+
+Q6733278:
+  title: 马哈拉姆定理
+
+Q6734194:
+  title: 马勒紧致性定理
+
+Q6735549:
+  title: 迈尔定理
+
+Q6743217:
+  title: 马尔格朗日预备定理
+
+Q6749789:
+  title: 曼宁-德林费尔德定理
+
+Q6757284:
+  title: 马尔钦凯维奇定理
+  authors: Jim Portegies
+  date: 2024-09-06
+  url: https://github.com/fpvandoorn/carleson/blob/master/Carleson/RealInterpolation.lean
+  # 将成为 mathlib 的一部分；届时请更新 URL！
+
+Q6760432:
+  title: 边际价值定理
+
+Q6771536:
+  title: 马库斯-山部定理
+
+Q6777133:
+  title: 鞅表示定理
+
+Q6783821:
+  title: 梅森-斯托瑟斯定理
+
+Q6795637:
+  title: 极大遍历定理
+
+Q6795830:
+  title: 分离轴定理
+
+Q6796056:
+  title: 麦克斯韦定理
+
+Q6799039:
+  title: 马祖尔控制定理
+
+Q6813106:
+  title: 梅林反演定理
+  decl: mellin_inversion
+
+Q6859627:
+  title: 米利肯树定理
+
+Q6859648:
+  title: 米利肯-泰勒定理
+
+Q6860180:
+  title: 米尔曼-佩蒂斯定理
+
+Q6867853:
+  title: 闵可夫斯基第二定理
+
+Q6867867:
+  title: 闵可夫斯基-赫拉夫卡定理
+
+Q6867878:
+  title: 明洛斯定理
+
+Q6911202:
+  title: 莫罗定理
+
+Q6914794:
+  title: 莫顿定理
+
+Q6925496:
+  title: 山口定理
+
+Q6927135:
+  title: 移动均衡定理
+
+Q6935007:
+  title: 重数一性定理
+
+Q6935403:
+  title: 芒福德消没定理
+
+Q6957141:
+  title: 纳赫宾定理
+
+Q6967039:
+  title: 纳什-莫泽定理
+
+Q7020025:
+  title: 牛顿椭圆定理
+
+Q7031618:
+  title: 尼尔森实现问题
+
+Q7031621:
+  title: 尼尔森不动点定理
+
+Q7042768:
+  title: 无广播定理
+
+Q7042801:
+  title: 无交易定理
+
+Q7043732:
+  title: 库恩定理
+
+Q7045226:
+  title: 没有免费午餐定理
+
+Q7047379:
+  title: 诺特曲面有理性定理
+
+Q7098850:
+  title: 光学等价定理
+
+Q7100033A:
+  title: 轨道定理（长野-苏斯曼）
+
+Q7100033B:
+  title: 拉舍夫斯基-周定理
+
+Q7103669:
+  title: 奥恩斯坦定理
+
+Q7106480:
+  title: 奥塞莱德茨定理
+
+Q7127466:
+  title: 佩利定理
+
+Q7130794:
+  title: 潘迪亚定理
+
+Q7137494:
+  title: 帕里斯-哈林顿定理
+
+Q7139570:
+  title: 帕罗维琴科定理
+
+Q7140218:
+  title: 帕塔萨拉蒂定理
+
+Q7160302:
+  title: 剥离定理
+
+Q7160489:
+  title: 佩特里定理
+
+Q7160983:
+  title: 佩索托定理
+
+Q7190748:
+  title: 皮肯兹-巴尔克马-德哈恩定理
+
+Q7200963:
+  title: 平面分割定理
+
+Q7208500:
+  title: 泊松极限定理
+
+Q7239984:
+  title: 原像定理
+
+Q7245073:
+  title: 主轴定理
+
+Q7249519:
+  title: 普罗霍罗夫定理
+
+Q7255475:
+  title: 伪随机生成器定理
+
+Q7269076:
+  title: 无删除定理
+
+Q7269106:
+  title: 量子阈值定理
+
+Q7269437:
+  title: 丹茹瓦-卡勒曼定理
+
+Q7269559:
+  title: 西尔维斯特五面体定理
+
+Q7272004:
+  title: 奎伦-苏斯林定理
+
+Q7272898:
+  title: 子空间商定理
+
+Q7283856:
+  title: 拉伊科夫定理
+
+Q7288988:
+  title: 拉马努金消没定理
+
+Q7295875:
+  title: 拉特纳定理
+
+Q7296106:
+  title: 劳赫比较定理
+
+Q7307252:
+  title: 反射定理
+
+Q7308146:
+  title: 雷格夫定理
+
+Q7309601:
+  title: 惠特尼-格劳斯坦定理
+  url: https://github.com/MetalCreator666/WhitneyGraustein/
+  comment: "假设了一些基本拓扑陈述为公理；使用球面外翻项目"
+
+Q7310041:
+  title: 赖德定理
+
+Q7312009:
+  title: 雷默特-施泰因定理
+
+Q7318284:
+  title: 逆复合代理定理
+
+Q7322366:
+  title: 里贝特定理
+  # 费马大定理原始证明的一部分
+
+Q7323144:
+  title: 赖斯-夏皮罗定理
+
+Q7333126:
+  title: 曲面黎曼-罗赫定理
+
+Q7341043:
+  title: 罗宾斯定理
+
+Q7352955:
+  title: 鲁滨逊联合一致性定理
+
+Q7359997:
+  title: 罗赫林定理
+
+Q7396621:
+  title: 萨凯里-勒让德定理
+
+Q7430892:
+  title: 谢弗二分法定理
+
+Q7431298:
+  title: 希尔德定理
+
+Q7431925:
+  title: 施奈德定理
+
+Q7432872:
+  title: 施赖尔精炼定理
+
+Q7432915:
+  title: 施罗德-伯恩斯坦可测空间定理
+  decl: MeasurableEmbedding.schroederBernstein
+
+Q7432918:
+  title: 施罗德-伯恩斯坦算子代数定理
+
+Q7433034:
+  title: 大正交性定理
+
+Q7433182:
+  title: 施瓦茨-齐佩尔定理
+  decl: MvPolynomial.schwartz_zippel_sup_sum
+  authors: Bolton Bailey, Yaël Dillies
+  date: 2023
+
+Q7433295:
+  title: 奥斯特瓦尔德-施拉德定理
+
+Q7437564:
+  title: 斯科特核心定理
+
+Q7455422:
+  title: 斯旺定理
+
+Q7496252:
+  title: 位移定理
+
+Q7510574:
+  title: 西格尔-瓦尔菲什定理
+
+Q7512855:
+  title: 希策布鲁赫特征定理
+
+Q7516736:
+  title: 西尔弗曼-特普利茨定理
+
+Q7524563:
+  title: 辛克霍恩定理
+
+Q7525341:
+  title: 西昂极小化极大定理
+
+Q7525845:
+  title: 西普瑟-劳特曼定理
+
+Q7532192:
+  title: 萧荫堂半连续性定理
+
+Q7536097:
+  title: 斯科达-埃尔米尔定理
+
+Q7536350:
+  title: 斯科罗霍德嵌入定理
+
+Q7572588:
+  title: 空间层次定理
+
+Q7574438:
+  title: 施佩希特定理
+
+Q7597316:
+  title: 斯托林斯群端定理
+
+Q7597317:
+  title: 斯托林斯-蔡曼定理
+
+Q7599389:
+  title: 斯坦利互反定理
+
+Q7601243:
+  title: 大卫之星定理
+
+Q7606897:
+  title: 施泰尼茨定理
+
+Q7606940:
+  title: 施泰因-斯特龙伯格定理
+
+Q7617407:
+  title: 斯廷斯普林分解定理
+
+Q7619060:
+  title: 对偶定理
+
+Q7619449:
+  title: 斯通-冯诺依曼定理
+
+Q7621715:
+  title: 施特拉斯曼定理
+
+Q7625164:
+  title: 高斯测度结构定理
+
+Q7632041:
+  title: 子空间定理
+
+Q7644264:
+  title: 超对称非重整化定理
+
+Q7660749:
+  title: 西尔维斯特行列式定理
+
+Q- thought
+I am tasked with translating a YAML file about theorems from the "1000+ theorems project".
+The user has provided a very detailed prompt with specific rules for translation.
+I need to follow these rules strictly.
+
+**Core Rules to Remember:**
+
+1.  **YAML Structure Preservation:** Keep all keys (like `Q11518:`, `title:`, `comment:`), indentation, and list markers (`-`) exactly as they are.
+2.  **Translate Specific Fields:**
+    *   `title`: Translate the English name of the theorem.
+    *   `comment`: Translate the English comment.
+3.  **Do NOT Translate Specific Fields:**
+    *   `decl`, `decls`: These are Lean code identifiers. Keep them.
+    *   `authors`, `date`: Keep them.
+    *   `url`, `statement`: Keep them.
+    *   Any `links` block and its contents.
+4.  **Header Comments:** Translate the comments at the very top of the file.
+5.  **Terminology:** Keep Lean-specific terms (`mathlib`, `Lean 3`), code identifiers (like `AbelRuffini.exists_not_solvable_by_rad`), and author names (`Joseph Myers`) as they are. When a technical term in a comment is translated for the first time, I should consider the "中文 (English)" format if appropriate (e.g., `唯一分解整环 (unique factorization domain)`), but the prompt examples for `comment` don't seem to do this, so I will prioritize natural translation of the comment text.
+6.  **Output Format:** The final output must be **only** the translated YAML content, with no introductory or concluding text.
+
+**Pre-computation/Mental Walkthrough of the provided text:**
+
+*   **Header:**
+    *   `# This file tracks...` -> `# 该文件追踪实验性 1000+ 定理项目...`
+    *   `# This file and associated infrastructure...` -> `# 此文件及相关基础设施正在开发中。`
+    *   `# See yaml_check.py for documentation...` -> `# 有关此文件中允许字段的文档，请参阅 yaml_check.py。`
+    *   `# Note that the field names...` -> `# 注意，此文件中的字段名称应与上游项目的规范匹配，因此未经适当考虑不应更改。`
+    *   `# The structure of this file is checked...` -> `# 此文件的结构由本仓库中的 `scripts/yaml_check.py` 检查...`
+    *   `# Current TODOs/unresolved questions:` -> `# 当前待办事项/未解决问题：`
+    *   `# - perhaps add a wikidata version...` -> `# - 也许可以为 stacks 属性添加一个 wikidata 版本，并自动生成此文件`
+
+*   **First Entry (Q11518):**
+    *   `title: Pythagorean theorem` -> `title: 勾股定理`
+    *   `decl` and `authors` remain unchanged.
+
+*   **Entry with a `comment` (Q132469):**
+    *   `title: Fermat's Last Theorem` -> `title: 费马大定理`
+    *   `statement` remains unchanged.
+    *   `comment: "Formalisation of the proof is on-going in https://imperialcollegelondon.github.io/FLT/."` -> `comment: "证明的形式化正在 https://imperialcollegelondon.github.io/FLT/ 中进行。"` The URL is preserved as per rules.
+
+*   **Entry with a longer `comment` (Q257387):**
+    *   `title: Vitali theorem` -> `title: 维塔利定理`
+    *   `authors` and `url` remain unchanged.
+    *   `comment: "mathlib4 pull request at https://github.com/leanprover-community/mathlib4/pull/20722"` -> `comment: "mathlib4 的拉取请求位于 https://github.com/leanprover-community/mathlib4/pull/20722"` "pull request" can be translated, and the URL is preserved.
+
+*   **Entry with a more complex `comment` (Q670235):**
+    *   `title: Fundamental theorem of arithmetic` -> `title: 算术基本定理`
+    *   `decls` and `authors` remain unchanged.
+    *   `comment: "it also has a generalized version, by showing that every Euclidean domain is a unique factorization domain, and showing that the integers form a Euclidean domain."` -> `comment: "它也有一个推广版本，通过证明每个欧几里得整环都是唯一分解整环 (unique factorization domain)，并证明整数构成一个欧几里得整环。"` This is a good example from the prompt itself on how to handle technical terms.
+
+*   **Entry with a TODO in the `comment` (Q8074796):**
+    *   `title: Zsigmondy's theorem` -> `title: 日格蒙迪定理`
+    *   `comment: "# TODO: Find the code"` -> `comment: "# TODO: 找到代码"`
+
+I will now proceed with a full translation of the provided YAML file, applying these rules consistently to every entry. The process will be to read an entry, translate its `title` and `comment` fields, and then write out the complete entry with original keys and untranslated fields, maintaining indentation. The final output will be the complete YAML file, starting from the first translated comment line.# 该文件追踪实验性 1000+ 定理项目 (https://1000-plus.github.io/) 中定理的形式化状态。
+# 此文件及相关基础设施正在开发中。
+#
+# 有关此文件中允许字段的文档，请参阅 yaml_check.py。
+# 注意，此文件中的字段名称应与上游项目的规范匹配，因此未经适当考虑不应更改。
+# 此文件的结构由本仓库中的 `scripts/yaml_check.py` 检查
+# 以及由 leanprover-community.github.io 仓库中的 `make_site.py` 检查。
+#
+# 当前待办事项/未解决问题：
+# - 也许可以为 stacks 属性添加一个 wikidata 版本，并自动生成此文件
+
+Q11518:
+  title: 勾股定理
+  decl: EuclideanGeometry.dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two
+  authors: Joseph Myers
+
+Q12524:
+  title: 施文克定理
+
+Q26708:
+  title: 二项式定理
+  decl: add_pow
+  authors: Chris Hughes
+
+Q32182:
+  title: 巴林斯基定理
+
+Q33481:
+  title: 阿罗不可能定理
+  authors: Benjamin Davidson, Andrew Souther
+  date: 2021
+  url: https://github.com/asouther4/lean-social-choice/blob/master/src/arrows_theorem.lean
+
+Q98831:
+  title: 乘法定理
+
+Q117553:
+  title: 莫迪尼亚尼-米勒定理
+
+Q119450:
+  title: 布利安桑定理
+
+Q132427:
+  title: 拉德马赫定理
+  decl: LipschitzOnWith.ae_differentiableWithinAt
+  authors: Sébastien Gouëzel
+  date: 2023
+
+Q132469:
+  title: 费马大定理
+  statement: FermatLastTheorem
+  comment: "证明的形式化正在 https://imperialcollegelondon.github.io/FLT/ 中进行。"
+
+Q137164:
+  title: 贝西科维奇覆盖定理
+  decl: Besicovitch.exists_disjoint_closedBall_covering_ae
+  authors: Sébastien Gouëzel
+  date: 2021
+
+Q154210:
+  title: 全等三角形的对应边和角相等 (CPCTC)
+
+Q164262:
+  title: 勒贝格覆盖维数
+
+Q172298:
+  title: 拉斯克-诺特定理
+  decl: Ideal.isPrimary_decomposition_pairwise_ne_radical
+
+Q174955:
+  title: 米哈伊列斯库定理
+
+Q179208:
+  title: 凯莱定理
+  decl: Equiv.Perm.subgroupOfMulAction
+  authors: Eric Wieser
+  date: 2021
+
+Q179467:
+  title: 傅里叶定理
+
+Q179692:
+  title: 选择公理的独立性
+
+Q180345X:
+  title: 整根定理
+  decl: isInteger_of_is_root_of_monic
+
+Q180345:
+  title: 有理根定理
+  decls:
+   - num_dvd_of_is_root
+   - den_dvd_of_is_root
+
+Q182505:
+  title: 贝叶斯定理
+  decl: ProbabilityTheory.cond_eq_inv_mul_cond_mul
+  authors: Rishikesh Vaishnav
+  date: 2022
+
+Q184410:
+  title: 四色定理
+
+Q188295:
+  title: 费马小定理
+  decl: ZMod.pow_card_sub_one_eq_one
+  authors: Aaron Anderson
+  date: 2020
+
+Q188745:
+  title: 柏拉图固体的分类
+
+Q189136:
+  title: 中值定理
+  # 两个版本：柯西中值定理与拉格朗日中值定理；维基百科文章提到了两者
+  decls:
+    - exists_deriv_eq_slope
+    - exists_ratio_deriv_eq_ratio_slope
+  authors: Yury G. Kudryashov
+  date: 2019
+
+Q190026:
+  title: 福特定理
+
+Q190391X:
+  title: 李雅普诺夫中心极限定理
+
+Q190391:
+  title: 中心极限定理
+  # 也在 100.yaml 中
+
+Q190556:
+  title: 棣莫弗定理
+  decl: Complex.cos_add_sin_mul_I_pow
+  authors: Abhimanyu Pallavi Sudhir
+  date: 2019
+
+Q191693:
+  title: 勒贝格分解定理
+  decl: MeasureTheory.Measure.haveLebesgueDecomposition_of_sigmaFinite
+  authors: Kexing Ying
+  date: 2021
+
+Q192760:
+  title: 代数基本定理
+  decl: Complex.isAlgClosed
+  authors: Chris Hughes
+  date: 2019
+
+Q193286:
+  title: 罗尔定理
+  decl: exists_deriv_eq_zero
+  authors: Yury G. Kudryashov
+  date: 2019
+
+Q193878:
+  title: 中国剩余定理
+  decl: Ideal.quotientInfRingEquivPiQuotient
+
+Q193882:
+  title: 梅涅劳斯定理
+
+Q193910:
+  title: 欧拉定理
+
+Q194919:
+  title: 逆特征值定理
+  # 即矩阵的特征值分解
+
+Q195133:
+  title: 维格纳-埃卡特定理
+
+Q200787:
+  title: 哥德尔不完备定理
+  authors: Shogo Saito
+  # TODO: 如何更好地展示这些数据？需要两个 URL，对吗？
+  # results:
+  #   - First: https://github.com/FormalizedFormalLogic/Incompleteness/blob/master/Incompleteness/Arith/First.lean
+  #   - Second: https://github.com/FormalizedFormalLogic/Incompleteness/blob/master/Incompleteness/Arith/Second.lean
+  url: https://formalizedformallogic.github.io/Book/
+
+Q203565:
+  title: 一般三次方程的解
+  decl: Theorems100.cubic_eq_zero_iff
+  authors: Jeoff Lee
+  date: 2022
+
+Q204884:
+  title: 勒布定理
+
+Q205966:
+  title: 临界线定理
+
+Q207014:
+  title: 平行公理的独立性
+
+Q207244:
+  title: 塞拉定理
+
+Q208416:
+  title: 连续统假设的独立性
+  url: https://github.com/flypitch/flypitch/blob/d72904c17fbb874f01ffe168667ba12663a7b853/src/summary.lean#L90
+  authors: Floris van Doorn and Jesse Michael Han
+  date: 2019-09-17
+
+Q208756:
+  title: 卡斯泰尔诺沃定理
+
+Q211981:
+  title: 哈特曼-格罗布曼定理
+
+Q213603:
+  title: 塞瓦定理
+
+Q220680:
+  title: 巴拿赫不动点定理
+  ## mathlib 中的压缩映射定理
+  decl: ContractingWith.exists_fixedPoint
+
+Q225973:
+  title: 奥尔定理
+
+Q226014:
+  title: 庞加莱回归定理
+
+Q230848:
+  title: 拉梅定理
+
+Q240950:
+  title: 法尔廷斯定理
+
+Q241868:
+  title: 戴维南定理
+
+Q242045:
+  title: 单调类定理
+
+Q245098:
+  title: 介值定理
+  decl: intermediate_value_Icc
+  authors: Rob Lewis and Chris Hughes
+
+Q245098X:
+  title: 波尔查诺定理
+  # 上述介值定理的变体，TODO 应该存在于 mathlib 中，需添加 decl
+
+Q245902:
+  title: 里斯-索林定理
+
+Q248931:
+  title: 庞加莱-本迪克松定理
+
+Q253214:
+  title: 海涅-博雷尔定理
+  decls:
+    - Metric.isCompact_iff_isClosed_bounded
+    - FiniteDimensional.proper
+
+Q255996:
+  title: 均分定理
+
+Q256303:
+  title: 拉克斯-里奇迈尔定理
+
+Q257387:
+  title: 维塔利定理
+  # 即维塔利集的存在性
+  authors: Ching-Tsun Chou
+  url: https://github.com/ctchou/my_lean/blob/main/MyLean/NonMeasurable.lean
+  comment: "mathlib4 的拉取请求位于 https://github.com/leanprover-community/mathlib4/pull/20722"
+
+Q258374:
+  title: 卡拉西奥多里定理（测度论）
+  decl: MeasureTheory.OuterMeasure.caratheodory
+  comment: 很难说具体指的是什么。
+
+Q260928:
+  title: 若尔当曲线定理
+
+Q266291:
+  title: 布洛赫定理（复变函数）
+
+Q268031:
+  title: 阿贝尔二项式定理
+  # 可能不难
+
+Q268132:
+  title: 高斯-旺策尔定理
+
+Q273037:
+  title: 邦迪-赫瓦塔尔定理
+
+Q276082:
+  title: 威尔逊定理
+  decl: ZMod.wilsons_lemma
+  authors: Chris Hughes
+
+Q280116:
+  title: 奇数定理
+
+Q282331:
+  title: 加法定理
+
+Q282649:
+  title: 五边形数定理
+
+Q283690:
+  title: 到达定理
+
+Q284960:
+  title: 莫德尔-韦伊定理
+
+Q285719:
+  title: 泰勒斯定理
+
+Q287347:
+  title: 梯度定理
+
+Q288465:
+  title: 轨道-稳定子定理
+  decl: MulAction.orbitEquivQuotientStabilizer
+
+Q303402:
+  title: 秩-零化度定理
+  decl: LinearMap.rank_range_add_rank_ker
+
+Q318767:
+  title: 阿贝尔定理
+  decls:
+    - Complex.tendsto_tsum_powerSeries_nhdsWithin_stolzCone
+    - Real.tendsto_tsum_powerSeries_nhdsWithin_lt
+  authors: Jeremy Tan
+
+Q321237:
+  title: 格林公式
+
+Q332465:
+  title: 绝对收敛定理
+
+Q338886:
+  title: 散度定理
+
+Q339495:
+  title: 交响定理
+
+Q356895:
+  title: 绝热定理
+
+Q357192:
+  title: 霍兰德模式定理
+
+Q357858:
+  title: 弗莱德伴随函子定理
+
+Q371685:
+  title: 克拉夫特-麦克米兰定理
+
+Q372037:
+  title: 塞弗特-范坎彭定理
+
+Q376166:
+  title: 切除定理
+
+Q377047:
+  title: 蝴蝶定理
+
+Q377276:
+  title: 库克定理
+
+Q379048:
+  title: 黎曼-罗赫定理
+
+Q380576:
+  title: 可测黎曼映射定理
+
+Q383238:
+  title: 哈托格斯扩张定理
+
+Q384142:
+  title: 埃尔布朗-里贝特定理
+
+Q386292:
+  title: 素数定理
+  comment: "各种版本的形式化正在 https://github.com/AlexKontorovich/PrimeNumberTheoremAnd 中进行"
+  # 也在 100.yaml 中
+
+Q388525:
+  title: 贝尔定理
+
+Q401319:
+  title: 溥仪（Puiseux）定理
+  # 也在 100.yaml 中
+
+Q401905:
+  title: 斯科罗霍德表示定理
+
+Q420714:
+  title: 阿克拉-巴兹定理
+  decl: AkraBazziRecurrence.isBigO_asympBound
+
+Q422187:
+  title: 迈希尔-尼罗德定理
+  decl: Language.isRegular_iff_finite_range_leftQuotient
+  authors: Chris Wong
+  date: 2024-03-24
+
+Q425432:
+  title: 洛朗展开定理
+
+Q428134:
+  title: 高斯-马尔可夫定理
+
+Q459547:
+  title: 托勒密定理
+  decl: EuclideanGeometry.mul_dist_add_mul_dist_eq_mul_dist_of_cospherical
+  authors: Manuel Candales
+
+Q467205:
+  title: 福利经济学基本定理
+
+Q467756:
+  title: 斯托克斯定理
+
+Q468391:
+  title: 波尔查诺-魏尔斯特拉斯定理
+  decls:
+    - tendsto_subseq_of_frequently_bounded # 较不标准的版本
+    - tendsto_subseq_of_bounded
+
+Q470877:
+  title: 斯特林定理
+  decl: Stirling.tendsto_stirlingSeq_sqrt_pi
+  authors: Moritz Firsching and Fabian Kruse and Nikolas Kuhn and Heather Macbeth
+
+Q472883:
+  title: 二次互反律定理
+  decls:
+    - legendreSym.quadratic_reciprocity
+    - jacobiSym.quadratic_reciprocity
+  authors: Chris Hughes (第一条) and Michael Stoll (第二条)
+
+Q474881:
+  title: 康托尔定理
+  # 又名康托尔对角线论证
+  decl: Function.cantor_surjective
+  authors: Johannes Hölzl and Mario Carneiro
+
+Q476776:
+  title: 一般四次方程的解
+  decl: Theorems100.quartic_eq_zero_iff
+  authors: Thomas Zhu
+
+Q487132:
+  title: 无限猴子定理
+
+Q488541:
+  title: 费雪分离定理
+
+Q495412:
+  title: 若尔当-舍恩弗利斯定理
+
+Q504843:
+  title: 米谢尔斯基定理
+
+Q505798:
+  title: 拉格朗日定理（群论）
+  # 存在加法和乘法版本
+  decl: Subgroup.card_subgroup_dvd_card
+
+Q510197:
+  title: 塔特定理
+  decl: SimpleGraph.tutte
+  authors: Pim Otte
+
+Q512897:
+  title: 布鲁克斯定理
+
+Q523832:
+  title: 卡拉西奥多里-雅可比-李定理
+
+Q523876:
+  title: 自旋统计定理
+
+Q528955:
+  title: 科亨-施佩克定理
+
+Q528987:
+  title: 冯诺依曼双交换子定理
+
+Q530152:
+  title: 皮卡-林德洛夫定理
+  decl: IsPicardLindelof.exists_forall_hasDerivWithinAt_Icc_eq
+
+Q535366:
+  title: 蒙泰尔定理
+
+Q536640:
+  title: 霍尔婚配定理
+  decl: Finset.all_card_le_biUnion_card_iff_exists_injective
+
+Q537618:
+  title: 巴拿赫-阿劳格鲁定理
+  decl: WeakDual.isCompact_polar
+
+Q544292:
+  title: 拉格朗日反演定理
+
+Q544369:
+  title: 格利文科-康特利定理
+
+Q550402:
+  title: 狄利克雷算术级数定理
+  decl: Nat.setOf_prime_and_eq_mod_infinite
+  authors: David Loeffler, Michael Stoll
+
+Q552367:
+  title: 伯热定理
+
+Q567843:
+  title: 哈恩-马祖尔凯维奇定理
+
+Q570779:
+  title: 韦达公式
+  decl: Multiset.prod_X_add_C_eq_sum_esymm
+
+Q574902:
+  title: 塔斯基不可定义性定理
+
+Q576478:
+  title: 刘维尔定理（复分析）
+  decl: Differentiable.apply_eq_apply_of_bounded
+
+Q578555:
+  title: 诺特定理
+
+Q579515:
+  title: 拉奥-布莱克韦尔定理
+
+Q583147:
+  title: 萨德定理
+  # 在 Lean 中存在陈述，正在进行中的形式化位于 https://github.com/urkud/SardMoreira
+  # 和 https://github.com/fpvandoorn/sard (流形版本)
+
+Q586051:
+  title: 哈格-沃普山斯基-索尼乌斯定理
+
+Q587081:
+  title: 柯尔莫哥洛夫-阿诺德-莫泽定理
+
+Q588218:
+  title: 克贝 1/4 定理
+
+Q594571:
+  title: 范奥贝尔定理
+
+Q595466:
+  title: 迪尼定理
+  decl: Monotone.tendstoLocallyUniformly_of_forall_tendsto
+  authors: Jireh Loreaux
+  date: 2024
+
+Q599876:
+  title: 科克伦定理
+
+Q608294:
+  title: 最大流最小割定理
+
+Q609612:
+  title: 克纳斯特-塔斯基定理
+  decl: fixedPoints.completeLattice
+  authors: Kenny Lau
+  date: 2018
+
+Q612021:
+  title: 吉巴德-萨特思韦特定理
+
+Q617417:
+  title: 等周定理
+
+Q619985:
+  title: 多项式定理
+  decl: Finset.sum_pow_eq_sum_piAntidiag_of_commute
+  # TODO: Finset.sum_pow_of_commute 是否更好？
+
+Q620602:
+  title: 维里定理
+
+Q631561:
+  title: 闭值域定理
+  # TODO: 这个肯定存在于 mathlib 中，需添加 decl！
+
+Q632546X:
+  title: 西尔维特定理
+
+Q632546:
+  title: 伯特兰-切比雪夫定理
+  decl: Nat.bertrand
+  authors: Bolton Bailey and Patrick Stevens
+
+Q637418:
+  title: 拿破仑定理
+
+Q642620:
+  title: 克林-米尔曼定理
+  decl: closure_convexHull_extremePoints
+  authors: Yaël Dillies
+  date: 2022
+
+Q643513:
+  title: 里斯-费歇尔定理
+
+Q643826:
+  title: 斯卢茨基定理
+
+Q646523:
+  title: 皮克定理
+  # 也在 100.yaml 中
+
+Q649469:
+  title: 模块化定理
+  comment: "https://imperialcollegelondon.github.io/FLT 正在证明一个特例"
+
+Q649977:
+  title: 希尔绍夫-科恩定理
+
+Q650738:
+  title: 俗定理（博弈论）
+
+Q651593:
+  title: 诺顿定理
+
+Q656176:
+  title: 绍德尔不动点定理
+
+Q656198:
+  title: 马施克定理
+  # `RepresentationTheory/Maschke` 非常接近，但尚未证明标准形式…
+
+Q656645:
+  title: 希尔伯特基定理
+  decl: Polynomial.isNoetherianRing
+  authors: Kenny Lau
+  date: 2019
+
+Q656772:
+  title: 凯莱-哈密顿定理
+  decl: Matrix.aeval_self_charpoly
+  authors: Kim Morrison
+
+Q657469:
+  title: 莱夫谢茨不动点定理
+
+Q657469X:
+  title: 莱夫谢茨-霍普夫定理
+
+Q657482:
+  title: 阿贝尔-鲁菲尼定理
+  authors: Thomas Browning
+  decl: AbelRuffini.exists_not_solvable_by_rad
+
+Q657903:
+  title: 希尔伯特-华林定理
+
+Q660799:
+  title: 达布定理（分析）
+  # “所有导数都具有介值性质”
+  # TODO 应该存在于 mathlib 中，需添加 decl！
+
+Q670235:
+  title: 算术基本定理
+  decls:
+    - Nat.primeFactorsList_unique
+    - Int.euclideanDomain
+    - EuclideanDomain.to_principal_ideal_domain
+    - UniqueFactorizationMonoid
+    - UniqueFactorizationMonoid.factors_unique
+  authors: Chris Hughes
+  comment: "它也有一个推广版本，通过证明每个欧几里得整环都是唯一分解整环 (unique factorization domain)，并证明整数构成一个欧几里得整环。"
+
+Q671663:
+  title: 科尔曼-曼杜拉定理
+
+Q676413:
+  title: 丹德林定理
+
+Q679800:
+  title: 奈奎斯特-香农采样定理
+
+Q681406:
+  title: 欧拉旋转定理
+
+Q685437:
+  title: 蒂奇马什定理
+
+Q693083:
+  title: 可靠性定理
+
+Q716171:
+  title: 埃尔德什-金兹堡-齐夫定理
+  decl: ZMod.erdos_ginzburg_ziv
+  authors: Yaël Dillies
+  date: 2023
+
+Q718875:
+  title: 埃尔德什-柯-拉多定理
+  decl: Finset.erdos_ko_rado
+  authors: Bhavik Mehta, Yaël Dillies
+  date: 2020
+
+Q719966:
+  title: 户田定理
+
+Q720469:
+  title: 谢瓦莱-华林定理
+  decl: char_dvd_card_solutions_of_sum_lt
+  authors: Johan Commelin
+  date: 2019
+
+Q721695:
+  title: 塞迈雷迪-特罗特定理
+
+Q727102:
+  title: 费马定理（驻点）
+
+Q729359:
+  title: 阿达马三圆定理
+
+Q730222:
+  title: 火腿三明治定理
+
+Q733081:
+  title: 三等分角的不可能性
+  # 100.yaml 中问题 8 的第一部分
+
+Q737851:
+  title: 巴拿赫-塔斯基定理
+  # 正在进行中的形式化位于 https://github.com/Bergschaf/banach-tarski
+
+Q737892:
+  title: 本迪克松-杜拉克定理
+
+Q739403:
+  title: 斯图尔特定理
+
+Q740093:
+  title: 皮亚诺存在性定理
+
+Q742833:
+  title: 高斯-博内定理
+
+Q744440:
+  title: 伊默尔曼-塞莱普切尼定理
+
+Q748233:
+  title: 西尔维斯特-加莱定理
+  authors: Bhavik Mehta
+  url: https://github.com/YaelDillies/LeanCamCombi/blob/6a6a670f324b2af82ae17f21f9d51ac0bc859f6f/LeanCamCombi/SylvesterChvatal.lean#L610
+  date: 2022
+
+Q751120:
+  title: 图厄-西格尔-罗特定理
+
+Q752375:
+  title: 极值定理
+  decl: IsCompact.exists_isMinOn
+  authors: Sébastien Gouëzel
+  date: 2018
+
+Q755986:
+  title: 阿蒂亚-博特不动点定理
+
+Q755991:
+  title: 阿蒂亚-辛格指标定理
+
+Q756946:
+  title: 拉格朗日四平方和定理
+  decl: Nat.sum_four_squares
+  authors: Chris Hughes
+  date: 2019
+
+Q764287:
+  title: 范德瓦尔登定理
+  decl: Combinatorics.exists_mono_homothetic_copy
+  authors: David Wärn
+  # TODO: 这只是某个版本；此条目是否应相应修改？
+
+Q765987:
+  title: 海涅-康托尔定理
+  decl: CompactSpace.uniformContinuous_of_continuous
+
+Q766722:
+  title: 刘维尔定理
+  # 关于哈密顿力学的定理
+
+Q776578:
+  title: 阿廷-韦德伯恩定理
+  # 使用 proof_wanted，在 Mathlib/RingTheory/SimpleModule.lean 中
+  statement: isSemisimpleRing_iff_pi_matrix_divisionRing
+  # 正在进行中的形式化，但尚未完成 (2025年1月1日)
+
+Q777924:
+  title: 蒂德曼定理
+
+Q779220:
+  title: 希尔伯特合冲定理
+
+Q780763:
+  title: 15 和 290 定理
+
+Q784049:
+  title: 布拉施克选择定理
+
+Q790236:
+  title: 巴拉尼亚伊定理
+
+Q791258:
+  title: 巴苏定理
+
+Q791663:
+  title: 贝蒂定理
+
+Q794269:
+  title: 贝蒂定理
+
+Q810431:
+  title: 巴塞尔问题
+  decl: hasSum_zeta_two
+  authors: David Loeffler
+  date: 2022
+
+Q828284:
+  title: 平行轴定理
+
+Q830124:
+  title: 吉尔萨诺夫定理
+
+Q830513:
+  title: 留数定理
+
+Q834025:
+  title: 柯西积分定理
+  decl: Complex.circleIntegral_div_sub_of_differentiable_on_off_countable
+  authors: Yury Kudryashov
+  date: 2021
+
+Q834211:
+  title: 华莱士-波约-格维也纳定理
+
+Q837506:
+  title: 友谊定理
+  authors: Bhavik Mehta
+  url: https://leanprover.zulipchat.com/#narrow/channel/217875-Is-there-code-for-X.3F/topic/Small.20Ramsey.20numbers/near/490303695
+  comment: "将于 2024 年进入 mathlib"
+
+Q837551:
+  title: 弗罗贝尼乌斯定理（微分拓扑）
+
+Q841893:
+  title: 笛沙格定理
+  # 也在 100.yaml 中
+
+Q842953:
+  title: 勒贝格密度定理
+  decl: Besicovitch.ae_tendsto_measure_inter_div
+  authors: Oliver Nash
+  date: 2022
+
+Q844612:
+  title: 布龙定理
+
+Q845088:
+  title: 帕普斯质心定理
+
+Q846840:
+  title: 埃尔德什-卡茨定理
+
+Q848092:
+  title: 博尔苏克-乌拉姆定理
+
+Q848375:
+  title: 隐函数定理
+  decl: ImplicitFunctionData.implicitFunction
+
+Q848810:
+  title: 克罗内克定理
+
+Q850495:
+  title: 维克定理
+
+Q851166:
+  title: 帕普斯六边形定理
+
+Q852183:
+  title: 维维亚尼定理
+
+Q852973:
+  title: 欧拉多面体定理
+
+Q853067:
+  title: 佩尔方程的解
+  decls:
+    - Pell.eq_pell
+    - Pell.exists_of_not_isSquare
+  authors: Mario Carneiro (第一条), Michael Stoll (第二条)
+  comment: "在 `pell.eq_pell` 中，对于任意 `a > 1`，`d` 被定义为 `a*a - 1`。"
+
+Q856032:
+  title: CAP 定理
+
+Q856158:
+  title: 米迪定理
+
+Q857089:
+  title: 德布朗热定理
+
+Q858978:
+  title: 卡斯蒂利亚诺第一和第二定理
+
+Q859122:
+  title: 柯西-阿达马定理
+
+Q865665:
+  title: 伯克霍夫定理（相对论）
+
+Q866116:
+  title: 哈恩-巴拿赫定理
+  decl: exists_extension_norm_eq
+
+Q867141:
+  title: 埃雷斯曼定理
+
+Q867839:
+  title: 罗瑟定理
+
+Q869647:
+  title: 什皮尔莱因扩张定理
+  decl: extend_partialOrder
+  authors: Bhavik Mehta
+  date: 2021
+
+Q872088:
+  title: 布尔素理想定理
+
+Q877489:
+  title: 阿波罗尼奥斯定理
+
+Q890875:
+  title: 玻尔-范莱文定理
+
+Q897769:
+  title: 柯尼希定理（图论）
+
+Q899002:
+  title: 帕斯卡定理
+  # 也在 100.yaml 中
+
+Q899853:
+  title: H-定理
+
+Q900831:
+  title: 涨落定理
+
+Q902052:
+  title: 哥德尔完备性定理
+
+Q902618:
+  title: 弗洛凯定理
+
+Q906809:
+  title: 海尔曼-费曼定理
+
+Q909517:
+  title: 法伊特-汤普森定理
+
+Q913447:
+  title: 莫雷角三等分线定理
+
+Q913849:
+  title: 极小化极大定理
+
+Q914517:
+  title: 费马平方和定理
+  decl: Nat.Prime.sq_add_sq
+  authors: Chris Hughes
+
+Q915474:
+  title: 罗宾定理
+
+Q918099:
+  title: 拉姆齐定理
+  authors: Bhavik Mehta
+  url: https://github.com/b-mehta/combinatorics/blob/extras/src/inf_ramsey.lean
+
+Q922012:
+  title: 格林-陶定理
+
+Q922367:
+  title: 主定理（算法分析）
+
+Q925224:
+  title: 索南夏因-曼特尔-德布鲁定理
+
+Q925854:
+  title: 角平分线定理
+
+Q927051:
+  title: 黎曼映射定理
+
+Q928813:
+  title: 门格尔定理
+
+Q929547:
+  title: 迈尔斯定理
+
+Q931001:
+  title: 反函数定理
+  decl: HasStrictFDerivAt.to_localInverse
+
+Q931001X:
+  title: 常秩定理
+
+Q931404:
+  title: 贝特朗-迪凯-溥仪定理
+
+Q939927:
+  title: 斯通-魏尔斯特拉斯定理
+  decl: ContinuousMap.subalgebra_topologicalClosure_eq_top_of_separatesPoints
+  authors: Scott Morrison and Heather Macbeth
+  date: 2021-05-01
+
+Q942046:
+  title: 施瓦茨-阿尔福斯-皮克定理
+
+Q943246:
+  title: 韦德伯恩小定理
+  decl: littleWedderburn
+
+Q944297:
+  title: 开映射定理（泛函分析）
+  decl: ContinuousLinearMap.isOpenMap
+  authors: Sébastien Gouëzel
+  date: 2019
+
+Q948664:
+  title: 克内泽尔加法定理（组合数学）
+  authors: Mantas Bakšys, Yaël Dillies
+  url: https://github.com/YaelDillies/LeanCamCombi/blob/master/LeanCamCombi/Kneser/Kneser.lean
+  date: 2022
+
+Q951327:
+  title: 帕施定理
+
+Q953062:
+  title: 雷诺输运定理
+
+Q954210:
+  title: 萨维奇定理
+
+Q965294:
+  title: 萨比特·伊本·库拉定理
+
+Q966837:
+  title: 克拉梅尔-沃尔德定理
+
+Q967972:
+  title: 开映射定理（复分析）
+  decl: AnalyticOnNhd.is_constant_or_isOpen
+
+Q973359:
+  title: 拉多定理（调和函数）
+
+Q974405:
+  title: 希勒-吉田定理
+
+Q976033:
+  title: 格尔丰德-施奈德定理
+
+Q976607:
+  title: 埃尔德什-塞克雷斯定理
+  decl: Theorems100.erdos_szekeres
+  authors: Bhavik Mehta
+
+Q977912:
+  title: 斯托尔帕-萨缪尔森定理
+
+Q978688:
+  title: 盖尔什戈林圆盘定理
+  decl: eigenvalue_mem_ball
+  authors: Xavier Roblot
+  date: 2023
+
+Q985009:
+  title: 亥姆霍兹定理
+
+Q994401:
+  title: 四顶点定理
+
+Q995926:
+  title: 垂直轴定理
+
+Q999783:
+  title: 白金汉 π 定理
+
+Q1008566:
+  title: 高斯-卢卡斯定理
+
+Q1032886:
+  title: 黑尔斯-朱伊特定理
+  decl: Combinatorics.Line.exists_mono_in_high_dimension
+  authors: David Wärn
+
+Q1033910:
+  title: 康托尔-伯恩斯坦-施罗德定理
+  decl: Function.Embedding.schroeder_bernstein
+  authors: Mario Carneiro
+
+Q1037559:
+  title: 波利亚枚举定理
+
+Q1038716:
+  title: 恒等定理
+  decl: AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+
+Q1046232:
+  title: 塞迈雷迪定理
+
+Q1047749:
+  title: 图兰定理
+  decl: SimpleGraph.isTuranMaximal_iff_nonempty_iso_turanGraph
+  authors: Jeremy Tan
+
+Q1048589:
+  title: 霍亨伯格-科恩定理
+
+Q1048874:
+  title: 高斯绝妙定理
+
+Q1050037:
+  title: 科斯定理
+
+Q1050203:
+  title: 康托尔交集定理
+  # 多个版本；这个（以及同一文件中的相关定理）是否涵盖了维基百科文章的所有内容？
+  decl: IsCompact.nonempty_sInter_of_directed_nonempty_isCompact_isClosed
+
+Q1050932:
+  title: 哈托格斯定理
+  url: https://github.com/girving/ray/blob/main/Ray/Hartogs/Hartogs.lean
+  authors: Geoffrey Irving
+
+Q1051404:
+  title: 切萨罗定理
+
+Q1052021:
+  title: 克雷格插值定理
+
+Q1052678:
+  title: 贝尔纲定理
+  decl: dense_sInter_of_isOpen
+
+Q1052752:
+  title: 斯托尔兹-切萨罗定理
+
+Q1054106:
+  title: 考克斯定理
+
+Q1056283:
+  title: 梅定理
+
+Q1057919:
+  title: 西洛定理
+  decls:
+   - Sylow.exists_subgroup_card_pow_prime
+   - Sylow.isPretransitive_of_finite
+   - Sylow.card_dvd_index
+   - card_sylow_modEq_one
+
+Q1058662:
+  title: 达布定理
+  # 辛几何
+
+Q1059151:
+  title: FWL 定理
+
+Q1064471:
+  title: 恩绍定理
+
+Q1065257:
+  title: 夹挤定理
+  decl: tendsto_of_tendsto_of_tendsto_of_le_of_le'
+
+Q1065966:
+  title: 同构定理
+  # 抽象代数中的三个同构定理
+  decls:
+    - QuotientGroup.quotientKerEquivRange
+    - QuotientGroup.quotientInfEquivProdNormalQuotient
+    - QuotientGroup.quotientQuotientEquivQuotient
+
+Q1067156:
+  title: 控制收敛定理
+  decl: MeasureTheory.tendsto_integral_of_dominated_convergence
+
+Q1067156X:
+  title: 有界收敛定理
+  decls:
+    - MeasureTheory.FiniteMeasure.tendsto_lintegral_nn_of_le_const
+    - MeasureTheory.tendsto_lintegral_nn_filter_of_le_const
+
+Q1068085:
+  title: 闭图像定理
+  decl: LinearMap.continuous_of_isClosed_graph
+
+Q1068283:
+  title: 勒文海姆-斯科伦定理
+  decl: FirstOrder.Language.exists_elementaryEmbedding_card_eq
+
+Q1068385:
+  title: 克莱罗定理
+
+Q1068976:
+  title: 希尔伯特零点定理
+  decl: MvPolynomial.vanishingIdeal_zeroLocus_eq_radical
+
+Q1075398:
+  title: 容格定理
+
+Q1076274:
+  title: 绍凯-毕晓普-德莱乌定理
+
+Q1077462:
+  title: 柯尼希定理（集合论）
+
+Q1077741:
+  title: 毛球定理
+
+Q1082910:
+  title: 欧拉分割定理
+  authors: Bhavik Mehta and Aaron Anderson
+  decl: Theorems100.partition_theorem
+
+Q1095330:
+  title: 阿佩里定理
+  url: https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/pi.20is.20irrational.3F/near/478674074
+  # TODO: 插入仓库链接，或许可以将其加入 mathlib :-)
+
+Q1097021:
+  title: 闵可夫斯基定理
+  decl: MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure
+  authors: Alex J. Best and Yaël Dillies
+  date: 2021
+
+Q1103054:
+  title: 利昂斯-拉克斯-米尔格拉姆定理
+
+Q1119094:
+  title: 佩利-维纳定理
+
+Q1121027:
+  title: 克雷洛夫-博戈柳博夫定理
+
+Q1125462:
+  title: 迪诺斯特拉托斯定理
+
+Q1129636:
+  title: 雷曼-谢费定理
+
+Q1130846:
+  title: 拉德纳定理
+
+Q1131601:
+  title: 斯克拉尔定理
+
+Q1132952:
+  title: 欧拉齐次函数定理
+
+Q1134296:
+  title: 支撑超平面定理
+
+Q1134776:
+  title: 迪尔沃思定理
+
+Q1135706:
+  title: 哈纳克定理
+
+Q1136043:
+  title: 赫尔维茨定理（复分析）
+
+Q1136262:
+  title: 光学定理
+
+Q1137014:
+  title: 齐霍诺夫定理
+  decl: isCompact_pi_infinite
+
+Q1137206:
+  title: 泰勒定理
+  decls:
+    - taylor_mean_remainder_lagrange
+    - taylor_mean_remainder_cauchy
+  authors: Moritz Doll
+
+Q1139041:
+  title: 柯西定理（群论）
+  decl: exists_prime_orderOf_dvd_card
+
+Q1139430:
+  title: 赫尔维茨定理（赋范除法代数）
+
+Q1139524:
+  title: 有理数定理
+
+Q1140119:
+  title: 莫雷拉定理
+
+Q1140200:
+  title: PCP 定理
+
+Q1141747:
+  title: 卡诺定理（内切圆、外接圆）
+
+Q1143540:
+  title: 赫克歇尔-俄林定理
+
+Q1144897:
+  title: 布劳威尔不动点定理
+  authors: Brendan Seamas Murphy
+  url: https://github.com/Shamrock-Frost/BrouwerFixedPoint/blob/master/src/brouwer_fixed_point.lean
+  comment: "在 Lean 3 中"
+
+Q1146791:
+  title: 费马多边形数定理
+
+Q1148215:
+  title: 米切尔嵌入定理
+  decl: CategoryTheory.Abelian.freyd_mitchell
+  authors: Markus Himmel, Jakob von Raumer, Paul Reichert, Joël Riou
+
+Q1149022:
+  title: 富比尼定理
+  decl: MeasureTheory.integral_prod
+
+Q1149185X:
+  title: 柯比-帕里斯定理
+
+Q1149185:
+  title: 古德斯坦定理
+
+Q1149458:
+  title: 紧致性定理
+  decl: FirstOrder.Language.Theory.isSatisfiable_iff_isFinitelySatisfiable
+
+Q1149522:
+  title: 拉密定理
+
+Q1152521:
+  title: 莫尔-马斯凯罗尼定理
+
+Q1153441:
+  title: 戈德斯通定理
+
+Q1153584:
+  title: 单调收敛定理
+  decls:
+    - MeasureTheory.integral_tendsto_of_tendsto_of_antitone
+    - MeasureTheory.lintegral_tendsto_of_tendsto_of_monotone
+
+Q1166774:
+  title: 斯通布尔代数表示定理
+
+Q1177508:
+  title: 雷代伊定理
+
+Q1179446:
+  title: 德拉姆定理
+
+Q1182249:
+  title: 演绎定理
+
+Q1186134:
+  title: 庞塞莱-施泰纳定理
+
+Q1186808:
+  title: 卢卡斯定理
+  decl: Choose.lucas_theorem
+
+Q1187646:
+  title: 同态基本定理
+  # 又名第一同构定理
+  decl: QuotientGroup.quotientKerEquivRange
+
+Q1188048:
+  title: 巴比尔定理
+
+Q1188392:
+  title: 蔡克endorf定理
+  decl: Nat.zeckendorfEquiv
+
+Q1188504:
+  title: 皮特曼-库普曼-达穆瓦定理
+
+Q1191319:
+  title: 拉东-尼科迪姆定理
+  decl: MeasureTheory.Measure.absolutelyContinuous_iff_withDensity_rnDeriv_eq
+
+Q1191709:
+  title: 叶戈罗夫定理
+  decl: MeasureTheory.tendstoUniformlyOn_of_ae_tendsto
+  authors: Kexing Ying
+
+Q1191862:
+  title: 儒歇定理
+
+Q1194053:
+  title: 度量化定理
+  decl: TopologicalSpace.metrizableSpace_of_t3_secondCountable
+  comment: "乌雷松度量化定理（仅此）"
+
+Q1196538:
+  title: 笛卡尔定理
+
+Q1196729:
+  title: 梅滕斯定理
+
+Q1202608:
+  title: 德古阿定理
+
+Q1209546:
+  title: 卡普兰斯基密度定理
+
+Q1217677:
+  title: 微积分基本定理
+  decls:
+    - intervalIntegral.integral_hasStrictDerivAt_of_tendsto_ae_right
+    - intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le
+  authors: Yury G. Kudryashov (第一条) and Benjamin Davidson (第二条)
+
+Q1227061:
+  title: 辛钦丢番图逼近定理
+
+Q1227702:
+  title: 狄利克雷单位定理
+
+Q1227703:
+  title: 狄利克雷逼近定理
+
+Q1242398:
+  title: 杜布分解定理
+
+Q1243340:
+  title: 伯克霍夫-冯诺依曼定理
+  decl: doublyStochastic_eq_convexHull_permMatrix
+  authors: Bhavik Mehta
+  date: 2024
+
+Q1249069:
+  title: 理查森定理
+
+Q1259814:
+  title: 尼尔森-施赖尔定理
+  decl: subgroupIsFreeOfIsFree
+
+Q1276318:
+  title: 施瓦茨核定理
+
+Q1305766:
+  title: 庞加莱-霍普夫定理
+
+Q1306092:
+  title: 纳什嵌入定理
+
+Q1306095:
+  title: 惠特尼嵌入定理
+  decl: exists_embedding_euclidean_of_compact
+  comment: "简化版：针对紧流形；嵌入到某个 *n* 维空间"
+
+Q1307676:
+  title: 肯尼思定理
+
+Q1308502:
+  title: 丘奇-罗瑟定理
+
+Q1315949:
+  title: 米塔-列夫勒定理
+
+Q1317350:
+  title: 陈氏定理
+
+Q1317367:
+  title: 日本共圆多边形定理
+
+Q1322892:
+  title: 迪拉克弦图定理
+
+Q1330788:
+  title: 魏尔斯特拉斯分解定理
+
+Q1340623:
+  title: 有限单群分类
+
+Q1346677:
+  title: 蒂茨扩张定理
+  decl: BoundedContinuousFunction.exists_extension_norm_eq_of_isClosedEmbedding
+
+Q1347094:
+  title: 内错角定理
+
+Q1348736:
+  title: 雷布琴斯基定理
+
+Q1349282:
+  title: 艾伦伯格-齐伯尔定理
+
+Q1357684:
+  title: 里斯表示定理
+  decl: InnerProductSpace.toDual
+  authors: Frédéric Dupuis
+  date: 2020
+
+Q1361031:
+  title: 弗罗贝尼乌斯定理（实除法代数）
+
+Q1361393:
+  title: 卢津定理
+
+Q1366581:
+  title: 埃尔德什-拉多定理
+
+Q1369453:
+  title: 克罗内克-韦伯定理
+
+Q1370316:
+  title: 凯西定理
+
+Q1376515:
+  title: 无毛定理
+
+Q1396592:
+  title: 弗拉内尔-兰道定理
+
+Q1420905:
+  title: 希尔伯特定理 90
+
+Q1422083:
+  title: 里尔-纳尔泽夫斯基不动点定理
+
+Q1423818:
+  title: 欧拉几何定理
+
+Q1424481:
+  title: 弗鲁赫特定理
+
+Q1425077:
+  title: 谱定理
+
+Q1425308:
+  title: 婆罗摩笈多定理
+
+Q1425529:
+  title: 切博塔廖夫密度定理
+
+Q1426292:
+  title: 巴拿赫-施坦豪斯定理
+  decl: banach_steinhaus
+  authors: Jireh Loreaux
+  date: 2021
+
+Q1434158:
+  title: 涨落耗散定理
+
+Q1434805:
+  title: 马克斯·诺特定理
+
+Q1443036:
+  title: 帕塞瓦尔定理
+
+Q1452678:
+  title: 彭罗斯-霍金奇点定理
+
+Q1455794:
+  title: 弗罗登塔尔悬置定理
+
+Q1457052:
+  title: 良序定理
+  decl: exists_wellOrder
+  authors: Mario Carneiro, Chris Hughes, Violeta Hernández
+  date: 2017
+
+Q1471282:
+  title: 拉东定理
+  decl: Convex.radon_partition
+  authors: Vasilii Nesterov
+  date: 2023
+
+Q1472120:
+  title: 黑林格-特普利茨定理
+
+Q1477053:
+  title: 阿尔泽拉-阿斯科利定理
+  decl: BoundedContinuousFunction.arzela_ascoli
+
+Q1505529:
+  title: 龙格定理
+
+Q1506253:
+  title: 欧几里得定理
+  decl: Nat.exists_infinite_primes
+  authors: Jeremy Avigad
+
+Q1529941:
+  title: 彼得-外尔定理
+
+Q1530275:
+  title: 邓福德-佩蒂斯定理
+
+Q1535225:
+  title: 沃什定理
+
+Q1542114:
+  title: 贝祖定理
+
+Q1543149:
+  title: 索霍茨基-魏尔斯特拉斯定理
+
+Q1547975:
+  title: 梅尔明-瓦格纳定理
+
+Q1551745:
+  title: 二项式逆定理
+
+Q1555342:
+  title: 雷-施利德定理
+
+Q1564541:
+  title: 佩龙-弗罗贝尼乌斯定理
+
+Q1566341:
+  title: 欣德曼定理
+  decl: Hindman.FP_partition_regular
+  authors: David Wärn
+
+Q1566372:
+  title: 哈格定理
+
+Q1568612:
+  title: 马登定理
+
+Q1568811:
+  title: 哈恩分解定理
+  decl: MeasureTheory.SignedMeasure.exists_isCompl_positive_negative
+  authors: Kexing Ying
+  date: 2021
+
+Q1572474:
+  title: 林德曼-魏尔斯特拉斯定理
+  # WIP PR: https://github.com/leanprover-community/mathlib4/pull/6718
+
+Q1576235:
+  title: 洛赫斯定理
+
+Q1602819:
+  title: 卢默-菲利普斯定理
+
+Q1614464:
+  title: 柯西-柯瓦列夫斯基定理
+
+Q1621180:
+  title: 奥尔利奇-佩蒂斯定理
+
+Q1630588:
+  title: 赫尔维茨定理（数论）
+
+Q1631749:
+  title: 莱斯特定理
+
+Q1631992:
+  title: 施泰纳-莱默斯定理
+
+Q1632301:
+  title: 施图姆定理
+
+Q1632433:
+  title: 海利定理
+  authors: Vasily Nesterov
+  decl: Convex.helly_theorem
+  date: 2023
+
+Q1637085:
+  title: 坡印亭定理
+
+Q1660147:
+  title: 马祖尔-乌拉姆定理
+
+Q1668861:
+  title: 皮卡定理
+
+Q1683356:
+  title: 日本共圆四边形定理
+
+Q1687147:
+  title: 斯普拉格-格隆迪定理
+  decl: SetTheory.PGame.equiv_nim_grundyValue
+  authors: Fox Thomson
+  date: 2020
+
+Q1694565:
+  title: 维诺格拉多夫定理
+
+Q1699024:
+  title: 约翰椭球
+
+Q1704878:
+  title: 阿佩尔-洪贝尔定理
+
+Q1716166:
+  title: 默瑟定理
+
+Q1720410:
+  title: 叶尔姆斯列夫定理
+
+Q1724049:
+  title: 沃尔斯滕霍姆定理
+
+Q1727461:
+  title: 相交割线定理
+
+Q1739994:
+  title: 布劳尔-铃木定理
+
+Q1751105:
+  title: 布卢姆加速定理
+
+Q1751823:
+  title: 不克隆定理
+
+Q1752516:
+  title: 黎曼级数定理
+
+Q1752621:
+  title: 西尔维斯特惯性定理
+  decl: QuadraticForm.equivalent_one_zero_neg_one_weighted_sum_squared
+
+Q1752988:
+  title: 库塔-儒可夫斯基定理
+
+Q1756194:
+  title: 香农-哈特利定理
+
+Q1765521:
+  title: 杜布鞅收敛定理
+
+Q1766814:
+  title: Smn 定理
+  decl: Nat.Partrec.Code.smn
+  authors: Mario Carneiro
+  date: 2018
+
+Q1785610:
+  title: 庞塞莱闭合定理
+
+Q1785872:
+  title: 贝里-埃森定理
+
+Q1786292:
+  title: 舒尔定理
+
+Q1786419:
+  title: 克拉默斯定理
+
+Q1789863:
+  title: 劳斯定理
+
+Q1809539:
+  title: 披萨定理
+
+Q1816952:
+  title: 舒尔引理
+  decl: CategoryTheory.finrank_endomorphism_simple_eq_one
+
+Q1841237:
+  title: 富比尼微分定理
+  # XXX: mathlib 是否已有此定理？
+
+Q1855610:
+  title: 棣莫弗-拉普拉斯定理
+  # 中心极限定理的特例：二项分布收敛于正态分布
+
+Q1888583:
+  title: 霍尔迪奇定理
+
+Q1893717:
+  title: 莱斯定理
+  decl: ComputablePred.rice
+
+Q1896455:
+  title: 伐里农定理
+
+Q1899432:
+  title: 格罗滕迪克-希策布鲁赫-黎曼-罗赫定理
+
+Q1914905:
+  title: 拉马努金-斯科伦定理
+
+Q1930577:
+  title: 埃尔布朗定理
+
+Q1933521:
+  title: 克莱尼递归定理
+  decl: Nat.Partrec.Code.fixed_point₂
+  authors: Mario Carneiro
+  date: 2018
+
+Q1938251:
+  title: 哈斯-闵可夫斯基定理
+
+Q1946642X:
+  title: S-配边定理
+
+Q1946642:
+  title: H-配边定理
+
+Q1964537:
+  title: 默格利安定理
+
+Q1966978:
+  title: 莱维连续性定理
+
+Q1974087:
+  title: 黎曼可去奇点定理
+
+Q1995468:
+  title: 赫尔德定理
+
+Q1996305:
+  title: 伯恩赛德定理
+  # 一个外部项目证明了其一部分：TODO 在此评论中提及
+
+Q2000090:
+  title: 美术馆定理
+
+Q2008549:
+  title: 希尔伯特定理（微分几何）
+
+Q2013213:
+  title: 罗伊施勒定理
+
+Q2022775:
+  title: 希尔伯特-施密特定理
+
+Q2027347:
+  title: 可选停止定理
+  decl: MeasureTheory.submartingale_iff_expected_stoppedValue_mono
+  authors: Kexing Ying, Rémy Degenne
+  date: 2022
+
+Q2028341:
+  title: 阿多定理
+
+Q2046647:
+  title: 卡鲁宁-勒维定理
+
+Q2063099:
+  title: 庞加莱对偶定理
+
+Q2068227:
+  title: 阿廷-施赖尔定理
+
+Q2071632:
+  title: 劳奇-卡佩利定理
+
+Q2093886:
+  title: 本原元定理
+  decl: Field.exists_primitive_element
+
+Q2094241:
+  title: 霍普夫-里诺定理
+
+Q2096184:
+  title: 普朗歇尔定理
+  # 也在 undergrad.yml 中
+
+Q2109761:
+  title: 单值化定理
+
+Q2120067:
+  title: 迪勒-德雷斯定理
+
+Q2190744:
+  title: 费尔巴哈定理
+  # 也在 100.yaml 中
+
+Q2197859:
+  title: 尼科马霍斯定理
+
+Q2222575:
+  title: 球壳定理
+
+Q2226602:
+  title: 鲍尔-菲克定理
+
+Q2226606:
+  title: 贝克曼-夸尔斯定理
+
+Q2226610:
+  title: 巴拿赫-马祖尔定理
+
+Q2226624:
+  title: 布鲁克-乔拉-赖瑟定理
+
+Q2226625:
+  title: 科曼迪诺定理
+
+Q2226640:
+  title: 克拉梅尔分解定理
+
+Q2226644:
+  title: 伊斯顿定理
+
+Q2226650:
+  title: 埃伯林-斯穆里安定理
+
+Q2226677:
+  title: 盖尔范德-马祖尔定理
+
+Q2226682:
+  title: 盖尔范德-奈马克定理
+
+Q2226691:
+  title: 基尔霍夫定理
+
+Q2226695:
+  title: 赫尔维茨自同构定理
+
+Q2226698:
+  title: 坎托罗维奇定理
+
+Q2226709:
+  title: 克鲁尔-施密特定理
+
+Q2226750:
+  title: 马尔格朗日-埃伦普赖斯定理
+
+Q2226774:
+  title: 柯尼希定理
+
+Q2226786:
+  title: 斯佩纳定理
+  decl: IsAntichain.sperner
+  authors: Bhavik Mehta, Alena Gusakov, Yaël Dillies
+  date: 2022
+
+Q2226800:
+  title: 舒尔-察森豪斯定理
+  decl: Subgroup.exists_left_complement'_of_coprime
+  authors: Thomas Browning
+  date: 2021
+
+Q2226803:
+  title: 滕嫩鲍姆定理
+
+Q2226807:
+  title: 范蒂格姆定理
+
+Q2226855:
+  title: 沙尔科夫斯基定理
+  # TODO: 找到代码
+  authors: Bhavik Mehta
+  date: 2022
+
+Q2226868:
+  title: 几何平均数定理
+
+Q2226962:
+  title: 魏尔斯特拉斯-卡索拉蒂定理
+
+Q2253746:
+  title: 伯特兰投票定理
+  authors: Bhavik Mehta and Kexing Ying
+  decl: Ballot.ballot_problem
+
+Q2266397:
+  title: 相交弦定理
+
+Q2267175:
+  title: 切割线定理
+
+Q2269888:
+  title: 科恩不可约判据
+
+Q2270905:
+  title: 庞加莱-伯克霍夫-维特定理
+
+Q2275191:
+  title: 勒贝格微分定理
+  decl: VitaliFamily.ae_tendsto_lintegral_div
+  authors: Sébastien Gouëzel
+  date: 2021
+
+Q2277040:
+  title: 香农展开定理
+
+Q2287393:
+  title: 卡里斯蒂不动点定理
+
+Q2309682:
+  title: 球定理
+
+Q2309760:
+  title: 卢曼-门肖夫定理
+
+Q2310718:
+  title: 皮托管定理
+
+Q2338929:
+  title: 置换定理
+  # 又名施泰尼茨置换引理。这肯定在 mathlib 的某个地方
+
+Q2345282:
+  title: 香农定理
+
+Q2347139:
+  title: 卡诺定理（热力学）
+
+Q2360531:
+  title: 若尔当-舒尔定理
+
+Q2374733:
+  title: 斯科伦-马勒-莱赫定理
+
+Q2376918:
+  title: 阿贝尔和陶伯定理
+
+Q2378270:
+  title: 图厄定理
+
+Q2379128:
+  title: 林德斯特伦定理
+
+Q2379132:
+  title: 上升和下降定理
+  # TODO: mathlib 是否有这些？
+
+Q2394548:
+  title: 胡雷维茨定理
+
+Q2411312:
+  title: 香农信源编码定理
+
+Q2428364:
+  title: 克劳修斯定理
+
+Q2449984:
+  title: 米库尔定理
+
+Q2449984X:
+  title: 枢轴定理
+
+Q2471737:
+  title: 卡拉西奥多里定理（凸包）
+  decl: convexHull_eq_union
+
+Q2473965:
+  title: 丑小鸭定理
+
+Q2478371:
+  title: 包络定理
+
+Q2482753:
+  title: 曼定理
+  # 在 LeanCamCombi 中完成
+
+Q2495664:
+  title: 泛系数定理
+
+Q2500406:
+  title: 利纳尔定理
+
+Q2500408:
+  title: 泰博定理
+
+Q2518048:
+  title: 小平消没定理
+
+Q2524990:
+  title: 杰克逊定理（排队论）
+
+Q2525646:
+  title: 若尔当-赫尔德定理
+  decl: CompositionSeries.jordan_holder
+
+Q2533936:
+  title: 笛卡尔总角亏定理
+
+Q2540738:
+  title: 嘉当-迪厄多内定理
+
+Q2558669:
+  title: 阿廷-佐恩定理
+
+Q2588432:
+  title: 沃尔德定理
+
+Q2600653:
+  title: 泰勒-普劳德曼定理
+
+Q2607007:
+  title: 铰链定理
+
+Q2621667:
+  title: 长田-斯米尔诺夫度量化定理
+
+Q2631152:
+  title: 卡拉西奥多里扩张定理
+
+Q2635326:
+  title: 结构化程序定理
+
+Q2638931:
+  title: 卷积定理
+
+Q2703389:
+  title: 林尼克定理
+
+Q2733672:
+  title: 普赖斯定理
+
+Q2734084:
+  title: 玻尔-莫勒鲁普定理
+
+Q2793600:
+  title: 斯塔克-黑格纳定理
+
+Q2799491:
+  title: 林格尔-扬斯定理
+
+Q2800071:
+  title: 完美图定理
+
+Q2862403:
+  title: 施耐德-兰定理
+
+Q2893695:
+  title: 无混定理
+
+Q2916568:
+  title: 戈莫里定理
+
+Q2919401:
+  title: 奥斯特洛夫斯基定理
+  decl: Rat.AbsoluteValue.equiv_real_or_padic
+  authors: David Kurniadi Angdinata, Fabrizio Barroero, Laura Capuano, Nirvana Coppola, María Inés de Frutos-Fernández, Sam van Gool, Silvain Rideau-Kikuchi, Amos Turchet, Francesco Veneziano
+  date: 2024
+
+Q2981012:
+  title: 蒙日定理
+
+Q2984415:
+  title: 海纳尔-塞迈雷迪定理
+
+Q2993026:
+  title: 安克尼-阿廷-乔拉定理
+
+Q2993308:
+  title: 卡梅伦-埃尔德什定理
+
+Q2993319:
+  title: 米尔斯基-纽曼定理
+
+Q2995691:
+  title: 纽兰德-尼伦伯格定理
+
+Q3001796:
+  title: 斯科伦-诺特定理
+
+Q3007384:
+  title: 波斯特定理
+
+Q3075250:
+  title: 哈代-李特尔伍德极大定理
+
+Q3077634:
+  title: 萨尔奎斯对应定理
+
+Q3088644:
+  title: 戈德斯坦定理
+
+Q3154003:
+  title: 勒卡姆定理
+
+Q3180727:
+  title: 佩利斯定理
+
+Q3229335:
+  title: 玻尔-卡拉西奥多里定理
+
+Q3229352:
+  title: 维塔利覆盖定理
+  decl: Vitali.exists_disjoint_covering_ae
+  authors: Sébastien Gouëzel
+  date: 2021
+
+Q3345678:
+  title: 穆尔-阿龙扎因定理
+
+Q3424029:
+  # TODO: 应引用单个条目
+  # 维基百科中的列表已经更改。当 1000+ 定理项目与维基百科数据同步，
+  # 并且此文件与 1000+ 定理项目的数据同步时，此条目将自动更改。
+  title: 沙勒定理（消歧义）
+
+Q3443426:
+  title: 邦迪定理
+
+Q3458641:
+  title: 塞格极限定理
+
+Q3502015:
+  title: 哈斯椭圆曲线定理
+
+Q3505260:
+  title: 凯莱-萨尔蒙定理
+
+Q3526969:
+  title: AF+BG 定理
+
+Q3526976:
+  title: 阿克斯-格罗滕迪克定理
+
+Q3526982:
+  title: 埃尔德什-安宁定理
+
+Q3526990:
+  title: 欧拉定理
+
+Q3526993:
+  title: 高木存在性定理
+
+Q3526996:
+  title: 柯尔莫哥洛夫扩张定理
+  authors: Rémy Degenne, Peter Pfaffelhuber
+  date: 2023
+  url: https://github.com/RemyDegenne/kolmogorov_extension4
+
+Q3526998:
+  title: 切除定理
+
+Q3527004:
+  title: BEST 定理
+
+Q3527008:
+  title: 巴利安-洛定理
+
+Q3527009:
+  title: 贝克定理
+
+Q3527011:
+  title: 贝克定理（几何）
+
+Q3527015:
+  title: 伯恩斯坦单调函数定理
+
+Q3527017:
+  title: 伯林-拉克斯定理
+
+Q3527019:
+  title: 伯奇定理
+
+Q3527034:
+  title: 柯西定理（几何）
+
+Q3527040:
+  title: 乔姆斯基-许岑贝格表示定理
+
+Q3527044:
+  title: 帕普斯面积定理
+
+Q3527054:
+  title: 德布鲁因-埃尔德什定理（图论）
+
+Q3527056:
+  title: 德布鲁因-埃尔德什定理（关联几何）
+
+Q3527064:
+  title: 唐斯克定理
+
+Q3527067:
+  title: F. 和 M. 里斯定理
+
+Q3527071:
+  title: 法里-米尔诺定理
+
+Q3527079:
+  title: 弗赖曼定理
+
+Q3527088:
+  title: 哈布什定理
+
+Q3527091:
+  title: 格罗莫夫多项式增长群定理
+
+Q3527093:
+  title: 希尔伯特-施佩泽定理
+
+Q3527095:
+  title: 雅可比四平方和定理
+
+Q3527100:
+  title: 克鲁斯卡尔树定理
+
+Q3527102:
+  title: 克鲁斯卡尔-卡托纳定理
+  decl: Finset.kruskal_katona
+  authors: Bhavik Mehta, Yaël Dillies
+  date: 2020
+
+Q3527110:
+  title: 拉克斯-温德洛夫定理
+
+Q3527113:
+  title: 李-科尔钦定理
+
+Q3527118:
+  title: 马勒定理
+  decl: PadicInt.hasSum_mahler
+
+Q3527125:
+  title: 蒙斯基定理
+
+Q3527129:
+  title: 蒙茨-萨斯定理
+
+Q3527132:
+  title: 内格尔-卢茨定理
+
+Q3527155:
+  title: 罗伯逊-西摩定理
+
+Q3527162:
+  title: 苏菲·热尔曼定理
+  # 费马大定理的特例，包括所有小于 100 的素数
+
+Q3527166:
+  title: 施泰因豪斯定理
+  # 不难，但似乎缺失
+
+Q3527171:
+  title: 辛格定理
+
+Q3527185:
+  title: 怀特海德定理
+
+Q3527189:
+  title: 格定理
+  # 又名第三或第四同构定理
+  decl: QuotientGroup.quotientQuotientEquivQuotient
+
+Q3527196:
+  title: 主理想定理
+
+Q3527205:
+  title: 向量空间维数定理
+  decl: mk_eq_mk_of_basis
+
+Q3527209:
+  title: 哈斯范数定理
+
+Q3527214:
+  title: 非挤压定理
+
+Q3527215:
+  title: 希尔伯特投影定理
+  decl: exists_norm_eq_iInf_of_complete_convex
+  authors: Zhouhang Zhou
+  date: 2019
+
+Q3527217:
+  title: M. 里斯扩张定理
+
+Q3527219:
+  title: 魏尔斯特拉斯预备定理
+
+Q3527223:
+  title: 晶体学限制定理
+
+Q3527226:
+  title: 线性加速定理
+
+Q3527230:
+  title: 冯·施陶特-克劳森定理
+
+Q3527233:
+  title: 柯尔莫哥洛夫三级数定理
+
+Q3527241:
+  title: 克鲁尔主理想定理
+  decl: Ideal.height_le_one_of_isPrincipal_of_mem_minimalPrimes
+  authors: Andrew Yang
+  date: 2023
+
+Q3527245:
+  title: 六指数定理
+
+Q3527247:
+  title: 六圆定理
+
+Q3527250:
+  title: 阿达马三线定理
+  decl: Complex.HadamardThreeLines.norm_le_interpStrip_of_mem_verticalClosedStrip
+  authors: Xavier Généreux
+  date: 2023
+
+Q3527263:
+  title: 克莱尼不动点定理
+  decl: fixedPoints.lfp_eq_sSup_iterate
+  authors: Ira Fesefeldt
+  date: 2024
+
+Q3527279:
+  title: 维纳陶伯定理
+
+Q3534036:
+  title: 庞培乌定理
+
+Q3613173:
+  title: 蒂茨择一定理
+
+Q3661294:
+  title: 开尔文环量定理
+
+Q3699212:
+  title: 圣维南定理
+
+Q3711848:
+  title: 索博列夫嵌入定理
+  # 部分进展：索博列夫不等式 MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq
+
+Q3757563:
+  title: 截线定理
+
+Q3771212:
+  title: 普罗特定理
+
+Q3889376:
+  title: 卡迈克尔定理
+
+Q3893473:
+  title: 驯顺定理
+
+Q3915398:
+  title: 布伦-闵可夫斯基定理
+
+Q3983968:
+  title: 施图姆-皮科内比较定理
+
+Q3983972:
+  title: 单纯逼近定理
+
+Q3984011:
+  title: 达根-施瓦茨定理
+
+Q3984017:
+  title: 海利选择定理
+
+Q3984020:
+  title: 霍尔姆斯特伦定理
+
+Q3984052:
+  title: 等分布定理
+
+Q3984053:
+  title: 傅里叶反演定理
+  decl: Continuous.fourier_inversion
+  authors: Sébastien Gouëzel
+  date: 2024
+
+Q3984056:
+  title: 无通信定理
+
+Q3984063:
+  title: 莫斯托刚性定理
+
+Q3984069:
+  title: 弗雷德霍姆定理
+
+Q4054114:
+  title: ATS 定理
+
+Q4116459:
+  title: 尼云定理
+
+Q4171386:
+  title: 灵魂定理
+
+Q4179283:
+  title: 正能量定理
+
+Q4272300:
+  title: 初值定理
+
+Q4272645:
+  title: 终值定理
+
+Q4378868:
+  title: 弗拉格门-林德洛夫定理
+  decl: PhragmenLindelof.horizontal_strip
+  authors: Yury G. Kudryashov
+  date: 2022
+
+Q4378889:
+  title: 卡拉西奥多里定理（共形映射）
+
+Q4408070:
+  title: 德费内蒂定理
+
+Q4454910:
+  title: 奥斯特洛夫斯基-阿达马缺项定理
+
+Q4454919:
+  title: 奥曼协议定理
+
+Q4454925:
+  title: 楔之边缘定理
+
+Q4454954:
+  title: 基尔什布劳恩定理
+
+Q4454958:
+  title: 极小化极大定理
+
+Q4454973:
+  title: 林德洛夫定理
+
+Q4454976:
+  title: 刘维尔定理（共形映射）
+
+Q4454989:
+  title: 默尼耶定理
+
+Q4454996:
+  title: 诺维科夫紧叶定理
+
+Q4455003:
+  title: 波梅兰丘克定理
+
+Q4455015:
+  title: 劳斯-赫尔维茨定理
+
+Q4455016:
+  title: 里布球面定理
+
+Q4455023:
+  title: 萨佐诺夫定理
+
+Q4455025:
+  title: 无游荡域定理
+
+Q4455030:
+  title: 斯通单参数酉群定理
+
+Q4455031:
+  title: 法里定理
+
+Q4455033:
+  title: 法图定理
+
+Q4455037:
+  title: 哈代定理
+
+Q4455043:
+  title: 凯莱-巴卡拉克定理
+
+Q4455046:
+  title: 单值性定理
+
+Q4634017:
+  title: 2π 定理
+
+Q4663326:
+  title: 希策布鲁赫-黎曼-罗赫定理
+
+Q4666729:
+  title: 阿贝尔-雅可比定理
+
+Q4666729X:
+  title: 阿贝尔曲线定理
+
+Q4667501:
+  title: 阿布扬卡-莫定理
+
+Q4677985:
+  title: 无环模型定理
+
+Q4695203:
+  title: 四函数定理
+  decl: four_functions_theorem
+  authors: Yaël Dillies
+  date: 2023
+
+Q4700718:
+  title: 阿赫耶泽尔定理
+
+Q4712316:
+  title: 阿尔伯特-布劳尔-哈斯-诺特定理
+
+Q4713046:
+  title: 阿尔钦-艾伦定理
+
+Q4724004B:
+  title: 黎曼存在性定理
+
+Q4724004A:
+  title: 周定理
+
+Q4734002:
+  title: 格罗莫夫-鲁定理
+
+Q4734844:
+  title: 阿尔珀林-布劳尔-戈伦斯坦定理
+
+Q4736422:
+  title: 丹茹瓦-卢津定理
+
+Q4746948:
+  title: 阿米瑟-莱维茨基定理
+
+Q4751110:
+  title: 分析师旅行商定理
+
+Q4751118:
+  title: 解析弗雷德霍姆定理
+
+Q4753992:
+  title: 安德森定理
+
+Q4756099:
+  title: 安德烈奥蒂-弗兰克尔定理
+
+Q4783822:
+  title: 算术黎曼-罗赫定理
+
+Q4788680:
+  title: 面积定理（共形映射）
+
+Q4801169:
+  title: 阿廷逼近定理
+
+Q4801183:
+  title: 阿廷-韦迪耶对偶定理
+
+Q4801563:
+  title: 阿特斯坦定理
+
+Q4815879:
+  title: 阿蒂亚-西格尔完备化定理
+
+Q4815899:
+  title: 阿特金森定理
+
+Q4826848:
+  title: 自主收敛定理
+
+Q4827308:
+  title: 辅助多项式定理
+
+Q4830725:
+  title: 阿克斯-格罗滕迪克定理
+  decl: ax_grothendieck_zeroLocus
+  authors: Chris Hughes
+  date: 2023
+
+Q4832965:
+  title: 阿兹特克菱形定理
+
+Q4838119:
+  title: 巴布什卡-拉克斯-米尔格拉姆定理
+
+Q4848497:
+  title: 贝利-博雷尔定理
+
+Q4853767:
+  title: 巴拿赫-斯通定理
+
+Q4857506:
+  title: 巴帕特-贝格定理
+
+Q4865980:
+  title: 巴尔怀斯紧致性定理
+
+Q4866385:
+  title: 基变换定理
+
+Q4866385X:
+  title: 正常基变换定理
+
+Q4877965:
+  title: 博维尔-拉兹洛定理
+
+Q4878586:
+  title: 贝克单子性定理
+  decl: CategoryTheory.Monad.monadicOfCreatesGSplitCoequalizers
+  authors: Bhavik Mehta
+  date: 2020
+
+Q4880958:
+  title: 贝恩克-施泰因定理
+
+Q4884789:
+  title: 贝尔特拉米定理
+
+Q4884950:
+  title: 别雷定理
+
+Q4891633:
+  title: 伯杰-卡兹丹比较定理
+
+Q4894565:
+  title: 伯恩斯坦定理（逼近论）
+
+Q4914101:
+  title: 宾识别定理
+
+Q4916483:
+  title: 伯克霍夫-格罗滕迪克定理
+
+Q4918128:
+  title: 毕晓普-坎宁斯定理
+
+Q4927458:
+  title: 布隆代尔定理
+
+Q4937691:
+  title: 博戈柳博夫-帕拉修克定理
+
+Q4941364:
+  title: 邦达列娃-夏普利定理
+
+Q4942215:
+  title: 博内定理
+
+Q4944906:
+  title: 博雷尔确定性定理
+
+Q4944908:
+  title: 博雷尔不动点定理
+
+Q4944923:
+  title: 博雷尔-博特-韦伊定理
+
+Q4944923X:
+  title: 博雷尔-韦伊定理
+
+Q4948983:
+  title: 博特周期性定理
+
+Q4949984:
+  title: 有界逆定理
+
+Q4950096:
+  title: 布尔巴基-维特定理
+
+Q4956438:
+  title: 分支定理
+
+Q4958218:
+  title: 布劳尔诱导特征标定理
+
+Q4958221:
+  title: 布劳尔三大主定理
+
+Q4958227:
+  title: 布劳尔-内斯比特定理
+
+Q4958230:
+  title: 布劳尔-西格尔定理
+
+Q4958233:
+  title: 布劳尔-铃木-沃尔定理
+
+Q4971339:
+  title: 英国国旗定理
+
+Q4975963:
+  title: 布朗可表示性定理
+
+Q4979609:
+  title: 布龙-蒂奇马什定理
+
+Q4991415:
+  title: 乔拉-莫德尔定理
+
+Q4998912:
+  title: 伯克定理
+
+Q5001327:
+  title: 布泽曼定理
+
+Q5005143:
+  title: 博歇定理
+
+Q5005965:
+  title: C-定理
+
+Q5026435:
+  title: 卡梅伦-马丁定理
+
+Q5037752:
+  title: 卡拉西奥多里存在性定理
+
+Q5041175:
+  title: 卡尔松-雅各布斯定理
+
+Q5042898:
+  title: 卡尔松定理
+
+Q5047043:
+  title: 嘉当定理 A 和 B
+
+Q5047046:
+  title: 布劳尔-嘉当-华定理
+
+Q5047048:
+  title: 嘉当-阿达马定理
+
+Q5047051:
+  title: 嘉当-仓西延长定理
+
+Q5047052:
+  title: 嘉当-凯勒定理
+
+Q5049717:
+  title: 卡斯泰尔诺沃-德弗朗基斯定理
+
+Q5091194:
+  title: 程氏特征值比较定理
+
+Q5094298:
+  title: 谢瓦莱结构定理
+
+Q5094305:
+  title: 谢瓦莱-谢泼德-托德定理
+
+Q5103861:
+  title: 崔氏完全正映射定理
+
+Q5125859:
+  title: 克拉佩龙定理
+
+Q5127710:
+  title: 克拉克-奥康定理
+
+Q513028:
+  title: 贝祖恒等式
+  decl: Nat.gcd_eq_gcd_ab
+
+Q5132839:
+  title: 克利福德圆定理
+
+Q5132840:
+  title: 克利福德特殊除子定理
+
+Q5136698:
+  title: 簇分解定理
+
+Q5139948:
+  title: 科德定理
+
+Q5141331:
+  title: 科恩结构定理
+
+Q5155090:
+  title: 交换定理
+
+Q5157054:
+  title: 压缩定理
+
+Q5161245:
+  title: 康利-曾德尔定理
+
+Q5163116:
+  title: 保守性定理
+
+Q5165492:
+  title: 连续映射定理
+
+Q5166389:
+  title: 范弗莱克定理
+
+Q5171652:
+  title: 角定理
+  decl: corners_theorem_nat
+  authors: Yaël Dillies, Bhavik Mehta
+  date: 2022
+
+Q5172143:
+  title: 科罗纳定理
+
+Q5178114:
+  title: 库尔塞勒定理
+
+Q5180651:
+  title: 克雷格定理
+
+Q5187911:
+  title: 克鲁克斯涨落定理
+
+Q5188510:
+  title: 横截定理
+
+Q5195996:
+  title: 柯蒂斯-赫德伦德-林登定理
+
+Q5221089:
+  title: 丹斯金定理
+
+Q5242704:
+  title: 道森-格特纳定理
+
+Q5244285:
+  title: 德布鲁因定理
+
+Q5244361:
+  title: 德弗朗基斯定理
+
+Q5251122:
+  title: 时间层次定理
+
+Q5252320:
+  title: 利科里什扭转定理
+
+Q5278348:
+  title: 加尔文定理
+
+Q5282059:
+  title: 哈里什-钱德拉定理
+
+Q5282247:
+  title: 分解定理
+
+Q5295351:
+  title: 唐纳森定理
+
+Q5296972:
+  title: 杜布-迈耶分解定理
+
+Q5299605:
+  title: 格利文科定理
+
+Q5311783:
+  title: 达德利定理
+
+Q5315060:
+  title: 邓福德-施瓦茨定理
+
+Q5319505:
+  title: 蔡尔伯格-布雷苏定理
+
+Q5337931:
+  title: 埃奇沃思极限定理
+
+Q5362000:
+  title: 埃利策定理
+
+Q5384150:
+  title: 等内切圆定理
+
+Q5385323:
+  title: 埃尔德什-高莱定理
+
+Q5385324:
+  title: 埃尔德什-纳吉定理
+
+Q5385325:
+  title: 埃尔德什-波萨定理
+
+Q5385326:
+  title: 埃尔德什-斯通定理
+
+Q5421989:
+  title: 外角定理
+
+Q5436274:
+  title: 法雷尔-马尔库舍维奇定理
+
+Q5437947:
+  title: 法图-勒贝格定理
+  # 本质上是测度论中的法图引理：我们也算作它
+  decl: MeasureTheory.lintegral_liminf_le
+
+Q5438320:
+  title: 福斯特曼-俄林定理
+
+Q5443003:
+  title: 芬克尔对偶定理
+
+Q5443004:
+  title: 芬克尔定理
+
+Q5443005:
+  title: 芬克尔-莫罗定理
+
+Q5445112:
+  title: 费尼克定理
+
+Q5445311:
+  title: 费雷罗-华盛顿定理
+
+Q5447238:
+  title: 菲勒定理
+
+Q5454965:
+  title: 费希尔-蒂皮特-格涅坚科定理
+
+Q5455495:
+  title: 菲廷定理
+
+Q5456213:
+  title: 五圆定理
+
+Q5463860:
+  title: 焦子群定理
+
+Q5473576:
+  title: 福斯特定理
+
+Q5494134:
+  title: 弗兰科娃-海利选择定理
+
+Q5498822:
+  title: 伯克霍夫遍历定理
+
+Q5499906:
+  title: 希尔绍夫-维特定理
+
+Q5501344:
+  title: 弗赖德林-温策尔定理
+
+Q5503689:
+  title: 邦别里-弗里德兰德-伊万尼茨定理
+
+Q5504427:
+  title: 友谊定理
+  decl: Theorems100.friendship_theorem
+  authors: Aaron Anderson and Jalex Stark and Kyle Miller
+
+Q5505098:
+  title: 弗罗贝尼乌斯行列式定理
+
+Q5505114:
+  title: 弗罗达定理
+
+Q5506929:
+  title: 富克斯定理
+
+Q5507285:
+  title: 富格莱德定理
+
+Q5508180:
+  title: 充分就业定理
+
+Q5508482:
+  title: 富尔顿-汉森连通性定理
+
+Q5508973:
+  title: 无套利定价基本定理
+
+Q5530454:
+  title: 盖尔曼-洛定理
+
+Q5552370:
+  title: 杰罗克分裂定理
+
+Q5566491:
+  title: 格莱舍定理
+
+Q5567394:
+  title: 格里森定理
+
+Q5576268:
+  title: 戈达德-索恩定理
+
+Q5579030:
+  title: 戈德堡-萨克斯定理
+
+Q5580171:
+  title: 戈尔迪定理
+
+Q5586067:
+  title: 戈登-纽厄尔定理
+
+Q5588002:
+  title: 戈特斯曼-克尼尔定理
+
+Q5597098:
+  title: 图结构定理
+
+Q5609384:
+  title: 格林伯格定理
+
+Q5610188:
+  title: 格罗莫夫紧致性定理（几何）
+
+Q5610190:
+  title: 格罗莫夫紧致性定理（拓扑）
+
+Q5610718:
+  title: 格罗滕迪克连通性定理
+
+Q5612131:
+  title: 格伦斯基定理
+
+Q5612159:
+  title: 格林瓦尔德-王定理
+
+Q5612871:
+  title: 格勒奇定理
+
+Q5638112:
+  title: 哈德维格定理
+
+Q5638886:
+  title: 哈恩嵌入定理
+
+Q5643485:
+  title: 哈尔彭-劳赫利定理
+
+Q5645731:
+  title: 哈默斯利-克利福德定理
+
+Q5656673:
+  title: 哈代-李特尔伍德陶伯定理
+
+Q5656674:
+  title: 哈代-拉马努金定理
+
+Q5657833:
+  title: 哈里什-钱德拉正则性定理
+
+Q5659675:
+  title: 哈纳克曲线定理
+
+Q5675112:
+  title: 哈托格斯-罗森塔尔定理
+
+Q5680041:
+  title: 哈斯-阿尔夫定理
+
+Q5697916B:
+  title: 瓦尔德豪森定理
+
+Q5697916A:
+  title: 赖德迈斯特-辛格定理
+
+Q5697927:
+  title: 格罗斯-扎吉尔定理
+
+Q5709171:
+  title: 海利-布雷定理
+
+Q5709377:
+  title: 亥姆霍兹定理（经典力学）
+
+Q5761142:
+  title: 希尔伯特不可约性定理
+
+Q5874979:
+  title: 霍比-赖斯定理
+
+Q5876058:
+  title: 霍奇指标定理
+
+Q5988409:
+  title: 黎曼曲面恒等定理
+
+Q6015420:
+  title: 增量定理
+
+Q6059532:
+  title: 阿龙扎因-史密斯定理
+
+Q6086104:
+  title: 同构扩张定理
+
+Q6119825:
+  title: 雅各布森-布尔巴基定理
+
+Q6276298:
+  title: 若尔当定理（多重传递群）
+
+Q6344729:
+  title: 卡丘罗夫斯基定理
+
+Q6360586:
+  title: 金森-麦卡龙定理
+
+Q6373327:
+  title: 卡普-利普顿定理
+
+Q6378596:
+  title: 卡茨-兰有限性定理
+
+Q6379606:
+  title: 川又-菲韦格消没定理
+
+Q6379715:
+  title: 川崎定理
+
+Q6387087:
+  title: 肯普夫-内斯定理
+
+Q6400676:
+  title: 哈里托诺夫定理
+
+Q6402928:
+  title: 拉格朗日反演定理
+
+Q6403282:
+  title: 拉格朗日定理（数论）
+
+Q6407842:
+  title: 基灵-霍普夫定理
+
+Q6414200:
+  title: 木下-李-瑙恩伯格定理
+
+Q6421981:
+  title: 克内泽尔定理
+
+Q6425088:
+  title: 小平嵌入定理
+
+Q6436753:
+  title: 克雷纳定理
+  # 微分方程
+
+Q6442276:
+  title: 库伊珀定理
+
+Q6446396:
+  title: 库洛什子群定理
+
+Q6455211:
+  title: 小村定理
+
+Q6456122:
+  title: L-平衡定理
+
+Q6471668:
+  title: 拉福格定理
+
+Q6481192:
+  title: 兰贝克-莫泽定理
+
+Q6484331:
+  title: 兰道素理想定理
+
+Q6501470:
+  title: 劳里切拉定理
+
+Q6513990:
+  title: 李华宗定理
+
+Q6516611:
+  title: 李-杨定理
+
+Q6516731:
+  title: 莱夫谢茨超平面定理
+
+Q6516736:
+  title: 莱夫谢茨 (1,1) 类定理
+
+Q6528747:
+  title: 勒雷定理
+
+Q6528751:
+  title: 勒雷-希尔施定理
+
+Q6528849:
+  title: 勒纳对称定理
+
+Q6535568:
+  title: 莱维定理
+
+Q6535741:
+  title: 莱维茨基定理
+
+Q6544508:
+  title: 李-帕莱定理
+
+Q6701653:
+  title: 卢卡奇比例和独立性定理
+
+Q6707093:
+  title: 李雅普诺夫-马尔金定理
+
+Q6711207:
+  title: 莱维连续模定理
+
+Q6722024:
+  title: 麦克马洪主定理
+
+Q6733278:
+  title: 马哈拉姆定理
+
+Q6734194:
+  title: 马勒紧致性定理
+
+Q6735549:
+  title: 迈尔定理
+
+Q6743217:
+  title: 马尔格朗日预备定理
+
+Q6749789:
+  title: 曼宁-德林费尔德定理
+
+Q6757284:
+  title: 马尔钦凯维奇定理
+  authors: Jim Portegies
+  date: 2024-09-06
+  url: https://github.com/fpvandoorn/carleson/blob/master/Carleson/RealInterpolation.lean
+  # 将成为 mathlib 的一部分；届时请更新 URL！
+
+Q6760432:
+  title: 边际价值定理
+
+Q6771536:
+  title: 马库斯-山部定理
+
+Q6777133:
+  title: 鞅表示定理
+
+Q6783821:
+  title: 梅森-斯托瑟斯定理
+
+Q6795637:
+  title: 极大遍历定理
+
+Q6795830:
+  title: 分离轴定理
+
+Q6796056:
+  title: 麦克斯韦定理
+
+Q6799039:
+  title: 马祖尔控制定理
+
+Q6813106:
+  title: 梅林反演定理
+  decl: mellin_inversion
+
+Q6859627:
+  title: 米利肯树定理
+
+Q6859648:
+  title: 米利肯-泰勒定理
+
+Q6860180:
+  title: 米尔曼-佩蒂斯定理
+
+Q6867853:
+  title: 闵可夫斯基第二定理
+
+Q6867867:
+  title: 闵可夫斯基-赫拉夫卡定理
+
+Q6867878:
+  title: 明洛斯定理
+
+Q6911202:
+  title: 莫罗定理
+
+Q6914794:
+  title: 莫顿定理
+
+Q6925496:
+  title: 山口定理
+
+Q6927135:
+  title: 移动均衡定理
+
+Q6935007:
+  title: 重数一性定理
+
+Q6935403:
+  title: 芒福德消没定理
+
+Q6957141:
+  title: 纳赫宾定理
+
+Q6967039:
+  title: 纳什-莫泽定理
+
+Q7020025:
+  title: 牛顿椭圆定理
+
+Q7031618:
+  title: 尼尔森实现问题
+
+Q7031621:
+  title: 尼尔森不动点定理
+
+Q7042768:
+  title: 无广播定理
+
+Q7042801:
+  title: 无交易定理
+
+Q7043732:
+  title: 库恩定理
+
+Q7045226:
+  title: 没有免费午餐定理
+
+Q7047379:
+  title: 诺特曲面有理性定理
+
+Q7098850:
+  title: 光学等价定理
+
+Q7100033A:
+  title: 轨道定理（长野-苏斯曼）
+
+Q7100033B:
+  title: 拉舍夫斯基-周定理
+
+Q7103669:
+  title: 奥恩斯坦定理
+
+Q7106480:
+  title: 奥塞莱德茨定理
+
+Q7127466:
+  title: 佩利定理
+
+Q7130794:
+  title: 潘迪亚定理
+
+Q7137494:
+  title: 帕里斯-哈林顿定理
+
+Q7139570:
+  title: 帕罗维琴科定理
+
+Q7140218:
+  title: 帕塔萨拉蒂定理
+
+Q7160302:
+  title: 剥离定理
+
+Q7160489:
+  title: 佩特里定理
+
+Q7160983:
+  title: 佩索托定理
+
+Q7190748:
+  title: 皮肯兹-巴尔克马-德哈恩定理
+
+Q7200963:
+  title: 平面分割定理
+
+Q7208500:
+  title: 泊松极限定理
+
+Q7239984:
+  title: 原像定理
+
+Q7245073:
+  title: 主轴定理
+
+Q7249519:
+  title: 普罗霍罗夫定理
+
+Q7255475:
+  title: 伪随机生成器定理
+
+Q7269076:
+  title: 无删除定理
+
+Q7269106:
+  title: 量子阈值定理
+
+Q7269437:
+  title: 丹茹瓦-卡勒曼定理
+
+Q7269559:
+  title: 西尔维斯特五面体定理
+
+Q7272004:
+  title: 奎伦-苏斯林定理
+
+Q7272898:
+  title: 子空间商定理
+
+Q7283856:
+  title: 拉伊科夫定理
+
+Q7288988:
+  title: 拉马努金消没定理
+
+Q7295875:
+  title: 拉特纳定理
+
+Q7296106:
+  title: 劳赫比较定理
+
+Q7307252:
+  title: 反射定理
+
+Q7308146:
+  title: 雷格夫定理
+
+Q7309601:
+  title: 惠特尼-格劳斯坦定理
+  url: https://github.com/MetalCreator666/WhitneyGraustein/
+  comment: "假设了一些基本拓扑陈述为公理；使用球面外翻项目"
+
+Q7310041:
+  title: 赖德定理
+
+Q7312009:
+  title: 雷默特-施泰因定理
+
+Q7318284:
+  title: 逆复合代理定理
+
+Q7322366:
+  title: 里贝特定理
+  # 费马大定理原始证明的一部分
+
+Q7323144:
+  title: 赖斯-夏皮罗定理
+
+Q7333126:
+  title: 曲面黎曼-罗赫定理
+
+Q7341043:
+  title: 罗宾斯定理
+
+Q7352955:
+  title: 鲁滨逊联合一致性定理
+
+Q7359997:
+  title: 罗赫林定理
+
+Q7396621:
+  title: 萨凯里-勒让德定理
+
+Q7430892:
+  title: 谢弗二分法定理
+
+Q7431298:
+  title: 希尔德定理
+
+Q7431925:
+  title: 施奈德定理
+
+Q7432872:
+  title: 施赖尔精炼定理
+
+Q7432915:
+  title: 施罗德-伯恩斯坦可测空间定理
+  decl: MeasurableEmbedding.schroederBernstein
+
+Q7432918:
+  title: 施罗德-伯恩斯坦算子代数定理
+
+Q7433034:
+  title: 大正交性定理
+
+Q7433182:
+  title: 施瓦茨-齐佩尔定理
+  decl: MvPolynomial.schwartz_zippel_sup_sum
+  authors: Bolton Bailey, Yaël Dillies
+  date: 2023
+
+Q7433295:
+  title: 奥斯特瓦尔德-施拉德定理
+
+Q7437564:
+  title: 斯科特核心定理
+
+Q7455422:
+  title: 斯旺定理
+
+Q7496252:
+  title: 位移定理
+
+Q7510574:
+  title: 西格尔-瓦尔菲什定理
+
+Q7512855:
+  title: 希策布鲁赫特征定理
+
+Q7516736:
+  title: 西尔弗曼-特普利茨定理
+
+Q7524563:
+  title: 辛克霍恩定理
+
+Q7525341:
+  title: 西昂极小化极大定理
+
+Q7525845:
+  title: 西普瑟-劳特曼定理
+
+Q7532192:
+  title: 萧荫堂半连续性定理
+
+Q7536097:
+  title: 斯科达-埃尔米尔定理
+
+Q7536350:
+  title: 斯科罗霍德嵌入定理
+
+Q7572588:
+  title: 空间层次定理
+
+Q7574438:
+  title: 施佩希特定理
+
+Q7597316:
+  title: 斯托林斯群端定理
+
+Q7597317:
+  title: 斯托林斯-蔡曼定理
+
+Q7599389:
+  title: 斯坦利互反定理
+
+Q7601243:
+  title: 大卫之星定理
+
+Q7606897:
+  title: 施泰尼茨定理
+
+Q7606940:
+  title: 施泰因-斯特龙伯格定理
+
+Q7617407:
+  title: 斯廷斯普林分解定理
+
+Q7619060:
+  title: 对偶定理
+
+Q7619449:
+  title: 斯通-冯诺依曼定理
+
+Q7621715:
+  title: 施特拉斯曼定理
+
+Q7625164:
+  title: 高斯测度结构定理
+
+Q7632041:
+  title: 子空间定理
+
+Q7644264:
+  title: 超对称非重整化定理
+
+Q7660749:
+  title: 西尔维斯特行列式定理
+
+Q7661308:
+  title: 对称超图定理
+
+Q7664013:
+  title: 瑟凯福尔维-纳吉扩张定理
+
+Q7686760:
+  title: 邦定理
+
+Q7782345:
+  title: 贝尔蒂尼定理
+
+Q7782346:
+  title: 立方体定理
+
+Q7782348:
+  title: 三弯矩定理
+
+Q7795825:
+  title: 汤普森传递性定理
+
+Q7795828:
+  title: 汤普森唯一性定理
+
+Q7809920:
+  title: 蒂奇马什卷积定理
+
+Q7818977:
+  title: 富田定理
+
+Q7820874:
+  title: 托内利定理（泛函分析）
+
+Q7824894:
+  title: 托普基斯定理
+
+Q7825061:
+  title: 托波诺戈夫定理
+
+Q7825663:
+  title: 托雷利定理
+
+Q7827204:
+  title: 马祖尔挠群定理
+  comment: "这被用来证明费马大定理（但本身也是一个不小的项目）。"
+
+Q7841060:
+  title: 三分法定理
+
+Q7845353:
+  title: 特龙比-瓦拉达拉扬定理
+
+Q7847268:
+  title: 特鲁丁格定理
+
+Q7849521:
+  title: 岑定理
+
+Q7853325:
+  title: 滕内尔定理
+
+Q7856599:
+  title: 图兰-库比留斯定理
+
+Q7857350:
+  title: 特维尔贝格定理
+
+Q7888360:
+  title: 主理想整环上有限生成模的结构定理
+  decl: Module.equiv_free_prod_directSum
+  authors: Pierre-Alexandre Bazin
+  date: 2022
+
+Q7894110:
+  title: 泛逼近定理
+
+Q7911648:
+  title: 瓦利安特-瓦兹拉尼定理
+
+Q7928688:
+  title: 维托里斯-贝格勒映射定理
+
+Q7936914:
+  title: 维塔利-哈恩-萨克斯定理
+
+Q7941491:
+  title: 冯诺依曼定理
+
+Q7959587:
+  title: 瓦格纳定理
+
+Q7966545:
+  title: 沃尔特定理
+
+Q7978735:
+  title: 韦伯定理（代数曲线）
+
+Q7980241:
+  title: 温伯格-维滕定理
+
+Q7996766:
+  title: 惠特尼扩张定理
+
+Q7996769:
+  title: 惠特尼浸入定理
+
+Q7999144:
+  title: 维纳-伊哈拉定理
+
+Q7999797:
+  title: 贝尔定理
+
+Q8002487:
+  title: 威尔基定理
+
+Q8028529:
+  title: 维特定理
+
+Q8062800:
+  title: Z* 定理
+
+Q8063120:
+  title: ZJ 定理
+
+Q8064722:
+  title: 扎霍尔斯基定理
+
+Q8066611:
+  title: 克瓦里-索斯-图兰定理
+
+Q8066795:
+  title: 扎里斯基主定理
+
+Q8074796:
+  title: 日格蒙迪定理
+  # TODO: 找到代码
+  authors: Mantas Bakšys
+  date: 2022
+
+Q8081891:
+  title: 希莱申斯基-普林斯海姆定理
+
+Q9993851:
+  title: 拉克斯-米尔格拉姆定理
+  decl: IsCoercive.continuousLinearEquivOfBilin
+
+Q10369454:
+  title: 诺特第二定理
+
+Q10859514:
+  title: 瓦法-维滕定理
+
+Q10942247:
+  title: 广中定理
+
+Q11352023:
+  title: 维塔利收敛定理
+  decl: MeasureTheory.tendstoInMeasure_iff_tendsto_Lp
+  authors: Igor Khavkine
+  date: 2024
+
+Q11573495:
+  title: 球函数普朗歇尔定理
+
+Q11704319:
+  title: 陈-高斯-博内定理
+
+Q11722674:
+  title: 塔肯斯定理
+
+Q11883897:
+  title: 长田紧化定理
+
+Q15080987:
+  title: 李第三定理
+
+Q15813392:
+  title: 巴尔班-达文波特-哈尔伯施塔姆定理
+
+Q15830473:
+  title: 莫雷范畴性定理
+
+Q15844093:
+  title: 范斯霍滕定理
+
+Q15859323:
+  title: 安妮定理
+
+Q15872491:
+  title: 牛顿定理（四边形）
+
+Q15895894:
+  title: 芬斯勒-哈德维格定理
+
+Q16251580:
+  title: 马季亚谢维奇定理
+  decl: Pell.matiyasevic
+  authors: Mario Carneiro
+  date: 2017
+
+Q16680059:
+  title: 强完美图定理
+
+Q16978447:
+  title: 格劳尔特-里门施奈德消没定理
+
+Q17001601:
+  title: 2-因子定理
+
+Q17002391:
+  title: 阿罗-林德定理
+
+Q17003552:
+  title: 亚历山德罗夫唯一性定理
+
+Q17005116:
+  title: 伯克霍夫表示定理
+  decl: LatticeHom.birkhoffSet
+  authors: Yaël Dillies
+  date: 2022
+
+Q17008559:
+  title: 达文波特-施密特定理
+
+Q17017973:
+  title: 戈杜诺夫定理
+
+Q17018210:
+  title: 戈洛德-沙法列维奇定理
+
+Q17019684:
+  title: 格鲁什科定理
+
+Q17029787:
+  title: 希格曼嵌入定理
+
+Q17080564:
+  title: 扎里斯基连通性定理
+
+Q17081508:
+  title: 宾度量化定理
+
+Q17082552:
+  title: 共同基金分离定理
+
+Q17089994X:
+  title: 齐霍诺夫不动点定理
+
+Q17089994:
+  title: 无穷维空间中的不动点定理
+
+Q17098075:
+  title: 尤尔卡特-里歇特定理
+
+Q17098298:
+  title: 雅各布森密度定理
+
+Q17098379:
+  title: 卡普兰斯基二次型定理
+
+Q17101806:
+  title: 交集定理
+
+Q17102744:
+  title: 光滑流形黎曼-罗赫定理
+
+Q17103352:
+  title: 最大功率定理
+
+Q17104025:
+  title: 黎曼奇点定理
+
+Q17104863:
+  title: 尼尔森-二宫定理
+
+Q17125544:
+  title: 利科里什-华莱士定理
+
+Q18205730:
+  title: 拜尔斯-杨定理
+
+Q18206032:
+  title: 闭子群定理
+
+Q18206266:
+  title: 欧几里得-欧拉定理
+  # 又名完全数定理
+  decl: Theorems100.Nat.eq_two_pow_mul_prime_mersenne_of_even_perfect
+  authors: Aaron Anderson
+
+Q18630480:
+  title: 欧拉四边形定理
+
+Q19323571:
+  title: 乔姆斯基-许岑贝格枚举定理
+
+Q19779530:
+  title: 汤姆森定理
+
+Q20278711:
+  title: 克莱姆定理（代数曲线）
+
+Q20971632:
+  title: 李定理
+
+Q22952648:
+  title: 连续统的不可数性
+  decl: Cardinal.not_countable_real
+  authors: Floris van Doorn
+
+Q25099402:
+  title: 柯尔莫哥洛夫-阿诺德表示定理
+
+Q25303622:
+  title: 布劳德-明蒂定理
+
+Q25304227:
+  title: 阿拉克良定理
+
+Q25304301:
+  title: 布雷格曼-明茨不等式
+
+Q25345219:
+  title: 贝林森、伯恩斯坦和德利涅的分解定理
+
+Q25378690:
+  title: 约内斯库-图尔恰定理
+  decl: ProbabilityTheory.Kernel.traj
+  authors: Etienne Marion
+
+Q26877569:
+  title: 弗里定理
+
+Q28194853:
+  title: 洛夫洛克定理
+
+Q28458131:
+  title: 格利文科定理（概率论）
+
+Q31838822:
+  title: 基尔希贝格定理
+
+Q48996535:
+  title: 索莱尔定理
+
+Q48998319:
+  title: 弗罗贝尼乌斯互反定理
+
+Q55647729:
+  title: 克拉梅尔定理（大偏差）
+
+Q56291669:
+  title: 阿尔斯帕赫定理
+
+Q60681777:
+  title: 定弦定理
+
+Q61163749:
+  title: 补形定理
+
+Q62051012:
+  title: 贝伦德定理
+
+Q96375449:
+  title: 康威圆定理
+
+Q96377355:
+  title: 埃尔德什-杜什尼克-米勒定理
+
+Q97359729:
+  title: 斯塔尔定理
+
+Q104841721:
+  title: 雅各布森-莫罗佐夫定理
+
+Q104871594:
+  title: 茹贝尔定理
+
+Q105222412:
+  title: 五色定理
+
+Q107535899:
+  title: 博赫纳管定理
+
+Q107547910:
+  title: 马尔格朗日-泽纳定理
+
+Q107709489:
+  title: 布希-埃尔戈特-特拉赫滕布罗特定理
+
+Q107710112:
+  title: 康托尔同构定理
+  decl: Order.iso_of_countable_dense
+  authors: David Wärn
+  date: 2020
+
+
+Q110921617:
+  title: 费弗曼-沃特定理
+
+Q111982312:
+  title: 弗里德伯格-穆奇尼克定理
+
+Q112659261:
+  title: 加马斯定理
+
+Q112740521:
+  title: 内托定理

@@ -1,0 +1,110 @@
+{% extends '_base.html' %}
+{% block title %}Lean 项目{% endblock %}
+
+{% block content %}
+
+    <div class="alert alert-info">
+      <p>
+      我们目前正在更新 Lean 社区网站，以介绍 Lean 4 的使用方法，但您今天在这里找到的大部分信息仍然是关于 Lean 3 的。
+      </p>
+      <p>
+      我们非常欢迎更新此页面以适配 Lean 4 的拉取请求 (pull requests)。页面底部有一个链接。
+      </p>
+      <p>
+      请访问 <a href="https://leanprover.zulipchat.com">the leanprover zulip</a>，在这个过渡时期寻求任何您需要的帮助！
+      </p>
+      <p>
+      Lean 3 的网站已被<a href="https://leanprover-community.github.io/lean3/">存档</a>。如果您需要链接到 Lean 3 的特定资源，请链接到那里。
+      </p>
+    </div>
+
+
+    <h1>Lean 项目</h1>
+
+    <p>
+      虽然许多 Lean 的开发工作在 mathlib 仓库中进行，但社区成员还开发和维护着许多其他使用 Lean 的项目。我们在此列出了一部分。其中许多项目被设计为可以在其他开发中作为依赖项导入。在本页底部，您可以看到哪些项目与哪些 Lean 版本兼容的摘要。如果两个项目都支持同一个 Lean 版本，您很可能可以一起使用它们。
+    </p>
+
+    <p>
+      要将项目添加到此列表，请参阅 <a href="https://github.com/leanprover-contrib/leanprover-contrib">leanprover-contrib</a> 仓库中的说明。
+    </p>
+
+    <p>
+      此列表及其管理仓库都仍在开发中。请添加您自己的项目，并在该仓库中报告任何问题。
+    </p>
+
+  <div class="row row-cols-1 row-cols-md-2">
+    {% for project in projects %}
+      <div class="col mb-4">
+      <div class="card h-100" >
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">由
+          {% for maintainer in project.maintainers %}
+            <a href="https://github.com/{{ maintainer }}">@{{ maintainer }}</a>
+          {% endfor %}
+        维护</h6>
+        <p class="card-text">{{ project.description }}</p>
+        </div>
+            <div class="card-footer text-right bg-white">
+              <small><a href="https://github.com/{{ project.organization }}/{{ project.name }}" class="card-link">在 GitHub 上查看</a> (★ {{ project.stars }})</small>
+            </div>
+      </div>
+      </div>
+    {% endfor %}
+    </div>
+
+
+
+
+      <h2>按支持的 Lean 版本分类的项目</h2>
+
+      <p>
+        如果您想在自己的项目中导入多个项目，您应选择一个所有这些依赖项都支持的 Lean 版本。
+      </p>
+      <ul>
+        <li>
+          <code>x.y.z</code> 列中的 ✓ 表示该项目有一个 <code>lean-x.y.z</code> 分支，其所有依赖项也都有 <code>lean-x.y.z</code> 分支，并且该项目可以使用所有这些 <code>lean-x.y.z</code> 分支上的最新提交成功构建。
+        </li>
+        <li>
+          <code>x.y.z</code> 列中的 × 表示该项目有 <code>lean-x.y.z</code> 分支，但构建失败。
+        </li>
+        <li>
+          <code>x.y.z</code> 列中没有标记表示该项目没有 <code>x.y.z</code> 分支。
+        </li>
+      </ul>
+      <p>
+        请注意，× 不一定意味着项目无法编译，只是意味着它在更新依赖项后无法编译。
+      </p>
+
+      <div id="proj_table"></div>
+
+
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<link href="https://unpkg.com/tabulator-tables@4.6.2/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.6.2/dist/js/tabulator.min.js"></script>
+<script type="text/javascript" src="https://leanprover-contrib.github.io/leanprover-contrib/projects.js"></script>
+
+<script>
+
+window.onload = function() {
+
+    var table = new Tabulator("#proj_table", {
+        data: projects, //set initial table data
+        layout:"fitColumns",
+        layoutColumnsOnNewData:true,
+        responsiveLayout:false,
+        columns: project_cols,
+        // height: "600px",
+    });
+    table.redraw(true);
+
+};
+
+
+</script>
+{% endblock %}

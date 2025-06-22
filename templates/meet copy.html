@@ -1,0 +1,71 @@
+{% extends '_base.html' %}
+{% block title %}社区成员{% endblock %}
+
+{% block extracss %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+  <style>
+  #userMap { height: 500px; margin-bottom: 1rem;}
+  </style>
+{% endblock %}
+
+{% block content %}
+
+        {{ community | md }}
+
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+
+<script type="text/javascript">
+var userMap = L.map('userMap', { zoomSnap: 0, minZoom: 2, worldCopyJump: true }).setView([26.7, 11], 1.86);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(userMap);
+
+userMap.on('contextmenu', event => {
+  let content = document.createElement('p');
+  content.appendChild(document.createTextNode("lat: " + event.latlng.lat.toFixed(6)))
+  content.appendChild(document.createElement('br'))
+  content.appendChild(document.createTextNode("lon: " + event.latlng.lng.toFixed(6)))
+  let popup = L.popup()
+    .setLatLng(event.latlng)
+    .setContent(content)
+    .openOn(userMap); // openOn => popup is closed if another popup is opened
+
+  content.addEventListener('click', e => {
+    this.scene.add(new Marker(event.latlng.lat, event.latlng.lng));
+    popup.remove();
+    e.preventDefault();
+  }, false);
+});
+
+var markers = L.markerClusterGroup();
+
+{% for user in users %}
+var marker = L.marker([{{user.lat}}, {{user.lon}}]);
+marker.bindPopup("<b>{% if user.website %}<a href=\"{{user.website}}\">{% endif %}{{user.fullname}}{% if user.website %}</a>{% endif %}</b>{% if user.github %}<br>GitHub: <a href=\"https://github.com/{{user.github}}\">{{user.github}}</a>{% endif %}");
+markers.addLayer(marker);
+
+var marker_left = L.marker([{{user.lat}}, {{user.lon - 360}}]);
+marker_left.bindPopup("<b>{% if user.website %}<a href=\"{{user.website}}\">{% endif %}{{user.fullname}}{% if user.website %}</a>{% endif %}</b>{% if user.github %}<br>GitHub: <a href=\"https://github.com/{{user.github}}\">{{user.github}}</a>{% endif %}");
+markers.addLayer(marker_left);
+
+var marker_right = L.marker([{{user.lat}}, {{user.lon + 360}}]);
+marker_right.bindPopup("<b>{% if user.website %}<a href=\"{{user.website}}\">{% endif %}{{user.fullname}}{% if user.website %}</a>{% endif %}</b>{% if user.github %}<br>GitHub: <a href=\"https://github.com/{{user.github}}\">{{user.github}}</a>{% endif %}");
+markers.addLayer(marker_right);
+{% endfor %}
+
+userMap.addLayer(markers);
+</script>
+{% endblock %}

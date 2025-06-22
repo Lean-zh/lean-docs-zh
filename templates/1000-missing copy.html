@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% block title %}Freek Wiedijk 的 1000+ 定理项目中缺失的定理{% endblock %}
+{% block content %}
+{% markdown %}
+# [Freek Wiedijk 的](https://www.cs.ru.nl/~freek/) [1000+ 定理项目](https://1000-plus.github.io/)中缺失的定理
+这些定理尚未在 Lean 中被形式化（或者，这些形式化成果尚未录入数据库）。
+目前共有 {{thousand_theorems|rejectattr('proof_formalized')|list|length}} 个这样的定理。
+在这些定理中，有 {{thousand_theorems|rejectattr('proof_formalized')|selectattr('statement_formalized')|list|length}} 个已经形式化了其陈述。
+<a href="1000.html">这里</a>是已形式化定理的列表。
+{% for theorem in thousand_theorems|rejectattr('proof_formalized') %}
+* {{ theorem.id }}: {{ theorem.title }}
+{% endfor %}
+
+{% endmarkdown %}
+{% endblock %}

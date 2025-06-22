@@ -879,5 +879,5 @@ if __name__ == '__main__':
     if '--local' in sys.argv:
         base_url = f"file://{(Path(__file__).parent/'build').absolute()}/"
     else:
-        base_url = 'https://leanprover-community.github.io/'
+        base_url = 'https://www.leanprover.cn/lean-docs-zh/'
     render_site(ROOT/'build', base_url, reloader='--reload' in sys.argv, only=only)

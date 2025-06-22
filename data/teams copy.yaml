@@ -1,0 +1,143 @@
+- name: Admin team
+  short_description: 管理团队负责监督 Lean 社区组织的活动，特别是 mathlib 项目。其职责是确保 mathlib 项目持续反映 Lean/mathlib 社区的普遍观点和利益。
+  description: |
+    管理团队负责监督 Lean 社区组织的活动，特别是 mathlib 项目。其职责是确保 mathlib 项目持续反映 Lean/mathlib 社区的普遍观点和利益。
+
+    管理团队是其他团队之间协调的中心枢纽。它负责程序性职责：当需要做出决策时，流程应该如何？特别地，它负责寻找在无法达成共识时解决冲突的程序。管理团队也是整个社区的首要联络点。
+
+    所有团队的成员每年通过选举选出管理团队，选举由现任管理团队组织，采用给予所有成员同等权重投票的系统。管理团队成员可以连任。
+  url: admin
+  members:
+    - Jeremy Avigad
+    - Mario Carneiro
+    - Johan Commelin
+    - Robert Y. Lewis
+    - Patrick Massot
+    - Kim Morrison
+    - Leonardo de Moura
+    - Oliver Nash
+    - Sebastian Ullrich
+  use_biography: True
+- name: Maintainer team
+  short_description: mathlib 维护者有权批准对 mathlib 的更改和增补。该团队负责 mathlib 的全局设计，旨在维护库的一致性并保持其各部分良好集成。
+  description: |
+    mathlib 库正处于活跃开发中，任何时候都有数百个提议的更改和增补在讨论中，每周都有数十个被批准。这些提议以 [mathlib Github 代码库上的“拉取请求 (pull requests)”](https://github.com/leanprover-community/mathlib4/pulls) 的形式组织。mathlib 维护者是拥有最终批准拉取请求权力的人。他们必须确保 mathlib 具有内聚的设计和高质量的实现。
+
+    Mathlib 维护者通常在数学或计算机科学的某个领域拥有研究水平的知识。社区成员经现任维护者邀请成为维护者，任何人都可以通过向现任维护者发送消息来提名社区成员。维护者的任期为可续任的两年，除非维护者变得不活跃或希望卸任，否则任期将被续展。
+  url: maintainers
+  members:
+    - Anne Baanen
+    - Matthew Robert Ballard
+    - Riccardo Brasca
+    - Kevin Buzzard
+    - Mario Carneiro
+    - Bryan Gin-ge Chen
+    - Johan Commelin
+    - Anatole Dedecker
+    - Rémy Degenne
+    - Floris van Doorn
+    - Frédéric Dupuis
+    - Sébastien Gouëzel
+    - Markus Himmel
+    - Yury G. Kudryashov
+    - Robert Y. Lewis
+    - Jireh Loreaux
+    - Heather Macbeth
+    - Patrick Massot
+    - Bhavik Mehta
+    - Kyle Miller
+    - Kim Morrison
+    - Oliver Nash
+    - Joël Riou
+    - Damiano Testa
+    - Adam Topaz
+    - Eric Wieser
+  use_biography: True
+  url: maintainers
+- name: Mathlib reviewers
+  short_description: "mathlib 审查团队协助 mathlib 维护者进行对 mathlib 的 PR 的日常审查。该团队由经验丰富的社区成员组成，他们在贡献和审查中表现出高质量。"
+  description: "mathlib 审查团队协助 mathlib 维护者进行对 mathlib 的 PR 的日常审查。该团队由经验丰富的社区成员组成，他们在贡献和审查中表现出高质量。在 PR 的审查过程中，他们会留下评论和反馈。一旦他们认为 PR 已准备好合并，他们就会将 PR 放入队列中，等待 mathlib 维护者的最终审查和合并指令。"
+  members:
+    - Aaron Anderson
+    - Dagur Asgeirsson
+    - Anne Baanen
+    - Matthew Robert Ballard
+    - Reid Barton
+    - Alex J. Best
+    - Eric Rodriguez Boidi
+    - Riccardo Brasca
+    - Thomas Browning
+    - Kevin Buzzard
+    - Mario Carneiro
+    - Bryan Gin-ge Chen
+    - Johan Commelin
+    - María Inés de Frutos-Fernández
+    - Anatole Dedecker
+    - Rémy Degenne
+    - Yaël Dillies
+    - Moritz Doll
+    - Floris van Doorn
+    - Frédéric Dupuis
+    - Gabriel Ebner
+    - Jon Eugster
+    - Jovan Gerbscheid
+    - Sébastien Gouëzel
+    - Markus Himmel
+    - Simon Hudon
+    - Yury G. Kudryashov
+    - Robert Y. Lewis
+    - David Loeffler
+    - Jireh Loreaux
+    - Heather Macbeth
+    - Etienne Marion
+    - Patrick Massot
+    - Bhavik Mehta
+    - Christian Merten
+    - Kyle Miller
+    - Kim Morrison
+    - Joseph Myers
+    - Oliver Nash
+    - David Renshaw
+    - Joël Riou
+    - Michael Rothgang
+    - Michael Stoll
+    - Damiano Testa
+    - Adam Topaz
+    - Ruben Van de Velde
+    - Eric Wieser
+    - Junyan Xu
+    - Andrew Yang
+    - Kexing Ying
+    - Filippo A. E. Nuccio
+    - Robin Carlier
+  use_biography: False
+  url: reviewers
+- name: Continuous integration
+  short_description: "负责 Azure、bors 管理、持续集成虚拟机的 root 访问权限，以及 Lean 用户社区各个项目上的 GitHub actions。"
+  description: "负责 Azure、bors 管理、持续集成虚拟机的 root 访问权限，以及 Lean 用户社区各个项目上的 GitHub actions。"
+  use_biography: True
+  url: ci
+  members:
+    - Bryan Gin-ge Chen
+    - Johan Commelin
+    - Gabriel Ebner
+    - Eric Wieser
+    - Wojciech Nawrocki
+- name: Code of conduct
+  short_description: "该团队负责处理事件报告并维护社区标准。"
+  description: "该团队负责处理事件报告并维护社区标准。请参阅[社区网页](https://leanprover-community.github.io/meet.html#community-guidelines)。"
+  use_biography: True
+  url: coc
+  members:
+    - Anne Baanen
+    - Riccardo Brasca
+    - Jeremy Avigad
+- name: Website/blog
+  short_description: "网站/博客团队负责维护社区网站运行所需的技术基础设施。这也包括社区博客和 mathlib 的自动生成文档。"
+  description: "网站/博客团队负责维护社区网站运行所需的技术基础设施。这也包括社区博客和 mathlib 的自动生成文档。"
+  use_biography: True
+  url: site
+  members:
+    - Patrick Massot
+    - Eric Wieser
+    - Robert Y. Lewis

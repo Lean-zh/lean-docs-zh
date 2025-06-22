@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+{% block title %}Lean 相关会议与活动{% endblock %}
+{% block content %}
+
+
+
+	<h1>Lean 相关会议与活动</h1>
+
+	<p>
+        我们在此维护一个与 Lean、mathlib 以及广义的形式化数学相关的过去及未来活动的列表。
+        请通过编辑 <a href="https://github.com/leanprover-community/leanprover-community.github.io/blob/lean4/data/events.yaml">events.yaml</a> 文件并提交一个拉取请求 (pull request) 来添加活动。
+	</p>
+
+    <p>
+        “会议 (conference)”、“研讨会 (workshop)”和“教程 (tutorial)”这些标签的定义比较模糊。
+        大致来说，“会议”用于正式展示已完成的工作，通常会出版论文集；
+        “研讨会”则更为随意，可能包含进行中的工作，有时也会发布非正式的论文集；
+        “教程”则是学习或实践如何使用本系统的机会。
+    </p>
+
+    <h2>即将举行的活动</h2>
+    <ul>
+    {% for e in new_events %}
+        <li> <a href="{{ e.url }}">{{ e.title }}</a> ({{ e.location }}. {{ e.date_range }})
+            <small class="align-middle">
+                <span class="badge badge-secondary align-middle event-tag-{{ e.type }}">{{ e.type }}</span>
+            </small></li>
+    {% endfor %}
+     </ul>
+
+    <h2>已结束的活动</h2>
+    <ul>
+    {% for e in old_events %}
+        <li> <a href="{{ e.url }}">{{ e.title }}</a> ({{ e.location }}. {{ e.date_range }})
+            <small class="align-middle">
+                <span class="badge badge-secondary align-middle event-tag-{{ e.type }}">{{ e.type }}</span>
+            </small></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

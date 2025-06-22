@@ -1,0 +1,90 @@
+{% extends '_base.html' %}
+{% block content %}
+
+  <div class="mx-auto mt-5" style="max-width: 30em">
+    <img src="img/community_logo_emb.svg" alt="Lean 社区"
+      height="146" width="278"
+                class="img-fluid w-100"/>
+  </div>
+
+		{{ presentation | md }}
+
+  <div class="justify-content-center mt-3">
+   <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+		  <h4>试一试！</h4>
+          <p>
+          你可以在网页浏览器中试用 Lean，也可以将其安装在隔离的文件夹中，或者进行完整安装。Lean 是免费的开源软件，支持 Linux、Windows 和 MacOS 系统。
+          </p>
+		</div>
+		<ul class="list-group list-group-flush border-top">
+          <li class="list-group-item"><a href="https://live.lean-lang.org/"
+                 >在线试用 Lean</a></li>
+          <li class="list-group-item"><a href="get_started.html#regular-install"
+                 >安装说明</a></li>
+          <li class="list-group-item"><a href="install/project.html">参与 Lean 项目</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-body">
+		<h4>学习 Lean！</h4>
+		<p>
+    你可以通过玩游戏、看教程或阅读书籍来学习。
+		</p>
+		</div>
+		<ul class="list-group list-group-flush border-top">
+          <li class="list-group-item"><a href="learn.html">学习资源</a></li>
+          <li class="list-group-item"><a href="https://lean-lang.org/theorem_proving_in_lean4/"
+                 >《用 Lean 4 证明定理》</a> (入门)</li>
+          <li class="list-group-item"><a href="https://leanprover-community.github.io/mathlib4_docs"
+                 >mathlib 的 API 文档</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-body">
+		<h4>加入社区！</h4>
+		<p>
+        Lean 拥有一个非常多元化和活跃的社区。大家主要聚集在
+    <a href="https://leanprover.zulipchat.com/">Zulip 聊天室</a>
+    和 <a href="https://github.com/leanprover-community/mathlib4">GitHub</a> 上。
+    欢迎你参与进来，共享乐趣！
+		</p>
+		</div>
+		<ul class="list-group list-group-flush border-top">
+          <li class="list-group-item"><a href="meet.html">认识我们</a></li>
+          <li class="list-group-item"><a href="contribute/index.html"
+                 >如何贡献</a></li>
+          <li class="list-group-item"><a href="papers.html"
+                 >涉及 Lean 的论文</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+		{{ what_is | md }}
+
+  <h2>使用 Lean 和 mathlib 形式化的项目</h2>
+
+  <div class="row row-cols-1 row-cols-md-2">
+	{% for formalization in formalizations %}
+	  <div class="col mb-4">
+		<div class="card" >
+		  <div class="card-body">
+			  <h5 class="card-title">{{ formalization.title }}</h5>
+			<h6 class="card-subtitle mb-2 text-muted">作者：{{ formalization.authors }}</h6>
+			<p class="card-text">{{ formalization.abstract }}</p>
+		  </div>
+          <div class="card-footer text-right bg-white">
+            <small><a href="{{ formalization.url | url }}" class="card-link">了解更多</a></small>
+          </div>
+		</div>
+	  </div>
+	{% endfor %}
+  </div>
+
+  <p class="mt-2">
+    你可以在<a href="papers.html">论文列表</a>和<a href="lean_projects.html">项目列表</a>中找到更多内容。
+  </p>
+
+  {% endblock %}

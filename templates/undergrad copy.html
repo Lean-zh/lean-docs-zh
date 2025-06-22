@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+{% block title %}mathlib 中的本科数学{% endblock %}
+{% block content %}
+    <h1>mathlib 中的本科数学</h1>
+
+      <p>
+    此处列出了 mathlib 目前涵盖的本科数学主题的指引。
+    此列表收集自
+    <a href="http://media.devenirenseignant.gouv.fr/file/agreg_externe/59/7/p2020_agreg_ext_maths_1107597.pdf">
+    法国课程大纲</a>。
+    还有一个列出了本科数学主题的页面，这些主题
+    <a href="undergrad_todo.html">尚未加入 mathlib</a>。
+    </p>
+
+    <p>要更新此列表，请在 mathlib4 存储库中通过 PR 修改
+      <a href="https://github.com/leanprover-community/mathlib4/edit/master/docs/undergrad.yaml">
+        docs/undergrad.yaml</a>。
+      </p>
+
+  {% for area in overviews %}
+    {% if area.is_nonempty %}
+    <h4>{{ area.title }}</h4>
+      {% for subarea in area.nonempty_children %}
+        <p class="ml-4 mb-2">
+        <b>{{ subarea.title }}</b>
+        {% for item in subarea.nonempty_children %}
+          {{ flat_child(item) }}{% if not loop.last %}, {% else %}.{% endif %}
+        {% endfor %}
+        </p>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}
