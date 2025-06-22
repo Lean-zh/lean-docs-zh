@@ -43,15 +43,32 @@ jobs:
       - name: Build the website
         run: NODOWNLOAD=1 python make_site.py
 
-      # vvvv 这是核心改动 vvvv
+      # 添加调试步骤，检查构建输出
+      - name: Check build output
+        run: |
+          echo "Build directory contents:"
+          ls -la ./build/
+          echo "Checking for symlinks and hardlinks:"
+          find ./build -type l -o -type f -links +1 | head -20 || true
+          echo "Build directory size:"
+          du -sh ./build/
+
+      # 清理可能的符号链接和设置正确权限
+      - name: Clean build artifacts
+        run: |
+          # 移除任何符号链接
+          find ./build -type l -delete || true
+          # 确保所有文件都有正确的权限
+          find ./build -type f -exec chmod 644 {} \;
+          find ./build -type d -exec chmod 755 {} \;
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Upload artifact
-        # 我们换回通用的 upload-artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          # 并明确地将它命名为 "github-pages"
-          name: github-pages
           path: ./build
-      # ^^^^ 核心改动结束 ^^^^
 
   deploy:
     name: Deploy to GitHub Pages
@@ -61,6 +78,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy from artifact
-        # deploy-pages 现在可以根据明确的名称找到包裹
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
