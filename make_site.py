@@ -783,11 +783,23 @@ def render_site(target: Path, base_url: str, reloader=False, only: Optional[str]
         title = ''
         for child in doc.children:
             if isinstance(child, block_token.Heading):
-                title = child.children[0].content
+                # 新的、更健壮的标题提取逻辑
+                title_parts = []
+                for part in child.children:
+                    # 递归地提取所有文本内容
+                    # 这个简单的函数可以处理嵌套的格式
+                    def extract_text(element):
+                        if hasattr(element, 'content'):
+                            return element.content
+                        elif hasattr(element, 'children'):
+                            return "".join(extract_text(sub_element) for sub_element in element.children)
+                        return ""
+                    title_parts.append(extract_text(part))
+                title = "".join(title_parts)
                 break
 
         return { 'content': content, 'name': template.name,
-                 'title': title }
+                'title': title }
 
     def url(raw: str):
         return raw if raw.startswith('http') else base_url + raw
