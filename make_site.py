@@ -24,7 +24,6 @@ import gzip
 import os
 from github import Github
 from slugify import slugify
-import shutil
 
 import zulip
 
@@ -864,20 +863,19 @@ def render_site(target: Path, base_url: str, reloader=False, only: Optional[str]
         with (target/'teams'/(team.url + '.html')).open('w') as tgt_file:
             team_tpl.stream(team=team, menus=menus, base_url=base_url).dump(tgt_file)
 
-    # 使用 shutil 来安全地复制文件和目录，避免产生符号链接
-    for folder in ['css', 'js', 'img', 'papers']:
+
+    # 这是最终的、修复后的代码
+    for folder in ['css', 'js', 'img', 'papers', 'teams']:
+        # 我们只处理顶级目录，并确保它们存在
         source_path = Path(folder)
+        # 注意：这里的 teams 是源目录，而非 build 目录下的 teams
         if source_path.exists() and source_path.is_dir():
-            shutil.copytree(source_path, target / folder, dirs_exist_ok=True)
+            subprocess.call(['rsync', '-rL', str(source_path), str(target)])
 
-    # 单独处理已经存在于 build 目录中的 teams 文件夹
-    # （因为之前的步骤已经把生成的文件放进去了，我们不需要再复制它）
-
-    # 复制单个文件
     for file in ['googlef0c00cb4d31b246f.html', 'robots.txt', 'lean.bib']:
         source_file = Path(file)
         if source_file.exists():
-            shutil.copy2(source_file, target)
+            subprocess.call(['rsync', '-L', str(source_file), str(target)])
 
     site.render(use_reloader=reloader)
 
