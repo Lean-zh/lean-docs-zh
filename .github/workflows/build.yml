@@ -1,54 +1,74 @@
+# 工作流的名称
 name: Deploy to GitHub Pages
 
+# 工作流的触发条件
 on:
   push:
+    # 只在 lean4 分支有 push 时触发
+    # 如果你的主要工作分支是 main，请把下面的 lean4 改成 main
     branches:
-      - lean4  # 如果你的工作分支不是 lean4，请修改成你的分支名，比如 main
-  # 允许你从 Actions 页面手动运行
+      - lean4
+  # 允许你从 Actions 页面手动触发
   workflow_dispatch:
 
-# 授予 Action 部署到 GitHub Pages 的权限
+# 授予工作流所需的权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# 定义工作流中的所有任务
 jobs:
+  # 第一个任务：构建网站
   build:
     name: Build Website
     runs-on: ubuntu-latest
     steps:
+      # 第 1 步：检出你的代码
       - name: Checkout your repository
         uses: actions/checkout@v4
 
+      # 第 2 步：安装 Python
       - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.11
 
+      # 第 3 步：设置缓存
+      - name: Cache Pip dependencies
+        uses: actions/cache@v4
+        with:
+          # 缓存 pip 的下载目录
+          path: ~/.cache/pip
+          # 基于操作系统和 requirements.txt 内容创建唯一 key
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          # 如果没有完全匹配的缓存，使用一个通用的备用缓存
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # 第 4 步：安装 bibtool
       - name: Install bibtool
         run: |
           sudo apt-get update --fix-missing
           sudo apt-get install bibtool -y
 
+      # 第 5 步：安装 Python 依赖（如果缓存命中，这步会飞快）
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip -r requirements.txt
 
+      # 第 6 步：运行脚本来构建网站
       - name: Build the website
-        # 我们现在直接运行 python 脚本来构建，而不是通过 deploy.sh
-        # NODOWNLOAD=1 可以加快构建速度
         run: NODOWNLOAD=1 python make_site.py
 
-      - name: Upload the build artifact
-        # 将构建好的网站文件（在 build/ 目录）打包，供下一个任务使用
+      # 第 7 步：使用专用的 Action 来打包网站文件
+      - name: Upload Pages artifact
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
           path: ./build
 
+  # 第二个任务：部署网站
   deploy:
     name: Deploy to GitHub Pages
-    # deploy 任务需要等待 build 任务成功完成
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -56,5 +76,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy from artifact
-        # 这是官方的部署动作，它会自动处理所有事情
         uses: actions/deploy-pages@v4
