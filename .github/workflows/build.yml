@@ -41,8 +41,9 @@ jobs:
 
       - name: Upload the build artifact
         # 将构建好的网站文件（在 build/ 目录）打包，供下一个任务使用
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: ./build
 
   deploy:
