@@ -509,13 +509,13 @@ def format_date_range(event):
         start_date = datetime.strptime(event.start_date, '%B %d %Y').date()
         end_date = datetime.strptime(event.end_date, '%B %d %Y').date()
         if start_date.year != end_date.year:
-            return f'{start_date.strftime("%B %-d, %Y")}–{end_date.strftime("%B %-d, %Y")}'
+            return f'{start_date.strftime("%B %#d, %Y")}–{end_date.strftime("%B %#d, %Y")}'
         elif start_date.month != end_date.month:
-            return f'{start_date.strftime("%B %-d")}–{end_date.strftime("%B %-d, %Y")}'
+            return f'{start_date.strftime("%B %#d")}–{end_date.strftime("%B %#d, %Y")}'
         elif start_date.day != end_date.day:
-            return f'{start_date.strftime("%B %-d")}–{end_date.strftime("%-d, %Y")}'
+            return f'{start_date.strftime("%B %#d")}–{end_date.strftime("%#d, %Y")}'
         else:
-            return start_date.strftime("%B %-d, %Y")
+            return start_date.strftime("%B %#d, %Y")
     else:
         return 'TBA'
 

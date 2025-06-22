@@ -1,0 +1,173 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# ᴄʜʀɪsᴛᴏᴘʜᴇʀ ᴍᴇɴɢ, 2013
+# ᴄʜʀɪsᴛᴏᴘʜᴇʀ ᴍᴇɴɢ, 2013
+# Kade For, 2013
+# Kade For, 2013,2019
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+# spaceoi <zhangzhaoyu@gmail.com>, 2016
+# spaceoi <zhangzhaoyu@gmail.com>, 2016
+# Zhé Chén, 2022
+# xingkong <dingpengyu06@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2013-03-15 15:29+0000\n"
+"Last-Translator: Zhé Chén, 2022\n"
+"Language-Team: Chinese (China) (http://app.transifex.com/ralsina/nikola/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "More posts about %s"
+msgstr "关于%s 的更多文章 "
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "简体中文"
+
+msgid "Tags"
+msgstr "标签"
+
+msgid "Categories"
+msgstr "分类"
+
+msgid "Tags and Categories"
+msgstr "标签和分类"
+
+msgid "Comments"
+msgstr "评论"
+
+msgid "Read more"
+msgstr "阅读更多"
+
+msgid "Posts about %s"
+msgstr "关于 %s 的文章"
+
+msgid "Next post"
+msgstr "下一篇文章"
+
+msgid "old posts, page %d"
+msgstr "旧文章，第 %d 页"
+
+msgid "page %d"
+msgstr "第 %d 页"
+
+msgid "Source"
+msgstr "源文件"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "阅读简体中文版"
+
+msgid "Posts for year %s"
+msgstr "%s 年的文章"
+
+msgid "Newer posts"
+msgstr "较新的文章"
+
+msgid "Previous post"
+msgstr "上一篇文章"
+
+msgid "Also available in:"
+msgstr "其他语言版本："
+
+msgid "Languages:"
+msgstr "语言："
+
+msgid "Original site"
+msgstr "原文地址"
+
+msgid "Older posts"
+msgstr "以前的文章"
+
+msgid "Archive"
+msgstr "文章归档"
+
+msgid "Publication date"
+msgstr "发布日期"
+
+msgid "Posted:"
+msgstr "发表于："
+
+msgid "Posts for {month_year}"
+msgstr "{month_year}的文章"
+
+msgid "Posts for {month_day_year}"
+msgstr "{month_day_year}的文章"
+
+msgid "Nothing found."
+msgstr "没有找到。"
+
+msgid "No posts found."
+msgstr "沒有找到文章。"
+
+msgid "RSS feed"
+msgstr "RSS 源"
+
+msgid "%d min remaining to read"
+msgstr "剩余阅读时间 %d 分钟"
+
+msgid "Skip to main content"
+msgstr "跳到主内容"
+
+msgid "Subcategories:"
+msgstr "子类别："
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "（活跃）"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "在这里书写你的文章。"
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "在这里书写你的页面。"
+
+msgid "Uncategorized"
+msgstr "未分类"
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "更新"
+
+msgid "Authors"
+msgstr "作者"
+
+msgid "Posts by %s"
+msgstr "由 %s 发布的文章"
+
+msgid "Toggle navigation"
+msgstr "展开导航栏"
+
+msgid "Previous"
+msgstr "以前"
+
+msgid "Up"
+msgstr "向上"
+
+msgid "Next"
+msgstr "下一篇"
+
+msgid "Atom feed"
+msgstr "Atom 源"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "已更新"

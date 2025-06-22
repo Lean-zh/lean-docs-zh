@@ -1,0 +1,169 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Alfons Rovira <inclusa@gmail.com>, 2014
+# Carles Barrobés <carles@barrobes.com>, 2021
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2019
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+# Sergi Almacellas <pokoli@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2021-01-24 16:06+0000\n"
+"Last-Translator: Carles Barrobés <carles@barrobes.com>\n"
+"Language-Team: Catalan (http://www.transifex.com/ralsina/nikola/language/ca/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "More posts about %s"
+msgstr "Més entrades sobre %s"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "Català"
+
+msgid "Tags"
+msgstr "Etiquetes"
+
+msgid "Categories"
+msgstr "Categories"
+
+msgid "Tags and Categories"
+msgstr "Etiquetes i categories"
+
+msgid "Comments"
+msgstr "Comentaris"
+
+msgid "Read more"
+msgstr "Llegeix-ne més"
+
+msgid "Posts about %s"
+msgstr "Entrades sobre %s"
+
+msgid "Next post"
+msgstr "Entrada següent"
+
+msgid "old posts, page %d"
+msgstr "entrades antigues, pàgina %d"
+
+msgid "page %d"
+msgstr "pàgina %d"
+
+msgid "Source"
+msgstr "Codi"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "Llegeix-ho en català"
+
+msgid "Posts for year %s"
+msgstr "Entrades de l'any %s"
+
+msgid "Newer posts"
+msgstr "Entrades més recents"
+
+msgid "Previous post"
+msgstr "Entrada anterior"
+
+msgid "Also available in:"
+msgstr "També disponible en:"
+
+msgid "Languages:"
+msgstr "Idiomes:"
+
+msgid "Original site"
+msgstr "Lloc original"
+
+msgid "Older posts"
+msgstr "Entrades més antigues"
+
+msgid "Archive"
+msgstr "Arxiu"
+
+msgid "Publication date"
+msgstr "Data de publicació"
+
+msgid "Posted:"
+msgstr "Publicat:"
+
+msgid "Posts for {month_year}"
+msgstr "Publicat en {month_year}"
+
+msgid "Posts for {month_day_year}"
+msgstr "Entrades per {month_day_year}"
+
+msgid "Nothing found."
+msgstr "No trobat"
+
+msgid "No posts found."
+msgstr "Publicació no trobada"
+
+msgid "RSS feed"
+msgstr "Canal RSS"
+
+msgid "%d min remaining to read"
+msgstr "%d min restants per a llegir"
+
+msgid "Skip to main content"
+msgstr "Vés al comentari principal"
+
+msgid "Subcategories:"
+msgstr "Subcategories:"
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "(actiu)"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "Escriviu la vostra entrada aquí."
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "Escriviu la vostra pàgina aquí."
+
+msgid "Uncategorized"
+msgstr "Sense categoria"
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "Actualitzacions"
+
+msgid "Authors"
+msgstr "Autors"
+
+msgid "Posts by %s"
+msgstr "Entrades per %s"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Up"
+msgstr "Amunt"
+
+msgid "Next"
+msgstr "Següent"
+
+msgid "Atom feed"
+msgstr "Canal Atom"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "actualitzat"

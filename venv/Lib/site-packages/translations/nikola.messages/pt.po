@@ -1,0 +1,167 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Fábio Rosado <fabioglrosado@gmail.com>, 2017
+# Fábio Rosado <fabioglrosado@gmail.com>, 2020
+# jamatos <jamatos@fep.up.pt>, 2015
+# jamatos <jamatos@fep.up.pt>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2020-04-26 16:36+0000\n"
+"Last-Translator: Fábio Rosado <fabioglrosado@gmail.com>\n"
+"Language-Team: Portuguese (http://www.transifex.com/ralsina/nikola/language/pt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "More posts about %s"
+msgstr "Mais textos publicados sobre %s"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "Português"
+
+msgid "Tags"
+msgstr "Etiqueta"
+
+msgid "Categories"
+msgstr "Categorias"
+
+msgid "Tags and Categories"
+msgstr "Etiquetas e Categorias"
+
+msgid "Comments"
+msgstr "Comentários"
+
+msgid "Read more"
+msgstr "Ler mais"
+
+msgid "Posts about %s"
+msgstr "Textos publicados sobre %s"
+
+msgid "Next post"
+msgstr "Próximo texto publicado"
+
+msgid "old posts, page %d"
+msgstr "Textos publicados antigos, página %d"
+
+msgid "page %d"
+msgstr "página %d"
+
+msgid "Source"
+msgstr "Código"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "Ler em português"
+
+msgid "Posts for year %s"
+msgstr "Textos publicados do ano %s"
+
+msgid "Newer posts"
+msgstr "Textos publicados mais recentes"
+
+msgid "Previous post"
+msgstr "Texto publicado anterior"
+
+msgid "Also available in:"
+msgstr "Também disponível em:"
+
+msgid "Languages:"
+msgstr "Idiomas:"
+
+msgid "Original site"
+msgstr "Sítio original"
+
+msgid "Older posts"
+msgstr "Textos publicados mais antigos"
+
+msgid "Archive"
+msgstr "Arquivo"
+
+msgid "Publication date"
+msgstr "Data de publicação"
+
+msgid "Posted:"
+msgstr "Publicado:"
+
+msgid "Posts for {month_year}"
+msgstr "Textos publicados de {month_year}"
+
+msgid "Posts for {month_day_year}"
+msgstr "Textos publicados de {month_day_year}"
+
+msgid "Nothing found."
+msgstr "Nada encontrado."
+
+msgid "No posts found."
+msgstr "Nenhum texto publicado foi encontrado"
+
+msgid "RSS feed"
+msgstr "Feed RSS"
+
+msgid "%d min remaining to read"
+msgstr "%d minutos restante para leitura"
+
+msgid "Skip to main content"
+msgstr "Saltar para o conteúdo principal"
+
+msgid "Subcategories:"
+msgstr "Sub-Categorias:"
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "(ativo)"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "Escreva o seu texto para publicar aqui."
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "Escreva a sua página aqui."
+
+msgid "Uncategorized"
+msgstr "Sem Categoria"
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "Actualizaçōes"
+
+msgid "Authors"
+msgstr "Autores"
+
+msgid "Posts by %s"
+msgstr "Textos publicados por %s"
+
+msgid "Toggle navigation"
+msgstr "Alternar Navegação"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Up"
+msgstr "Cima"
+
+msgid "Next"
+msgstr "Próximo"
+
+msgid "Atom feed"
+msgstr "Feed Atom"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "Actualizado"

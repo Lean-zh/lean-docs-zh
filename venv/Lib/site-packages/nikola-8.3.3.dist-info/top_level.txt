@@ -1,0 +1,7 @@
+dist
+docs
+logo
+nikola
+npm_assets
+scripts
+translations

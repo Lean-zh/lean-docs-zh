@@ -1,0 +1,107 @@
+Metadata-Version: 2.1
+Name: staticjinja
+Version: 5.0.0
+Summary: jinja based static site generator
+Home-page: https://github.com/staticjinja/staticjinja
+License: MIT
+Keywords: jinja,static,website
+Author: Ceasar Bautista
+Author-email: cbautista2010@gmail.com
+Maintainer: Nick Crews
+Maintainer-email: nicholas.b.crews@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: docopt-ng (>=0.7.2)
+Requires-Dist: jinja2 (>=2.10.1)
+Requires-Dist: watchdog (>=1.0.0)
+Project-URL: Documentation, https://staticjinja.readthedocs.io
+Project-URL: Repository, https://github.com/staticjinja/staticjinja
+Description-Content-Type: text/x-rst
+
+staticjinja
+===========
+
+.. image:: https://badge.fury.io/py/staticjinja.png
+    :target: https://badge.fury.io/py/staticjinja
+    :alt: PyPi Badge
+
+.. image:: https://github.com/staticjinja/staticjinja/workflows/build/badge.svg?branch=main&event=schedule
+    :target: https://github.com/staticjinja/staticjinja/actions?query=branch%3Amain
+    :alt: Build and Testing Status
+
+.. image:: https://readthedocs.org/projects/staticjinja/badge/?version=stable
+    :target: https://staticjinja.readthedocs.io/en/stable/?badge=stable&style=plastic
+    :alt: Documentation Status
+
+.. image:: https://codecov.io/gh/staticjinja/staticjinja/branch/main/graph/badge.svg?token=En337ZXsPK
+    :target: https://codecov.io/gh/staticjinja/staticjinja
+    :alt: Test coverage status
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code style: Black
+
+.. image:: https://static.pepy.tech/personalized-badge/staticjinja?period=total&units=international_system&left_color=black&right_color=blue&left_text=downloads
+    :target: https://pepy.tech/project/staticjinja
+    :alt: PyPi downloads total
+
+.. image:: https://static.pepy.tech/personalized-badge/staticjinja?period=month&units=international_system&left_color=black&right_color=blue&left_text=downloads/month
+    :target: https://pepy.tech/project/staticjinja
+    :alt: PyPi downloads per month
+
+**staticjinja** is a library that makes it easy to build static sites using
+Jinja2_.
+
+Many static site generators are complex, with long manuals and unnecessary
+features. But using template engines to build static websites is really useful.
+
+staticjinja is designed to be lightweight (under 500 lines of source code),
+and to be easy to use, learn, and extend, enabling you to focus on making your
+site.
+
+.. code-block:: bash
+
+    $ mkdir templates
+    $ vim templates/index.html
+    $ staticjinja watch
+    Building index.html...
+    Templates built.
+    Watching 'templates' for changes...
+    Press Ctrl+C to stop.
+
+
+Installation
+------------
+
+To install staticjinja, simply:
+
+.. code-block:: bash
+
+    $ pip install staticjinja
+
+Documentation
+-------------
+
+Documentation is available at
+https://staticjinja.readthedocs.io.
+
+Contribute
+----------
+
+Please see CONTRIBUTING_.
+
+.. _CONTRIBUTING: CONTRIBUTING.rst
+.. _Jinja2: https://jinja.palletsprojects.com
+

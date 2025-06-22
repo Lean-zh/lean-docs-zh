@@ -1,0 +1,171 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Alvarez Alejandro <eliluminado00@gmail.com>, 2017
+# Ángel García Cuartero, 2014-2015
+# Chris Warrick, 2015,2017
+# Joaquín T <joaquintita@gmail.com>, 2014
+# Juan José Conti <jjconti@gmail.com>, 2015
+# Nicolas Bohorquez, 2022
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013-2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2013-03-15 15:29+0000\n"
+"Last-Translator: Nicolas Bohorquez, 2022\n"
+"Language-Team: Spanish (http://app.transifex.com/ralsina/nikola/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+msgid "More posts about %s"
+msgstr "Más publicaciones sobre %s"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "Español"
+
+msgid "Tags"
+msgstr "Etiquetas"
+
+msgid "Categories"
+msgstr "Categorías"
+
+msgid "Tags and Categories"
+msgstr "Etiquetas y Categorías"
+
+msgid "Comments"
+msgstr "Comentarios"
+
+msgid "Read more"
+msgstr "Leer más"
+
+msgid "Posts about %s"
+msgstr "Publicaciones sobre %s"
+
+msgid "Next post"
+msgstr "Siguiente publicación"
+
+msgid "old posts, page %d"
+msgstr "publicaciones antiguas, página %d"
+
+msgid "page %d"
+msgstr "página %d"
+
+msgid "Source"
+msgstr "Código fuente"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "Leer en español"
+
+msgid "Posts for year %s"
+msgstr "Publicaciones del año %s"
+
+msgid "Newer posts"
+msgstr "Publicaciones posteriores"
+
+msgid "Previous post"
+msgstr "Publicación anterior"
+
+msgid "Also available in:"
+msgstr "También disponible en:"
+
+msgid "Languages:"
+msgstr "Idiomas:"
+
+msgid "Original site"
+msgstr "Sitio original"
+
+msgid "Older posts"
+msgstr "Publicaciones anteriores"
+
+msgid "Archive"
+msgstr "Archivo"
+
+msgid "Publication date"
+msgstr "Fecha de publicación"
+
+msgid "Posted:"
+msgstr "Publicado:"
+
+msgid "Posts for {month_year}"
+msgstr "Posts de {month_year}"
+
+msgid "Posts for {month_day_year}"
+msgstr "Publicaciones del {month_day_year}"
+
+msgid "Nothing found."
+msgstr "No se encontró nada."
+
+msgid "No posts found."
+msgstr "No se encontraron publicaciones."
+
+msgid "RSS feed"
+msgstr "Canal RSS"
+
+msgid "%d min remaining to read"
+msgstr "quedan %d minutos de lectura"
+
+msgid "Skip to main content"
+msgstr "Ir al contenido principal"
+
+msgid "Subcategories:"
+msgstr "Subcategorías:"
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "(activo)"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "Escriba su publicación aquí."
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "Escriba su página aquí."
+
+msgid "Uncategorized"
+msgstr "Sin categoría"
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "Actualizaciones"
+
+msgid "Authors"
+msgstr "Autores"
+
+msgid "Posts by %s"
+msgstr "Publicaciones de %s"
+
+msgid "Toggle navigation"
+msgstr "Mostrar navegación"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Up"
+msgstr "Arriba"
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "Atom feed"
+msgstr "Canal Atom"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "actualizado"

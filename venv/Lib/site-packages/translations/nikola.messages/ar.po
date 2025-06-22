@@ -1,0 +1,169 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Abdullah ahmed <Alhadab@hotmail.co.uk>, 2019
+# Ahmad Fauzan bin Ahsan Azam <ahmadfahsan@gmail.com>, 2018
+# darkwise <za3boud@yahoo.fr>, 2014
+# Mohammed Attia <skeuomorf@gmail.com>, 2014
+# Nasser Alshammari <designernasser@gmail.com>, 2018
+# darkwise <za3boud@yahoo.fr>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2019-12-25 11:46+0000\n"
+"Last-Translator: Abdullah ahmed <Alhadab@hotmail.co.uk>\n"
+"Language-Team: Arabic (http://www.transifex.com/ralsina/nikola/language/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "More posts about %s"
+msgstr "المزيد من المقالات حول %s"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "العربيّة"
+
+msgid "Tags"
+msgstr "تصنيفات"
+
+msgid "Categories"
+msgstr "فئات"
+
+msgid "Tags and Categories"
+msgstr "تصنيفات و فئات"
+
+msgid "Comments"
+msgstr "التّعليقات"
+
+msgid "Read more"
+msgstr "قراءة المزيد"
+
+msgid "Posts about %s"
+msgstr "مقالات عن %s"
+
+msgid "Next post"
+msgstr "المقالة التالية"
+
+msgid "old posts, page %d"
+msgstr "مقالات قديمة, صفحة %d"
+
+msgid "page %d"
+msgstr "صفحة %d"
+
+msgid "Source"
+msgstr "المصدر"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "اقرأ بالعربية"
+
+msgid "Posts for year %s"
+msgstr "مقالات سنة %s"
+
+msgid "Newer posts"
+msgstr "مقالات أحدث"
+
+msgid "Previous post"
+msgstr "المقالة السابقة"
+
+msgid "Also available in:"
+msgstr "أيضا متوفر في:"
+
+msgid "Languages:"
+msgstr "اللُغَات"
+
+msgid "Original site"
+msgstr "الموقع الأصلي"
+
+msgid "Older posts"
+msgstr "مقالات أقدم"
+
+msgid "Archive"
+msgstr "الأرشيف"
+
+msgid "Publication date"
+msgstr "تاريخ النَشْر"
+
+msgid "Posted:"
+msgstr "نشر:"
+
+msgid "Posts for {month_year}"
+msgstr "مقالـ {شَهْر - سَنَة }"
+
+msgid "Posts for {month_day_year}"
+msgstr "مقال لـ {شَهْر - يَوْم - سَنَة}"
+
+msgid "Nothing found."
+msgstr "لا يوجد شيء."
+
+msgid "No posts found."
+msgstr "لم يوجد مقالات."
+
+msgid "RSS feed"
+msgstr "روابط التغذية "
+
+msgid "%d min remaining to read"
+msgstr "%d دقائق متبقية للقراءة"
+
+msgid "Skip to main content"
+msgstr "انتقل إلى المحتوى الرئيسي"
+
+msgid "Subcategories:"
+msgstr "فئات فرعية"
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "(نشط)"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "اكْتُب مَقَالَك هُنَا"
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "اكْتُب صَفْحَتك هُنَا "
+
+msgid "Uncategorized"
+msgstr "غير مصنف"
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "التَحْدِيثَات"
+
+msgid "Authors"
+msgstr "المؤلفون"
+
+msgid "Posts by %s"
+msgstr "مقالات بواسطة %s"
+
+msgid "Toggle navigation"
+msgstr "تَفْعيل وَضْع التَنَقُلْ"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Up"
+msgstr "أعلى"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "Atom feed"
+msgstr "روابط Atom"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "مُحدَّثة"

@@ -1,0 +1,167 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Batist D 🐍 <baptiste+transifex@darthenay.fr>, 2015-2017
+# David Paleino <d.paleino@gmail.com>, 2013
+# David Paleino <d.paleino@gmail.com>, 2013
+# Tanja Orme <irizanjo@gmail.com>, 2022
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2013-03-15 15:29+0000\n"
+"Last-Translator: Tanja Orme <irizanjo@gmail.com>, 2022\n"
+"Language-Team: Esperanto (http://app.transifex.com/ralsina/nikola/language/eo/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: eo\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "More posts about %s"
+msgstr "Pli da artikoloj pri %s"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "Esperante"
+
+msgid "Tags"
+msgstr "Etikedoj"
+
+msgid "Categories"
+msgstr "Kategorioj"
+
+msgid "Tags and Categories"
+msgstr "Etikedoj kaj kategorioj"
+
+msgid "Comments"
+msgstr "Komentoj"
+
+msgid "Read more"
+msgstr "Legu pli"
+
+msgid "Posts about %s"
+msgstr "Artikoloj pri %s"
+
+msgid "Next post"
+msgstr "Venonta artikolo"
+
+msgid "old posts, page %d"
+msgstr "%da paĝo de malnovaj artikoloj"
+
+msgid "page %d"
+msgstr "paĝo %d"
+
+msgid "Source"
+msgstr "Fonto"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "Legu ĝin en Esperanto"
+
+msgid "Posts for year %s"
+msgstr "Artikoloj de la jaro %s"
+
+msgid "Newer posts"
+msgstr "Pli novaj artikoloj"
+
+msgid "Previous post"
+msgstr "Antaŭa artikolo"
+
+msgid "Also available in:"
+msgstr "Ankaŭ disponebla en:"
+
+msgid "Languages:"
+msgstr "Lingvoj:"
+
+msgid "Original site"
+msgstr "Originala retejo"
+
+msgid "Older posts"
+msgstr "Pli malnovaj artikoloj"
+
+msgid "Archive"
+msgstr "Arkivo"
+
+msgid "Publication date"
+msgstr "Eldona dato"
+
+msgid "Posted:"
+msgstr "Skribita:"
+
+msgid "Posts for {month_year}"
+msgstr "Artikoloj de {month_year}"
+
+msgid "Posts for {month_day_year}"
+msgstr "Artikoloj de {month_day_year}"
+
+msgid "Nothing found."
+msgstr "Nenio trovita."
+
+msgid "No posts found."
+msgstr "Neniu artikoloj trovitaj."
+
+msgid "RSS feed"
+msgstr "RSS fluo"
+
+msgid "%d min remaining to read"
+msgstr "%d minutoj por legi"
+
+msgid "Skip to main content"
+msgstr "Salti al ĉefenhavo"
+
+msgid "Subcategories:"
+msgstr "Subkategorioj:"
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "(aktiva)"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "Skribu tie vian artikolon."
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "Skribu tie vian paĝon."
+
+msgid "Uncategorized"
+msgstr "Sen kategorioj"
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "Ĝisdatigoj"
+
+msgid "Authors"
+msgstr "Aŭtoroj"
+
+msgid "Posts by %s"
+msgstr "Artikoloj de %s"
+
+msgid "Toggle navigation"
+msgstr "Ŝalti menuon"
+
+msgid "Previous"
+msgstr "Antaŭa"
+
+msgid "Up"
+msgstr "Supren"
+
+msgid "Next"
+msgstr "Venonta"
+
+msgid "Atom feed"
+msgstr "Atom fluo"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "ĝisdatigita"

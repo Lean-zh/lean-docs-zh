@@ -1,0 +1,168 @@
+# Messages in Nikola
+# Copyright (C) 2012-2016
+# This file is distributed under the same license as the Nikola package.
+# 
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# Nikolaos Kostakos <kosnickx@gmail.com>, 2019
+# Panagiotis Mavrogiorgos <otinanai90@gmail.com>, 2013,2015
+# Panagiotis Mavrogiorgos <otinanai90@gmail.com>, 2013
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+# Roberto Alsina <ralsina@netmanagers.com.ar>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Nikola\n"
+"Report-Msgid-Bugs-To: ralsina@netmanagers.com.ar\n"
+"POT-Creation-Date: 2013-03-15 12:24-0300\n"
+"PO-Revision-Date: 2013-03-15 15:29+0000\n"
+"Last-Translator: Nikolaos Kostakos <kosnickx@gmail.com>, 2019\n"
+"Language-Team: Greek (http://app.transifex.com/ralsina/nikola/language/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "More posts about %s"
+msgstr "Περισσότερες αναρτήσεις για %s"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "LANGUAGE"
+msgstr "Ελληνικά"
+
+msgid "Tags"
+msgstr "Ετικέτες"
+
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+msgid "Tags and Categories"
+msgstr "Ετικέτες και κατηγορίες"
+
+msgid "Comments"
+msgstr "Σχόλια"
+
+msgid "Read more"
+msgstr "Διαβάστε περισσότερα"
+
+msgid "Posts about %s"
+msgstr "Αναρτήσεις για %s"
+
+msgid "Next post"
+msgstr "Επόμενη ανάρτηση"
+
+msgid "old posts, page %d"
+msgstr "σελίδα παλαιότερων αναρτήσεων %d"
+
+msgid "page %d"
+msgstr "σελίδα %d"
+
+msgid "Source"
+msgstr "Πηγαίος κώδικας"
+
+#. Here your translation should NOT say English but the name of your language
+#. instead
+msgid "Read in English"
+msgstr "Διαβάστε στα Ελληνικά"
+
+msgid "Posts for year %s"
+msgstr "Αναρτήσεις για το έτος %s"
+
+msgid "Newer posts"
+msgstr "Νεότερες αναρτήσεις"
+
+msgid "Previous post"
+msgstr "Προηγούμενη ανάρτηση"
+
+msgid "Also available in:"
+msgstr "Διαθέσιμο και στα:"
+
+msgid "Languages:"
+msgstr "Γλώσσες"
+
+msgid "Original site"
+msgstr "Ιστοσελίδα αρχικής ανάρτησης"
+
+msgid "Older posts"
+msgstr "Παλαιότερες αναρτήσεις"
+
+msgid "Archive"
+msgstr "Αρχείο"
+
+msgid "Publication date"
+msgstr "Ημερομηνία δημοσίευσης"
+
+msgid "Posted:"
+msgstr "Αναρτήθηκε:"
+
+msgid "Posts for {month_year}"
+msgstr "Αναρτήσεις για τον {month_year}"
+
+msgid "Posts for {month_day_year}"
+msgstr "Αναρτήσεις στις {month_day_year}"
+
+msgid "Nothing found."
+msgstr "Δε βρέθηκε περιεχόμενο"
+
+msgid "No posts found."
+msgstr "Δε βρέθηκαν αναρτήσεις"
+
+msgid "RSS feed"
+msgstr "Ροή RSS"
+
+msgid "%d min remaining to read"
+msgstr "%dmin απομένουν για ανάγνωση"
+
+msgid "Skip to main content"
+msgstr "Παράλειψη στο κυρίως περιεχόμενο"
+
+msgid "Subcategories:"
+msgstr "Υποκατηγορίες:"
+
+#. Used for active navigation links, for screen readers only
+msgid "(active)"
+msgstr "(ενεργό)"
+
+#. Default content for a new post
+msgid "Write your post here."
+msgstr "Γράψτε τις αναρτήσεις σας εδώ."
+
+#. Default content for a new page
+msgid "Write your page here."
+msgstr "Γράψτε τη σελίδα σας εδώ."
+
+msgid "Uncategorized"
+msgstr "Χωρίς κατηγορία."
+
+#. Used for feeds of any format
+msgid "Updates"
+msgstr "Ενημερώσεις"
+
+msgid "Authors"
+msgstr "Συγγραφείς"
+
+msgid "Posts by %s"
+msgstr "Αναρτήσεις από %s"
+
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+msgid "Up"
+msgstr "Επάνω"
+
+msgid "Next"
+msgstr "Επόμενο"
+
+msgid "Atom feed"
+msgstr "Ροή Atom"
+
+#. {date} (updated {updated_date})
+msgid "updated"
+msgstr "ενημερωμένο"
