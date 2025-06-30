@@ -698,7 +698,7 @@
     元编程 (metaprogramming) 系统。本课程面向数学家和
     计算机科学家。涵盖的内容包括：类型多态、
     Monads、CIC、子类型化、策略、逻辑、集合、可计算性、终止性、
-    元编程、宏、精化 (Elaboration)、类型合一 (Type Unification) 以及其他证明助手的相关工作。
+    元编程、宏、繁饰 (Elaboration)、类型合一 (Type Unification) 以及其他证明助手的相关工作。
 - name: 密码学导论
   instructor: Matthew Robert Ballard
   institution: 南卡罗来纳大学 (University of South Carolina)
